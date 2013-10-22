@@ -1,0 +1,193 @@
+<html>
+    <head>
+        <link href='../css/charsheet.css' type='text/css' rel='StyleSheet'/>
+        <link href='../css/template1.css'rel='stylesheet'/>
+        <title>New Character</title>
+        <h1>Character Sheet</h1>
+    </head>
+    <body>
+        <form method='post' action=''>
+            <table class='char'>
+                <th colspan='5'>
+                    Player:<label id='name'class='result'></label>Character:<label id='charname'class='result'></label></br>
+                    <button class='menubutton' type='button'id="commit">Commit</button>
+                    <button class='menubutton' type='submit'>Save</button>
+                    <button class='menubutton' type='button'onclick='tocharselect()'>Cancel</button>
+                </th>
+                <tr>
+                    <td>Level:<label class='result'id='level'></label></td>
+                    <td>Class:<label class='result'id='class'></label></td>
+                    <td>Race:<label class='result'id='race'></label></td>
+                    <td>Age:<label class='result'id='age'></label></td>
+                    <td>XP:<label class='result'id='xp'></label></td>
+                </tr>
+                <tr>
+                    <td>Gender:<label class='result'style='width:50px;'maxlength='6'id='gender'></label></td>
+                    <td>Height:<label class='result'id='height'></label></td>
+                    <td>Weight:<label class='result'id='weight'></label></td>
+                    <td>Diety:<label class='result'id='diety'></label></td>
+                    <td>Speed:<label class='result'id='speed'></label></td>
+                </tr>
+                <tr>
+                    <td colspan='1'>
+                        <u>Ability Scores</u><br/><br/>
+                        <label class='abillabel'>STR:</label><label CLASS='result'maxlength='2'type='text'id='str'></label>MOD:<label class='result'id='strmod'></label><br/>
+                        <label class='abillabel'>CON:</label><label CLASS='result'maxlength='2'type='text'id='con'></label>MOD:<label class='result'id='conmod'></label><br/>
+                        <label class='abillabel'>DEX:</label><label CLASS='result'maxlength='2'type='text'id='dex'></label>MOD:<label class='result'id='dexmod'></label><br/>
+                        <label class='abillabel'>INT:</label><label CLASS='result'maxlength='2'type='text'id='int'></label>MOD:<label class='result'id='intmod'></label><br/>
+                        <label class='abillabel'>WIS:</label><label CLASS='result'maxlength='2'type='text'id='wis'></label>MOD:<label class='result'id='wismod'></label><br/>
+                        <label class='abillabel'>CHA:</label><label CLASS='result'maxlength='2'type='text'id='cha'></label>MOD:<label class='result'id='chamod'></label>
+                    </td>
+                    <td colspan='2' rowspan='2'><img src="../../images/form.png"/></td>
+                    <td colspan='2'>
+                        <u>Defenses</u><br/>(lvl & abil included)<br/><br/>
+                        AC:<label class='result' id='ac'></label><br/>
+                        <label class='deflabel'>ARMOR:</label><label type='text' class='result'id='armor'></label>
+                        <label class='deflabel'>CLASS:</label><label type='text' class='result'id='classac'></label>
+                        MISC:<label type='text'class='result'id='acmisc'></label><br/>
+                        <label class='deflabel'>FORT:</label><label class='result'id='fort'></label><label class='deflabel'>CLASS:</label><label class='result' id='classfort'type='text'></label>MISC:<label class='result'id='fortmisc'></label><br/>
+                        <label class='deflabel'>REF:</label><label class='result'id='ref'></label><label class='deflabel'>CLASS:</label><label class='result' id='classref'type='text'></label>MISC:<label class='result'id='refmisc'></label><br/>
+                        <label class='deflabel'>WILL:</label><label class='result'id='will'></label><label class='deflabel'>CLASS:</label><label class='result' id='classwill'type='text'></label>MISC:<label type='text'class='result'id='willmisc'></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <u>Hit Points</u><br/><br/>
+                        HP:<label class='result' id='hp'></label> <label class='result'>/</label> <label class='result' id='maxhp'></label><br/>
+                        Surges/Day:<label class='result'id='surges'></label>
+                    </td>
+                    <td colspan='2'>
+                        <u>Attacks</u><br/>
+                        (lvl & abil included)<br/><br/>
+                        ATK Bonus:<label class='result'id='atkbonus'></label><br/>
+                        CLASS:<label class='result' id='atkclass'></label>FEAT:<label class='result'id='atkfeat'></label>MISC:<label class='result'id='atkmisc'></label><br/><br/>
+                        Damage:<label class='result'id='damage'></label><br/>
+                        FEAT:<label class='result'id='damfeat'></label>MISC:<label class='result'id='dammisc'></label><br/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <u>Senses</u><br/><br/>
+                        Passive Insight:<label class='result'id='passins'></label><br/>
+                        Passive Perception:<label class='result'id='passperc'></label>
+                    </td>
+                    <td>
+                        <u>Race Features</u><br/><br/>
+                        <label class='smlareaio'id='racefeatures'></label>
+                    </td>
+                    <td>
+                        <u>Class Features</u><br/><br/>
+                        <label class='smlareaio'id='classfeatures'></label>
+                    </td>
+                    <td colspan='2'>
+                        <u>Feats/Languages</u><br/><br/>
+                        <label class='mareaio'id='featsnlang'></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td rowspan='3'>
+                        <u>At Will Powers</u><br/><br/>
+                        Power:<label id='awpower1'type='text'class'mediumio'maxlength='50'><br/>
+                        Power:<label id='awpower2'type='text'class'mediumio'maxlength='50'><br/>
+                        Power:<label id='awpower3'type='text'class'mediumio'maxlength='50'><br/>
+                        Power:<label id='awpower4'type='text'class'mediumio'maxlength='50'><br/>
+                        Power:<label id='awpower5'type='text'class'mediumio'maxlength='50'><br/>
+                        Power:<label id='awpower6'type='text'class'mediumio'maxlength='50'><br/>
+                        Power:<label id='awpower7'type='text'class'mediumio'maxlength='50'><br/>
+                        Power:<label id='awpower8'type='text'class'mediumio'maxlength='50'><br/>
+                        <u>Encounter Powers</u><br/><br/>
+                        <input type='checkbox'>Power:<label id='epower1'class'mediumio'><br/>
+                        <input type='checkbox'>Power:<label id='epower2'class'mediumio'><br/>
+                        <input type='checkbox'>Power:<label id='epower3'class'mediumio'><br/>
+                        <input type='checkbox'>Power:<label id='epower4'class'mediumio'><br/>
+                        <input type='checkbox'>Power:<label id='epower5'class'mediumio'><br/>
+                        <input type='checkbox'>Power:<label id='epower6'class'mediumio'><br/>
+                        <input type='checkbox'>Power:<label id='epower7'class'mediumio'><br/>
+                        <input type='checkbox'>Power:<label id='epower8'class'mediumio'><br/>
+                        <u>Daily Powers</u><br/><br/>
+                        <input type='checkbox'>Power:<label id='dpower1'class'mediumio'></label><br/>
+                        <input type='checkbox'>Power:<label id='dpower2'class'mediumio'></label><br/>
+                        <input type='checkbox'>Power:<label id='dpower3'class'mediumio'></label><br/>
+                        <input type='checkbox'>Power:<label id='dpower4'class'mediumio'></label><br/>
+                        <input type='checkbox'>Power:<label id='dpower5'class'mediumio'></label><br/>
+                        <input type='checkbox'>Power:<label id='dpower6'class'mediumio'></label><br/>
+                        <input type='checkbox'>Power:<label id='dpower7'class'mediumio'></label><br/>
+                        <input type='checkbox'>Power:<label id='dpower8'class'mediumio'></label><br/>
+                        <u>utility Powers</u><br/><br/>
+                        <input type='checkbox'>Power:<label id='upower1'class'mediumio'></label><br/>
+                        <input type='checkbox'>Power:<label id='upower2'class'mediumio'></label><br/>
+                        <input type='checkbox'>Power:<label id='upower3'class'mediumio'></label><br/>
+                        <input type='checkbox'>Power:<label id='upower4'class'mediumio'></label><br/>
+                        <input type='checkbox'>Power:<label id='upower5'class'mediumio'></label><br/>
+                        <input type='checkbox'>Power:<label id='upower6'class'mediumio'></label><br/>
+                        <input type='checkbox'>Power:<label id='upower7'class'mediumio'></label><br/>
+                        <input type='checkbox'>Power:<label id='upower8'class'mediumio'></label><br/>
+                    </td>
+                    <td colspan='2'>
+                        <u>Wealth</u><br/><br/>
+                        Copper:<label class='result'id='copper'></label>
+                        Silver:<label class='result'id='silver'></label>
+                        Gold:<label class='result'id='gold'></label>
+                        Platinum:<label class='result'id='platinum'></label>
+                        Astral Diamond:<label class='result'id='astraldiamond'></label>
+                    </td>
+                    <td colspan='2'>
+                        <u>Notes:</u><br/><br/>
+                        <label class='mareaio'id='notes'></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan='2' rowspan='2'>
+                        <u>Equipment</u><br/><br/>
+                        <label class='eqiuplabel'>Head:</label><label class='mediumio'id='headeqiup'></label><br/>
+                        <label class='eqiuplabel'>Neck:</label><label class='mediumio'id='neckeqiup'></label><br/>
+                        <label class='eqiuplabel'>Armor:</label><label class='mediumio'id='armoreqiup'></label><br/>
+                        <label class='eqiuplabel'>Arms:</label><label class='mediumio'id='armeqiup'></label><br/>
+                        <label class='eqiuplabel'>Hands:</label><label class='mediumio'id='handseqiup'></label><br/>
+                        <label class='eqiuplabel'>Finger:</label><label class='mediumio'id='finger1eqiup'></label><br/>
+                        <label class='eqiuplabel'>Finger:</label><label class='mediumio'id='finger2eqiup'></label><br/>
+                        <label class='eqiuplabel'>Waist:</label><label class='mediumio'id='waisteqiup'></label><br/>
+                        <label class='eqiuplabel'>Legs:</label><label class='mediumio'id='legseqiup'></label><br/>
+                        <label class='eqiuplabel'>Feet:</label><label class='mediumio'id='feeteqiup'></label><br/><br/>
+                        <u>Misc.</u><br/><br/>
+                        <label class='lrgareaio' id='miscequip'></label>
+                    </td>
+                    <td colspan='2'>
+                        <u>Magical Items</u><br/><br/>
+                        <label class='longareaio'id='magicitems'></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan='2'>
+                        <u>Skills</u><br/>
+                        (lvl & abil included)<br/>
+                        check box if trained<br/><br/>
+                        <label class='skilllabel'>Acrobatics:</label><label id='acro'class='result'></label><input type='checkbox'id='acrotnd'><br/>
+                        <label class='skilllabel'>Arcana:</label><label id='arc'class='result'></label><input type='checkbox'id='arctnd'><br/>
+                        <label class='skilllabel'>Athletics:</label><label id='ath'class='result'></label><input type='checkbox'id='athtnd'><br/>
+                        <label class='skilllabel'>Bluff:</label><label id='bluff'class='result'></label><input type='checkbox'id='blufftnd'><br/>
+                        <label class='skilllabel'>Diplomacy:</label><label id='dip'class='result'></label><input type='checkbox'id='diptnd'><br/>
+                        <label class='skilllabel'>Dungeoneering:</label><label id='dun'class='result'></label><input type='checkbox'id='duntnd'><br/>
+                        <label class='skilllabel'>Endurance:</label><label id='end'class='result'></label><input type='checkbox'id='endtnd'><br/>
+                        <label class='skilllabel'>Heal:</label><label id='heal'class='result'></label><input type='checkbox'id='healtnd'><br/>
+                        <label class='skilllabel'>History:</label><label id='hist'class='result'></label><input type='checkbox'id='histtnd'><br/>
+                        <label class='skilllabel'>Insight:</label><label id='ins'class='result'></label><input type='checkbox'id='instnd'><br/>
+                        <label class='skilllabel'>Intimidate:</label><label id='int'class='result'></label><input type='checkbox'id='inttnd'><br/>
+                        <label class='skilllabel'>Nature:</label><label id='nat'class='result'></label><input type='checkbox'id='nattnd'><br/>
+                        <label class='skilllabel'>Perception:</label><label id='perc'class='result'></label><input type='checkbox'id='perctnd'><br/>
+                        <label class='skilllabel'>Religion:</label><label id='rel'class='result'></label><input type='checkbox'id='reltnd'><br/>
+                        <label class='skilllabel'>Stealth:</label><label id='ste'class='result'></label><input type='checkbox'id='stetnd'><br/>
+                        <label class='skilllabel'>Streetwise:</label><label id='sw'class='result'></label><input type='checkbox'id='swtnd'><br/>
+                        <label class='skilllabel'>Thievery:</label><label id='thi'class='result'></label><input type='checkbox'id='thitnd'>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <script src='../js/JQuery.js' type='text/javascript'></script>
+        <script src='../js/index.js'typ='text/javascript'></script>
+        <script src='../js/charsheet.js'type='text/javascript'></script>
+    </body>
+    <footer>
+        Sheet Version: 1.5
+    </footer>
+</html>

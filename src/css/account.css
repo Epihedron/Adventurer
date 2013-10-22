@@ -1,0 +1,22 @@
+.xpndlbl
+{
+    display:inline-block;
+    width:40%;
+    line-height:50px;
+    background:#0A3210;
+    font-size:24;
+    font-family:verdana;
+    color:white;
+    border-radius:16px;
+    cursor:pointer;
+}
+.passlbls
+{
+    display:inline-block;
+    width:160px;
+    text-align:right;
+}
+.passbutton
+{
+    width:75px;
+}

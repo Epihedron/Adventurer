@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <link href='../css/template1.css'rel='stylesheet'type='text/css'/>
+        <h1>Character Selection</h1>
+        <h2>
+            <label class='menubutton'>New Character</label>
+            <label class='menubutton'>Cancel</label>
+            <label class='menubutton'>Log Out</label>
+        </h2>
+        <style>
+            #charlist li
+            {
+                list-style:none;
+                color:blue;
+                cursor:pointer;
+                margin-bottom:10%;
+                font-size:1.3em;
+                font-family:helvetica;
+            }
+            #charlist
+            {
+                padding-left:0;
+                padding-left:0;
+                width:200px;
+                margin:auto;
+            }
+        </style>
+    </head>
+    <body>
+        <label id='user'></label>, select from your characters.<br/><hr/><br/>
+        <div>
+            <ol  id='charlist'>
+                <!--character list from json gets ajaxed here-->
+            </ol>
+        </div>
+        <div id='test'>
+            
+        </div>
+        <script src='../js/JQuery.js'></script>
+        <script src='../js/charselect.js'></script>
+    </body>
+</html>

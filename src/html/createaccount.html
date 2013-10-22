@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <link href="../css/createaccount.css" type='text/css' rel='stylesheet'/>
+        <h1>Create Account</h1>
+    </head>
+    <body>
+        <form method='post' action='../php/create.php'>
+            Fill in ALL fields<br/>
+            <fieldset>
+                <label for='firstname'>First Name: </label><input type='text' name='firstname' id='firstname'/><br/>
+                <label for='lastname'>Last Name: </label><input type='text' name='lastname' id='lastname'/><br/>
+                <label for='username'>Username: </label><input type='text' name='username' id='username' maxlength='50'/><br/>
+                <label for='email'>Email: </label><input type='text' name='email' id='email'/><br/>
+                <label for='password'>Password: </label><input type='password' name='password' id='password'/><br/>
+                <label for='passwordagain'>Password Again: </label><input type='password' name='passwordagain' id='passwordagain'/><br/>
+            </fieldset>
+        <input type='submit' value='Submit'><input type='button' onclick='tologin()' value='Cancel'>
+        </form>
+        <script>
+            function tologin()
+            {
+                window.location.replace('../../index.html');
+            }
+        </script>
+    </body>
+</html>

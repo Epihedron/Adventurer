@@ -1,0 +1,39 @@
+h1
+{
+    text-align:center;
+    font-family:helvetica;
+    font-weight:normal;
+    font-size:16;
+}
+h2
+{
+    text-align:center;
+    font-family:tahoma;
+}
+body
+{
+    background:#d2bb89;
+    text-align:center;
+}
+.menubutton
+{
+    display:inline-block;
+    background:#6C3108;
+    width:115px;
+    line-height:25px;
+    border-radius:16px;
+    -moz-border-radius:15px;
+    -webkit-border-radius:15px;
+    color:#B69A71;
+    border:2px inset white;
+    font-size:14px;
+    font-weight:normal;
+    font-family:tahoma;
+
+}
+.menubutton:hover
+{
+    color:white;
+    background:#99440c;
+    cursor:pointer;
+}

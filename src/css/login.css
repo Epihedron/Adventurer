@@ -1,0 +1,78 @@
+h1
+{
+    padding-top:2%;
+    text-align:center;
+    font-family:trebuchet;
+    color:#343434;
+}
+body
+{
+    background:#d2bb89;
+    text-align:center;
+    color:Black;
+    font-family:trebuchet;
+}
+footer
+{
+    font-family:helvetica;
+    color:#767271;
+    text-align:center;
+}
+table
+{
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:3%;
+    font-family:trebuchet;
+}
+form input
+{
+    margin-bottom:15px;
+}
+.textinput
+{
+    border-radius:6px;
+    height:30px;
+    width:245px;
+}
+.textinput:focus
+{
+    text-align:left;
+    
+}
+.loginbuttons
+{
+    display:inline-block;
+    width:120px;
+    line-height:30px;
+    background:#4B3827;
+    border-radius:16px;
+    color:#D3D4CF;
+    margin-top:10px;
+    border:2px outset white;
+}
+.loginbuttons:hover
+{
+    color:white;
+    cursor:pointer;
+    background:#604832;
+}
+.loginbuttonsdown
+{
+    color:white;
+    border:2px inset white;
+    background:#131411;
+}
+::-webkit-input-placeholder
+{
+   color: #808080;
+   text-align: center;
+ 
+}
+:-moz-placeholder
+{
+   color: #808080;
+   text-align: center;
+ 
+}

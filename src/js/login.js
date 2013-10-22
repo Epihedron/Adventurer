@@ -1,0 +1,19 @@
+$("#loginbutton").click(function()
+{
+    $("#login").submit();
+});
+$("#createbutton").click(function()
+{
+    window.location.href='src/html/createaccount.html';
+});
+if($("#password").on("keyup",function(e)
+	{
+		if(e.which==13)
+		{
+			$("#login").submit();
+		}
+	}));
+$(".loginbuttons").click(function()
+	{
+		$(".loginbuttons").class(".loginbuttonsdown");
+	});
