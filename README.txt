@@ -86,7 +86,9 @@ Alpha 0.1.5(10.22.13)
 -created new main html
 -revamped character list
 -changed most all redirects
--
+
+Alpha 0.1.6(10.22.13)
+-Added entire directory to github
 
 bugs:
 
