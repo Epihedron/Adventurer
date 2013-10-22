@@ -1,4 +1,3 @@
--created create a char layout
 //////////////////////////////////////////
 //////////////////////////////////////////
 ///                                    ///
@@ -63,6 +62,7 @@ Alpha 0.1.1 (10.10.13)
 -created index.js for ALL THE BUTTONS! :D
 
 Alpha 0.1.1 (10.11.13)
+-created create a char layout
 -ajaxed to init for username on newchar.html
 
 Alpha 0.1.1 (10.12.13)
