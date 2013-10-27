@@ -108,3 +108,8 @@ $.get('../php/main.php',function(data)
             });
     }
 });
+$("#abilscolabel").click(function()
+    {
+        $("#abilscodiv").toggle("slow");
+    }
+);

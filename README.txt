@@ -90,8 +90,27 @@ Alpha 0.1.5(10.22.13)
 Alpha 0.1.6(10.22.13)
 -Added entire directory to github
 
+<<<<<<< HEAD
 Alpha 0.1.6(10.27.13)
 -Revamped charactersheet
+=======
+Alpha 0.1.6(10/23/13)
+-revamped character sheet to 2.0
+
+Alpha 0.1.6(11.16.13)
+-added DM Tools button to main page
+-created DM tools page
+-added menu buttons to DM Tools page
+
+Alpha 0.1.6(11.22.13)
+-merged in new character sheet
+-added ajax for login check on charactersheet
+-trashed senses label and kept senses static
+-increased width of console to 700px
+-changed main button labels
+-got character loading to work on the new charactersheet
+
+Alpha 0.1.8(11.22.13)
 
 bugs:
 

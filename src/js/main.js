@@ -1,39 +1,67 @@
+var today;
 $.ajax({
 	url:'../php/init.php',
+	type:'post',
 	data:{userquery:1},
 	success:function(data)
 	{
-		if(data=='')
+		if(data=="")
 		{
-			alert('you must login');
+			alert('You must login');
+			setTimeout(function()
+				{
+					window.location.href='../../index.html';
+				}
+			);
 		}
 		else
 		{
-			alert('you are logged in');
+			//the date
+			function makeArray() 
+			{
+				for (i = 0; i<makeArray.arguments.length; i++)
+				this[i + 1] = makeArray.arguments[i];
+			}
+
+			var months = new makeArray('January','February','March','April','May',
+			'June','July','August','September','October','November','December');
+			var date = new Date();
+			var day = date.getDate();
+			var month = date.getMonth() + 1;
+			var yy = date.getYear();
+			var year = (yy < 1000) ? yy + 1900 : yy;
+			$("#user").text(data);
+			$("#date").text(day + " " + months[month] + " " + year);
 		}
 	},
 	error:function()
 	{
 		alert('ajax encounter a problem');
+		window.location.href = '../index.html';
 	}
 });
-$(".menubutton:nth-child(3)").click(function()
+$("#forums").click(function()
 	{
 		window.location.href = 'http://numaria.createaforum.com';
 	}
 );
-$(".menubutton:nth-child(4)").click(function()
+$("#logout").click(function()
 	{
     	window.location.href = '../php/logout.php';
 	}
 );
-$(".menubutton:nth-child(1)").click(function()
+$("#chars").click(function()
 	{
     	window.location.href = '../html/charselect.html';
 	}
 );
-$(".menubutton:nth-child(2)").click(function()
+$("#account").click(function()
 	{
    	 	window.location.href = '../html/account.html';
+	}
+);
+$("#dmtools").click(function()
+	{
+   	 	window.location.href = '../html/dmtools.html';
 	}
 );

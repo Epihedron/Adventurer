@@ -1,17 +1,25 @@
 var n = new Date();
 var d = n.toDateString();
 //login check
-$.get('../php/main.php',function(data)
-{
-    var user = $(data).find('#user').text();
-    if(user == '')
+$.ajax({
+    url:'../php/init.php',
+    type:'post',
+    data:{userquery:1},
+    success:function(data)
     {
-        alert('YOU MUST LOG IN FOOL!');
-        window.location.replace('../../index.html');
-    }
-    else
+        if(data=="")
+        {
+            alert('You must login');
+            window.location.href='../../index.html';
+        }
+        else
+        {
+            $("#user").text(data);
+        }
+    },
+    error:function()
     {
-        $('#username').text(user);
+        alert('ajax encounter a problem');
     }
 });
 //submission

@@ -23,6 +23,10 @@ input
     border-radius:4px;
     text-align:center;
 }
+.scoredisplay
+{
+    display:inline-block;
+}
 .char
 {
     margin:auto;

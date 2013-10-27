@@ -9,7 +9,7 @@
         <form method='post' action=''>
             <table class='char'>
                 <th colspan='5'>
-                    Player:<label id='name'class='result'></label>Character:<label id='charname'class='result'></label></br>
+                    </label>Character:<label id='charname'class='result'></label></br>
                     <button class='menubutton' type='button'id="commit">Commit</button>
                     <button class='menubutton' type='submit'>Save</button>
                     <button class='menubutton' type='button'onclick='tocharselect()'>Cancel</button>
@@ -30,13 +30,15 @@
                 </tr>
                 <tr>
                     <td colspan='1'>
-                        <u>Ability Scores</u><br/><br/>
+                        <label id='abilscolabel'><u>Ability Scores</u></label><br/><br/>
+                        <div id='abilscodiv'class='scoredisplay'>
                         <label class='abillabel'>STR:</label><label CLASS='result'maxlength='2'type='text'id='str'></label>MOD:<label class='result'id='strmod'></label><br/>
                         <label class='abillabel'>CON:</label><label CLASS='result'maxlength='2'type='text'id='con'></label>MOD:<label class='result'id='conmod'></label><br/>
                         <label class='abillabel'>DEX:</label><label CLASS='result'maxlength='2'type='text'id='dex'></label>MOD:<label class='result'id='dexmod'></label><br/>
                         <label class='abillabel'>INT:</label><label CLASS='result'maxlength='2'type='text'id='int'></label>MOD:<label class='result'id='intmod'></label><br/>
                         <label class='abillabel'>WIS:</label><label CLASS='result'maxlength='2'type='text'id='wis'></label>MOD:<label class='result'id='wismod'></label><br/>
                         <label class='abillabel'>CHA:</label><label CLASS='result'maxlength='2'type='text'id='cha'></label>MOD:<label class='result'id='chamod'></label>
+                        </div>
                     </td>
                     <td colspan='2' rowspan='2'><img src="../../images/form.png"/></td>
                     <td colspan='2'>

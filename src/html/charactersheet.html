@@ -1,0 +1,260 @@
+<html>
+	<head>
+		<link href='../css/template1.css'rel='stylesheet'/>
+		<link href='../css/charactersheet.css'rel='stylesheet'/>
+		<title>Character Sheet</title>
+		<h1>
+			Character Sheet
+		</h1>
+		<h2>
+			<input type='button'value='Save'class='menubutton'id='savechar'/>
+			<input type='button'value='Character Select'class='menubutton'id='charselect'/>
+		</h2>
+        <h3><label id='name'></label>'s Character</h3>
+	</head>
+	<body>
+		<span class='console'>
+			<div class='tripcol' id='leftcol'>
+				<span id='character'></span>
+				<span id='picframe'>
+					<span id='healthinfo'><span id='currenthealth'>0</span>/<span id='maxhealth'>0</span></span>
+					<label id='level'>0</label>
+				</span>
+                <label class='valuelablrg'style='width:110px;padding-left:5px;padding-right:5px;'>Passive Insight:</label><label class='sbresult'id='passins'>0</label><br/>
+                <label class='valuelablrg'style='width:110px;padding-left:5px;padding-right:5px;'>Passive Perception:</label><label class='sbresult'id='passperc'>0</label>
+				<label class='infotab'id='basicinfotab'>Basic Info</label>
+				<span id='basicinfo'>
+	                <label class='valuelab'>Class:</label><label class='sbresult'id='class'>0</label><br/>
+	                <label class='valuelab'>Race:</label><label class='sbresult'id='race'>0</label><br/>
+	                <label class='valuelab'>Age:</label><label class='sbresult'id='age'>0</label><br/>
+	                <label class='valuelab'>XP:</label><label class='sbresult'id='xp'>0</label><br/>
+	                <label class='valuelab'>Gender:</label><label class='sbresult'id='gender'>0</label><br/>
+	                <label class='valuelab'>Height:</label><label class='sbresult'id='height'>0</label><br/>
+	                <label class='valuelab'>Weight:</label><label class='sbresult'id='weight'>0</label><br/>
+	                <label class='valuelab'>Diety:</label><label class='sbresult'id='diety'>0</label><br/>
+	                <label class='valuelab'>Speed:</label><label class='sbresult'id='speed'>0</label>
+                </span>
+                <label class='infotab'id='abilscotab'>Ability Scores</label>
+                <span id='abilscoinfo'>
+            		<label class='valuelab'>STR:</label><label CLASS='sbresult'id='str'>0</label><label class='valuelab'>MOD:</label><label class='sbresult'id='strmod'>0</label><br/>
+                    <label class='valuelab'>CON:</label><label CLASS='sbresult'id='con'>0</label><label class='valuelab'>MOD:</label><label class='sbresult'id='conmod'>0</label><br/>
+                    <label class='valuelab'>DEX:</label><label CLASS='sbresult'id='dex'>0</label><label class='valuelab'>MOD:</label><label class='sbresult'id='dexmod'>0</label><br/>
+                    <label class='valuelab'>INT:</label><label CLASS='sbresult'id='int'>0</label><label class='valuelab'>MOD:</label><label class='sbresult'id='intmod'>0</label><br/>
+                    <label class='valuelab'>WIS:</label><label CLASS='sbresult'id='wis'>0</label><label class='valuelab'>MOD:</label><label class='sbresult'id='wismod'>0</label><br/>
+                    <label class='valuelab'>CHA:</label><label CLASS='sbresult'id='cha'>0</label><label class='valuelab'>MOD:</label><label class='sbresult'id='chamod'>0</label>
+                </span>
+                <label class='infotab'id='atkstab'>Attacks</label>
+                <label class='infotab'id='defstab'>Defenses</label>
+			</div>
+		<div id='maincol'class='tripcol'>
+			<span id='atksinfo'>
+                	<table class='middletable'>
+                        <th colspan='6'>Attacks</th>
+                		<tr>
+                			<td></td>
+                			<td></td>
+                			<td>
+	                			<label class='valuelablrg'>ATK Bonus:</label>
+	                		</td>
+	                		<td>
+	                			<label class='result'id='atkbonus'>0</label>
+                			</td>
+            			</tr>
+            			<tr>
+            				<td>
+	                    		<label class='valuelablrg'>CLASS:</label>
+                			</td>
+                			<td>
+	                    		<label class='result' id='atkclass'>0</label>
+                			</td>
+                			<td>
+	                    		<label class='valuelablrg'>FEAT:</label>
+                    		</td>
+                    		<td>
+	                    		<label class='result'id='atkfeat'>0</label>
+                			</td>
+                			<td>
+	                    		<label class='valuelablrg'>MISC:</label>
+                    		</td>
+                			<td>
+	                    		<label class='result'id='atkmisc'>0</label>
+                    		</td>
+                		</tr>
+                		<tr>
+                			<td></td>
+                			<td></td>
+	                    	<td>
+	                    		<label class='valuelablrg'>Damage:</label>
+                    		</td>
+                    		<td>
+	                    		<label class='result'id='damage'>0</label>
+	                    	</td>
+	                	</tr>
+	                	<tr>
+	                		<td></td>
+	                		<td></td>
+	                    	<td>
+	                    		<label class='valuelablrg'>FEAT:</label>
+	                    	</td>
+	                    	<td>
+	                    		<label class='result'id='damfeat'>0</label>
+                    		</td>
+                    		<td>
+	                    		<label class='valuelablrg'>MISC:</label>
+	                    	</td>
+	                    	<td>
+	                    		<label class='result'id='dammisc'>0</label>
+	                    	</td>
+
+	                	</tr>
+                    </table>
+                </span>
+                <span id='defsinfo'>
+                	<table class='middletable'>
+                        <th colspan='6'>Defenses</th>
+                		<tr>
+                			<td></td>
+                			<td></td>
+                			<td>
+                				<label class='valuelablrg'>AC:</label>
+            				</td>
+            				<td>
+                				<label class='result' id='ac'>0</label>
+            				</td>
+        				</tr>
+        				<tr>
+            				<td>
+                        		<label class='valuelablrg'>ARMOR:</label>
+                        	</td>
+                        	<td>
+                        		<label type='text' class='result'id='armor'>0</label>
+                        	</td>
+                        	<td>
+                        		<label class='valuelablrg'>CLASS:</label>
+                        	</td>
+                        	<td>
+                        		<label type='text' class='result'id='classac'>0</label>
+                        	</td>
+                        	<td>
+								<label class='valuelablrg'>MISC:</label>
+							</td>
+							<td>
+								<label type='text'class='result'id='acmisc'>0</label>
+							</td>
+						<tr>
+							<td>
+                        		<label class='valuelablrg'>FORT:</label>
+                        	</td>
+                        	<td>
+                        		<label class='result'id='fort'>0</label>
+                        	</td>
+                        	<td>
+                        		<label class='valuelablrg'>CLASS:</label>
+                        	</td>
+                        	<td>
+                        		<label class='result' id='classfort'>0</label>
+                        	</td>
+                        	<td>
+                        		<label class='valuelablrg'>MISC:</label>
+                        	</td>
+                        	<td>
+                        		<label class='result'id='fortmisc'>0</label>
+                        	</td>
+                        </tr>
+                        <tr>
+                        	<td>
+                        		<label class='valuelablrg'>REF:</label>
+                        	</td>
+                        	<td>
+                        		<label class='result'id='ref'>0</label>
+                        	</td>
+                        	<td>
+                        		<label class='valuelablrg'>CLASS:</label>
+                        	</td>
+                        	<td>
+                        		<label class='result' id='classref'>0</label>
+                        	</td>
+                        	<td>
+                        		<label class='valuelablrg'>MISC:</label>
+                        	</td>
+                        	<td>
+                        		<label class='result'id='refmisc'>0</label>
+                        	</td>
+                        </tr>
+                        <tr>
+                        	<td>
+                        		<label class='valuelablrg'>WILL:</label>
+                        	</td>
+                        	<td>
+                        		<label class='result'id='will'>0</label>
+                        	</td>
+                        	<td>
+                        		<label class='valuelablrg'>CLASS:</label>
+                        	</td>
+                        	<td>
+                        		<label class='result' id='classwill'>0</label>
+                        	</td>
+                        	<td>
+                        		<label class='valuelablrg'>MISC:</label>
+                        	</td>
+                        	<td>
+                        		<label class='result'id='willmisc'>0</label>
+                        	</td>
+                		</tr>
+                	</table>
+            	</span>
+            	<span id='powersinfo'>
+            			<!--<label class='valuelab'>Power:</label><label id='awpower1'class'value'>0</label><br/>
+                        <label class='valuelab'>Power:</label><label id='awpower2'class'value'>0</label><br/>
+                        <label class='valuelab'>Power:</label><label id='awpower3'class'value'>0</label><br/>
+                        <label class='valuelab'>Power:</label><label id='awpower4'class'value'>0</label><br/>
+                        <label class='valuelab'>Power:</label><label id='awpower5'class'value'>0</label><br/>
+                        <label class='valuelab'>Power:</label><label id='awpower6'class'value'>0</label><br/>
+                        <label class='valuelab'>Power:</label><label id='awpower7'class'value'>0</label><br/>
+                        <label class='valuelab'>Power:</label><label id='awpower8'class'value'>0</label><br/>
+                        <u>Encounter Powers</u><br/><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='epower1'class'value'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='epower2'class'value'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='epower3'class'value'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='epower4'class'value'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='epower5'class'value'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='epower6'class'value'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='epower7'class'value'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='epower8'class'value'>0</label><br/>
+                        <u>Daily Powers</u><br/><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='dpower1'class'value'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='dpower2'class'value'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='dpower3'class'value'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='dpower4'class'value'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='dpower5'class'value'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='dpower6'class'value'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='dpower7'class'value'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='dpower8'class'value'>0</label><br/>
+                        <u>utility Powers</u><br/><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='upower1'class'mediumio'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='upower2'class'mediumio'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='upower3'class'mediumio'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='upower4'class'mediumio'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='upower5'class'mediumio'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='upower6'class'mediumio'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='upower7'class'mediumio'>0</label><br/>
+                        <input type='checkbox'><label class='valuelab'>Power:</label><label id='upower8'class'mediumio'>0</label><br/>-->
+            	</span>
+		</div>
+		<div class='tripcol'id='rightcol'>
+			<label class='infotab'id='powerstab'style='border-top-right-radius:8px;'>Powers</label>
+			<label class='infotab'id='featurestab'>Features</label>
+			<label class='infotab'id='featsnlangtab'>Feats & Languages</label>
+			<label class='infotab'id='skillstab'>Skills</label>
+			<label class='infotab'id='skillstab'>Equipment & Inventory</label>
+			<label class='infotab'id='equipninvtab'>Wealth</label>
+			<label class='infotab'id='wealthtab'>Notes</label>
+		</div>
+		</span>
+		<script src='../js/JQuery.js'></script>
+		<script src='../js/charactersheet.js'></script>
+	</body>
+	<footer>
+		Version 2.0
+	</footer>
+</html>
