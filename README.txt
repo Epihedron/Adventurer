@@ -90,6 +90,9 @@ Alpha 0.1.5(10.22.13)
 Alpha 0.1.6(10.22.13)
 -Added entire directory to github
 
+Alpha 0.1.6(10.27.13)
+-Revamped charactersheet
+
 bugs:
 
 -console broke *(fixed itself)
