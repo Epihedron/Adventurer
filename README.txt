@@ -109,7 +109,8 @@ Alpha 0.1.6(11.22.13)
 -changed main button labels
 -got character loading to work on the new charactersheet
 
-Alpha 0.1.8(11.22.13)
+Alpha 0.1.8(11.23.13)
+-fixed github repository
 
 bugs:
 
