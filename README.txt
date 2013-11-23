@@ -90,10 +90,9 @@ Alpha 0.1.5(10.22.13)
 Alpha 0.1.6(10.22.13)
 -Added entire directory to github
 
-<<<<<<< HEAD
 Alpha 0.1.6(10.27.13)
 -Revamped charactersheet
-=======
+
 Alpha 0.1.6(10/23/13)
 -revamped character sheet to 2.0
 
@@ -114,7 +113,7 @@ Alpha 0.1.8(11.22.13)
 
 bugs:
 
--console broke *(fixed itself)
+-chrome doesn't like adding new characters to the char list. I suspect local save issues
 
 notes:
 
