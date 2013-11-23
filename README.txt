@@ -7,6 +7,7 @@
 //////////////////////////////////////////
 
 Updates:
+==========================================
 
 Alpha 0.0.1 (9.28.13)
 -created login page
@@ -114,31 +115,27 @@ Alpha 0.1.8(11.23.13)
 -removed from IP from .at.vu
 -internal IP changed, remapped router's port forwarding
 -fixed console sizing
+-revamped readme to work also with MD format
 
-bugs:
+
+
+
+
+Bugs:
+==========================================
 
 -chrome doesn't like adding new characters to the char list. I suspect local save issues
 
-notes:
 
--
 
-ideas:
 
--menubuttons
-    -forum
-    -new character
-    -characters
-    -account
-    -contact
-    -logout
+
+Ideas:
+==========================================
+
 -whose logged in at the bottom
 -chat on right
 -archives on left
--change new character sheet to step by step
--layout of char sheets to be 3 column
+-*done* change new character sheet to step by step
+-*done* layout of char sheets to be 3 column
 -initiative order for battles
-    
-requests:
-
--
