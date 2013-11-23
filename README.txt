@@ -1,7 +1,6 @@
 //////////////////////////////////////////
 //////////////////////////////////////////
 ///                                    ///
-///                The                 ///
 ///             Adventurer             ///
 ///                                    ///
 //////////////////////////////////////////
@@ -111,6 +110,10 @@ Alpha 0.1.6(11.22.13)
 
 Alpha 0.1.8(11.23.13)
 -fixed github repository
+-delete character prompts work
+-removed from IP from .at.vu
+-internal IP changed, remapped router's port forwarding
+-fixed console sizing
 
 bugs:
 

@@ -21,19 +21,26 @@
     if(isset($_POST['delchar']))
     {
         $trash=$_POST['delchar'];
-        // $charlist=file_get_contents("../json/chars/$user/$user"."list.json");
-        // $charlistdc=json_decode($charlist);
-        // foreach($charlistdc as $key => $value)
-        // {
-        //     echo($key.'+'.$value);
-        //     if(in_array($trash,$value))
-        //     {
-        //         // unset($charlistdc[$key]);
-        //     }
-        // }
-        var_dump($charlistdc);
-        $finallist=json_encode($charlistdc);
+        $charlist=file_get_contents("../json/chars/$user/$user"."list.json");
+        $charlistdc=json_decode($charlist);
+        foreach($charlistdc as $key => $value)
+        {
+            $chars=json_encode($value);
+            echo($chars."\n");
+            var_dump($value);
+            if(in_array($trash,$chars))
+            {
 
-        // file_put_contents("../json/chars/$user/$user"."list.json",$finallist);
+                echo("ok");
+                //unset($charlistdc[$key]);
+            }
+            else
+            {
+                echo("Could not find that character");
+            }
+        }
+        //$finallist=json_encode($charlistdc);
+        //var_dump($charlistdc);
+        //file_put_contents("../json/chars/$user/$user"."list.json",$finallist);
     }
 ?>

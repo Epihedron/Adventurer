@@ -17,6 +17,8 @@ $.ajax({
                 $('#user').text(user);
             }
             var playerurl='../json/chars/'+user+'/'+user+'list.json';
+
+            //getting characters from character list
             $.ajax(
             {
                 url:playerurl,
@@ -34,9 +36,13 @@ $.ajax({
                     {
                         $("#charlist").append("<li value="+i+">"+data[i]['Basic Info']['character']+"</li>");
                     }
+
+                    //character selected
                     $("#charlist li").click(function()
                     {
                         var charsheet;
+
+                        //sending current character selection to players init
                         $.ajax(
                             {
                                 url:'../php/init.php',
@@ -59,6 +65,8 @@ $.ajax({
         }
     }
 );
+
+//basic menu button items
 $("#tomain").click(function()
     {
         window.location.href='../html/main.html';
@@ -74,30 +82,34 @@ $("#newchar").click(function()
         window.location.href='../html/newchar.html';
     }
 );
+
+//delete character
 $("#delchar").click(function()
 {
     var p1=prompt("Enter character's name(CaSe SeNsItIvE):");
-    var p2=prompt("Measure twice, cut once:");
-    if(p1==p2)
-    {
-        $.ajax(
-            {
-                url:"../php/init.php",
-                type:"POST",
-                data:{"delchar":p2},
-                success:function(data)
+    if(p1 != null)
+        {
+            var p2=prompt("Measure twice, cut once:");
+            if(p2 != null)
                 {
-                    alert(data);
-                },
-                error:function(err)
-                {
-                    alert("An error was thrown:"+JSON.stringify(err));
+                    if(p1==p2)
+                        {
+                            $.ajax(
+                                {
+                                    url:"../php/init.php",
+                                    type:"POST",
+                                    data:{"delchar":p2},
+                                    error:function(err)
+                                    {
+                                        alert("An error was thrown:"+JSON.stringify(err));
+                                    }
+                                }
+                            );
+                        }
+                    else
+                        {
+                            alert('The names did not match.');
+                        }
                 }
-            }
-        );
-    }
-    else
-    {
-        alert('The names did not match.');
-    }
+        }
 });
