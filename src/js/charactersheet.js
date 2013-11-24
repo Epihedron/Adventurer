@@ -122,12 +122,12 @@ $.ajax(
         }
     }
 );
-
 //hiding panels
 $('#basicinfo').hide();
 $('#abilscoinfo').hide();
 $('#atksinfo').hide();
 $('#defsinfo').hide();
+$('#powersinfo').hide();
 
 //panel toggles
 $('#basicinfotab').click(function()
@@ -153,8 +153,15 @@ $('#defstab').click(function()
 $('#senstab').click(function()
 	{
 		$('#sensinfo').toggle('slow');
-	});
+	}
+);
+$('#powerstab').click(function()
+	{
+		$('#powersinfo').toggle('slow');
+	}
+);
 
+//back to char select button
 $('#charselect').click(function()
 	{
 		window.location.href='../html/charselect.html';

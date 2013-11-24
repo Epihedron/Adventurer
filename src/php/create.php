@@ -52,7 +52,7 @@
                     $newusr["name"]=$first;
                     $newusr["access"]=1;
                     echo('You have submitted successfully. Heading to login.');
-                    echo("<meta http-equiv='refresh' content='3;../php/login.php'");
+                    echo("<meta http-equiv='refresh' content='3;../../index.html'");
                 }
             }
         }

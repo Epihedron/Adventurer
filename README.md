@@ -108,7 +108,9 @@
 - internal IP changed, remapped router's port forwarding
 - fixed console sizing
 - revamped readme to work also with MD format
+- revamped menu buttons
 - delete character button now works
+- aligned the console layout more
 
 
 

@@ -8,6 +8,11 @@ h3
 #character
 {
 	margin:auto;
+	display:inline-block;
+	font-size:16px;
+	font-family:verdana;
+	margin-bottom:5px;
+	margin-top:5px;
 }
 #leftcol
 {
@@ -50,6 +55,10 @@ h3
 	line-height:18;
 	margin-left:5px;
 }
+#powersinfo
+{
+	background:;
+}
 .middletable
 {
 	position:relative;
@@ -89,7 +98,7 @@ h3
 .console
 {
 	display:inline-block;
-	width:720px;
+	width:760px;
 	height:480px;
 	background:#413529;
 	border-radius:10px;

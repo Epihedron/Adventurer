@@ -18,14 +18,20 @@ body
 .menubutton
 {
     display:inline-block;
-    background:#6C3108;
+    background: #bf845f; /* Old browsers */
+    background: -moz-linear-gradient(top,  #bf845f 0%, #6c3108 6%, #6c3108 89%, #bf845f 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#bf845f), color-stop(6%,#6c3108), color-stop(89%,#6c3108), color-stop(100%,#bf845f)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #bf845f 0%,#6c3108 6%,#6c3108 89%,#bf845f 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #bf845f 0%,#6c3108 6%,#6c3108 89%,#bf845f 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #bf845f 0%,#6c3108 6%,#6c3108 89%,#bf845f 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #bf845f 0%,#6c3108 6%,#6c3108 89%,#bf845f 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf845f', endColorstr='#bf845f',GradientType=0 ); /* IE6-9 */
     width:115px;
     line-height:25px;
-    border-radius:16px;
-    -moz-border-radius:15px;
-    -webkit-border-radius:15px;
+    border-radius:8px;
+    -moz-border-radius:7px;
+    -webkit-border-radius:7px;
     color:#B69A71;
-    border:2px inset white;
     font-size:14px;
     font-weight:normal;
     font-family:tahoma;
@@ -34,6 +40,5 @@ body
 .menubutton:hover
 {
     color:white;
-    background:#99440c;
     cursor:pointer;
 }
