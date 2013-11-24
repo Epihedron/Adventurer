@@ -99,12 +99,16 @@ $("#delchar").click(function()
                                     url:"../php/init.php",
                                     type:"POST",
                                     data:{"delchar":p2},
+                                    success:function(data)
+                                    {
+                                        alert(data);
+                                    },
                                     error:function(err)
                                     {
                                         alert("An error was thrown:"+JSON.stringify(err));
                                     }
                                 }
-                            );
+                            ).done(function(){location.reload(true);});
                         }
                     else
                         {

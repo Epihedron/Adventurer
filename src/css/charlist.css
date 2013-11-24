@@ -1,0 +1,16 @@
+#charlist
+{
+    padding-left:0;
+    padding-left:0;
+    width:200px;
+    margin:auto;
+}
+#charlist li
+{
+    list-style:none;
+    color:blue;
+    cursor:pointer;
+    margin-bottom:10%;
+    font-size:32px;
+    font-family:verdana;
+}

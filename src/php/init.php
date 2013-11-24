@@ -20,27 +20,32 @@
     //delete character
     if(isset($_POST['delchar']))
     {
+        $notfound=false;
         $trash=$_POST['delchar'];
         $charlist=file_get_contents("../json/chars/$user/$user"."list.json");
-        $charlistdc=json_decode($charlist);
+        $charlistdc=json_decode($charlist,true);
         foreach($charlistdc as $key => $value)
         {
-            $chars=json_encode($value);
-            echo($chars."\n");
-            var_dump($value);
-            if(in_array($trash,$chars))
+            if($trash == $value["Basic Info"]["character"])
             {
-
-                echo("ok");
-                //unset($charlistdc[$key]);
+                $notfound=false;
+                unset($charlistdc[$key]);
+                break;
             }
             else
             {
-                echo("Could not find that character");
+                $notfound=true;
             }
         }
-        //$finallist=json_encode($charlistdc);
-        //var_dump($charlistdc);
-        //file_put_contents("../json/chars/$user/$user"."list.json",$finallist);
+        if($notfound==true)
+        {
+            echo("Character not found");
+        }
+        else
+        {
+            echo("Character deleted \n");
+        }
+        $finallist=json_encode($charlistdc);
+        file_put_contents("../json/chars/$user/$user"."list.json",$finallist);
     }
 ?>
