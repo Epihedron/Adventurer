@@ -112,6 +112,12 @@
 - delete character button now works
 - aligned the console layout more
 
+##### Alpha 0.1.8(11.24.13)
+- added powers to console
+- fixed console tables widths
+- created list icon
+- got rid of menubuttons and title on character sheet
+
 
 
 
