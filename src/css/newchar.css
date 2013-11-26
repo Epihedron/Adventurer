@@ -30,8 +30,8 @@ fieldset
     height:16px;
     border-radius:16px;
     margin-left:3px;
-    top:2px;
-    float:left;
+    top:4px;
+    float:right;
 }
 .deletebutton:hover
 {

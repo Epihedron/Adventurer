@@ -149,10 +149,10 @@ $(document).ready(function()
     );
     $('#addclassfeature').click(function()
         {
-            $('#classfeaturelist').append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+            $('#classfeaturelist').append("<img class='deletebutton'/><li><input type='text'maxchar='100'class='lgtxt'/></li>");
             $('.deletebutton').click(function()
                 {
-                    $(this).prev().remove();
+                    $(this).next().remove();
                     $(this).remove();
                 }
             );
@@ -160,10 +160,10 @@ $(document).ready(function()
     );
     $('#addfeat').click(function()
         {
-            $('#featslist').append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+            $('#featslist').append("<img class='deletebutton'/><li><input type='text'maxchar='100'class='lgtxt'/></li>");
             $('.deletebutton').click(function()
                 {
-                    $(this).prev().remove();
+                    $(this).next().remove();
                     $(this).remove();
                 }
             );
@@ -171,10 +171,10 @@ $(document).ready(function()
     );
     $('#addlang').click(function()
         {
-            $('#langslist').append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+            $('#langslist').append("<img class='deletebutton'/><li><input type='text'maxchar='100'class='lgtxt'/></li>");
             $('.deletebutton').click(function()
                 {
-                    $(this).prev().remove();
+                    $(this).next().remove();
                     $(this).remove();
                 }
             );
@@ -182,10 +182,10 @@ $(document).ready(function()
     );
     $('#addatwill').click(function()
         {
-            $('#atwillplist').append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+            $('#atwillplist').append("<img class='deletebutton'/><li><input type='text'maxchar='100'class='lgtxt'/></li>");
             $('.deletebutton').click(function()
                 {
-                    $(this).prev().remove();
+                    $(this).next().remove();
                     $(this).remove();
                 }
             );
@@ -193,10 +193,10 @@ $(document).ready(function()
     );
     $('#addenc').click(function()
         {
-            $('#encplist').append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+            $('#encplist').append("<img class='deletebutton'/><li><input type='text'maxchar='100'class='lgtxt'/></li>");
             $('.deletebutton').click(function()
                 {
-                    $(this).prev().remove();
+                    $(this).next().remove();
                     $(this).remove();
                 }
             );
@@ -204,10 +204,10 @@ $(document).ready(function()
     );
     $('#adddaily').click(function()
         {
-            $('#dailyplist').append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+            $('#dailyplist').append("<img class='deletebutton'/><li><input type='text'maxchar='100'class='lgtxt'/></li>");
             $('.deletebutton').click(function()
                 {
-                    $(this).prev().remove();
+                    $(this).next().remove();
                     $(this).remove();
                 }
             );
@@ -215,10 +215,10 @@ $(document).ready(function()
     );
     $('#addinv').click(function()
         {
-            $('#invlist').append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+            $('#invlist').append("<img class='deletebutton'/><li><input type='text'maxchar='100'class='lgtxt'/></li>");
             $('.deletebutton').click(function()
                 {
-                    $(this).prev().remove();
+                    $(this).next().remove();
                     $(this).remove();
                 }
             );
@@ -226,10 +226,10 @@ $(document).ready(function()
     );
     $('#addutil').click(function()
         {
-            $('#utilityplist').append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+            $('#utilityplist').append("<img class='deletebutton'/><li><input type='text'maxchar='100'class='lgtxt'/></li>");
             $('.deletebutton').click(function()
                 {
-                    $(this).prev().remove();
+                    $(this).next().remove();
                     $(this).remove();
                 }
             );
