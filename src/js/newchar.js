@@ -138,10 +138,10 @@ $(document).ready(function()
     // }
     $('#addracefeature').click(function()
         {
-            $('#racefeaturelist').append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+            $('#racefeaturelist').append("<img class='deletebutton'/><li><input type='text'maxchar='100'class='lgtxt'/></li>");
             $('.deletebutton').click(function()
                 {
-                    $(this).prev().remove();
+                    $(this).next().remove();
                     $(this).remove();
                 }
             );
