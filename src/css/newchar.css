@@ -20,6 +20,34 @@ fieldset
 {
     margin:auto;
 }
+.deletebutton
+{
+    background-image:url('../../images/smldeletebutton.png');
+    background-repeat:no-repeat;
+    display:inline-block;
+    position:relative;
+    width:16px;
+    height:16px;
+    border-radius:16px;
+    margin-left:3px;
+    top:2px;
+}
+.deletebutton:hover
+{
+    cursor:pointer;
+}
+.addbutton
+{
+    display:inline-block;
+    width:32px;
+    height:32px;
+    background-image:url('../../images/plusicon.png');
+}
+.addbutton:hover
+{
+    background-image:url('../../images/plusiconhover.png');
+    cursor:pointer;
+}
 .badresult
 {
     color:red;
@@ -66,7 +94,7 @@ fieldset
 }
 .lgtxt
 {
-    width:350px;
+    width:330px;
 }
 .menubutton
 {
@@ -79,4 +107,13 @@ fieldset
 .vertdiv
 {
     display:inline-block;
+}
+.varfield
+{
+    display:inline-block;
+}
+.atttitle
+{
+    font-weight:bold;
+    font-size:16;
 }

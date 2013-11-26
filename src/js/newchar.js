@@ -22,7 +22,7 @@ $.ajax({
         alert('ajax encounter a problem');
     }
 });
-//submission
+//submission with validation
 $('#submit').click(function ()
 {
     var err = 0;
@@ -83,6 +83,7 @@ $(".menubutton:nth-child(2)").click(function()
         window.location.href='../html/charselect.html'
     }
 );
+//after document loads
 $(document).ready(function()
 {
     //back and forward buttons
@@ -121,6 +122,117 @@ $(document).ready(function()
                 i=imax;
                 $('fieldset:eq('+i+')').show();
             }
+        }
+    );
+
+    //adding fields to chosen group inputs
+    // function adddelfield(x)
+    // {
+    //     x.append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+    //     $('.deletebutton').click(function()
+    //         {
+    //             $(this).prev().remove();
+    //             $(this).remove();
+    //         }
+    //     );
+    // }
+    $('#addracefeature').click(function()
+        {
+            $('#racefeaturelist').append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+            $('.deletebutton').click(function()
+                {
+                    $(this).prev().remove();
+                    $(this).remove();
+                }
+            );
+        }
+    );
+    $('#addclassfeature').click(function()
+        {
+            $('#classfeaturelist').append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+            $('.deletebutton').click(function()
+                {
+                    $(this).prev().remove();
+                    $(this).remove();
+                }
+            );
+        }
+    );
+    $('#addfeat').click(function()
+        {
+            $('#featslist').append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+            $('.deletebutton').click(function()
+                {
+                    $(this).prev().remove();
+                    $(this).remove();
+                }
+            );
+        }
+    );
+    $('#addlang').click(function()
+        {
+            $('#langslist').append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+            $('.deletebutton').click(function()
+                {
+                    $(this).prev().remove();
+                    $(this).remove();
+                }
+            );
+        }
+    );
+    $('#addatwill').click(function()
+        {
+            $('#atwillplist').append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+            $('.deletebutton').click(function()
+                {
+                    $(this).prev().remove();
+                    $(this).remove();
+                }
+            );
+        }
+    );
+    $('#addenc').click(function()
+        {
+            $('#encplist').append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+            $('.deletebutton').click(function()
+                {
+                    $(this).prev().remove();
+                    $(this).remove();
+                }
+            );
+        }
+    );
+    $('#adddaily').click(function()
+        {
+            $('#dailyplist').append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+            $('.deletebutton').click(function()
+                {
+                    $(this).prev().remove();
+                    $(this).remove();
+                }
+            );
+        }
+    );
+    $('#addinv').click(function()
+        {
+            $('#invlist').append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+            $('.deletebutton').click(function()
+                {
+                    $(this).prev().remove();
+                    $(this).remove();
+                }
+            );
+        }
+    );
+    $('#addutil').click(function()
+        {
+            $('#utilityplist').append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
+            $('.deletebutton').click(function()
+                {
+                    $(this).prev().remove();
+                    $(this).remove();
+                }
+            );
         }
     );
 });

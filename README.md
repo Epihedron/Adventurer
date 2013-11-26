@@ -118,6 +118,11 @@
 - created list icon
 - got rid of menubuttons and title on character sheet
 
+##### Alpha 0.1.8(11/25/13)
+- created delete field button for add char
+- added add field button to new char
+- added delete field button to new char
+
 
 
 
