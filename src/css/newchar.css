@@ -39,15 +39,18 @@ fieldset
 }
 .addbutton
 {
+    margin-bottom:5px;
     display:inline-block;
     width:32px;
     height:32px;
     background-image:url('../../images/plusicon.png');
+    background-repeat:no-repeat;
 }
 .addbutton:hover
 {
     background-image:url('../../images/plusiconhover.png');
     cursor:pointer;
+    background-repeat:no-repeat;
 }
 .badresult
 {

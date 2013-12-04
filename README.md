@@ -123,7 +123,13 @@
 - added add field button to new char
 - added delete field button to new char
 
+##### Alpha 0.1.8(12/3/13)
+- added test button to new char page
 
+##### Alpha 0.1.8(12/4/13)
+- race feature list now adds and deletes properly
+- changed delete feature on all text inputs on new character sheet
+- named all new text inputs on new character sheet with array values
 
 
 

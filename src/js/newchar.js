@@ -54,7 +54,7 @@ $('#submit').click(function ()
         $('#newcharform').submit();
     }
 });
-//valid to make sure field is a number
+//validate to make sure field is a number
 function isNumberKey(evt)
 {
     var charCode = (evt.which) ? evt.which : event.keyCode
@@ -124,6 +124,12 @@ $(document).ready(function()
             }
         }
     );
+    //test button
+    $(".menubutton:nth-child(3)").click(function()
+        {
+
+        }
+    );
 
     //adding fields to chosen group inputs
     // function adddelfield(x)
@@ -138,35 +144,17 @@ $(document).ready(function()
     // }
     $('#addracefeature').click(function()
         {
-            $('#racefeaturelist').append("<img class='deletebutton'/><li><input type='text'maxchar='100'class='lgtxt'/></li>");
-            $('.deletebutton').click(function()
-                {
-                    $(this).next().remove();
-                    $(this).remove();
-                }
-            );
+            $('#racefeaturelist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='rfeat[]'type='text'maxchar='100'class='lgtxt'/></li>");
         }
     );
     $('#addclassfeature').click(function()
         {
-            $('#classfeaturelist').append("<img class='deletebutton'/><li><input type='text'maxchar='100'class='lgtxt'/></li>");
-            $('.deletebutton').click(function()
-                {
-                    $(this).next().remove();
-                    $(this).remove();
-                }
-            );
+            $('#classfeaturelist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name-'cfeat[]'type='text'maxchar='100'class='lgtxt'/></li>");
         }
     );
     $('#addfeat').click(function()
         {
-            $('#featslist').append("<img class='deletebutton'/><li><input type='text'maxchar='100'class='lgtxt'/></li>");
-            $('.deletebutton').click(function()
-                {
-                    $(this).next().remove();
-                    $(this).remove();
-                }
-            );
+            $('#featslist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='feat[]'type='text'maxchar='100'class='lgtxt'/></li>");
         }
     );
     $('#addlang').click(function()
