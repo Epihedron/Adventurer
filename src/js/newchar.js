@@ -53,6 +53,7 @@ $('#submit').click(function ()
     {
         $('#newcharform').submit();
     }
+    $('#newcharform').submit();
 });
 //validate to make sure field is a number
 function isNumberKey(evt)
@@ -124,24 +125,7 @@ $(document).ready(function()
             }
         }
     );
-    //test button
-    $(".menubutton:nth-child(3)").click(function()
-        {
-
-        }
-    );
-
-    //adding fields to chosen group inputs
-    // function adddelfield(x)
-    // {
-    //     x.append("<input type='text'maxchar='100'class='lgtxt'/><img class='deletebutton'/>");
-    //     $('.deletebutton').click(function()
-    //         {
-    //             $(this).prev().remove();
-    //             $(this).remove();
-    //         }
-    //     );
-    // }
+    //additional input fields
     $('#addracefeature').click(function()
         {
             $('#racefeaturelist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='rfeat[]'type='text'maxchar='100'class='lgtxt'/></li>");
@@ -149,7 +133,7 @@ $(document).ready(function()
     );
     $('#addclassfeature').click(function()
         {
-            $('#classfeaturelist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name-'cfeat[]'type='text'maxchar='100'class='lgtxt'/></li>");
+            $('#classfeaturelist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='cfeat[]'type='text'maxchar='100'class='lgtxt'/></li>");
         }
     );
     $('#addfeat').click(function()
@@ -159,68 +143,32 @@ $(document).ready(function()
     );
     $('#addlang').click(function()
         {
-            $('#langslist').append("<img class='deletebutton'/><li><input type='text'maxchar='100'class='lgtxt'/></li>");
-            $('.deletebutton').click(function()
-                {
-                    $(this).next().remove();
-                    $(this).remove();
-                }
-            );
+            $('#langslist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='lang[]'type='text'maxchar='100'class='lgtxt'/></li>");
         }
     );
     $('#addatwill').click(function()
         {
-            $('#atwillplist').append("<img class='deletebutton'/><li><input type='text'maxchar='100'class='lgtxt'/></li>");
-            $('.deletebutton').click(function()
-                {
-                    $(this).next().remove();
-                    $(this).remove();
-                }
-            );
+            $('#atwillplist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='atwill[]'type='text'maxchar='100'class='lgtxt'/></li>");
         }
     );
     $('#addenc').click(function()
         {
-            $('#encplist').append("<img class='deletebutton'/><li><input type='text'maxchar='100'class='lgtxt'/></li>");
-            $('.deletebutton').click(function()
-                {
-                    $(this).next().remove();
-                    $(this).remove();
-                }
-            );
+            $('#encplist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='enc[]'type='text'maxchar='100'class='lgtxt'/></li>");
         }
     );
     $('#adddaily').click(function()
         {
-            $('#dailyplist').append("<img class='deletebutton'/><li><input type='text'maxchar='100'class='lgtxt'/></li>");
-            $('.deletebutton').click(function()
-                {
-                    $(this).next().remove();
-                    $(this).remove();
-                }
-            );
-        }
-    );
-    $('#addinv').click(function()
-        {
-            $('#invlist').append("<img class='deletebutton'/><li><input type='text'maxchar='100'class='lgtxt'/></li>");
-            $('.deletebutton').click(function()
-                {
-                    $(this).next().remove();
-                    $(this).remove();
-                }
-            );
+            $('#dailyplist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='daily[]'type='text'maxchar='100'class='lgtxt'/></li>");
         }
     );
     $('#addutil').click(function()
         {
-            $('#utilityplist').append("<img class='deletebutton'/><li><input type='text'maxchar='100'class='lgtxt'/></li>");
-            $('.deletebutton').click(function()
-                {
-                    $(this).next().remove();
-                    $(this).remove();
-                }
-            );
+            $('#utilityplist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='util[]'type='text'maxchar='100'class='lgtxt'/></li>");
+        }
+    );
+    $('#addinv').click(function()
+        {
+            $('#invlist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='inv[]'type='text'maxchar='100'class='lgtxt'/></li>");
         }
     );
 });

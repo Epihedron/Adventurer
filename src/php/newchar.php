@@ -36,16 +36,16 @@
     $speed=$_POST['speed'];
     $passperc=$_POST['passperc'];
     $passins=$_POST['passins'];
-    $rfeature1=$_POST['racefeatures1'];
-    $rfeature2=$_POST['racefeatures2'];
-    $rfeature3=$_POST['racefeatures3'];
-    $rfeature4=$_POST['racefeatures4'];
-    $rfeature5=$_POST['racefeatures5'];
-    $cfeature1=$_POST['classfeatures1'];
-    $cfeature2=$_POST['classfeatures2'];
-    $cfeature3=$_POST['classfeatures3'];
-    $cfeature4=$_POST['classfeatures4'];
-    $cfeature5=$_POST['classfeatures5'];
+    // $rfeature1=$_POST['racefeatures1'];
+    // $rfeature2=$_POST['racefeatures2'];
+    // $rfeature3=$_POST['racefeatures3'];
+    // $rfeature4=$_POST['racefeatures4'];
+    // $rfeature5=$_POST['racefeatures5'];
+    // $cfeature1=$_POST['classfeatures1'];
+    // $cfeature2=$_POST['classfeatures2'];
+    // $cfeature3=$_POST['classfeatures3'];
+    // $cfeature4=$_POST['classfeatures4'];
+    // $cfeature5=$_POST['classfeatures5'];
     $feat1=$_POST['feat1'];
     $feat2=$_POST['feat2'];
     $feat3=$_POST['feat3'];
@@ -153,44 +153,83 @@
     $hp['pass ins']=$passins;
     
     //features
-    $features['race feature1']=$rfeature1;
-    $features['race feature2']=$rfeature2;
-    $features['race feature3']=$rfeature3;
-    $features['race feature4']=$rfeature4;
-    $features['race feature5']=$rfeature5;
-    $features['class feature1']=$cfeature1;
-    $features['class feature2']=$cfeature2;
-    $features['class feature3']=$cfeature3;
-    $features['class feature4']=$cfeature4;
-    $features['class feature5']=$cfeature5;
+    // $features['race feature1']=$rfeature1;
+    // $features['race feature2']=$rfeature2;
+    // $features['race feature3']=$rfeature3;
+    // $features['race feature4']=$rfeature4;
+    // $features['race feature5']=$rfeature5;
+    // $features['class feature1']=$cfeature1;
+    // $features['class feature2']=$cfeature2;
+    // $features['class feature3']=$cfeature3;
+    // $features['class feature4']=$cfeature4;
+    // $features['class feature5']=$cfeature5;
+
+    //race features
+    foreach($_POST['rfeat'] as $x)
+    {
+        $features['race features'][]=$x;
+    }
+
+    //class features
+    foreach($_POST['cfeat'] as $x)
+    {
+        $features['class features'][]=$x;
+    }
+
     
     //feats and languages
-    $feat['feat1']=$feat1;
-    $feat['feat2']=$feat2;
-    $feat['feat3']=$feat3;
-    $feat['feat4']=$feat4;
-    $feat['feat5']=$feat5;
-    $feat['lang1']=$lang1;
-    $feat['lang2']=$lang2;
-    $feat['lang3']=$lang3;
+    // $feat['feat1']=$feat1;
+    // $feat['feat2']=$feat2;
+    // $feat['feat3']=$feat3;
+    // $feat['feat4']=$feat4;
+    // $feat['feat5']=$feat5;
+    // $feat['lang1']=$lang1;
+    // $feat['lang2']=$lang2;
+    // $feat['lang3']=$lang3;
+
+    //feats
+    foreach($_POST['feat'] as $x)
+    {
+        $feat['feats'][]=$x;
+    }
+    foreach($_POST['lang'] as $x)
+    {
+        $feat['langs'][]=$x;
+    }
     
     //powers
-    $powers['at will1']=$aw1;
-    $powers['at will2']=$aw2;
-    $powers['at will3']=$aw3;
-    $powers['at will4']=$aw4;
-    $powers['at will5']=$aw5;
-    $powers['enc1']=$enc1;
-    $powers['enc2']=$enc2;
-    $powers['enc3']=$enc3;
-    $powers['enc4']=$enc4;
-    $powers['enc5']=$enc5;
-    $powers['dai1']=$dai1;
-    $powers['dai2']=$dai2;
-    $powers['dai3']=$dai3;
-    $powers['dai4']=$dai4;
-    $powers['dai5']=$dai5;
-    
+    // $powers['at will1']=$aw1;
+    // $powers['at will2']=$aw2;
+    // $powers['at will3']=$aw3;
+    // $powers['at will4']=$aw4;
+    // $powers['at will5']=$aw5;
+    // $powers['enc1']=$enc1;
+    // $powers['enc2']=$enc2;
+    // $powers['enc3']=$enc3;
+    // $powers['enc4']=$enc4;
+    // $powers['enc5']=$enc5;
+    // $powers['dai1']=$dai1;
+    // $powers['dai2']=$dai2;
+    // $powers['dai3']=$dai3;
+    // $powers['dai4']=$dai4;
+    // $powers['dai5']=$dai5;
+    foreach($_POST['atwill'] as $x)
+    {
+        $powers['at will'][]=$x;
+    }
+    foreach($_POST['enc'] as $x)
+    {
+        $powers['encounter'][]=$x;
+    }
+    foreach($_POST['daily'] as $x)
+    {
+        $powers['daily'][]=$x;
+    }
+    foreach($_POST['util'] as $x)
+    {
+        $powers['utility'][]=$x;
+    }
+
     //equipment
     $equip['ehead']=$head;
     $equip['eneck']=$neck;
@@ -202,17 +241,22 @@
     $equip['ewaist']=$waist;
     $equip['elegs']=$legs;
     $equip['efeet']=$feet;
-    $equip['slot1']=$slot1;
-    $equip['slot2']=$slot2;
-    $equip['slot3']=$slot3;
-    $equip['slot4']=$slot4;
-    $equip['slot5']=$slot5;
-    $equip['slot6']=$slot6;
-    $equip['slot7']=$slot7;
-    $equip['slot8']=$slot8;
-    $equip['slot9']=$slot9;
-    $equip['slot10']=$slot10;
-    
+    // $equip['slot1']=$slot1;
+    // $equip['slot2']=$slot2;
+    // $equip['slot3']=$slot3;
+    // $equip['slot4']=$slot4;
+    // $equip['slot5']=$slot5;
+    // $equip['slot6']=$slot6;
+    // $equip['slot7']=$slot7;
+    // $equip['slot8']=$slot8;
+    // $equip['slot9']=$slot9;
+    // $equip['slot10']=$slot10;
+
+    //inventory slots
+    foreach($_POST['inv'] as $x)
+    {
+        $powers['inventory'][]=$x;
+    }
     
     //skills
     $skills['acrobatics']=$acro;

@@ -31,7 +31,7 @@
 - added new character sheet
 
 ##### Alpha 0.0.8 (10.6.13)
-- cheebus finished layout of charsheet (DRINK!)
+- cheebus finished layout of charsheet *DRINK
 - fixed color scheme of login and create account
 - made it so you cannot create an account with a space
 - changed some of the charsheet layout
@@ -130,8 +130,11 @@
 - race feature list now adds and deletes properly
 - changed delete feature on all text inputs on new character sheet
 - named all new text inputs on new character sheet with array values
+- added bottom margin to add icon
+- got rid of test button
 
-
+##### Alpha 0.1.8(12/5/13)
+- fully finished additional input fields on new char sheet *DRINK
 
 ### Bugs:
 
