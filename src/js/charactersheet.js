@@ -91,6 +91,81 @@ $.ajax(
 							                    $("#atkmisc").text(d[i]["Attacks"]["atk misc"]);
 							                    $("#damfeat").text(d[i]["Attacks"]["dam feat"]);
 							                    $("#dammisc").text(d[i]["Attacks"]["dam misc"]);
+							                    //powers
+							                    var atwills=d[i]["Powers"]["at will"];
+							                    var encounters=d[i]["Powers"]["encounter"];
+							                    var dailys=d[i]["Powers"]["daily"];
+							                    var utilities=d[i]["Powers"]["utility"];
+
+							                    for(var x in atwills)
+							                    {
+							                    	$("#atwillpowers").append("<li>"+atwills[x]+"</li>");
+							                    }
+							                    for(var x in encounters)
+							                    {
+							                    	$("#encounterpowers").append("<li><input type='checkbox'style='float:left;'/>"+encounters[x]+"</li>");
+							                    }
+							                    for(var x in dailys)
+							                    {
+							                    	$("#dailypowers").append("<li><input type='checkbox'style='float:left;'/>"+dailys[x]+"</li>");
+							                    }
+							                    for(var x in utilities)
+							                    {
+							                    	$("#utilitypowers").append("<li><input type='checkbox'style='float:left;'/>"+utilities[x]+"</li>");
+							                    }
+							                    //features
+							                    var racefeatures=d[i]["Features"]["race features"];
+							                    var classfeatures=d[i]["Features"]["class features"];
+
+							                    for(var x in racefeatures)
+							                    {
+							                    	$('#racefeatures').append("<li>"+racefeatures[x]+"</li>");
+							                    }
+							                    for(var x in classfeatures)
+							                    {
+							                    	$('#classfeatures').append("<li>"+classfeatures[x]+"</li>");
+							                    }
+							                    //feats and langs
+							                    var feats=d[i]["Feats and Langs"]["feats"];
+							                    var langs=d[i]["Feats and Langs"]["langs"];
+
+							                    for(var x in feats)
+							                    {
+							                    	$('#feats').append("<li>"+feats[x]+"</li>");
+							                    }
+							                    for(var x in langs)
+							                    {
+							                    	$('#langs').append("<li>"+langs[x]+"</li>");
+							                    }
+							                    //equipment
+							                    var head=d[i]["Equipment"]['ehead'];
+							                    var neck=d[i]["Equipment"]['eneck'];
+							                    var armor=d[i]["Equipment"]['earmor'];
+							                    var arms=d[i]["Equipment"]['earms'];
+							                    var hands=d[i]["Equipment"]['ehands'];
+							                    var finger1=d[i]["Equipment"]['efinger1'];
+							                    var finger2=d[i]["Equipment"]['efinger2'];
+							                    var waist=d[i]["Equipment"]['ewaist'];
+							                    var legs=d[i]["Equipment"]['elegs'];
+							                    var feet=d[i]["Equipment"]['efeet'];
+
+							                    $('#head').text(head);
+							                    $('#neck').text(neck);
+							                    $('#earmor').text(armor);
+							                    $('#arms').text(arms);
+							                    $('#hands').text(hands);
+							                    $('#finger1').text(finger1);
+							                    $('#finger2').text(finger2);
+							                    $('#waist').text(waist);
+							                    $('#legs').text(legs);
+							                    $('#feet').text(feet);
+							                    //inventory
+							                    var inventory=d[i]["Equipment"]["inventory"];
+
+							                    for(var x in inventory)
+							                    {
+							                    	$('#inventory').append("<li>"+inventory[x]+"</li>");
+							                    }
 							                    //wealth
 							                    $("#copper").text(0);
 							                    $("#silver").text(0);
@@ -128,6 +203,12 @@ $('#abilscoinfo').hide();
 $('#atksinfo').hide();
 $('#defsinfo').hide();
 $('#powersinfo').hide();
+$('#featuresinfo').hide();
+$('#featsandlangsinfo').hide();
+$('#skillsinfo').hide();
+$('#equipinfo').hide();
+$('#wealthinfo').hide();
+$('#notesinfo').hide();
 
 //panel toggles
 $('#basicinfotab').click(function()
@@ -158,6 +239,36 @@ $('#senstab').click(function()
 $('#powerstab').click(function()
 	{
 		$('#powersinfo').toggle('slow');
+	}
+);
+$('#featurestab').click(function()
+	{
+		$('#featuresinfo').toggle('slow');
+	}
+);
+$('#featsnlangtab').click(function()
+	{
+		$('#featsandlangsinfo').toggle('slow');
+	}
+);
+$('#skillstab').click(function()
+	{
+		$('#skillsinfo').toggle('slow');
+	}
+);
+$('#equipninvtab').click(function()
+	{
+		$('#equipinfo').toggle('slow');
+	}
+);
+$('#wealthtab').click(function()
+	{
+		$('#wealthinfo').toggle('slow');
+	}
+);
+$('#notestab').click(function()
+	{
+		$('#notesinfo').toggle('slow');
 	}
 );
 

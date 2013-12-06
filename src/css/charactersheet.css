@@ -5,6 +5,7 @@ h3
 	font-size:14;
 	font-weight:normal;
 }
+
 #character
 {
 	margin:auto;
@@ -64,7 +65,7 @@ h3
 	display:inline-block;
 	position:relative;
 	float:right;
-	margin-top:48px;
+	margin-top:45px;
 	background-image:url('../../images/tocharlisticon.png');
 	background-color:black;
 	width:64px;
@@ -78,6 +79,13 @@ h3
 	width:64px;
 	height:64px;
 }
+#equipmentlist
+{
+	position:relative;
+	display:inline-block;
+	text-align:left;
+}
+
 .middletable
 {
 	position:relative;
@@ -91,14 +99,56 @@ h3
 	font-size:14px;
 	width:335px;
 }
+.mcol
+{
+	position:relative;
+	display:inline-block;
+	background:#D2BB89;
+	border:1px solid black;
+	margin-top:10px;
+	margin-left:auto;
+	margin-right:auto;
+	border-radius:8px;
+	font-size:14px;
+	width:335px;
+	color:#7D2706;
+}
+.mcol ol li
+{
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom:5px;
+	padding-left: 0;
+	padding:5px 0;
+	list-style-type: none;
+	border:1px inset #45525D;
+	color:#FBE7C8;
+	border-radius:5;
+	width:300px;
+	background:#6C4B1A;
+}
+.mcol ol
+{
+	margin-left: 0;
+	padding-left: 0;
+	list-style-type: none;	
+}
 .middletable td
 {
 	width:60px;
+	text-align:center;
+}
+.middletitle
+{
+	color:#7D2706;
+	font-size:18px;
+	font-weight:bold;
 }
 .middletable th
 {
 	color:#7D2706;
 	font-size:18px;
+	width:335px;
 }
 .tripcol
 {
@@ -126,7 +176,7 @@ h3
 }
 .valuelab
 {
-	text-align:right;
+	text-align:left;
 	font-size:12;
 	font-family:helvetica;
 	position:relative;
@@ -149,12 +199,27 @@ h3
 	color:#FBE7C8;
 	padding:0 5px;
 	border-radius:5;
-	width:75px;
+	width:80px;
+	background:#6C4B1A;
+}
+.valuelabm
+{
+	text-align:left;
+	font-size:12;
+	font-family:helvetica;
+	position:relative;
+	display:inline-block;
+	border:1px inset #45525D;
+	color:#FBE7C8;
+	padding:0 5px;
+	border-radius:5;
+	width:50px;
 	background:#6C4B1A;
 }
 .result
 {
 	color:#7D2706;
+	display:inline-block;
 	font-weight:bold;
 }
 .sbresult

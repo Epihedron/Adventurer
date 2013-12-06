@@ -17,19 +17,19 @@
 					<span id='healthinfo'><span id='currenthealth'>0</span>/<span id='maxhealth'>0</span></span>
 					<label id='level'>0</label>
 				</span>
-                <label class='valuelablrg'style='width:110px;padding-left:5px;padding-right:5px;'>Passive Insight:</label><label class='sbresult'id='passins'>0</label><br/>
-                <label class='valuelablrg'style='width:110px;padding-left:5px;padding-right:5px;'>Passive Perception:</label><label class='sbresult'id='passperc'>0</label>
+                <label class='valuelablrg'style='float:left;margin-left:20px;width:110px;padding-left:5px;padding-right:5px;'>Passive Insight:</label><label class='sbresult'style='float:left;'id='passins'>0</label><br/>
+                <label class='valuelablrg'style='float:left;margin-left:20px;width:110px;padding-left:5px;padding-right:5px;'>Passive Perception:</label><label class='sbresult'style='float:left;'id='passperc'>0</label>
 				<label class='infotab'id='basicinfotab'>Basic Info</label>
 				<span id='basicinfo'>
-	                <label class='valuelab'>Class:</label><label class='sbresult'id='class'>0</label><br/>
-	                <label class='valuelab'>Race:</label><label class='sbresult'id='race'>0</label><br/>
-	                <label class='valuelab'>Age:</label><label class='sbresult'id='age'>0</label><br/>
-	                <label class='valuelab'>XP:</label><label class='sbresult'id='xp'>0</label><br/>
-	                <label class='valuelab'>Gender:</label><label class='sbresult'id='gender'>0</label><br/>
-	                <label class='valuelab'>Height:</label><label class='sbresult'id='height'>0</label><br/>
-	                <label class='valuelab'>Weight:</label><label class='sbresult'id='weight'>0</label><br/>
-	                <label class='valuelab'>Diety:</label><label class='sbresult'id='diety'>0</label><br/>
-	                <label class='valuelab'>Speed:</label><label class='sbresult'id='speed'>0</label>
+	                <label class='valuelab'style='float:left;margin-left:10px;'>Class:</label><label class='sbresult'id='class'>0</label><br/>
+	                <label class='valuelab'style='float:left;margin-left:10px;'>Race:</label><label class='sbresult'id='race'>0</label><br/>
+	                <label class='valuelab'style='float:left;margin-left:10px;'>Age:</label><label class='sbresult'id='age'>0</label><br/>
+	                <label class='valuelab'style='float:left;margin-left:10px;'>XP:</label><label class='sbresult'id='xp'>0</label><br/>
+	                <label class='valuelab'style='float:left;margin-left:10px;'>Gender:</label><label class='sbresult'id='gender'>0</label><br/>
+	                <label class='valuelab'style='float:left;margin-left:10px;'>Height:</label><label class='sbresult'id='height'>0</label><br/>
+	                <label class='valuelab'style='float:left;margin-left:10px;'>Weight:</label><label class='sbresult'id='weight'>0</label><br/>
+	                <label class='valuelab'style='float:left;margin-left:10px;'>Diety:</label><label class='sbresult'id='diety'>0</label><br/>
+	                <label class='valuelab'style='float:left;margin-left:10px;'>Speed:</label><label class='sbresult'id='speed'>0</label>
                 </span>
                 <label class='infotab'id='abilscotab'>Ability Scores</label>
                 <span id='abilscoinfo'>
@@ -46,16 +46,18 @@
 
             <!-- main middle column in the console -->
 		<div id='maincol'class='tripcol'class=''>
-
+            <div></div>
             <!-- list of attacks -->
 			<span id='atksinfo'>
                 	<table class='middletable'>
                         <th colspan='6'>Attacks</th>
                 		<tr>
-                			<td></td>
-                			<td></td>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
                 			<td>
-	                			<label class='valuelablrg'>ATK Bonus:</label>
+	                			<label class='valuelabm'style='width:70px;'>ATK Bonus:</label>
 	                		</td>
 	                		<td>
 	                			<label class='result'id='atkbonus'>0</label>
@@ -63,19 +65,19 @@
             			</tr>
             			<tr>
             				<td>
-	                    		<label class='valuelablrg'>CLASS:</label>
+	                    		<label class='valuelabm'>CLASS:</label>
                 			</td>
                 			<td>
 	                    		<label class='result' id='atkclass'>0</label>
                 			</td>
                 			<td>
-	                    		<label class='valuelablrg'>FEAT:</label>
+	                    		<label class='valuelabm'>FEAT:</label>
                     		</td>
                     		<td>
 	                    		<label class='result'id='atkfeat'>0</label>
                 			</td>
                 			<td>
-	                    		<label class='valuelablrg'>MISC:</label>
+	                    		<label class='valuelabm'>MISC:</label>
                     		</td>
                 			<td>
 	                    		<label class='result'id='atkmisc'>0</label>
@@ -85,7 +87,7 @@
                 			<td></td>
                 			<td></td>
 	                    	<td>
-	                    		<label class='valuelablrg'>Damage:</label>
+	                    		<label class='valuelabm'>Damage:</label>
                     		</td>
                     		<td>
 	                    		<label class='result'id='damage'>0</label>
@@ -95,13 +97,13 @@
 	                		<td></td>
 	                		<td></td>
 	                    	<td>
-	                    		<label class='valuelablrg'>FEAT:</label>
+	                    		<label class='valuelabm'>FEAT:</label>
 	                    	</td>
 	                    	<td>
 	                    		<label class='result'id='damfeat'>0</label>
                     		</td>
                     		<td>
-	                    		<label class='valuelablrg'>MISC:</label>
+	                    		<label class='valuelabm'>MISC:</label>
 	                    	</td>
 	                    	<td>
 	                    		<label class='result'id='dammisc'>0</label>
@@ -119,7 +121,7 @@
                 			<td></td>
                 			<td></td>
                 			<td>
-                				<label class='valuelablrg'>AC:</label>
+                				<label class='valuelabm'>AC:</label>
             				</td>
             				<td>
                 				<label class='result' id='ac'>0</label>
@@ -127,38 +129,38 @@
         				</tr>
         				<tr>
             				<td>
-                        		<label class='valuelablrg'>ARMOR:</label>
+                        		<label class='valuelabm'>ARMOR:</label>
                         	</td>
                         	<td>
                         		<label type='text' class='result'id='armor'>0</label>
                         	</td>
                         	<td>
-                        		<label class='valuelablrg'>CLASS:</label>
+                        		<label class='valuelabm'>CLASS:</label>
                         	</td>
                         	<td>
                         		<label type='text' class='result'id='classac'>0</label>
                         	</td>
                         	<td>
-								<label class='valuelablrg'>MISC:</label>
+								<label class='valuelabm'>MISC:</label>
 							</td>
 							<td>
 								<label type='text'class='result'id='acmisc'>0</label>
 							</td>
 						<tr>
 							<td>
-                        		<label class='valuelablrg'>FORT:</label>
+                        		<label class='valuelabm'>FORT:</label>
                         	</td>
                         	<td>
                         		<label class='result'id='fort'>0</label>
                         	</td>
                         	<td>
-                        		<label class='valuelablrg'>CLASS:</label>
+                        		<label class='valuelabm'>CLASS:</label>
                         	</td>
                         	<td>
                         		<label class='result' id='classfort'>0</label>
                         	</td>
                         	<td>
-                        		<label class='valuelablrg'>MISC:</label>
+                        		<label class='valuelabm'>MISC:</label>
                         	</td>
                         	<td>
                         		<label class='result'id='fortmisc'>0</label>
@@ -166,19 +168,19 @@
                         </tr>
                         <tr>
                         	<td>
-                        		<label class='valuelablrg'>REF:</label>
+                        		<label class='valuelabm'>REF:</label>
                         	</td>
                         	<td>
                         		<label class='result'id='ref'>0</label>
                         	</td>
                         	<td>
-                        		<label class='valuelablrg'>CLASS:</label>
+                        		<label class='valuelabm'>CLASS:</label>
                         	</td>
                         	<td>
                         		<label class='result' id='classref'>0</label>
                         	</td>
                         	<td>
-                        		<label class='valuelablrg'>MISC:</label>
+                        		<label class='valuelabm'>MISC:</label>
                         	</td>
                         	<td>
                         		<label class='result'id='refmisc'>0</label>
@@ -186,19 +188,19 @@
                         </tr>
                         <tr>
                         	<td>
-                        		<label class='valuelablrg'>WILL:</label>
+                        		<label class='valuelabm'>WILL:</label>
                         	</td>
                         	<td>
                         		<label class='result'id='will'>0</label>
                         	</td>
                         	<td>
-                        		<label class='valuelablrg'>CLASS:</label>
+                        		<label class='valuelabm'>CLASS:</label>
                         	</td>
                         	<td>
                         		<label class='result' id='classwill'>0</label>
                         	</td>
                         	<td>
-                        		<label class='valuelablrg'>MISC:</label>
+                        		<label class='valuelabm'>MISC:</label>
                         	</td>
                         	<td>
                         		<label class='result'id='willmisc'>0</label>
@@ -208,9 +210,13 @@
             	</span>
 
                 <!-- list of powers -->
-            	<span id='powersinfo'>
-                    <table class='middletable' id='powerstable'>
-                        <th colspan='3'>At Will Powers</th>
+            	<span class='mcol'id='powersinfo'>                
+                    <!-- <table class='middletable' id='powerstable'> -->
+                        <label class='middletitle'>At Will Powers</label>
+                        <ol id='atwillpowers'>
+                            
+                        </ol>
+                        <!-- <th colspan='3'>At Will Powers</th>
                 			<tr>
                                 <td>
                                 </td>
@@ -290,8 +296,12 @@
                                 <td>
                                     <label id='awpower8'class'value'>0</label>
                                 </td>
-                            </tr>
-                        <th colspan='3'>Encounter Powers</th>
+                            </tr> -->
+                            <label class='middletitle'>Encounter Powers</label>
+                            <ol id='encounterpowers'>
+                                
+                            </ol>
+                        <!-- <th colspan='3'>Encounter Powers</th>
                             <tr>
                                 <td>
                                     <input type='checkbox'>
@@ -379,8 +389,12 @@
                                 <td>
                                     <label id='epower8'class'value'>0</label>
                                 </td>
-                            </tr>
-                        <th colspan='3'>Daily Powers</th>
+                            </tr> -->
+                            <label class='middletitle'>Daily Powers</label>
+                            <ol id='dailypowers'>
+                                
+                            </ol>
+                        <!-- <th colspan='3'>Daily Powers</th>
                             <tr>
                                 <td>
                                     <input type='checkbox'>
@@ -468,8 +482,12 @@
                                 <td>
                                     <label id='dpower8'class'value'>0</label>
                                 </td>
-                            </tr>
-                        <th colspan='3'>Utility Powers</th>
+                            </tr> -->
+                            <label class='middletitle'>Utility Powers</label>
+                            <ol id='utilitypowers'>
+                                
+                            </ol>
+                        <!-- <th colspan='3'>Utility Powers</th>
                             <tr>
                                 <td>
                                     <input type='checkbox'>
@@ -558,8 +576,74 @@
                                     <label id='upower8'class'mediumio'>0</label>
                                 </td>
                             </tr>
-                    </table>
-            	</span>
+                    </table> -->
+            	</span><br/>
+                <span class='mcol' id='featuresinfo'>
+                    <label class='middletitle'>Racial Features</label>
+                    <ol id='racefeatures'>
+                    </ol>
+                    <label class='middletitle'>Class Features</label>
+                    <ol id='classfeatures'>
+                    </ol>
+                </span><br/>
+                <span class='mcol'id='featsandlangsinfo'>
+                    <label class='middletitle'>Feats</label>
+                    <ol id='feats'>
+                    </ol>
+                    <label class='middletitle'>Languages</label>
+                    <ol id='langs'>
+                    </ol>
+                </span>
+                <span class='mcol'id='skillsinfo'>
+                    <label class='middletitle'>Skills</label><br/>
+                    <label class='valuelablrg'>Acrobatics</label><label id='acro'class='result'>null</label>
+                    <label class='valuelablrg'>Insight</label><label id='ins'class='result'>null</label><br/>
+                    <label class='valuelablrg'>Arcana</label><label id='arc'class='result'>null</label>
+                    <label class='valuelablrg'>Intimidate</label><label id='int'class='result'>null</label><br/>
+                    <label class='valuelablrg'>Athletics</label><label id='ath'class='result'>null</label>
+                    <label class='valuelablrg'>Nature</label><label id='nat'class='result'>null</label><br/>
+                    <label class='valuelablrg'>Bluff</label><label id='bluff'class='result'>null</label>
+                    <label class='valuelablrg'>Perception</label><label id='perc'class='result'>null</label><br/>
+                    <label class='valuelablrg'>Diplomacy</label><label id='dip'class='result'>null</label>
+                    <label class='valuelablrg'>Religion</label><label id='rel'class='result'>null</label><br/>
+                    <label class='valuelablrg'>Dungeoneering</label><label id='dung'class='result'>null</label>
+                    <label class='valuelablrg'>Stealth</label><label id='ste'class='result'>null</label><br/>
+                    <label class='valuelablrg'>Endurance</label><label id='end'class='result'>null</label>
+                    <label class='valuelablrg'>Streetwise</label><label id='stre'class='result'>null</label><br/>
+                    <label class='valuelablrg'>Heal</label><label id='heal'class='result'>null</label>
+                    <label class='valuelablrg'>Thievery</label><label id='thiev'class='result'>null</label><br/>
+                    <label class='valuelablrg'>History</label><label id='his'class='result'>null</label>
+                </span>
+                <span class='mcol'id='equipinfo'>
+                    <label Class='middletitle'>Equipment</label><br/>
+                    <span id='equipmentlist'>
+                    <label class='valuelab'style='float:left;width:35px'>Head:</label><label id='head'style='margin-left:5px;'class='result'>null</label><br/>
+                    <label class='valuelab'style='float:left;width:35px'>Neck:</label><label id='neck'style='margin-left:5px;'class='result'>null</label><br/>
+                    <label class='valuelab'style='float:left;width:35px'>Armor:</label><label id='earmor'style='margin-left:5px;'class='result'>null</label><br/>
+                    <label class='valuelab'style='float:left;width:35px'>Arms:</label><label id='arms'style='margin-left:5px;'class='result'>null</label><br/>
+                    <label class='valuelab'style='float:left;width:35px'>Hands:</label><label id='hands'style='margin-left:5px;'class='result'>null</label><br/>
+                    <label class='valuelab'style='float:left;width:35px'>Finger:</label><label id='finger1'style='margin-left:5px;'class='result'>null</label><br/>
+                    <label class='valuelab'style='float:left;width:35px'>Finger:</label><label id='finger2'style='margin-left:5px;'class='result'>null</label><br/>
+                    <label class='valuelab'style='float:left;width:35px'>Waist:</label><label id='waist'style='margin-left:5px;'class='result'>null</label><br/>
+                    <label class='valuelab'style='float:left;width:35px'>Legs:</label><label id='legs'style='margin-left:5px;'class='result'>null</label><br/>
+                    <label class='valuelab'style='float:left;width:35px'>Feet:</label><label id='feet'style='margin-left:5px;'class='result'>null</label>
+                    </span><br/>
+                    <label class='middletitle'>Inventory</label><br/>
+                    <ol id='inventory'>
+                    </ol>
+                </span>
+                <span class='mcol'id='wealthinfo'style='height:60px'>
+                    <label class='middletitle'>Wealth</label><br/>
+                    <label class='valuelab'>Copper</label><label style='margin-left:5px;'class='result'>0</label>
+                    <label class='valuelab'>Silver</label><label style='margin-left:5px;'class='result'>0</label>
+                    <label class='valuelab'>Gold</label><label style='margin-left:5px;'class='result'>0</label>
+                    <label class='valuelab'>Platinum</label><label style='margin-left:5px;'class='result'>0</label>
+                </span>
+                <span class='mcol'id='notesinfo'>
+                    <label class='middletitle'>Notes</label><br/>
+                    <div id='notes'>
+                    </div>
+                </span>
 		</div>
 
         <!-- right column in the console -->
@@ -568,9 +652,9 @@
 			<label class='infotab'id='featurestab'>Features</label>
 			<label class='infotab'id='featsnlangtab'>Feats & Languages</label>
 			<label class='infotab'id='skillstab'>Skills</label>
-			<label class='infotab'id='skillstab'>Equipment & Inventory</label>
-			<label class='infotab'id='equipninvtab'>Wealth</label>
-			<label class='infotab'id='wealthtab'>Notes</label>
+			<label class='infotab'id='equipninvtab'>Equipment & Inventory</label>
+			<label class='infotab'id='wealthtab'>Wealth</label>
+			<label class='infotab'id='notestab'>Notes</label>
             <span id='charselect'></span>
 		</div>
 		</span>

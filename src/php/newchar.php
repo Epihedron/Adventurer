@@ -255,7 +255,7 @@
     //inventory slots
     foreach($_POST['inv'] as $x)
     {
-        $powers['inventory'][]=$x;
+        $equip['inventory'][]=$x;
     }
     
     //skills

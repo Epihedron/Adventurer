@@ -135,10 +135,29 @@
 
 ##### Alpha 0.1.8(12/5/13)
 - fully finished additional input fields on new char sheet *DRINK
+- pulled at will powers to character sheet
+- pulled encounter powers to character sheet
+- pulled daily powers to character sheet
+- pulled utility powers to character sheet
+- pulled features list to character sheet
+- pulled feats and languages to character sheet
+- gave style to the new additions to the character sheet
+- added check boxes to powers to indicate used or not
+- pulled skills to character sheet, not fully functional
+- pulled equipment and inventory to character sheet equipment not fully functional
+- created wealth tab on character sheet page
+- created notes tab on character sheet page
+- rezised tables in console to fit width
+- resize right column in console to fit length
+- fixed basic info labels
+- equipment sheet fully pulled
+
 
 ### Bugs:
 
-- chrome doesn't like adding new characters to the char list. I suspect local save issues
+- chrome doesn't like adding new characters to the char list. I suspect local save issues (use in incognito)
+- chrome likes to add space for hidden fields
+- chrome likes to mess up equipment list
 
 
 
