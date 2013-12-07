@@ -12,6 +12,7 @@
 
             <!-- left column in the console -->
 			<div class='tripcol' id='leftcol'>
+            <div></div>
 				<span id='character'></span>
 				<span id='picframe'>
 					<span id='healthinfo'><span id='currenthealth'>0</span>/<span id='maxhealth'>0</span></span>
@@ -33,12 +34,22 @@
                 </span>
                 <label class='infotab'id='abilscotab'>Ability Scores</label>
                 <span id='abilscoinfo'>
-            		<label class='valuelab'>STR:</label><label CLASS='sbresult'id='str'>0</label><label class='valuelab'>MOD:</label><label class='sbresult'id='strmod'>0</label><br/>
-                    <label class='valuelab'>CON:</label><label CLASS='sbresult'id='con'>0</label><label class='valuelab'>MOD:</label><label class='sbresult'id='conmod'>0</label><br/>
-                    <label class='valuelab'>DEX:</label><label CLASS='sbresult'id='dex'>0</label><label class='valuelab'>MOD:</label><label class='sbresult'id='dexmod'>0</label><br/>
-                    <label class='valuelab'>INT:</label><label CLASS='sbresult'id='int'>0</label><label class='valuelab'>MOD:</label><label class='sbresult'id='intmod'>0</label><br/>
-                    <label class='valuelab'>WIS:</label><label CLASS='sbresult'id='wis'>0</label><label class='valuelab'>MOD:</label><label class='sbresult'id='wismod'>0</label><br/>
-                    <label class='valuelab'>CHA:</label><label CLASS='sbresult'id='cha'>0</label><label class='valuelab'>MOD:</label><label class='sbresult'id='chamod'>0</label>
+                    <span style='display:inline-block;float:left;width:85px;'>
+                        <label class='valuelab'>STR:</label><label CLASS='sbresult'id='str'>0</label>
+                        <label class='valuelab'>CON:</label><label CLASS='sbresult'id='con'>0</label>
+                        <label class='valuelab'>DEX:</label><label CLASS='sbresult'id='dex'>0</label>
+                        <label class='valuelab'>INT:</label><label CLASS='sbresult'id='int'>0</label>
+                        <label class='valuelab'>WIS:</label><label CLASS='sbresult'id='wis'>0</label>
+                        <label class='valuelab'>CHA:</label><label CLASS='sbresult'id='cha'>0</label>
+                    </span>
+                    <span style='display:inline-block;width:85px;'>
+                        <label class='valuelab'style='float:left;'>MOD:</label><label class='sbresult'id='strmod'>0</label>
+                        <label class='valuelab'style='float:left;'>MOD:</label><label class='sbresult'id='conmod'>0</label>
+                        <label class='valuelab'style='float:left;'>MOD:</label><label class='sbresult'id='dexmod'>0</label>
+                        <label class='valuelab'style='float:left;'>MOD:</label><label class='sbresult'id='intmod'>0</label>
+                        <label class='valuelab'style='float:left;'>MOD:</label><label class='sbresult'id='wismod'>0</label>
+                        <label class='valuelab'style='float:left;'>MOD:</label><label class='sbresult'id='chamod'>0</label>
+                    </span>                    
                 </span>
                 <label class='infotab'id='atkstab'>Attacks</label>
                 <label class='infotab'id='defstab'>Defenses</label>
@@ -216,367 +227,18 @@
                         <ol id='atwillpowers'>
                             
                         </ol>
-                        <!-- <th colspan='3'>At Will Powers</th>
-                			<tr>
-                                <td>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='awpower1'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='awpower2'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='awpower3'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='awpower4'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='awpower5'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='awpower6'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='awpower7'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='awpower8'class'value'>0</label>
-                                </td>
-                            </tr> -->
                             <label class='middletitle'>Encounter Powers</label>
                             <ol id='encounterpowers'>
                                 
                             </ol>
-                        <!-- <th colspan='3'>Encounter Powers</th>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='epower1'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='epower2'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='epower3'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='epower4'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='epower5'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='epower6'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='epower7'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='epower8'class'value'>0</label>
-                                </td>
-                            </tr> -->
                             <label class='middletitle'>Daily Powers</label>
                             <ol id='dailypowers'>
                                 
                             </ol>
-                        <!-- <th colspan='3'>Daily Powers</th>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='dpower1'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='dpower2'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='dpower3'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='dpower4'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='dpower5'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='dpower6'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='dpower7'class'value'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='dpower8'class'value'>0</label>
-                                </td>
-                            </tr> -->
                             <label class='middletitle'>Utility Powers</label>
                             <ol id='utilitypowers'>
                                 
                             </ol>
-                        <!-- <th colspan='3'>Utility Powers</th>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='upower1'class'mediumio'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='upower2'class'mediumio'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='upower3'class'mediumio'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='upower4'class'mediumio'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='upower5'class'mediumio'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='upower6'class'mediumio'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='upower7'class'mediumio'>0</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <input type='checkbox'>
-                                </td>
-                                <td>
-                                    <label class='valuelab'>Power:</label>
-                                </td>
-                                <td>
-                                    <label id='upower8'class'mediumio'>0</label>
-                                </td>
-                            </tr>
-                    </table> -->
             	</span><br/>
                 <span class='mcol' id='featuresinfo'>
                     <label class='middletitle'>Racial Features</label>
@@ -594,26 +256,32 @@
                     <ol id='langs'>
                     </ol>
                 </span>
-                <span class='mcol'id='skillsinfo'>
+                <!-- list of skills -->
+                <span class='mcol'id='skillsinfo'>                    
                     <label class='middletitle'>Skills</label><br/>
-                    <label class='valuelablrg'>Acrobatics</label><label id='acro'class='result'>null</label>
-                    <label class='valuelablrg'>Insight</label><label id='ins'class='result'>null</label><br/>
-                    <label class='valuelablrg'>Arcana</label><label id='arc'class='result'>null</label>
-                    <label class='valuelablrg'>Intimidate</label><label id='int'class='result'>null</label><br/>
-                    <label class='valuelablrg'>Athletics</label><label id='ath'class='result'>null</label>
-                    <label class='valuelablrg'>Nature</label><label id='nat'class='result'>null</label><br/>
-                    <label class='valuelablrg'>Bluff</label><label id='bluff'class='result'>null</label>
-                    <label class='valuelablrg'>Perception</label><label id='perc'class='result'>null</label><br/>
-                    <label class='valuelablrg'>Diplomacy</label><label id='dip'class='result'>null</label>
-                    <label class='valuelablrg'>Religion</label><label id='rel'class='result'>null</label><br/>
-                    <label class='valuelablrg'>Dungeoneering</label><label id='dung'class='result'>null</label>
-                    <label class='valuelablrg'>Stealth</label><label id='ste'class='result'>null</label><br/>
-                    <label class='valuelablrg'>Endurance</label><label id='end'class='result'>null</label>
-                    <label class='valuelablrg'>Streetwise</label><label id='stre'class='result'>null</label><br/>
-                    <label class='valuelablrg'>Heal</label><label id='heal'class='result'>null</label>
-                    <label class='valuelablrg'>Thievery</label><label id='thiev'class='result'>null</label><br/>
-                    <label class='valuelablrg'>History</label><label id='his'class='result'>null</label>
+                    <span style="float:left;width:110px;margin-left:58px;">
+                        <label class='valuelablrg'style='float:left;'>Acrobatics</label><label id='acro'class='result'>null</label>
+                        <label class='valuelablrg'style='float:left;'>Arcana</label><label id='arc'class='result'>null</label>
+                        <label class='valuelablrg'style='float:left;'>Athletics</label><label id='ath'class='result'>null</label>
+                        <label class='valuelablrg'style='float:left;'>Bluff</label><label id='bluff'class='result'>null</label>
+                        <label class='valuelablrg'style='float:left;'>Diplomacy</label><label id='dip'class='result'>null</label>
+                        <label class='valuelablrg'style='float:left;'>Dungeoneering</label><label id='dung'class='result'>null</label>
+                        <label class='valuelablrg'style='float:left;'>Endurance</label><label id='end'class='result'>null</label>
+                        <label class='valuelablrg'style='float:left;'>Heal</label><label id='heal'class='result'>null</label>
+                        <label class='valuelablrg'style='float:left;'>History</label><label id='his'class='result'>null</label>
+                    </span>
+                    <span style="float:left;width:110px;margin:auto;">
+                        <label class='valuelablrg'style='float:left;'>Insight</label><label id='ins'class='result'>null</label>
+                        <label class='valuelablrg'style='float:left;'>Intimidate</label><label id='inti'class='result'>null</label>
+                        <label class='valuelablrg'style='float:left;'>Nature</label><label id='nat'class='result'>null</label>
+                        <label class='valuelablrg'style='float:left;'>Perception</label><label id='perc'class='result'>null</label>
+                        <label class='valuelablrg'style='float:left;'>Religion</label><label id='rel'class='result'>null</label>
+                        <label class='valuelablrg'style='float:left;'>Stealth</label><label id='ste'class='result'>null</label>
+                        <label class='valuelablrg'style='float:left;'>Streetwise</label><label id='stre'class='result'>null</label>
+                        <label class='valuelablrg'style='float:left;'>Thievery</label><label id='thiev'class='result'>null</label>
+                    </span>                                                            
                 </span>
+                <!-- list of equipment and inventory -->
                 <span class='mcol'id='equipinfo'>
                     <label Class='middletitle'>Equipment</label><br/>
                     <span id='equipmentlist'>
@@ -648,6 +316,7 @@
 
         <!-- right column in the console -->
 		<div class='tripcol'id='rightcol'>
+            <div></div>
 			<label class='infotab'id='powerstab'style='border-top-right-radius:8px;'>Powers</label>
 			<label class='infotab'id='featurestab'>Features</label>
 			<label class='infotab'id='featsnlangtab'>Feats & Languages</label>
@@ -662,6 +331,7 @@
         <!-- javascript calls -->
 		<script src='../js/JQuery.js'></script>
 		<script src='../js/charactersheet.js'></script>
+        <script src='../js/charactersheetpost.js'></script>
 	</body>
 	<footer>
 		Version 2.0

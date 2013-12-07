@@ -152,12 +152,27 @@
 - fixed basic info labels
 - equipment sheet fully pulled
 
+##### Alpha 0.1.8(12/6/13)
+- pulled in skills with existing json data
+- created function for rounding odd numbers down (modifiers) *DRINK!
+- created function for modifiers implementing rounding function! *DRINK! (its friday...)
+- skills now work perfectly!!!!!!
+- ability mods now work!
+- skills that you have chosen are highlighted
+- finished attacks equations
+- finished defense equations
+
+##### Alpha 0.1.8(12/7/13)
+- fixed ability scores layout
+- fixed skill layout
+- added highlight to shown tabs on character sheet
 
 ### Bugs:
 
 - chrome doesn't like adding new characters to the char list. I suspect local save issues (use in incognito)
 - chrome likes to add space for hidden fields
 - chrome likes to mess up equipment list
+- chrome kills hidden and shown tabs(quick fix is adding div to top of column)
 
 
 
