@@ -167,6 +167,9 @@
 - fixed skill layout
 - added highlight to shown tabs on character sheet
 
+##### Alpha 0.1.8(1/17/14)
+- reimaged entire computer and reloaded page from github
+
 ### Bugs:
 
 - chrome doesn't like adding new characters to the char list. I suspect local save issues (use in incognito)
