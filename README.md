@@ -170,6 +170,14 @@
 ##### Alpha 0.1.8(1/17/14)
 - reimaged entire computer and reloaded page from github
 
+##### Alpha 0.1.8(1/18/14)
+- got login working with new SQL database
+- added json db for dmtools users
+
+##### Alpha 0.1.8(1/20/14)
+- added init php page for dmtools
+
+
 ### Bugs:
 
 - chrome doesn't like adding new characters to the char list. I suspect local save issues (use in incognito)
@@ -189,3 +197,44 @@
 - *done* change new character sheet to step by step
 - *done* layout of char sheets to be 3 column
 - initiative order for battles
+
+- DMTools : Adventurers Info
+-- adventurer name
+-- character name
+-- HP
+-- AC
+-- speed
+-- level
+-- exp
+-- class
+-- race
+-- gold
+-- pass perc
+-- pass insight
+-- notable skills
+-- languages
+-- notes
+
+- JSON db file structure
+[
+    {
+        "charname": [
+            {
+                "attr": "attr"
+            },
+            {
+                "attr": "attr"
+            }
+        ]
+    },
+    {
+        "char2name": [
+            {
+                "attr": "attr"
+            },
+            {
+                "attr": "attr"
+            }
+        ]
+    }
+]

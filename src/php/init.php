@@ -48,4 +48,10 @@
         $finallist=json_encode($charlistdc);
         file_put_contents("../json/chars/$user/$user"."list.json",$finallist);
     }
+    if(isset($_POST['mkdm']))
+    {
+        $fp=fopen("../json/chars/$user/$user"."dm.json", w);
+        fwrite($fp,"{}");
+        fclose("../json/chars/$user/$user"."dm.json");
+    }
 ?>

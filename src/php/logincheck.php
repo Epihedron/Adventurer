@@ -8,7 +8,7 @@
     $urow=mysql_fetch_array($userquery);
     if($user&&$password!=='')
     {
-        if($user == $urow[3] && $password == $urow[4])
+        if($user == $urow[2] && $password == $urow[3])
         {
             $_SESSION['user'] = $user;
             header("LOCATION:../html/main.html");
