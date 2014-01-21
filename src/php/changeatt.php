@@ -2,6 +2,7 @@
 	session_start();
 	$user=$_SESSION['user'];
 
+	//change name
 	if(isset($_POST['chngname']) && isset($_POST['ogname']))
 	{
 		$ogname=$_POST['ogname'];
@@ -31,5 +32,11 @@
 		$findata=json_encode($chardata);
 		print_r($findata);
 		file_put_contents("../json/chars/$user/$user"."list.json", $findata);
+	}
+
+	//change class
+	if(isset($_POST['class']))
+	{
+		echo($_POST['class']);
 	}
 ?>

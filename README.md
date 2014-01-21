@@ -179,6 +179,7 @@
 - able to now change your name in the character sheet
 - fixed the character select screen not loading the newest character changes (appended changing variable to json file load so the browser won't cache the page)
 - implemented change attribute on focusout
+- created function for changing character sheet data
 
 
 ### Bugs:
