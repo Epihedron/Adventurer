@@ -3,7 +3,7 @@ var user;
 $.ajax({
     url:'../php/init.php',
     type:'post',
-    data:{userquery:1},
+    data:{'userquery':1},
     success:function(data)
         {
             user = data;
@@ -16,27 +16,21 @@ $.ajax({
             {
                 $('#user').text(user);
             }
-            var playerurl='../json/chars/'+user+'/'+user+'list.json';
+            var playerurl='../json/chars/'+user+'/'+user+'list.json?nocache='+(new Date()).getTime();
 
             //getting characters from character list
             $.ajax(
             {
                 url:playerurl,
-                type:"GET",
-                error:function()
-                {
-                    $("#charlist").text('You have no characters.');
-                }
-            }
-            ).done(function(data)
+                success:function(data)
                 {
                     var i;
                     console.log(JSON.stringify(data));
+                    console.log('on');
                     for(i in data)
                     {
                         $("#charlist").append("<li value="+i+">"+data[i]['Basic Info']['character']+"</li>");
                     }
-
                     //character selected
                     $("#charlist li").click(function()
                     {
@@ -51,6 +45,7 @@ $.ajax({
                                 success:function(data)
                                 {
                                     console.log(data+' sent successfully');
+                                    data='';
                                 },
                                 error:function(e)
                                 {
@@ -60,8 +55,13 @@ $.ajax({
                         setTimeout("window.location.href='../html/charactersheet.html';",300)
                     }
                 );
+                },
+                error:function()
+                {
+                    $("#charlist").text('You have no characters.');
                 }
-            );
+            }
+            )
         }
     }
 );

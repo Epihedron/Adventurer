@@ -176,6 +176,9 @@
 
 ##### Alpha 0.1.8(1/20/14)
 - added init php page for dmtools
+- able to now change your name in the character sheet
+- fixed the character select screen not loading the newest character changes (appended changing variable to json file load so the browser won't cache the page)
+- implemented change attribute on focusout
 
 
 ### Bugs:

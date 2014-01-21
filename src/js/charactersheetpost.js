@@ -244,25 +244,31 @@ function dataref()
 }
 $('#character').dblclick(function()
 	{
+		var ogcharname = $('#character').html();
 		$('#character').html('<input type="text"/>');
-		$(this).keyup(function(e)
+		$('input').focus();
+		$('input').focusout(function()
 		{
-			var x=$('input').val();
-			$('input').focusout(function()
+			if($('input').val() == '')
+			{
+				$('#character').html(ogcharname);
+			}
+			else
+			{
+				var x=$('input').val();
+				$.ajax(
 				{
-					$.ajax(
-						{
-							url:'../php/changeatt.php',
-							type:'post',
-							data:{'chngname':x},
-							success:function()
-							{
-								alert('your character was successfully changed to'+x+'.');
-								$('input').remove();
-								dataref();
-							}
-						});
+					url:'../php/changeatt.php',
+					type:'post',
+					data:{'chngname':x,'ogname':ogcharname},
+					success:function(data)
+					{
+						// alert('your character was successfully changed to '+x+'.');
+						console.log(data);
+					}
 				});
+			}
+
 		});
 	}
 );
