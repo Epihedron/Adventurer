@@ -182,6 +182,9 @@
 - created function for changing character sheet data
 
 ##### Alpha 0.1.8(1/26/14)
+- transfered github repo to Epihedron
+- deleted local jquery file and pointed to google api jquery
+- now syncing with branches on github
 
 ### Bugs:
 
