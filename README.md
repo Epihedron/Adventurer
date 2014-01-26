@@ -181,6 +181,7 @@
 - implemented change attribute on focusout
 - created function for changing character sheet data
 
+##### Alpha 0.1.8(1/26/14)
 
 ### Bugs:
 
