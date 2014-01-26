@@ -2,6 +2,28 @@
 	session_start();
 	$user=$_SESSION['user'];
 
+	//function for changing attributes
+	function changeatt($x,$y,$z)
+	{
+		$user=$_SESSION['user'];
+		$cf=file_get_contents("../json/chars/$user/$user"."list.json");
+		$cd=json_decode($cf);
+		foreach($cd as $p)
+		{
+			foreach($p as $g)
+			{
+				foreach($g as $o)
+				{
+					if($o == $z)
+					{
+						;
+						break;
+					}
+				}
+			}
+		}
+	}
+
 	//change name
 	if(isset($_POST['chngname']) && isset($_POST['ogname']))
 	{
@@ -37,6 +59,9 @@
 	//change class
 	if(isset($_POST['class']))
 	{
-		echo($_POST['class']);
+		$a='class';
+		$b=$_POST['class'];
+		$c=$_POST['character'];
+		echo changeatt($a,$b,$c);
 	}
 ?>
