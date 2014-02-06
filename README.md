@@ -31,7 +31,7 @@
 - added new character sheet
 
 ##### Alpha 0.0.8 (10.6.13)
-- cheebus finished layout of charsheet *DRINK
+- cheebus finished layout of charsheet *DRINK*
 - fixed color scheme of login and create account
 - made it so you cannot create an account with a space
 - changed some of the charsheet layout
@@ -134,7 +134,7 @@
 - got rid of test button
 
 ##### Alpha 0.1.8(12/5/13)
-- fully finished additional input fields on new char sheet *DRINK
+- fully finished additional input fields on new char sheet *DRINK*
 - pulled at will powers to character sheet
 - pulled encounter powers to character sheet
 - pulled daily powers to character sheet
@@ -154,8 +154,8 @@
 
 ##### Alpha 0.1.8(12/6/13)
 - pulled in skills with existing json data
-- created function for rounding odd numbers down (modifiers) *DRINK!
-- created function for modifiers implementing rounding function! *DRINK! (its friday...)
+- created function for rounding odd numbers down (modifiers) *DRINK!*
+- created function for modifiers implementing rounding function! *DRINK!* (its friday...)
 - skills now work perfectly!!!!!!
 - ability mods now work!
 - skills that you have chosen are highlighted
@@ -185,6 +185,13 @@
 - transfered github repo to Epihedron
 - deleted local jquery file and pointed to google api jquery
 - now syncing with branches on github
+
+##### Alpha 0.2.0(2/5/14)
+- completely ported the web server to a Raspberry Pi!!
+- installed SQL server on the Pi
+- got SQL to work with current PHP settings
+- switched name of database to adventurer
+- configured git hub with Pi
 
 ### Bugs:
 
