@@ -192,6 +192,7 @@
 - got SQL to work with current PHP settings
 - switched name of database to adventurer
 - configured git hub with Pi
+- set Pi's private IP to static with port routed on router
 
 ### Bugs:
 
