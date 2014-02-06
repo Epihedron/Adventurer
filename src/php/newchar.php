@@ -289,64 +289,63 @@
     $charstats['Equipment']=$equip;
     $charstats['Skills']=$skills;
     
+    //previous json way of doing things. 
     //checking accounts to see if they've been here and made a char before
-    $characcounts=file_get_contents('../json/accounts.json');
-    $accountsdata=json_decode($characcounts,true);
-    foreach($accountsdata['users'] as $i)
-    {
-        if($i['user'] == $user)
-        {
-            $err=true;
-        }
-    }
-    if($err == true)
-    {
+    //$characcounts=file_get_contents('../json/accounts.json');
+    //$accountsdata=json_decode($characcounts,true);
+    //foreach($accountsdata['users'] as $i)
+    //{
+    //  if($i['user'] == $user)
+    //  {
+    //      $err=true;
+    //  }
+    //}
+    //if($err == true)
+    //{
         //grabbing char contents
-        $charpd=file_get_contents("../json/chars/$user/$user"."list.json");
-        $charpddecode=json_decode($charpd);
+    //  $charpd=file_get_contents("../json/chars/$user/$user"."list.json");
+    //  $charpddecode=json_decode($charpd);
         
         //creating json object
-        $charpddecode[]=$charstats;
+    //  $charpddecode[]=$charstats;
         
         //pushing json object to charfile
-        $finchar=json_encode($charpddecode);
-        file_put_contents("../json/chars/$user/$user"."list.json",$finchar);
-        header("location:../html/charselect.html");
-    }
-    else
-    {
-        $newarr['user']=$user;
-        $newarr['list']="../json/chars/$user/$user"."list.json";
-        array_push($accountsdata['users'],$newarr);
-        $finaccjson=json_encode($accountsdata);
-        file_put_contents('../json/accounts.json',$finaccjson);
+    //  $finchar=json_encode($charpddecode);
+    //  file_put_contents("../json/chars/$user/$user"."list.json",$finchar);
+    //  header("location:../html/charselect.html");
+    //}
+    //else
+    //{
+    //  $newarr['user']=$user;
+    //  $newarr['list']="../json/chars/$user/$user"."list.json";
+    //  array_push($accountsdata['users'],$newarr);
+    //  $finaccjson=json_encode($accountsdata);
+    //  file_put_contents('../json/accounts.json',$finaccjson);
         
         //making char directory
-        mkdir("../json/chars/$user");
-        $charpage="../json/chars/$user/$user"."list.json";
-        $charpagefp=fopen($charpage,'w+');
-        fclose($charpagefp);
+    //  mkdir("../json/chars/$user");
+    //  $charpage="../json/chars/$user/$user"."list.json";
+    //  $charpagefp=fopen($charpage,'w+');
+    //  fclose($charpagefp);
         
         //creating init.json
-        $jsoninit=file_get_contents("../json/chars/$user/$user"."init.json");
-        $jsoninitdc=json_decode($jsoninit);
-        $jsoninitdc['user']=$user;
-        $jsoninitdc['char']=$character;
-        $finjsoninit=json_encode($jsoninitdc);
-        file_put_contents("../json/chars/$user/$user"."init.json",$finjsoninit);
+    //  $jsoninit=file_get_contents("../json/chars/$user/$user"."init.json");
+    //  $jsoninitdc=json_decode($jsoninit);
+    //  $jsoninitdc['user']=$user;
+    //  $jsoninitdc['char']=$character;
+    //  $finjsoninit=json_encode($jsoninitdc);
+    //  file_put_contents("../json/chars/$user/$user"."init.json",$finjsoninit);
         
         //grabbing contents after closing the made page
-        $charpd=file_get_contents("../json/chars/$user/$user"."list.json");
-        $charpddecode=json_decode($charpd);
+    //  $charpd=file_get_contents("../json/chars/$user/$user"."list.json");
+    //  $charpddecode=json_decode($charpd);
         
         //creating json object
-        $charpddecode[]=$charstats;
+    //  $charpddecode[]=$charstats;
         
         //pushing json object to charfile
-        $finchar=json_encode($charpddecode);
-        file_put_contents("../json/chars/$user/$user"."list.json",$finchar);
-        header("location:../html/charselect.html");
-    }
-    echo("<hr/>");
-    echo($finchar);
+    //  $finchar=json_encode($charpddecode);
+    //  file_put_contents("../json/chars/$user/$user"."list.json",$finchar);
+    //  header("location:../html/charselect.html");
+    //}
 ?>
