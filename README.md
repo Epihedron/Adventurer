@@ -195,6 +195,11 @@
 - set Pi's private IP to static with port routed on router
 - testing git branches
 
+##### Alpha 0.2.0(2/6/14)
+- commented out JSON character creation files from PHP
+- cleaned up htdocs folder a bit
+- cleaned up newchar.php
+
 ### Bugs:
 
 - chrome doesn't like adding new characters to the char list. I suspect local save issues (use in incognito)
