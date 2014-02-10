@@ -200,6 +200,13 @@
 - cleaned up htdocs folder a bit
 - cleaned up newchar.php
 
+##### Alpha 0.2.0(2/7/14)
+- created SQL tables for cfeatures,rfeatures,feats,powers,and inventory (items)
+
+##### Alpha 0.2.0(2/9/14)
+- cleaned up newchar.php and created function for php array to sql tables
+- created tables in SQL for characters
+
 ### Bugs:
 
 - chrome doesn't like adding new characters to the char list. I suspect local save issues (use in incognito)

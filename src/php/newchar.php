@@ -12,7 +12,7 @@
     $class=$_POST['class'];
     $race=$_POST['race'];
     $gender=$_POST['gender'];
-    $diety=$_POST['diety'];
+    $deity=$_POST['deity'];
 
     $str=$_POST['str'];
     $con=$_POST['con'];
@@ -71,6 +71,23 @@
     $thiev=$_POST['hasthiev'];
     $his=$_POST['hashis'];
     
+	//connection to SQL 
+	$con=mysql_connect('localhost','host','');
+	if(!$con){print("could not connect to SQL\n");}
+	$sel=mysql_select_db("adventurer");
+	if(!$sel){print("could not select db\n");}
+
+	//sending data to SQL
+	function qinit($y,$z)
+	{
+		foreach($z as $x)
+		{
+			$query=mysql_query("insert into $y values(null,$character,$user,$x);");
+			if(!$query){print("could not query to database\n");}
+		}
+	}
+	print("i am working\n");
+
     //basic info array
     //$basicinfo['world']=$world;
     $basicinfo['character']=$character;
@@ -82,7 +99,7 @@
     $basicinfo['class']=$class;
     $basicinfo['weight']=$weight;
     $basicinfo['height']=$height;
-    $basicinfo['diety']=$diety;
+    $basicinfo['deity']=$deity;
     $basicinfo['notes']='';
     
     //abilsco array
@@ -94,6 +111,7 @@
     $abilsco['cha']=$cha;
     
     //defs
+    $defs['armor']=$arm;
     $defs['armor class']=$armclass;
     $defs['armor misc']=$armmisc;
     $defs['fort class']=$fortclass;
@@ -115,7 +133,38 @@
     $hp['speed']=$speed;
     $hp['pass perc']=$passperc;
     $hp['pass ins']=$passins;
+   
+    //equipment
+    $equip['ehead']=$head;
+    $equip['eneck']=$neck;
+    $equip['earmor']=$armor;
+    $equip['earms']=$arms;
+    $equip['ehands']=$hands;
+    $equip['efinger1']=$finger1;
+    $equip['efinger2']=$finger2;
+    $equip['ewaist']=$waist;
+    $equip['elegs']=$legs;
+    $equip['efeet']=$feet;
     
+    //skills
+    $skills['acrobatics']=$acro;
+    $skills['arcana']=$arc;
+    $skills['athletics']=$ath;
+    $skills['bluff']=$bluff;
+    $skills['diplomacy']=$diplo;
+    $skills['dungeoneering']=$dung;
+    $skills['endurance']=$end;
+    $skills['heal']=$heal;
+    $skills['insight']=$ins;
+    $skills['intimidate']=$intim;
+    $skills['nature']=$nat;
+    $skills['perception']=$perc;
+    $skills['religion']=$rel;
+    $skills['stealth']=$ste;
+    $skills['streetwise']=$street;
+    $skills['thievery']=$thiev;
+    $skills['history']=$his;
+
     //race features
     foreach($_POST['rfeat'] as $x)
     {
@@ -156,43 +205,12 @@
         $powers['utility'][]=$x;
     }
 
-    //equipment
-    $equip['ehead']=$head;
-    $equip['eneck']=$neck;
-    $equip['earmor']=$armor;
-    $equip['earms']=$arms;
-    $equip['ehands']=$hands;
-    $equip['efinger1']=$finger1;
-    $equip['efinger2']=$finger2;
-    $equip['ewaist']=$waist;
-    $equip['elegs']=$legs;
-    $equip['efeet']=$feet;
-
     //inventory slots
     foreach($_POST['inv'] as $x)
     {
         $equip['inventory'][]=$x;
     }
-    
-    //skills
-    $skills['acrobatics']=$acro;
-    $skills['arcana']=$arc;
-    $skills['athletics']=$ath;
-    $skills['bluff']=$bluff;
-    $skills['diplomacy']=$diplo;
-    $skills['dungeoneering']=$dung;
-    $skills['endurance']=$end;
-    $skills['heal']=$heal;
-    $skills['insight']=$ins;
-    $skills['intimidate']=$intim;
-    $skills['nature']=$nat;
-    $skills['perception']=$perc;
-    $skills['religion']=$rel;
-    $skills['stealth']=$ste;
-    $skills['streetwise']=$street;
-    $skills['thievery']=$thiev;
-    $skills['history']=$his;
-     
+
     //previous json way of doing things. 
     //json encode
     //$charstats['Basic Info']=$basicinfo;
