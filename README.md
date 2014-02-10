@@ -207,6 +207,9 @@
 - cleaned up newchar.php and created function for php array to sql tables
 - created tables in SQL for characters
 
+##### Alpha 0.2.0(2/10/14)
+- added function to update SQL with new character info. The function has the option to either insert or update
+
 ### Bugs:
 
 - chrome doesn't like adding new characters to the char list. I suspect local save issues (use in incognito)

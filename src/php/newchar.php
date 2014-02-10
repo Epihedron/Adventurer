@@ -86,6 +86,24 @@
 			if(!$query){print("could not query to database\n");}
 		}
 	}
+	function arraytosql($array,$inup)
+	{
+		foreach($array as $key => $value)
+		{
+			$columns=array();
+			$data=array();
+			$columns[]=$key;
+
+			if($value != "")
+			{
+				$data[]="'".$value."'";
+			}
+			else
+			{
+				$data[]="null";
+			}
+		}
+	}
 	print("i am working\n");
 
     //basic info array
@@ -101,7 +119,10 @@
     $basicinfo['height']=$height;
     $basicinfo['deity']=$deity;
     $basicinfo['notes']='';
-    
+   
+	//inserting values into SQL
+	
+ 
     //abilsco array
     $abilsco['str']=$str;
     $abilsco['con']=$con;
