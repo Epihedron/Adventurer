@@ -216,6 +216,7 @@
 - got all fields to populate into SQL from new char page. *DRINK*
 - JSON script commented out
 - added languages table to SQL
+- turned on input validation on new char page
 
 ### Bugs:
 
