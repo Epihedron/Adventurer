@@ -266,6 +266,9 @@
     }
 	qinit($equip,'item','inventory');
 
+	header("location:../html/charselect.html");
+
+
     //previous json way of doing things. 
     //json encode
     //$charstats['Basic Info']=$basicinfo;
@@ -335,6 +338,5 @@
         //pushing json object to charfile
     //  $finchar=json_encode($charpddecode);
     //  file_put_contents("../json/chars/$user/$user"."list.json",$finchar);
-    //  header("location:../html/charselect.html");
     //}
 ?>
