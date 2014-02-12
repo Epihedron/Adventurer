@@ -12,7 +12,7 @@
     $class=$_POST['class'];
     $race=$_POST['race'];
     $gender=$_POST['gender'];
-    $deity=$_POST['deity'];
+    $deity=$_POST['diety'];
 
     $str=$_POST['str'];
     $con=$_POST['con'];
@@ -72,125 +72,140 @@
     $his=$_POST['hashis'];
     
 	//connection to SQL 
-	$con=mysql_connect('localhost','host','');
-	if(!$con){print("could not connect to SQL\n");}
+	$conn=mysql_connect('localhost','host','');
+	if(!$conn){print("could not connect to SQL\n");}
 	$sel=mysql_select_db("adventurer");
 	if(!$sel){print("could not select db\n");}
 
-	//sending data to SQL
-	function qinit($y,$z)
+	//function to send variable arrays to proper SQL tables
+	function qinit($array,$field,$table)
 	{
-		foreach($z as $x)
+		$sql="insert into $table(charname,username,$field) values";
+		$it=new ArrayIterator($array);
+		$cit=new CachingIterator($it);
+		
+		foreach($cit as $v)
 		{
-			$query=mysql_query("insert into $y values(null,$character,$user,$x);");
-			if(!$query){print("could not query to database\n");}
+			$sql .= "($character,$user,'".$cit->current()."')";
 		}
-	}
-	function arraytosql($array,$inup)
-	{
-		foreach($array as $key => $value)
+
+		if($cit->hasNext())
 		{
-			$columns=array();
-			$data=array();
+			$sql .= ",";
+		}
+		
+		mysql_query($sql) or die("Could not send query");
+	}
+
+	//function to send initial SQL character data
+	function arraytosql($array)
+	{
+		$columns=array();
+		$data=array();
+		foreach($array as $key => $value)
+		{	
 			$columns[]=$key;
 
 			if($value != "")
 			{
-				$data[]="'".$value."'";
+				$data[]='"'.$value.'"';
 			}
 			else
 			{
 				$data[]="null";
 			}
 		}
+		$fincol=implode(",",$columns);
+		$findat=implode(",",$data);
+		//print($fincol."<br/>".$findat);
+		mysql_query("insert into characters($fincol) values($findat);") or die("<br/> could not send query");
 	}
-	print("i am working\n");
 
     //basic info array
     //$basicinfo['world']=$world;
-    $basicinfo['character']=$character;
-    $basicinfo['level']=1;
-    $basicinfo['xp']=0;
-    $basicinfo['age']=$age;
-    $basicinfo['gender']=$gender;
-    $basicinfo['race']=$race;
-    $basicinfo['class']=$class;
-    $basicinfo['weight']=$weight;
-    $basicinfo['height']=$height;
-    $basicinfo['deity']=$deity;
-    $basicinfo['notes']='';
+    $charinfo['username']=$user;
+    $charinfo['charname']=$character;
+    $charinfo['level']=1;
+    $charinfo['xp']=0;
+    $charinfo['age']=$age;
+    $charinfo['gender']=$gender;
+    $charinfo['race']=$race;
+    $charinfo['class']=$class;
+    $charinfo['weight']=$weight;
+    $charinfo['height']=$height;
+    $charinfo['deity']=$deity;
+    $charinfo['notes']='';
    
-	//inserting values into SQL
-	
- 
     //abilsco array
-    $abilsco['str']=$str;
-    $abilsco['con']=$con;
-    $abilsco['dex']=$dex;
-    $abilsco['int']=$int;
-    $abilsco['wis']=$wis;
-    $abilsco['cha']=$cha;
-    
+    $charinfo['strength']=$str;
+    $charinfo['constitution']=$con;
+    $charinfo['dexterity']=$dex;
+    $charinfo['intelligence']=$int;
+    $charinfo['wisdom']=$wis;
+    $charinfo['charisma']=$cha;
+
     //defs
-    $defs['armor']=$arm;
-    $defs['armor class']=$armclass;
-    $defs['armor misc']=$armmisc;
-    $defs['fort class']=$fortclass;
-    $defs['fort misc']=$fortmisc;
-    $defs['ref class']=$refclass;
-    $defs['ref misc']=$refmisc;
-    $defs['will class']=$willclass;
-    $defs['will misc']=$willmisc;
+    $charinfo['armor']=$arm;
+    $charinfo['armorclass']=$armclass;
+    $charinfo['armormisc']=$armmisc;
+    $charinfo['fortclass']=$fortclass;
+    $charinfo['fortmisc']=$fortmisc;
+    $charinfo['refclass']=$refclass;
+    $charinfo['refmisc']=$refmisc;
+    $charinfo['willclass']=$willclass;
+    $charinfo['willmisc']=$willmisc;
     
     //atks
-    $atks['atk class']=$atkclass;
-    $atks['atk feat']=$atkfeat;
-    $atks['atk misc']=$atkmisc;
-    $atks['dam feat']=$damfeat;
-    $atks['dam misc']=$dammisc;
+    $charinfo['atkclass']=$atkclass;
+    $charinfo['atkfeat']=$atkfeat;
+    $charinfo['atkmisc']=$atkmisc;
+    $charinfo['damfeat']=$damfeat;
+    $charinfo['dammisc']=$dammisc;
     
     //HP
-    $hp['maxhp']=$maxhp;
-    $hp['speed']=$speed;
-    $hp['pass perc']=$passperc;
-    $hp['pass ins']=$passins;
+    $charinfo['maxhp']=$maxhp;
+    $charinfo['speed']=$speed;
    
     //equipment
-    $equip['ehead']=$head;
-    $equip['eneck']=$neck;
-    $equip['earmor']=$armor;
-    $equip['earms']=$arms;
-    $equip['ehands']=$hands;
-    $equip['efinger1']=$finger1;
-    $equip['efinger2']=$finger2;
-    $equip['ewaist']=$waist;
-    $equip['elegs']=$legs;
-    $equip['efeet']=$feet;
+    $charinfo['headslot']=$head;
+    $charinfo['neckslot']=$neck;
+    $charinfo['chestslot']=$armor;
+    $charinfo['armsslot']=$arms;
+    $charinfo['handsslot']=$hands;
+    $charinfo['finger1']=$finger1;
+    $charinfo['finger2']=$finger2;
+    $charinfo['waistslot']=$waist;
+    $charinfo['legsslot']=$legs;
+    $charinfo['feetslot']=$feet;
     
     //skills
-    $skills['acrobatics']=$acro;
-    $skills['arcana']=$arc;
-    $skills['athletics']=$ath;
-    $skills['bluff']=$bluff;
-    $skills['diplomacy']=$diplo;
-    $skills['dungeoneering']=$dung;
-    $skills['endurance']=$end;
-    $skills['heal']=$heal;
-    $skills['insight']=$ins;
-    $skills['intimidate']=$intim;
-    $skills['nature']=$nat;
-    $skills['perception']=$perc;
-    $skills['religion']=$rel;
-    $skills['stealth']=$ste;
-    $skills['streetwise']=$street;
-    $skills['thievery']=$thiev;
-    $skills['history']=$his;
+    $charinfo['acrobatics']=$acro;
+    $charinfo['arcane']=$arc;
+    $charinfo['athletics']=$ath;
+    $charinfo['bluff']=$bluff;
+    $charinfo['diplomacy']=$diplo;
+    $charinfo['dungeoneering']=$dung;
+    $charinfo['endurance']=$end;
+    $charinfo['heal']=$heal;
+    $charinfo['insight']=$ins;
+    $charinfo['intimidation']=$intim;
+    $charinfo['nature']=$nat;
+    $charinfo['perception']=$perc;
+    $charinfo['religion']=$rel;
+    $charinfo['stealth']=$ste;
+    $charinfo['streetwise']=$street;
+    $charinfo['thievery']=$thiev;
+    $charinfo['history']=$his;
+
+	//sending charinfo array to SQL table
+	//arraytosql($charinfo);
 
     //race features
     foreach($_POST['rfeat'] as $x)
     {
-        $features['race features'][]=$x;
+        $rfeatures[]=$x;
     }
+	qinit($rfeatures,'rfeature','rfeatures);
 
     //class features
     foreach($_POST['cfeat'] as $x)

@@ -210,6 +210,9 @@
 ##### Alpha 0.2.0(2/10/14)
 - added function to update SQL with new character info. The function has the option to either insert or update
 
+##### Alpha 0.2.0(2/11/14)
+- modified insert for initial character data
+
 ### Bugs:
 
 - chrome doesn't like adding new characters to the char list. I suspect local save issues (use in incognito)

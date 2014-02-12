@@ -25,34 +25,34 @@ $.ajax({
 //submission with validation
 $('#submit').click(function ()
 {
-    var err = 0;
+   // var err = 0;
     
-    $('input').each(function()
-    {
-        if($(this).val().length == 0)
-        {
-            err += 1;
-            if(!$(this).next().text())
-            {
-                $(this).after('<span class="badresult">&#10539;</span>');
-            }
-        }
-        else 
-        {
-            if($(this).next().text())
-            {
-                $(this).next().text('');
-            }
-        }
-    });
-    if(err>0)
-    {
-        alert('There are ' + err + ' fields missing. Please fill them all.');
-    }
-    else
-    {
-        $('#newcharform').submit();
-    }
+   // $('input').each(function()
+   // {
+   //     if($(this).val().length == 0)
+   //     {
+   //         err += 1;
+   //         if(!$(this).next().text())
+   //         {
+   //             $(this).after('<span class="badresult">&#10539;</span>');
+   //       }
+   //     }
+   //     else 
+   //     {
+   //         if($(this).next().text())
+   //         {
+   //             $(this).next().text('');
+   //       }
+   //     }
+   // });
+   // if(err>0)
+   // {
+   //     alert('There are ' + err + ' fields missing. Please fill them all.');
+   // }
+   // else
+   // {
+   //     $('#newcharform').submit();
+   // }
     $('#newcharform').submit();
 });
 //validate to make sure field is a number
