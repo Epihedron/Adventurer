@@ -212,6 +212,10 @@
 
 ##### Alpha 0.2.0(2/11/14)
 - modified insert for initial character data
+- trashed passive perc and passive ins inputs on new char worksheet
+- got all fields to populate into SQL from new char page. *DRINK*
+- JSON script commented out
+- added languages table to SQL
 
 ### Bugs:
 

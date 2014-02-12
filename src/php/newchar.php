@@ -80,21 +80,29 @@
 	//function to send variable arrays to proper SQL tables
 	function qinit($array,$field,$table)
 	{
-		$sql="insert into $table(charname,username,$field) values";
-		$it=new ArrayIterator($array);
-		$cit=new CachingIterator($it);
-		
-		foreach($cit as $v)
+		if(empty($array))
 		{
-			$sql .= "($character,$user,'".$cit->current()."')";
+			return null;
 		}
+		else
+		{
+			global $character,$user;
 
-		if($cit->hasNext())
-		{
-			$sql .= ",";
+			$sql="insert into $table(charname,username,$field) values";
+			$it=new ArrayIterator($array);
+			$cit=new CachingIterator($it);
+		
+			foreach($cit as $v)
+			{
+				$sql .= "('$character','$user','".$cit -> current()."')";
+				if($cit -> hasNext())
+				{
+					$sql .= ",";
+				}
+			}
 		}
 		
-		mysql_query($sql) or die("Could not send query");
+		mysql_query($sql.';') or die("<br/>Could not send query");
 	}
 
 	//function to send initial SQL character data
@@ -117,7 +125,6 @@
 		}
 		$fincol=implode(",",$columns);
 		$findat=implode(",",$data);
-		//print($fincol."<br/>".$findat);
 		mysql_query("insert into characters($fincol) values($findat);") or die("<br/> could not send query");
 	}
 
@@ -198,54 +205,66 @@
     $charinfo['history']=$his;
 
 	//sending charinfo array to SQL table
-	//arraytosql($charinfo);
+	arraytosql($charinfo);
 
     //race features
     foreach($_POST['rfeat'] as $x)
     {
         $rfeatures[]=$x;
     }
-	qinit($rfeatures,'rfeature','rfeatures);
+	qinit($rfeatures,'rfeature','rfeatures');
 
     //class features
     foreach($_POST['cfeat'] as $x)
     {
-        $features['class features'][]=$x;
+        $cfeatures[]=$x;
     }
+	qinit($cfeatures,'cfeature','cfeatures');
 
     //feats
     foreach($_POST['feat'] as $x)
     {
-        $feat['feats'][]=$x;
+        $feats[]=$x;
     }
+	qinit($feats,'feat','feats');
+
     foreach($_POST['lang'] as $x)
     {
-        $feat['langs'][]=$x;
+        $langs[]=$x;
     }
+	qinit($langs,'language','languages');
     
     //powers
     foreach($_POST['atwill'] as $x)
     {
-        $powers['at will'][]=$x;
+        $aw[]=$x;
     }
+	qinit($aw,'power','powers');
+
     foreach($_POST['enc'] as $x)
     {
-        $powers['encounter'][]=$x;
+        $enc[]=$x;
     }
+	qinit($enc,'power','powers');
+
     foreach($_POST['daily'] as $x)
     {
-        $powers['daily'][]=$x;
+        $daily[]=$x;
     }
+	qinit($daily,'power','powers');
+
     foreach($_POST['util'] as $x)
     {
-        $powers['utility'][]=$x;
+        $util[]=$x;
     }
+	qinit($util,'power','powers');
 
     //inventory slots
     foreach($_POST['inv'] as $x)
     {
-        $equip['inventory'][]=$x;
+        $equip[]=$x;
     }
+	qinit($equip,'item','inventory');
 
     //previous json way of doing things. 
     //json encode
