@@ -104,6 +104,33 @@
 		
 		mysql_query($sql.';') or die("<br/>Could not send query");
 	}
+	
+	function sqinit($array,$field,$table,$type)
+	{
+		if(empty($array))
+		{
+			return null;
+		}
+		else
+		{
+			global $character,$user;
+
+			$sql="insert into $table(charname,username,$field,type) values";
+			$it=new ArrayIterator($array);
+			$cit=new CachingIterator($it);
+		
+			foreach($cit as $v)
+			{
+				$sql .= "('$character','$user','".$cit -> current()."','$type')";
+				if($cit -> hasNext())
+				{
+					$sql .= ",";
+				}
+			}
+		}
+		
+		mysql_query($sql.';') or die("<br/>Could not send query");
+	}
 
 	//function to send initial SQL character data
 	function arraytosql($array)
@@ -239,25 +266,25 @@
     {
         $aw[]=$x;
     }
-	qinit($aw,'power','powers');
+	sqinit($aw,'power','powers','at will');
 
     foreach($_POST['enc'] as $x)
     {
         $enc[]=$x;
     }
-	qinit($enc,'power','powers');
+	sqinit($enc,'power','powers','encounter');
 
     foreach($_POST['daily'] as $x)
     {
         $daily[]=$x;
     }
-	qinit($daily,'power','powers');
+	sqinit($daily,'power','powers','daily');
 
     foreach($_POST['util'] as $x)
     {
         $util[]=$x;
     }
-	qinit($util,'power','powers');
+	sqinit($util,'power','powers','utility');
 
     //inventory slots
     foreach($_POST['inv'] as $x)

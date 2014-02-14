@@ -218,6 +218,15 @@
 - added languages table to SQL
 - turned on input validation on new char page
 
+##### Alpha 0.2.0(2/12/14)
+- working on character select page to query database for users characters
+- got character select page to work by sending JSON from php to javascript
+
+##### Alpha 0.2.0(2/13/14)
+- got character select to show your characters
+- got character select delete button to work properly with SQL
+- character select now chooses your character but doesn't fill everything out on the character sheet yet
+
 ### Bugs:
 
 - chrome doesn't like adding new characters to the char list. I suspect local save issues (use in incognito)

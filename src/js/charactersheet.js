@@ -38,7 +38,7 @@ function datMod(x)
 }
 //logincheck
 $.ajax(
-	{
+{
     url:'../php/init.php',
     type:'post',
     data:{userquery:1},
@@ -54,31 +54,35 @@ $.ajax(
             {
                 $('#name').text(user);
             }
+
             //grabbing selected character
-			$.ajax(
-				{
-					url:'../json/chars/'+user+'/'+user+'init.json',
-					success:function(data)
-						{
-							schar = data['char'];
-							$('#character').text(schar);
-							//grabbing selected characters attributes
-							$.ajax(
-							   {
-							       url:'../json/chars/'+user+'/'+user+'list.json',
-							       success:function(d)
-							       {
-							       		//find the character in the players character list
-							           for(var i in d)
-							           {
-							               if(d[i]['Basic Info']['character']==$('#character').text())
-							               {
-							               		var atkbonus,damage,ac,fort,ref,will;
-							               		var lvl=d[i]['Basic Info']['level'];
-							               		var hlvl=isOdd(lvl)/2;							           
-							                    //adding attributes to char sheet
-							                    //basic info
-							                    $("#charname").text(d[i]['Basic Info']['character']);
+		$.ajax(
+		{
+			url:'../php/init.php',
+			type:'post',
+			data:{charquery:1},
+			success:function(data)
+			{
+				$('#character').text(data);
+
+				//grabbing selected characters attributes
+				$.ajax(
+			 	{
+			     		url:'../php/init.php',
+					type:'post',
+					data:{charstats:1},
+					success:function(d)
+					{
+						//find the character in the players character list
+					        for(var i in d)
+					        {
+							var atkbonus,damage,ac,fort,ref,will;
+				               		var lvl=d[i]['Basic Info']['level'];
+				               		var hlvl=isOdd(lvl)/2;							           
+
+							//adding attributes to char sheet
+							//basic info
+							$("#charname").text(d[i]['Basic Info']['character']);
 							                    $("#level").text(lvl);
 							                    $("#class").text(d[i]['Basic Info']['class']);
 							                    $("#race").text(d[i]['Basic Info']['race']);
@@ -89,6 +93,7 @@ $.ajax(
 							                    $("#weight").text(d[i]['Basic Info']['weight']);
 							                    $("#diety").text(d[i]['Basic Info'].diety);
 							                    $("#speed").text(d[i]['Hit Points'].speed);
+
 							                    //ability scores
 							                    $("#str").text(d[i]["Ability Scores"].str);
 							                    $("#con").text(d[i]["Ability Scores"].con);
@@ -108,6 +113,7 @@ $.ajax(
 							                    $("#intmod").text(intm);
 							                    $("#wismod").text(wism);
 							                    $("#chamod").text(cham);
+
 							                    //defenses
 							                    var fortswitch,refswitch,willswtich;							                 
 							                    $("#armor").text(0);
@@ -291,7 +297,6 @@ $.ajax(
 							                    $('#thiev').text(thie);
 
 							                    break;
-							               }
 							           }
 							       },
 							       error:function(e)
