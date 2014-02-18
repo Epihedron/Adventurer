@@ -94,6 +94,7 @@
 		echo $ff;
 	}
 
+	//getting character stats from SQL
 	if(isset($_POST['charstats']))
 	{
 		mysql_connect('localhost','host','');
