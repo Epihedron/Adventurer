@@ -1,6 +1,7 @@
 <?php
-    session_start();
-    $user=$_SESSION['user'];
+	session_start();
+	$user=$_SESSION['user'];
+	$char=$_SESSION['character'];
     
     //character change
     if(isset($_POST['cc']))
@@ -95,10 +96,15 @@
 	}
 
 	//getting character stats from SQL
-	if(isset($_POST['charstats']))
+	if(isset($_POST['basicstats']))
 	{
 		mysql_connect('localhost','host','');
 		mysql_select_db('adventurer');
-		$query=mysql_query();
+		$query=mysql_query("select * from characters where username='$user' and charname='$char';");
+		while($r=mysql_fetch_assoc($query))
+		{
+			$a=$r;
+		}
+		echo json_encode($a);
 	}
 ?>

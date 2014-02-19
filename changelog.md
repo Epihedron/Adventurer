@@ -227,6 +227,11 @@
 - got character select delete button to work properly with SQL
 - character select now chooses your character but doesnt fill everything out on the character sheet yet
 
-
 ##### Alpha 0.2.0(2/18/14)
 - created a change log file to clean up readme
+
+##### Alpha 0.2.0(2/19/14)
+- changed name of changelog from ChangeLog
+- cleaned up readme file
+- figured out mardown was looking at the indentation as code and not a paragraph which resulted in words not wrapping
+- parsed JSON from PHP to character sheet, working on all the values

@@ -70,59 +70,60 @@ $.ajax(
 			 	{
 			     		url:'../php/init.php',
 					type:'post',
-					data:{charstats:1},
-					success:function(d)
+					data:{basicstats:1},
+					success:function(data)
 					{
 						//find the character in the players character list
-					        for(var i in d)
+					        for(var i in data)
 					        {
+							var d = JSON.parse(data);
 							var atkbonus,damage,ac,fort,ref,will;
-				               		var lvl=d[i]['Basic Info']['level'];
+				               		var lvl=d['level'];
 				               		var hlvl=isOdd(lvl)/2;							           
-
 							//adding attributes to char sheet
 							//basic info
-							$("#charname").text(d[i]['Basic Info']['character']);
-							                    $("#level").text(lvl);
-							                    $("#class").text(d[i]['Basic Info']['class']);
-							                    $("#race").text(d[i]['Basic Info']['race']);
-							                    $("#age").text(d[i]['Basic Info']['age']);
-							                    $("#xp").text(d[i]['Basic Info']['xp']);
-							                    $("#gender").text(d[i]['Basic Info']['gender']);
-							                    $("#height").text(d[i]['Basic Info']['height']);
-							                    $("#weight").text(d[i]['Basic Info']['weight']);
-							                    $("#diety").text(d[i]['Basic Info'].diety);
-							                    $("#speed").text(d[i]['Hit Points'].speed);
+							$("#level").text(lvl);
+							$("#class").text(d['class']);
+							$("#race").text(d['race']);
+							$("#age").text(d['age']);
+							$("#xp").text(d['xp']);
+							$("#gender").text(d['gender']);
+							$("#height").text(d['height']);
+							$("#weight").text(d['weight']);
+							$("#diety").text(d.deity);
+							$("#speed").text(d.speed);
 
-							                    //ability scores
-							                    $("#str").text(d[i]["Ability Scores"].str);
-							                    $("#con").text(d[i]["Ability Scores"].con);
-							                    $("#dex").text(d[i]["Ability Scores"].dex);
-							                    $("#int").text(d[i]["Ability Scores"]['int']);
-							                    $("#wis").text(d[i]["Ability Scores"].wis);
-							                    $("#cha").text(d[i]["Ability Scores"].cha);							                    
-							                    strm=datMod(d[i]["Ability Scores"].str);
-							                    conm=datMod(d[i]["Ability Scores"].con);
-							                    dexm=datMod(d[i]["Ability Scores"].dex);
-							                    intm=datMod(d[i]["Ability Scores"]['int']);
-							                    wism=datMod(d[i]["Ability Scores"].wis);
-							                    cham=datMod(d[i]["Ability Scores"].cha);
-							                    $("#strmod").text(strm);
-							                    $("#conmod").text(conm);
-							                    $("#dexmod").text(dexm);
-							                    $("#intmod").text(intm);
-							                    $("#wismod").text(wism);
-							                    $("#chamod").text(cham);
+							//ability scores
+							$("#str").text(d.strength);
+							$("#con").text(d.constitution);
+							$("#dex").text(d.dexterity);
+							$("#int").text(d.intelligence);
+							$("#wis").text(d.wisdom);
+							$("#cha").text(d.charisma);							                    
+							strm=datMod(d.strength);
+							conm=datMod(d.constitution);
+							dexm=datMod(d.dexterity);
+							intm=datMod(d.intelligence);
+							wism=datMod(d.wisdom);
+							cham=datMod(d.charisma);
 
-							                    //defenses
-							                    var fortswitch,refswitch,willswtich;							                 
-							                    $("#armor").text(0);
-							                    $("#classac").text(d[i]["Defenses"]["armor class"]);
-							                    $("#acmisc").text(d[i]["Defenses"]["armor misc"]);							                   
-							                    $("#classfort").text(d[i]["Defenses"]["fort class"]);
-							                    $("#classref").text(d[i]["Defenses"]["ref class"]);
-							                    $("#classwill").text(d[i]["Defenses"]["will class"]);
-							                    $("#fortmisc").text(d[i]["Defenses"]["fort misc"]);
+							$("#strmod").text(strm);
+							$("#conmod").text(conm);
+							$("#dexmod").text(dexm);
+							$("#intmod").text(intm);
+							$("#wismod").text(wism);
+							$("#chamod").text(cham);
+
+							//defenses
+							var fortswitch,refswitch,willswtich;							                 
+							$("#armor").text(0);
+							$("#classac").text(d["armor class"]);
+							$("#acmisc").text(["armor misc"]);							                   
+							$("#classfort").text(["fort class"]);
+							$("#classref").text(d["ref class"]);
+							$("#classwill").text(d["will class"]);
+
+							$("#fortmisc").text(d["fort misc"]);
 							                    $("#refmisc").text(d[i]["Defenses"]["ref misc"]);
 							                    $("#willmisc").text(d[i]["Defenses"]["will misc"]);							                    
 							                    ac=10+hlvl+parseInt(d[i]["Defenses"]["armor misc"])+parseInt(d[i]["Defenses"]["armor class"])+parseInt($('#armor').html());
