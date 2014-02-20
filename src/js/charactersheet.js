@@ -117,125 +117,119 @@ $.ajax(
 							//defenses
 							var fortswitch,refswitch,willswtich;							                 
 							$("#armor").text(0);
-							$("#classac").text(d["armor class"]);
-							$("#acmisc").text(["armor misc"]);							                   
-							$("#classfort").text(["fort class"]);
-							$("#classref").text(d["ref class"]);
-							$("#classwill").text(d["will class"]);
+							$("#classac").text(d["armorclass"]);
+							$("#acmisc").text(d["armormisc"]);							                   
+							$("#classfort").text(d["fortclass"]);
+							$("#classref").text(d["refclass"]);
+							$("#classwill").text(d["willclass"]);
 
-							$("#fortmisc").text(d["fort misc"]);
-							                    $("#refmisc").text(d[i]["Defenses"]["ref misc"]);
-							                    $("#willmisc").text(d[i]["Defenses"]["will misc"]);							                    
-							                    ac=10+hlvl+parseInt(d[i]["Defenses"]["armor misc"])+parseInt(d[i]["Defenses"]["armor class"])+parseInt($('#armor').html());
-							                    forswitch=(strm>conm)?fortswitch=strm:fortswitch=conm;
-							                    refswitch=(dexm>intm)?refswitch=dexm:fortswitch=intm;
-							                    willswitch=(wism>cham)?willswitch=wism:willswitch=cham;
-							                    fort=10+hlvl+fortswitch+parseInt($("#classfort").html())+parseInt($("#fortmisc").html());
-							                    ref=10+hlvl+refswitch+parseInt($("#classref").html())+parseInt($("#refmisc").html());
-							                    will=10+hlvl+willswitch+parseInt($("#classwill").html())+parseInt($("#willmisc").html());
-							                    $("#ac").text(ac);
-							                    $("#fort").text(fort);
-							                    $("#ref").text(ref);
-							                    $("#will").text(will);
-							                    //hit points
-							                    $("#currenthealth").text(0);
-							                    $("#maxhealth").text(d[i]["Hit Points"]["maxhp"]);
-							                    $("#surges").text(0);
-							                    $("#passperc").text(d[i]["Hit Points"]["pass perc"]);
-							                    $("#passins").text(d[i]["Hit Points"]["pass ins"]);
-							                    //attacks							                    
-							                    $("#atkclass").text(d[i]["Attacks"]["atk class"]);
-							                    $("#atkfeat").text(d[i]["Attacks"]["atk feat"]);
-							                    $("#atkmisc").text(d[i]["Attacks"]["atk misc"]);
-							                    $("#damfeat").text(d[i]["Attacks"]["dam feat"]);
-							                    $("#dammisc").text(d[i]["Attacks"]["dam misc"]);
-							                    atkbonus=parseInt(d[i]["Attacks"]["atk misc"])+parseInt(d[i]["Attacks"]["atk feat"])+parseInt(d[i]["Attacks"]["atk class"])+hlvl;
-							                    damage=parseInt(d[i]["Attacks"]["dam misc"])+parseInt(d[i]["Attacks"]["dam feat"]);
-							                    $("#atkbonus").text(atkbonus);
-							                    $("#damage").text(damage);
-							                    //powers
-							                    var atwills=d[i]["Powers"]["at will"];
-							                    var encounters=d[i]["Powers"]["encounter"];
-							                    var dailys=d[i]["Powers"]["daily"];
-							                    var utilities=d[i]["Powers"]["utility"];
+							$("#fortmisc").text(d["fortmisc"]);
+							$("#refmisc").text(d["refmisc"]);
+							$("#willmisc").text(d["willmisc"]);							                    
 
-							                    for(var x in atwills)
-							                    {
-							                    	$("#atwillpowers").append("<li>"+atwills[x]+"</li>");
-							                    }
-							                    for(var x in encounters)
-							                    {
-							                    	$("#encounterpowers").append("<li><input type='checkbox'style='float:left;'/>"+encounters[x]+"</li>");
-							                    }
-							                    for(var x in dailys)
-							                    {
-							                    	$("#dailypowers").append("<li><input type='checkbox'style='float:left;'/>"+dailys[x]+"</li>");
-							                    }
-							                    for(var x in utilities)
-							                    {
-							                    	$("#utilitypowers").append("<li><input type='checkbox'style='float:left;'/>"+utilities[x]+"</li>");
-							                    }
+							ac=10+hlvl+parseInt(d["armormisc"])+parseInt(d["armorclass"])+parseInt($('#armor').html());
+							forswitch=(strm>conm)?fortswitch=strm:fortswitch=conm;
+							refswitch=(dexm>intm)?refswitch=dexm:fortswitch=intm;
+							willswitch=(wism>cham)?willswitch=wism:willswitch=cham;
+							fort=10+hlvl+fortswitch+parseInt($("#classfort").html())+parseInt($("#fortmisc").html());
+							ref=10+hlvl+refswitch+parseInt($("#classref").html())+parseInt($("#refmisc").html());
+							will=10+hlvl+willswitch+parseInt($("#classwill").html())+parseInt($("#willmisc").html());
+
+							$("#ac").text(ac);
+							$("#fort").text(fort);
+							$("#ref").text(ref);
+							$("#will").text(will);
+
+							//hit points
+							$("#currenthealth").text(0);
+							$("#maxhealth").text(d["maxhp"]);
+							$("#surges").text(0);
+
+							//passive perception and insight
+							var pperc,pins;
+
+							pperc = 10+hlvl;
+							pins = 10+hlvl;
+
+							if(d['perception']){pperc+=5}
+							if(d['insight']){pins+=5}
+
+							$("#passperc").text(pperc);
+							$("#passins").text(pins);
+
+							//attacks							                    
+							$("#atkclass").text(d["atkclass"]);
+							$("#atkfeat").text(d["atkfeat"]);
+							$("#atkmisc").text(d["atkmisc"]);
+							$("#damfeat").text(d["damfeat"]);
+							$("#dammisc").text(d["dammisc"]);
+
+							atkbonus=parseInt(d["atkmisc"])+parseInt(d["atkfeat"])+parseInt(d["atkclass"])+hlvl;
+							damage=parseInt(d["dammisc"])+parseInt(d["damfeat"]);
+
+							$("#atkbonus").text(atkbonus);
+							$("#damage").text(damage);
+
+							//powers
+							//var atwills=d["atwill"];
+							                    //var encounters=d[i]["Powers"]["encounter"];
+							                    //var dailys=d[i]["Powers"]["daily"];
+							                    //var utilities=d[i]["Powers"]["utility"];
+
+							                    //for(var x in atwills)
+							                    //{
+							                    	//$("#atwillpowers").append("<li>"+atwills[x]+"</li>");
+							                    //}
+							                    //for(var x in encounters)
+							                    //{
+							                    	//$("#encounterpowers").append("<li><input type='checkbox'style='float:left;'/>"+encounters[x]+"</li>");
+							                    //}
+							                    //for(var x in dailys)
+							                    //{
+							                    	//$("#dailypowers").append("<li><input type='checkbox'style='float:left;'/>"+dailys[x]+"</li>");
+							                    //}
+							                    //for(var x in utilities)
+							                    //{
+							                    	//$("#utilitypowers").append("<li><input type='checkbox'style='float:left;'/>"+utilities[x]+"</li>");
+							                    //}
+
 							                    //features
-							                    var racefeatures=d[i]["Features"]["race features"];
-							                    var classfeatures=d[i]["Features"]["class features"];
+							                    //var racefeatures=d[i]["Features"]["race features"];
+							                    //var classfeatures=d[i]["Features"]["class features"];
 
-							                    for(var x in racefeatures)
-							                    {
-							                    	$('#racefeatures').append("<li>"+racefeatures[x]+"</li>");
-							                    }
-							                    for(var x in classfeatures)
-							                    {
-							                    	$('#classfeatures').append("<li>"+classfeatures[x]+"</li>");
-							                    }
+							                    //for(var x in racefeatures)
+							                    //{
+							                    	//$('#racefeatures').append("<li>"+racefeatures[x]+"</li>");
+							                    //}
+							                    //for(var x in classfeatures)
+							                    //{
+							                    	//$('#classfeatures').append("<li>"+classfeatures[x]+"</li>");
+							                    //}
+
 							                    //feats and langs
-							                    var feats=d[i]["Feats and Langs"]["feats"];
-							                    var langs=d[i]["Feats and Langs"]["langs"];
+							                    //var feats=d[i]["Feats and Langs"]["feats"];
+							                    //var langs=d[i]["Feats and Langs"]["langs"];
 
-							                    for(var x in feats)
-							                    {
-							                    	$('#feats').append("<li>"+feats[x]+"</li>");
-							                    }
-							                    for(var x in langs)
-							                    {
-							                    	$('#langs').append("<li>"+langs[x]+"</li>");
-							                    }
-							                    //skills
-							                    var skills=d[i]["Skills"];							                  
-							                    
-							                    for(var x in skills)
-							                    {
-							                    	if(skills[x]!==null)
-							                    	{
-							                    		if(x=='acrobatics'){acro+=5;$('#acro').addClass("resulthl");}
-							                    		if(x=='arcana'){arca+=5;$('#arc').addClass("resulthl");}
-							                    		if(x=='athletics'){athl+=5;$('#ath').addClass("resulthl");}
-							                    		if(x=='bluff'){bluf+=5;$('#bluff').addClass("resulthl");}
-							                    		if(x=='diplomacy'){dipl+=5;$('#dip').addClass("resulthl");}
-							                    		if(x=='dungeoneering'){dung+=5;$('#dung').addClass("resulthl");}
-							                    		if(x=='endurance'){endu+=5;$('#end').addClass("resulthl");}
-							                    		if(x=='heal'){heal+=5;$('#heal').addClass("resulthl");}
-							                    		if(x=='history'){hist+=5;$('#his').addClass("resulthl");}
-							                    		if(x=='insight'){insi+=5;$('#ins').addClass("resulthl");}
-							                    		if(x=='intimidate'){inti+=5;$('#inti').addClass("resulthl");}
-							                    		if(x=='nature'){natu+=5;$('#nat').addClass("resulthl");}
-							                    		if(x=='perception'){perc+=5;$('#perc').addClass("resulthl");}
-							                    		if(x=='religion'){reli+=5;$('#rel').addClass("resulthl");}
-							                    		if(x=='stealth'){stea+=5;$('#ste').addClass("resulthl");}
-							                    		if(x=='streetwise'){stre+=5;$('#stre').addClass("resulthl");}
-							                    		if(x=='thievery'){thie+=5;$('#thiev').addClass("resulthl");}
-							                    	}
-							                    }
+							                    //for(var x in feats)
+							                    //{
+							                    	//$('#feats').append("<li>"+feats[x]+"</li>");
+							                    //}
+							                    //for(var x in langs)
+							                    //{
+							                    	//$('#langs').append("<li>"+langs[x]+"</li>");
+							                    //}
+
 							                    //equipment
-							                    var head=d[i]["Equipment"]['ehead'];
-							                    var neck=d[i]["Equipment"]['eneck'];
-							                    var armor=d[i]["Equipment"]['earmor'];
-							                    var arms=d[i]["Equipment"]['earms'];
-							                    var hands=d[i]["Equipment"]['ehands'];
-							                    var finger1=d[i]["Equipment"]['efinger1'];
-							                    var finger2=d[i]["Equipment"]['efinger2'];
-							                    var waist=d[i]["Equipment"]['ewaist'];
-							                    var legs=d[i]["Equipment"]['elegs'];
-							                    var feet=d[i]["Equipment"]['efeet'];
+							                    var head=d['headslot'];
+							                    var neck=d['neckslot'];
+							                    var armor=d['chestslot'];
+							                    var arms=d['armsslot'];
+							                    var hands=d['handsslot'];
+							                    var finger1=d['finger1'];
+							                    var finger2=d['finger2'];
+							                    var waist=d['waistslot'];
+							                    var legs=d['legsslot'];
+							                    var feet=d['feetslot'];
 
 							                    $('#head').text(head);
 							                    $('#neck').text(neck);
@@ -247,37 +241,58 @@ $.ajax(
 							                    $('#waist').text(waist);
 							                    $('#legs').text(legs);
 							                    $('#feet').text(feet);
-							                    //inventory
-							                    var inventory=d[i]["Equipment"]["inventory"];
 
-							                    for(var x in inventory)
-							                    {
-							                    	$('#inventory').append("<li>"+inventory[x]+"</li>");
-							                    }
+							                    //inventory
+							                    //var inventory=d[i]["Equipment"]["inventory"];
+
+							                    //for(var x in inventory)
+							                    //{
+							                    	//$('#inventory').append("<li>"+inventory[x]+"</li>");
+							                    //}
+
 							                    //wealth
 							                    $("#copper").text(0);
 							                    $("#silver").text(0);
 							                    $("#gold").text(0);
 							                    $("#platinum").text(0);
 							                    $("#astraldiamond").text(0);		
+
 							                    //calculating skills values
-							                    acro+=dexm;							                    
+							                    acro+=dexm;						                    
+										if(d['acrobatics']){acro+=5}
 							                    arca+=intm;
+										if(d['arcane']){arca+=5}
 							                    athl+=strm;
+										if(d['athletics']){athl+=5}	
 							                    bluf+=cham;
+										if(d['bluff']){bluf+=5}		
 							                    dipl+=cham;
+										if(d['diplomacy']){dipl+=5}
 							                    dung+=wism;
+										if(d['dungeoneering']){dung+=5}	
 							                    endu+=conm;
+										if(d['endurance']){endu+=5}
 							                    heal+=wism;
+										if(d['heal']){heal+=5}
 							                    hist+=intm;
+										if(d['history']){hist+=5}
 							                    insi+=wism;
+										if(d['insight']){insi+=5}	
 							                    inti+=cham;
+										if(d['intimidation']){inti+=5}
 							                    natu+=wism;
+										if(d['nature']){natu+=5}
 							                    perc+=wism;
+										if(d['perception']){perc+=5}
 							                    reli+=intm;
+										if(d['religion']){reli+=5}
 							                    stea+=dexm;
+										if(d['stealth']){stea+=5}	
 							                    stre+=cham;
+										if(d['streetwise']){stre+=5}
 							                    thie+=dexm;
+										if(d['thievery']){thie+=5}
+
 							                    //adding skills value to page
 							                    $('#acro').text(acro);
 							                    $('#arc').text(arca);

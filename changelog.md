@@ -235,3 +235,4 @@
 - cleaned up readme file
 - figured out mardown was looking at the indentation as code and not a paragraph which resulted in words not wrapping
 - parsed JSON from PHP to character sheet, working on all the values
+- added basic info values to charactersheet.js as well as cleaned up the script so it runs properly
