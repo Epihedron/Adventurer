@@ -170,172 +170,299 @@ $.ajax(
 							$("#atkbonus").text(atkbonus);
 							$("#damage").text(damage);
 
-							//powers
-							//var atwills=d["atwill"];
-							                    //var encounters=d[i]["Powers"]["encounter"];
-							                    //var dailys=d[i]["Powers"]["daily"];
-							                    //var utilities=d[i]["Powers"]["utility"];
+							//equipment
+							var head=d['headslot'];
+							var neck=d['neckslot'];
+							var armor=d['chestslot'];
+							var arms=d['armsslot'];
+							var hands=d['handsslot'];
+							var finger1=d['finger1'];
+							var finger2=d['finger2'];
+							var waist=d['waistslot'];
+							var legs=d['legsslot'];
+							var feet=d['feetslot'];
 
-							                    //for(var x in atwills)
-							                    //{
-							                    	//$("#atwillpowers").append("<li>"+atwills[x]+"</li>");
-							                    //}
-							                    //for(var x in encounters)
-							                    //{
-							                    	//$("#encounterpowers").append("<li><input type='checkbox'style='float:left;'/>"+encounters[x]+"</li>");
-							                    //}
-							                    //for(var x in dailys)
-							                    //{
-							                    	//$("#dailypowers").append("<li><input type='checkbox'style='float:left;'/>"+dailys[x]+"</li>");
-							                    //}
-							                    //for(var x in utilities)
-							                    //{
-							                    	//$("#utilitypowers").append("<li><input type='checkbox'style='float:left;'/>"+utilities[x]+"</li>");
-							                    //}
+							$('#head').text(head);
+							$('#neck').text(neck);
+							$('#earmor').text(armor);
+							$('#arms').text(arms);
+							$('#hands').text(hands);
+							$('#finger1').text(finger1);
+							$('#finger2').text(finger2);
+							$('#waist').text(waist);
+							$('#legs').text(legs);
+							$('#feet').text(feet);
 
-							                    //features
-							                    //var racefeatures=d[i]["Features"]["race features"];
-							                    //var classfeatures=d[i]["Features"]["class features"];
+							//wealth
+							$("#copper").text(0);
+							$("#silver").text(0);
+							$("#gold").text(0);
+							$("#platinum").text(0);
+							$("#astraldiamond").text(0);		
 
-							                    //for(var x in racefeatures)
-							                    //{
-							                    	//$('#racefeatures').append("<li>"+racefeatures[x]+"</li>");
-							                    //}
-							                    //for(var x in classfeatures)
-							                    //{
-							                    	//$('#classfeatures').append("<li>"+classfeatures[x]+"</li>");
-							                    //}
+							//calculating skills values
+							acro+=dexm;     
+							if(d['acrobatics']){acro+=5}
+							arca+=intm;
+							if(d['arcane']){arca+=5}
+							athl+=strm;
+							if(d['athletics']){athl+=5}	
+							bluf+=cham;
+							if(d['bluff']){bluf+=5}		
+							dipl+=cham;
+							if(d['diplomacy']){dipl+=5}
+							dung+=wism;
+							if(d['dungeoneering']){dung+=5}	
+							endu+=conm;
+							if(d['endurance']){endu+=5}
+							heal+=wism;
+							if(d['heal']){heal+=5}
+							hist+=intm;
+							if(d['history']){hist+=5}
+							insi+=wism;
+							if(d['insight']){insi+=5}	
+							inti+=cham;
+							if(d['intimidation']){inti+=5}
+							natu+=wism;
+							if(d['nature']){natu+=5}
+							perc+=wism;
+							if(d['perception']){perc+=5}
+							reli+=intm;
+							if(d['religion']){reli+=5}
+							stea+=dexm;
+							if(d['stealth']){stea+=5}	
+							stre+=cham;
+							if(d['streetwise']){stre+=5}
+							thie+=dexm;
+							if(d['thievery']){thie+=5}
 
-							                    //feats and langs
-							                    //var feats=d[i]["Feats and Langs"]["feats"];
-							                    //var langs=d[i]["Feats and Langs"]["langs"];
+							//adding skills value to page
+					                $('#acro').text(acro);
+							$('#arc').text(arca);
+							$('#ath').text(athl);
+							$('#bluff').text(bluf);
+							$('#dip').text(dipl);
+							$('#dung').text(dung);
+							$('#end').text(endu); 
+							$('#heal').text(heal);
+							$('#his').text(hist);
+							$('#ins').text(insi);
+					                $('#inti').text(inti);
+					                $('#nat').text(natu);
+					                $('#perc').text(perc);
+					                $('#rel').text(reli);
+					                $('#ste').text(stea);
+							$('#stre').text(stre);
+							$('#thiev').text(thie);
 
-							                    //for(var x in feats)
-							                    //{
-							                    	//$('#feats').append("<li>"+feats[x]+"</li>");
-							                    //}
-							                    //for(var x in langs)
-							                    //{
-							                    	//$('#langs').append("<li>"+langs[x]+"</li>");
-							                    //}
+							//adding notes
+							$('#notes').text(d['notes']);
 
-							                    //equipment
-							                    var head=d['headslot'];
-							                    var neck=d['neckslot'];
-							                    var armor=d['chestslot'];
-							                    var arms=d['armsslot'];
-							                    var hands=d['handsslot'];
-							                    var finger1=d['finger1'];
-							                    var finger2=d['finger2'];
-							                    var waist=d['waistslot'];
-							                    var legs=d['legsslot'];
-							                    var feet=d['feetslot'];
-
-							                    $('#head').text(head);
-							                    $('#neck').text(neck);
-							                    $('#earmor').text(armor);
-							                    $('#arms').text(arms);
-							                    $('#hands').text(hands);
-							                    $('#finger1').text(finger1);
-							                    $('#finger2').text(finger2);
-							                    $('#waist').text(waist);
-							                    $('#legs').text(legs);
-							                    $('#feet').text(feet);
-
-							                    //inventory
-							                    //var inventory=d[i]["Equipment"]["inventory"];
-
-							                    //for(var x in inventory)
-							                    //{
-							                    	//$('#inventory').append("<li>"+inventory[x]+"</li>");
-							                    //}
-
-							                    //wealth
-							                    $("#copper").text(0);
-							                    $("#silver").text(0);
-							                    $("#gold").text(0);
-							                    $("#platinum").text(0);
-							                    $("#astraldiamond").text(0);		
-
-							                    //calculating skills values
-							                    acro+=dexm;						                    
-										if(d['acrobatics']){acro+=5}
-							                    arca+=intm;
-										if(d['arcane']){arca+=5}
-							                    athl+=strm;
-										if(d['athletics']){athl+=5}	
-							                    bluf+=cham;
-										if(d['bluff']){bluf+=5}		
-							                    dipl+=cham;
-										if(d['diplomacy']){dipl+=5}
-							                    dung+=wism;
-										if(d['dungeoneering']){dung+=5}	
-							                    endu+=conm;
-										if(d['endurance']){endu+=5}
-							                    heal+=wism;
-										if(d['heal']){heal+=5}
-							                    hist+=intm;
-										if(d['history']){hist+=5}
-							                    insi+=wism;
-										if(d['insight']){insi+=5}	
-							                    inti+=cham;
-										if(d['intimidation']){inti+=5}
-							                    natu+=wism;
-										if(d['nature']){natu+=5}
-							                    perc+=wism;
-										if(d['perception']){perc+=5}
-							                    reli+=intm;
-										if(d['religion']){reli+=5}
-							                    stea+=dexm;
-										if(d['stealth']){stea+=5}	
-							                    stre+=cham;
-										if(d['streetwise']){stre+=5}
-							                    thie+=dexm;
-										if(d['thievery']){thie+=5}
-
-							                    //adding skills value to page
-							                    $('#acro').text(acro);
-							                    $('#arc').text(arca);
-							                    $('#ath').text(athl);
-							                    $('#bluff').text(bluf);
-							                    $('#dip').text(dipl);
-							                    $('#dung').text(dung);
-							                    $('#end').text(endu);							                    
-							                    $('#heal').text(heal);
-							                    $('#his').text(hist);
-							                    $('#ins').text(insi);
-							                    $('#inti').text(inti);
-							                    $('#nat').text(natu);
-							                    $('#perc').text(perc);
-							                    $('#rel').text(reli);
-							                    $('#ste').text(stea);
-							                    $('#stre').text(stre);
-							                    $('#thiev').text(thie);
-
-							                    break;
-							           }
-							       },
-							       error:function(e)
-							       {
-							           alert('err');
-							       }
-							   }
-							);
+							break;
+							}
 						},
-					error:function()
+						error:function(e)
 						{
-							alert('error on character select ajax call');
+							alert('err');
 						}
+					});
+
+					//adding features to page
+					$.ajax(
+					{
+						url:'../php/init.php',
+						type:'post',
+						data:{cfeatures:1},
+						success:function(data)
+						{
+							var d=JSON.parse(data);
+
+							for(var i in d)
+							{
+								if(d[i])
+								{
+									$('#classfeatures').append("<li>"+d[i]['cfeature']+"</li>");
+								}
+							}
+						},
+						error:function()
+						{
+							console.log('could not pull class features');
+						}
+					});
+					$.ajax(
+					{
+						url:'../php/init.php',
+						type:'post',
+						data:{rfeatures:1},
+						success:function(data)
+						{
+							var d=JSON.parse(data);
+
+							for(var i in d)
+							{
+								if(d[i])
+								{
+									$('#racefeatures').append("<li>"+d[i]['rfeature']+"</li>");
+								}
+							}
+						},
+						error:function()
+						{
+							console.log('could not pull class features');
+						}
+					});
+
+					//adding feats and languages to page
+					$.ajax(
+					{
+						url:'../php/init.php',
+						type:'post',
+						data:{feats:1},
+						success:function(data)
+						{
+							var d=JSON.parse(data);
+
+							for(var i in d)
+							{
+								if(d[i])
+								{
+									$('#feats').append("<li>"+d[i]['feat']+"</li>");
+								}
+							}
+						},
+						error:function()
+						{
+							console.log('could not pull class features');
+						}
+					});
+					$.ajax(
+					{
+						url:'../php/init.php',
+						type:'post',
+						data:{languages:1},
+						success:function(data)
+						{
+							var d=JSON.parse(data);
+
+							for(var i in d)
+							{
+								if(d[i])
+								{
+									$('#langs').append("<li>"+d[i]['language']+"</li>");
+								}
+							}
+						},
+						error:function()
+						{
+							console.log('could not pull class features');
+						}
+					});
+
+					//adding inventory to page
+					$.ajax(
+					{
+						url:'../php/init.php',
+						type:'post',
+						data:{inventory:1},
+						success:function(data)
+						{
+							var d=JSON.parse(data);
+
+							for(var i in d)
+							{
+								if(d[i])
+								{
+									$('#inventory').append("<li>"+d[i]['item']+"</li>");
+								}
+							}
+						},
+						error:function()
+						{
+							console.log('could not pull class features');
+						}
+					});
+					//adding powers to page
+					$.ajax(
+					{
+						url:'../php/init.php',
+						type:'post',
+						data:{powers:1},
+						success:function(data)
+						{
+							var d=JSON.parse(data);
+							var awp=new Array();
+							var ep=new Array();
+							var dp=new Array();
+							var up=new Array();
+
+							for(var i in d)
+							{
+								if(d[i]['type']=='utility')
+								{
+									up.push(d[i]['power']);
+								}
+								if(d[i]['type']=='daily')
+								{
+									dp.push(d[i]['power']);
+								}
+								if(d[i]['type']=='encounter')
+								{
+									ep.push(d[i]['power']);
+								}
+								if(d[i]['type']=='at will')
+								{
+									awp.push(d[i]['power']);
+								}
+							}
+
+							if(awp)
+							{
+								for(var x in awp)
+								{
+									$("#atwillpowers").append("<li>"+awp[x]+"</li>");
+								}
+							}
+							if(ep)
+							{
+								for(var x in ep)
+								{
+									$("#encounterpowers").append("<li><input type='checkbox'style='float:left;'/>"+ep[x]+"</li>");
+								}
+							}
+							if(dp)
+							{
+								for(var x in dp)
+								{
+									$("#dailypowers").append("<li><input type='checkbox'style='float:left;'/>"+dp[x]+"</li>");
+								}
+							}
+							if(up)
+							{
+								for(var x in up)
+								{
+									$("#utilitypowers").append("<li><input type='checkbox'style='float:left;'/>"+up[x]+"</li>");
+								}
+							}
+						},
+						error:function(e)
+						{
+							console.log('unable to grab powers');
+						}
+					});	
+				},
+				error:function()
+				{
+					alert('error on character select ajax call');
 				}
-			);
-        },
+			});
+		},
     error:function()
     	{
 	        alert('Character failed to load.');
 	        window.location.href='../html/charselect.html';
-        }
-    }
-);
+       	}
+    });
 //hiding panels
 $('#basicinfo').hide();
 $('#abilscoinfo').hide();

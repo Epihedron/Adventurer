@@ -236,3 +236,7 @@
 - figured out mardown was looking at the indentation as code and not a paragraph which resulted in words not wrapping
 - parsed JSON from PHP to character sheet, working on all the values
 - added basic info values to charactersheet.js as well as cleaned up the script so it runs properly
+
+##### Alpha 0.2.0(2/20/14)
+- added the rest of the values to charactersheet.js some cleaning needs to be done
+- character sheet now fully loads SQL values *DRINK*

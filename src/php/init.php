@@ -107,4 +107,72 @@
 		}
 		echo json_encode($a);
 	}
+
+	if(isset($_POST['powers']))
+	{
+		mysql_connect('localhost','host','');
+		mysql_select_db('adventurer');
+		$query=mysql_query("select * from powers where username='$user' and charname='$char';");
+		while($r=mysql_fetch_assoc($query))
+		{
+			$a[]=$r;
+		}
+		echo json_encode($a);
+	}
+	
+	if(isset($_POST['cfeatures']))
+	{
+		mysql_connect('localhost','host','');
+		mysql_select_db('adventurer');
+		$query=mysql_query("select * from cfeatures where username='$user' and charname='$char';");
+		while($r=mysql_fetch_assoc($query))
+		{
+			$a[]=$r;
+		}
+		echo json_encode($a);
+	}
+	if(isset($_POST['rfeatures']))
+	{
+		mysql_connect('localhost','host','');
+		mysql_select_db('adventurer');
+		$query=mysql_query("select * from rfeatures where username='$user' and charname='$char';");
+		while($r=mysql_fetch_assoc($query))
+		{
+			$a[]=$r;
+		}
+		echo json_encode($a);
+	}
+	if(isset($_POST['feats']))
+	{
+		mysql_connect('localhost','host','');
+		mysql_select_db('adventurer');
+		$query=mysql_query("select * from feats where username='$user' and charname='$char';");
+		while($r=mysql_fetch_assoc($query))
+		{
+			$a[]=$r;
+		}
+		echo json_encode($a);
+	}
+	if(isset($_POST['languages']))
+	{
+		mysql_connect('localhost','host','');
+		mysql_select_db('adventurer');
+		$query=mysql_query("select * from languages where username='$user' and charname='$char';");
+		while($r=mysql_fetch_assoc($query))
+		{
+			$a[]=$r;
+		}
+		echo json_encode($a);
+	}
+	if(isset($_POST['inventory']))
+	{
+		mysql_connect('localhost','host','');
+		mysql_select_db('adventurer');
+		$query=mysql_query("select * from inventory where username='$user' and charname='$char';");
+		while($r=mysql_fetch_assoc($query))
+		{
+			$a[]=$r;
+		}
+		echo json_encode($a);
+	}
 ?>
