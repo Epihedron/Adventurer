@@ -30,35 +30,6 @@
     //delete character
     if(isset($_POST['delchar']))
     {
-	//old json way of doing things
-        //$notfound=false;
-        //$trash=$_POST['delchar'];
-        //$charlist=file_get_contents("../json/chars/$user/$user"."list.json");
-        //$charlistdc=json_decode($charlist,true);
-        //foreach($charlistdc as $key => $value)
-        //{
-        //    if($trash == $value["Basic Info"]["character"])
-        //    {
-        //        $notfound=false;
-        //        unset($charlistdc[$key]);
-        //        break;
-        //    }
-        //    else
-        //    {
-        //        $notfound=true;
-        //    }
-        //}
-        //if($notfound==true)
-        //{
-        //    echo("Character not found");
-        //}
-        //else
-        //{
-        //    echo("Character deleted \n");
-        //}
-        //$finallist=json_encode($charlistdc);
-        //file_put_contents("../json/chars/$user/$user"."list.json",$finallist);
-	
 	//SQL char removal
 	$trash=$_POST['delchar'];
 	mysql_connect('localhost','host','');

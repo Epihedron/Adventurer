@@ -240,3 +240,8 @@
 ##### Alpha 0.2.0(2/20/14)
 - added the rest of the values to charactersheet.js some cleaning needs to be done
 - character sheet now fully loads SQL values *DRINK*
+
+##### Alpha 0.2.0(2/21/14)
+- bought epihedron.com
+- domain now redirects to pi
+- working on functions to change character attributes

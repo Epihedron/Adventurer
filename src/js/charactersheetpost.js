@@ -1,74 +1,33 @@
-//change characters name
-$('#character').dblclick(function()
+//change character stat function
+function ccstat(id,tbl,clm)
+{
+	id.dblclick(function()
 	{
-		var ogcharname = $('#character').html();
-		$('#character').html('<input type="text"/>');
+		var ogval = $(id).html();
+
+		$(id).html('<input type="text"/>');
 		$('input').focus();
 		$('input').focusout(function()
 		{
 			if($('input').val() == '')
 			{
-				$('#character').html(ogcharname);
+				$(id).html(ogval);
 			}
 			else
 			{
-				var x=$('input').val();
+				var nval = $('input').val();
 				$.ajax(
 				{
 					url:'../php/changeatt.php',
 					type:'post',
-					data:{'chngname':x,'ogname':ogcharname},
-					success:function(data)
-					{
-						// alert('your character was successfully changed to '+x+'.');
-						console.log(data);
-					}
+					data:{table:tbl,column:clm,og:ogval,nv:nval},
+					success:function(d){console.log(d);$(id).text(nval);},
+					fail:function(){console.log('change data WASNT sent');}
 				});
-				$('#character').html(x);
 			}
-
 		});
-	}
-);
-
-//change attribute function
-function chngatt(x,y)
-{
-	x.dblclick(function()
-		{
-			var charname=$('#character').html();
-			var og=x.html();
-			x.html('<input type="text"/>');
-			$('input').focus();
-			$('input').focusout(function()
-				{
-					if($('input').val() == '')
-					{
-						x.html(og);
-					}
-					else
-					{
-						var newvalue=$('input').val();
-						var findata = {};
-						findata[y]=newvalue;
-						findata['character']=charname;
-						$.ajax(
-							{
-								url:'../php/changeatt.php',
-								type:'post',
-								data:findata,
-								success:function(data)
-								{
-									x.html(newvalue);
-									console.log(data);								
-								},
-								fail:function()
-								{
-									console.log('Could not send change data.');
-								}
-							});
-					}
-				});
-		});
+	});
 }
-chngatt($('#class'),'class');
+
+//change attributes
+ccstat($('#character'),'characters','charname');
