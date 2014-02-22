@@ -245,3 +245,6 @@
 - bought epihedron.com
 - domain now redirects to pi
 - working on functions to change character attributes
+- realized I needed a bug log (wow took me this long...i feel like an @$$ :P *DRINK*
+- cleaned up a lot of the change attribute functions
+- cleaned up some of the residual php json and js json queries

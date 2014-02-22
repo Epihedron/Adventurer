@@ -16,52 +16,6 @@ $.ajax({
             {
                 $('#user').text(user);
             }
-            var playerurl='../json/chars/'+user+'/'+user+'list.json?nocache='+(new Date()).getTime();
-
-            //getting characters from character list
-            //$.ajax(
-            //{
-            //    url:playerurl,
-            //    success:function(data)
-            //    {
-            //        var i;
-            //        console.log(JSON.stringify(data));
-            //        console.log('on');
-            //        for(i in data)
-            //        {
-            //            $("#charlist").append("<li value="+i+">"+data[i]['Basic Info']['character']+"</li>");
-            //        }
-            //        //character selected
-            //        $("#charlist li").click(function()
-            //        {
-            //            var charsheet;
-
-            //            //sending current character selection to players init
-            //            $.ajax(
-            //                {
-            //                    url:'../php/init.php',
-            //                    type:'POST',
-            //                    data:{cc:data[this.value]['Basic Info']['character']},
-            //                    success:function(data)
-            //                    {
-            //                        console.log(data+' sent successfully');
-            //                        data='';
-            //                    },
-            //                    error:function(e)
-            //                    {
-            //                        alert('err');
-            //                    }
-            //                });
-            //            setTimeout("window.location.href='../html/charactersheet.html';",300)
-            //        }
-            //    );
-            //    },
-            //    error:function()
-            //    {
-            //        $("#charlist").text('You have no characters.');
-            //    }
-            //}
-            //)
         }
     }
 );
