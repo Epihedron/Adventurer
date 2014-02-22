@@ -2,7 +2,7 @@
     $required = array('firstname','lastname','password','passwordagain','email','username');
     $error=false;
     mysql_connect('localhost','host','');
-    mysql_select_db(accounts);
+    mysql_select_db(adventurer);
     $date = date('m/d/y@H:i');
     $hashedpass = md5($_POST['password']);
     $username = $_POST['username'];

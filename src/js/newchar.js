@@ -35,14 +35,14 @@ $('#submit').click(function ()
             if(!$(this).next().text())
             {
                 $(this).after('<span class="badresult">&#10539;</span>');
-            }
+          }
         }
         else 
         {
             if($(this).next().text())
             {
                 $(this).next().text('');
-            }
+          }
         }
     });
     if(err>0)
