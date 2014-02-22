@@ -1,21 +1,59 @@
-<html>
-    <head>
-        <link href='src/css/login.css'rel='stylesheet'type='text/css'/>
-        <h1>
-            Adventurer
-        </h1>
-    </head>
-    <body>
-        <form id='login'method='post' name='login'action='src/php/logincheck.php'>
-            <input class='textinput'placeholder='Enter Your Username'type='text'id='username'name='username'/><br/>
-            <input class='textinput'placeholder='Enter Your Password'type='password'id='password'name='password'/><br/>
-            <label class='loginbuttons'id='loginbutton'>Login</label>
-            <!-- <label class='loginbuttons'id='createbutton'>Create Account</label> -->
-        </form><br/>
-        <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
-        <script src='src/js/login.js'></script>
-    </body>
-    <footer>
-        Alpha 0.2.0
-    </footer>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="src/stylesheets/styles.css">
+    <link rel="stylesheet" type="text/css" href="src/stylesheets/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="site-wrapper">
+
+        <div class="site-wrapper-inner">
+
+            <div class="cover-container">
+
+                <div class="masthead clearfix">
+                    <div class="inner">
+                        <h3 class="masthead-brand">Adventurer</h3>
+                        <ul class="nav masthead-nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#">Features</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="inner cover">
+                    <h1 class="cover-heading">Begin Your Adventure</h1>
+                    <div class = "col-sm-3"></div>
+                    <div class = "col-sm-6">
+                        <form class="form-signin" role="form">
+                            <input type="text" class="form-control" placeholder="Username" id="username" required autofocus>
+                            <input type="password" class="form-control" placeholder="Password" id="password" required>
+                            <button class="btn btn-lg btn-primary btn-block" id="loginbutton" type="submit">Submit</button>
+                        </form>
+                    </div>
+                    <div class = "col-sm-3"></div>
+                </div>
+
+                <div class="mastfoot">
+                    <div class="inner">
+                        <p>Alpha 0.2.0</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+</body>
+
 </html>
