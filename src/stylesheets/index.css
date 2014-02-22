@@ -1,8 +1,14 @@
+@import url(http://fonts.googleapis.com/css?family=Eagle+Lake);
+@font-face {
+  font-family: "Thorn";
+  src: url('/stylesheets/fonts/fonts/Ithornet.ttf') format('truetype'), url('/stylesheets/fonts/fonts/Ithornet.otf') format('opentype');
+}
+
 /*
  * Globals
  */
 /* Links */
-/* line 11, ../sass/index.scss */
+/* line 10, ../sass/index.scss */
 a,
 a:focus,
 a:hover {
@@ -10,28 +16,28 @@ a:hover {
 }
 
 /* Custom default button */
-/* line 18, ../sass/index.scss */
+/* line 17, ../sass/index.scss */
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
-  color: #333;
+  color: #fff;
   text-shadow: none;
   /* Prevent inheritence from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
+  background-color: #939db6;
+  border: 1px solid #939db6;
 }
 
 /*
  * Base structure
  */
-/* line 32, ../sass/index.scss */
+/* line 31, ../sass/index.scss */
 html,
 body {
   height: 100%;
-  background-color: #333;
+  background-color: #0f172b;
 }
 
-/* line 37, ../sass/index.scss */
+/* line 36, ../sass/index.scss */
 body {
   color: #fff;
   text-align: center;
@@ -40,7 +46,7 @@ body {
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
-/* line 45, ../sass/index.scss */
+/* line 44, ../sass/index.scss */
 .site-wrapper {
   display: table;
   width: 100%;
@@ -49,20 +55,20 @@ body {
   min-height: 100%;
 }
 
-/* line 53, ../sass/index.scss */
+/* line 52, ../sass/index.scss */
 .site-wrapper-inner {
   display: table-cell;
   vertical-align: top;
 }
 
-/* line 58, ../sass/index.scss */
+/* line 57, ../sass/index.scss */
 .cover-container {
   margin-right: auto;
   margin-left: auto;
 }
 
 /* Padding for spacing */
-/* line 64, ../sass/index.scss */
+/* line 63, ../sass/index.scss */
 .inner {
   padding: 30px;
 }
@@ -70,23 +76,26 @@ body {
 /*
  * Header
  */
-/* line 72, ../sass/index.scss */
+/* line 71, ../sass/index.scss */
 .masthead-brand {
+  font-family: 'Eagle Lake', cursive;
+  font-size: 3em;
+  color: #ff9c00;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-/* line 77, ../sass/index.scss */
+/* line 79, ../sass/index.scss */
 .masthead-nav > li {
   display: inline-block;
 }
 
-/* line 81, ../sass/index.scss */
+/* line 83, ../sass/index.scss */
 .masthead-nav > li + li {
   margin-left: 20px;
 }
 
-/* line 85, ../sass/index.scss */
+/* line 87, ../sass/index.scss */
 .masthead-nav > li > a {
   padding-right: 0;
   padding-left: 0;
@@ -98,14 +107,14 @@ body {
   border-bottom: 2px solid transparent;
 }
 
-/* line 97, ../sass/index.scss */
+/* line 99, ../sass/index.scss */
 .masthead-nav > li > a:hover,
 .masthead-nav > li > a:focus {
   background-color: transparent;
   border-bottom-color: rgba(255, 255, 255, 0.25);
 }
 
-/* line 104, ../sass/index.scss */
+/* line 106, ../sass/index.scss */
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
@@ -114,12 +123,12 @@ body {
 }
 
 @media (min-width: 768px) {
-  /* line 110, ../sass/index.scss */
+  /* line 112, ../sass/index.scss */
   .masthead-brand {
     float: left;
   }
 
-  /* line 114, ../sass/index.scss */
+  /* line 116, ../sass/index.scss */
   .masthead-nav {
     float: right;
   }
@@ -127,12 +136,12 @@ body {
 /*
  * Forms
 */
-/* line 123, ../sass/index.scss */
+/* line 125, ../sass/index.scss */
 form .checkbox {
   display: inline-block;
 }
 
-/* line 127, ../sass/index.scss */
+/* line 129, ../sass/index.scss */
 form input {
   margin-bottom: 5px;
 }
@@ -140,12 +149,12 @@ form input {
 /*
  * Cover
  */
-/* line 135, ../sass/index.scss */
+/* line 137, ../sass/index.scss */
 .cover {
   padding: 0 20px;
 }
 
-/* line 139, ../sass/index.scss */
+/* line 141, ../sass/index.scss */
 .cover .btn-lg {
   padding: 10px 20px;
   font-weight: bold;
@@ -154,7 +163,7 @@ form input {
 /*
  * Footer
  */
-/* line 149, ../sass/index.scss */
+/* line 151, ../sass/index.scss */
 .mastfoot {
   color: #999;
   /* IE8 proofing */
@@ -166,26 +175,26 @@ form input {
  */
 @media (min-width: 768px) {
   /* Pull out the header and footer */
-  /* line 162, ../sass/index.scss */
+  /* line 164, ../sass/index.scss */
   .masthead {
     position: fixed;
     top: 0;
   }
 
-  /* line 167, ../sass/index.scss */
+  /* line 169, ../sass/index.scss */
   .mastfoot {
     position: fixed;
     bottom: 0;
   }
 
   /* Start the vertical centering */
-  /* line 172, ../sass/index.scss */
+  /* line 174, ../sass/index.scss */
   .site-wrapper-inner {
     vertical-align: middle;
   }
 
   /* Handle the widths */
-  /* line 178, ../sass/index.scss */
+  /* line 180, ../sass/index.scss */
   .masthead,
   .mastfoot,
   .cover-container {
@@ -194,7 +203,7 @@ form input {
   }
 }
 @media (min-width: 992px) {
-  /* line 187, ../sass/index.scss */
+  /* line 189, ../sass/index.scss */
   .masthead,
   .mastfoot,
   .cover-container {

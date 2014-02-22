@@ -1,5 +1,4 @@
-
-
+@import "base";
 
 /*
  * Globals
@@ -16,11 +15,11 @@ a:hover {
 .btn-default,
 .btn-default:hover,
 .btn-default:focus {
-    color: #333;
+    color: #fff;
     text-shadow: none;
  /* Prevent inheritence from `body` */
-    background-color: #fff;
-    border: 1px solid #fff;
+    background-color: $lightblue;
+    border: 1px solid $lightblue;
 }
 
 
@@ -31,7 +30,7 @@ a:hover {
 html,
 body {
     height: 100%;
-    background-color: #333;
+    background-color: $darkblue;
 }
 
 body {
@@ -70,6 +69,9 @@ body {
  * Header
  */
 .masthead-brand {
+    font-family: 'Eagle Lake', cursive;
+    font-size: 3em;
+    color: $gold;
     margin-top: 10px;
     margin-bottom: 10px;
 }
