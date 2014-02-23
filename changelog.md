@@ -245,3 +245,15 @@
 - bought epihedron.com
 - domain now redirects to pi
 - working on functions to change character attributes
+- realized I needed a bug log (wow took me this long...i feel like an @$$ :P *DRINK*
+- cleaned up a lot of the change attribute functions
+- cleaned up some of the residual php json and js json queries
+
+##### Alpha 0.2.0(2/21/14)
+- the level and hp values on the character sheet can now be changed
+- created currenthp storage in the database
+- not sure if i listed this before but passive perception and passive insight now automagically work
+- max hp, class, race, age, xp, gender, height, weight, deity and speed can now be changed, basic info tab all set
+- the modifiers now work for negative mods
+- defenses now properly work and reflect correct values
+- lists function works properly with at will powers. the rest will come shortly *DRINK*

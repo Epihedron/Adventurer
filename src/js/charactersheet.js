@@ -21,21 +21,40 @@ function isOdd(x)
 //ability modifier function
 function datMod(x)
 {
-	x=isOdd(x);
+	var rX=isOdd(x);
 	var y=0;
-	if(x>11)
+	if(rX>11)
 	{
 		for(var a=12;a<100;a+=2)
 		{
 			y+=1;
-			if(x == a)
+			if(rX == a)
 			{
 				x=y;
 				return x;
 			}
 		}
 	}
+
+	if(rX == 10 || rX == 11)
+	{
+		return 0;	
+	}
+	
+	if(rX<10)
+	{
+		for(var a=8;a>-100;a-=2)
+		{
+			y-=1;
+			if(rX == a)
+			{
+				x=y
+				return x;
+			}
+		}
+	}
 }
+
 //logincheck
 $.ajax(
 {
@@ -90,7 +109,7 @@ $.ajax(
 							$("#gender").text(d['gender']);
 							$("#height").text(d['height']);
 							$("#weight").text(d['weight']);
-							$("#diety").text(d.deity);
+							$("#deity").text(d.deity);
 							$("#speed").text(d.speed);
 
 							//ability scores
@@ -116,7 +135,7 @@ $.ajax(
 
 							//defenses
 							var fortswitch,refswitch,willswtich;							                 
-							$("#armor").text(0);
+							$("#armor").text(d['armor']);
 							$("#classac").text(d["armorclass"]);
 							$("#acmisc").text(d["armormisc"]);							                   
 							$("#classfort").text(d["fortclass"]);
@@ -128,9 +147,10 @@ $.ajax(
 							$("#willmisc").text(d["willmisc"]);							                    
 
 							ac=10+hlvl+parseInt(d["armormisc"])+parseInt(d["armorclass"])+parseInt($('#armor').html());
-							forswitch=(strm>conm)?fortswitch=strm:fortswitch=conm;
-							refswitch=(dexm>intm)?refswitch=dexm:fortswitch=intm;
+							fortswitch=(strm>=conm)?fortswitch=strm:fortswitch=conm;
+							refswitch=(dexm>intm)?refswitch=dexm:refswitchswitch=intm;
 							willswitch=(wism>cham)?willswitch=wism:willswitch=cham;
+
 							fort=10+hlvl+fortswitch+parseInt($("#classfort").html())+parseInt($("#fortmisc").html());
 							ref=10+hlvl+refswitch+parseInt($("#classref").html())+parseInt($("#refmisc").html());
 							will=10+hlvl+willswitch+parseInt($("#classwill").html())+parseInt($("#willmisc").html());
@@ -141,7 +161,7 @@ $.ajax(
 							$("#will").text(will);
 
 							//hit points
-							$("#currenthealth").text(0);
+							$("#currenthealth").text(d["currenthp"]);
 							$("#maxhealth").text(d["maxhp"]);
 							$("#surges").text(0);
 
