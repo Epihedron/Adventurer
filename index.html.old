@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <link href='src/css/login.css'rel='stylesheet'type='text/css'/>
+        <h1>
+            Adventurer
+        </h1>
+    </head>
+    <body>
+        <form id='login'method='post' name='login'action='src/php/logincheck.php'>
+            <input class='textinput'placeholder='Enter Your Username'type='text'id='username'name='username'/><br/>
+            <input class='textinput'placeholder='Enter Your Password'type='password'id='password'name='password'/><br/>
+            <label class='loginbuttons'id='loginbutton'>Login</label>
+            <!-- <label class='loginbuttons'id='createbutton'>Create Account</label> -->
+        </form><br/>
+        <script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+        <script src='src/js/login.js'></script>
+    </body>
+    <footer>
+        Alpha 0.2.0
+    </footer>
+</html>
