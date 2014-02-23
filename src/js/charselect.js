@@ -47,7 +47,7 @@ $.ajax({
 					data='';
 				}
 			});
-			setTimeout("window.location.href='../html/charactersheet.html';",300)
+			setTimeout("window.location.href='../html/charactersheet.html?dummy="+new Date().getTime()+"';",300)
 		});
 	}
 });

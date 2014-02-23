@@ -24,6 +24,9 @@
 		mysql_query("update inventory set charname='$nn' where username='$user' and charname='$char';");
 		mysql_query("update languages set charname='$nn' where username='$user' and charname='$char';");
 		mysql_query("update powers set charname='$nn' where username='$user' and charname='$char';");
+
+		$_SESSION['character']=$nn;
+		echo "Character name changed to ".$_SESSION['character'];
 	}
 	if(isset($_POST['changename'])){changenm($_POST['changename']);}
 
@@ -37,5 +40,25 @@
 		mysql_select_db('adventurer');
 		$query="update $t set $c='$n' where username='$user' and charname='$char' and $c='$o';";
 		mysql_query($query) or die('Could not update attribute');
+	}
+	if(isset($_POST['table']) && isset($_POST['column']) && isset($_POST['og']) && isset($_POST['nv']))
+	{
+		changeatt($table,$column,$og,$nv);
+	}
+
+	//function for changing powers
+	function changepow($t,$c,$o,$n,$tp)
+	{
+		global $user;
+		global $char;
+
+		mysql_connect('localhost','host','');
+		mysql_select_db('adventurer');
+		$query="update $t set $c='$n' where username='$user' and charname='$char' and $c='$o' and type='$tp';";
+		mysql_query($query) or die('Could not update attribute');
+	}
+	if(isset($_POST['table']) && isset($_POST['column']) && isset($_POST['og']) && isset($_POST['nv']) && isset($_POST['tp']))
+	{
+		changepow($table,$column,$og,$nv);
 	}
 ?>

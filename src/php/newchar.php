@@ -160,7 +160,7 @@
     $charinfo['username']=$user;
     $charinfo['charname']=$character;
     $charinfo['level']=1;
-    $charinfo['xp']=0;
+    $charinfo['xp']=1;
     $charinfo['age']=$age;
     $charinfo['gender']=$gender;
     $charinfo['race']=$race;
@@ -179,7 +179,7 @@
     $charinfo['charisma']=$cha;
 
     //defs
-    $charinfo['armor']=$arm;
+    $charinfo['armor']=0;
     $charinfo['armorclass']=$armclass;
     $charinfo['armormisc']=$armmisc;
     $charinfo['fortclass']=$fortclass;
@@ -198,6 +198,7 @@
     
     //HP
     $charinfo['maxhp']=$maxhp;
+    $charinfo['currenthp']=$maxhp;
     $charinfo['speed']=$speed;
    
     //equipment
