@@ -72,6 +72,7 @@ body {
     font-family: 'Eagle Lake', cursive;
     font-size: 3em;
     color: $gold;
+    @include text-shadow(shadow-1)
     margin-top: 10px;
     margin-bottom: 10px;
 }
