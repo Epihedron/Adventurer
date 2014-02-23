@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"font",
+				"font-size"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
 				"h",
 				"h1	Tag"
 			],
@@ -24,13 +36,10 @@
 	"buffers":
 	[
 		{
-			"contents": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"src/stylesheets/styles.css\">\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"src/stylesheets/index.css\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n</head>\n<body>\n    <div class=\"site-wrapper\">\n\n        <div class=\"site-wrapper-inner\">\n\n            <div class=\"cover-container\">\n\n                <div class=\"masthead clearfix\">\n                    <div class=\"inner\">\n                        <h3 class=\"masthead-brand\">Adventurer</h3>\n                        <ul class=\"nav masthead-nav\">\n                            <li class=\"active\"><a href=\"#\">Home</a></li>\n                            <li><a href=\"#\">Features</a></li>\n                            <li><a href=\"#\">Contact</a></li>\n                        </ul>\n                    </div>\n                </div>\n\n                <div class=\"inner cover\">\n                    <h1 class=\"cover-heading\">Begin your adventure</h1>\n\n                    <form class=\"form-signin\" role=\"form\">\n                        <h2 class=\"form-signin-heading\">Please sign in</h2>\n                        <input type=\"email\" class=\"form-control\" placeholder=\"Email address\" required autofocus>\n                        <input type=\"password\" class=\"form-control\" placeholder=\"Password\" required>\n                        <label class=\"checkbox\">\n                            <input type=\"checkbox\" value=\"remember-me\"> Remember me\n                        </label>\n                        <button class=\"btn btn-lg btn-primary btn-block\" type=\"submit\">Sign in</button>\n                    </form>\n                    \n                    <a href=\"#\" class=\"btn btn-lg btn-default\">Login</a>\n                </div>\n\n                <div class=\"mastfoot\">\n                    <div class=\"inner\">\n                        <p>Alpha 0.2.0</p>\n                    </div>\n                </div>\n\n            </div>\n\n        </div>\n\n    </div>\n\n    <!-- Bootstrap core JavaScript\n    ================================================== -->\n    <!-- Placed at the end of the document so the pages load faster -->\n    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>\n    <script src=\"../../dist/js/bootstrap.min.js\"></script>\n    <script src=\"../../assets/js/docs.min.js\"></script>\n</body>\n\n</html>",
 			"file": "index.html",
-			"file_size": 2356,
-			"file_write_time": 130375724910000000,
 			"settings":
 			{
-				"buffer_size": 2378,
+				"buffer_size": 2332,
 				"line_ending": "Unix"
 			}
 		},
@@ -38,23 +47,31 @@
 			"file": "src/sass/index.scss",
 			"settings":
 			{
-				"buffer_size": 2595,
+				"buffer_size": 2809,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/sass/styles.scss",
+			"file": "src/sass/_fonts.scss",
 			"settings":
 			{
-				"buffer_size": 81,
+				"buffer_size": 174,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/sass/_variables.scss",
+			"file": "src/sass/_colors.scss",
 			"settings":
 			{
-				"buffer_size": 26433,
+				"buffer_size": 96,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/sass/_base.scss",
+			"settings":
+			{
+				"buffer_size": 59,
 				"line_ending": "Unix"
 			}
 		}
@@ -99,6 +116,10 @@
 	},
 	"file_history":
 	[
+		"/Users/akindzerske/code/epihedron/htdocs/index.html.old",
+		"/Users/akindzerske/code/epihedron/htdocs/src/sass/_colors.scss",
+		"/Users/akindzerske/code/epihedron/htdocs/src/sass/_variables.scss",
+		"/Users/akindzerske/code/epihedron/htdocs/src/sass/styles.scss",
 		"/Users/akindzerske/code/epihedron/htdocs/src/sass/_base.scss",
 		"/Users/akindzerske/code/epihedron/htdocs/index.html",
 		"/Users/akindzerske/code/epihedron/htdocs/src/stylesheets/styles.css",
@@ -150,6 +171,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"mast",
+			"button",
+			"back",
+			"checkbox",
+			"radio, .ch",
+			"col-md-",
 			"section",
 			"display: none",
 			"fb",
@@ -179,7 +206,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -188,15 +215,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2378,
+						"buffer_size": 2332,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1668,
-								1000
+								448,
+								448
 							]
 						],
 						"settings":
@@ -209,7 +236,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -218,15 +245,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2595,
+						"buffer_size": 2809,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2595,
-								2595
+								1178,
+								1178
 							]
 						],
 						"settings":
@@ -236,31 +263,32 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 873.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "src/sass/styles.scss",
+					"file": "src/sass/_fonts.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 81,
+						"buffer_size": 174,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								81,
-								81
+								86,
+								86
 							]
 						],
 						"settings":
 						{
+							"auto_name": "",
 							"syntax": "Packages/SCSS/SCSS.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -272,30 +300,58 @@
 				},
 				{
 					"buffer": 3,
-					"file": "src/sass/_variables.scss",
+					"file": "src/sass/_colors.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 26433,
+						"buffer_size": 96,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1009,
-								1009
+								96,
+								96
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/SCSS/SCSS.tmLanguage"
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/sass/_base.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 59,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								59,
+								59
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -355,6 +411,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"",
+				"~/code/magic-of-css/magic-of-css.sublime-project"
+			]
 		],
 		"width": 380.0
 	},
