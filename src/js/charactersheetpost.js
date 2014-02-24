@@ -54,7 +54,7 @@ function ccstat(id,tbl,clm)
 	});
 }
 
-//change character stat function
+//change character power function
 function ccpower(id,tbl,clm,tp)
 {
 	var ogval = id.html();
@@ -125,6 +125,11 @@ $('#atwillpowers').delegate('*','dblclick',function()
 {
 	var elm=$(this);	
 	ccpower(elm,'powers','power','at will');
+});
+$('#encounterpowers').delegate('*','dblclick',function()
+{
+	var elm=$(this);
+	ccpower(elm,'powers','power','encounter');
 });
 
 //change class features and race features
