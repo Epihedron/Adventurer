@@ -4,3 +4,9 @@
 @import "fonts";
 
 // Compass
+
+// Site wide
+
+*, *:before, *:after {
+	@include box-sizing(border-box);
+}

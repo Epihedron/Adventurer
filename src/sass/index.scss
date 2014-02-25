@@ -7,14 +7,14 @@
 /* Links */
 a,
 a:focus,
-a:hover {
+a:hover{
     color: #fff;
 }
 
 /* Custom default button */
 .btn-default,
 .btn-default:hover,
-.btn-default:focus {
+.btn-default:focus{
     color: #fff;
     text-shadow: none;
  /* Prevent inheritence from `body` */
@@ -26,3 +26,30 @@ a:hover {
 /*
  * Base structure
  */
+
+.container{
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.form-signin{
+	max-width: 275px;
+	margin-left: auto;
+	margin-right: auto;
+	.form-control{
+		height: auto;
+	}
+	button{
+		margin-top: 1.5rem;
+	}
+	input{
+		@include border-radius(0px, 0px);
+		padding-left: 1rem;
+	}
+	input:focus{
+		padding-left: .8rem;
+		border-left: .3rem solid $gold;
+	}
+}

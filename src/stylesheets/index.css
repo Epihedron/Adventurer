@@ -4,6 +4,13 @@
   src: url('/stylesheets/fonts/fonts/Ithornet.ttf') format('truetype'), url('/stylesheets/fonts/fonts/Ithornet.otf') format('opentype');
 }
 
+/* line 10, ../sass/_base.scss */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 /*
  * Globals
  */
@@ -30,183 +37,37 @@ a:hover {
 /*
  * Base structure
  */
-/* line 31, ../sass/index.scss */
-html,
-body {
-  height: 100%;
-  background-color: #0f172b;
-}
-
-/* line 36, ../sass/index.scss */
-body {
-  color: #fff;
-  text-align: center;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.5);
-}
-
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-/* line 44, ../sass/index.scss */
-.site-wrapper {
-  display: table;
-  width: 100%;
-  height: 100%;
-  /* For at least Firefox */
-  min-height: 100%;
-}
-
-/* line 52, ../sass/index.scss */
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
-}
-
-/* line 57, ../sass/index.scss */
-.cover-container {
-  margin-right: auto;
+/* line 30, ../sass/index.scss */
+.container {
   margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-/* Padding for spacing */
-/* line 63, ../sass/index.scss */
-.inner {
-  padding: 30px;
+/* line 37, ../sass/index.scss */
+.form-signin {
+  max-width: 275px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-/*
- * Header
- */
-/* line 71, ../sass/index.scss */
-.masthead-brand {
-  font-family: 'Eagle Lake', cursive;
-  font-size: 3em;
-  color: #ff9c00;
-  margin-top: 10px;
-  margin-bottom: 10px;
+/* line 41, ../sass/index.scss */
+.form-signin .form-control {
+  height: auto;
 }
-
-/* line 79, ../sass/index.scss */
-.masthead-nav > li {
-  display: inline-block;
+/* line 44, ../sass/index.scss */
+.form-signin button {
+  margin-top: 1.5rem;
 }
-
-/* line 83, ../sass/index.scss */
-.masthead-nav > li + li {
-  margin-left: 20px;
+/* line 47, ../sass/index.scss */
+.form-signin input {
+  -webkit-border-radius: 0px 0px;
+  -moz-border-radius: 0px / 0px;
+  border-radius: 0px / 0px;
+  padding-left: 1rem;
 }
-
-/* line 87, ../sass/index.scss */
-.masthead-nav > li > a {
-  padding-right: 0;
-  padding-left: 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  /* IE8 proofing */
-  color: rgba(255, 255, 255, 0.75);
-  border-bottom: 2px solid transparent;
-}
-
-/* line 99, ../sass/index.scss */
-.masthead-nav > li > a:hover,
-.masthead-nav > li > a:focus {
-  background-color: transparent;
-  border-bottom-color: rgba(255, 255, 255, 0.25);
-}
-
-/* line 106, ../sass/index.scss */
-.masthead-nav > .active > a,
-.masthead-nav > .active > a:hover,
-.masthead-nav > .active > a:focus {
-  color: #fff;
-  border-bottom-color: #fff;
-}
-
-@media (min-width: 768px) {
-  /* line 112, ../sass/index.scss */
-  .masthead-brand {
-    float: left;
-  }
-
-  /* line 116, ../sass/index.scss */
-  .masthead-nav {
-    float: right;
-  }
-}
-/*
- * Forms
-*/
-/* line 125, ../sass/index.scss */
-form .checkbox {
-  display: inline-block;
-}
-
-/* line 129, ../sass/index.scss */
-form input {
-  margin-bottom: 5px;
-}
-
-/*
- * Cover
- */
-/* line 137, ../sass/index.scss */
-.cover {
-  padding: 0 20px;
-}
-
-/* line 141, ../sass/index.scss */
-.cover .btn-lg {
-  padding: 10px 20px;
-  font-weight: bold;
-}
-
-/*
- * Footer
- */
-/* line 151, ../sass/index.scss */
-.mastfoot {
-  color: #999;
-  /* IE8 proofing */
-  color: rgba(255, 255, 255, 0.5);
-}
-
-/*
- * Affix and center
- */
-@media (min-width: 768px) {
-  /* Pull out the header and footer */
-  /* line 164, ../sass/index.scss */
-  .masthead {
-    position: fixed;
-    top: 0;
-  }
-
-  /* line 169, ../sass/index.scss */
-  .mastfoot {
-    position: fixed;
-    bottom: 0;
-  }
-
-  /* Start the vertical centering */
-  /* line 174, ../sass/index.scss */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
-
-  /* Handle the widths */
-  /* line 180, ../sass/index.scss */
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 100%;
-    /* Must be percentage or pixels for horizontal alignment */
-  }
-}
-@media (min-width: 992px) {
-  /* line 189, ../sass/index.scss */
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 700px;
-  }
+/* line 51, ../sass/index.scss */
+.form-signin input:focus {
+  padding-left: .8rem;
+  border-left: 0.3rem solid #ff9c00;
 }
