@@ -447,7 +447,7 @@ $.ajax(
 							{
 								for(var x in ep)
 								{
-									$("#encounterpowers").append("<li><input type='checkbox'style='float:left;'/>"+ep[x]+"</li>");
+									$("#encounterpowers").append("<li><input type='checkbox' style='float:left;'/>"+ep[x]+"</li>");
 								}
 							}
 							if(dp)
