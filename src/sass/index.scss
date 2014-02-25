@@ -13,19 +13,28 @@ a:hover{
 
 /* Custom default button */
 .btn-default,
-.btn-default:hover,
 .btn-default:focus{
     color: #fff;
     text-shadow: none;
  /* Prevent inheritence from `body` */
     background-color: $lightblue;
-    border: 1px solid $lightblue;
+    border: 1px solid $quiet-lightblue;
+    @include transition-property(background-color);
+    @include transition-duration(.2s);
+    @include transition-timing-function(ease-in);
 }
 
+.btn-default:hover{
+	background-color: $loud-lightblue;
+}
 
 /*
  * Base structure
  */
+
+body{
+	background-color: $blue;
+}
 
 .container{
 	margin-left: auto;
@@ -34,6 +43,10 @@ a:hover{
 	padding-right: 1rem;
 }
 
+/*
+ * Forms
+ */
+
 .form-signin{
 	max-width: 275px;
 	margin-left: auto;
@@ -41,15 +54,26 @@ a:hover{
 	.form-control{
 		height: auto;
 	}
+	.form-signin-heading{
+		color: white;
+		text-align: center;
+	}
 	button{
-		margin-top: 1.5rem;
+		margin-top: -1px;
+		padding-left: 1rem;
+		text-align: left;
+		font-size: 2rem;
+		@include border-radius(0px, 0px);
 	}
 	input{
-		@include border-radius(0px, 0px);
+		@include border-radius(1px, 1px);
 		padding-left: 1rem;
 	}
 	input:focus{
 		padding-left: .8rem;
 		border-left: .3rem solid $gold;
+	}
+	input:first-child{
+		margin-bottom: 100px;
 	}
 }

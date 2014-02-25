@@ -4,7 +4,7 @@
   src: url('/stylesheets/fonts/fonts/Ithornet.ttf') format('truetype'), url('/stylesheets/fonts/fonts/Ithornet.otf') format('opentype');
 }
 
-/* line 10, ../sass/_base.scss */
+/* line 11, ../sass/_base.scss */
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -23,21 +23,42 @@ a:hover {
 }
 
 /* Custom default button */
-/* line 17, ../sass/index.scss */
+/* line 16, ../sass/index.scss */
 .btn-default,
-.btn-default:hover,
 .btn-default:focus {
   color: #fff;
   text-shadow: none;
   /* Prevent inheritence from `body` */
   background-color: #939db6;
-  border: 1px solid #939db6;
+  border: 1px solid #d0d4df;
+  -webkit-transition-property: background-color;
+  -moz-transition-property: background-color;
+  -o-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+
+/* line 27, ../sass/index.scss */
+.btn-default:hover {
+  background-color: #6a789b;
 }
 
 /*
  * Base structure
  */
-/* line 30, ../sass/index.scss */
+/* line 35, ../sass/index.scss */
+body {
+  background-color: #263a6c;
+}
+
+/* line 39, ../sass/index.scss */
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -45,29 +66,47 @@ a:hover {
   padding-right: 1rem;
 }
 
-/* line 37, ../sass/index.scss */
+/*
+ * Forms
+ */
+/* line 50, ../sass/index.scss */
 .form-signin {
   max-width: 275px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 41, ../sass/index.scss */
+/* line 54, ../sass/index.scss */
 .form-signin .form-control {
   height: auto;
 }
-/* line 44, ../sass/index.scss */
-.form-signin button {
-  margin-top: 1.5rem;
+/* line 57, ../sass/index.scss */
+.form-signin .form-signin-heading {
+  color: white;
+  text-align: center;
 }
-/* line 47, ../sass/index.scss */
-.form-signin input {
+/* line 61, ../sass/index.scss */
+.form-signin button {
+  margin-top: -1px;
+  padding-left: 1rem;
+  text-align: left;
+  font-size: 2rem;
   -webkit-border-radius: 0px 0px;
   -moz-border-radius: 0px / 0px;
   border-radius: 0px / 0px;
+}
+/* line 68, ../sass/index.scss */
+.form-signin input {
+  -webkit-border-radius: 1px 1px;
+  -moz-border-radius: 1px / 1px;
+  border-radius: 1px / 1px;
   padding-left: 1rem;
 }
-/* line 51, ../sass/index.scss */
+/* line 72, ../sass/index.scss */
 .form-signin input:focus {
   padding-left: .8rem;
   border-left: 0.3rem solid #ff9c00;
+}
+/* line 76, ../sass/index.scss */
+.form-signin input:first-child {
+  margin-bottom: 100px;
 }

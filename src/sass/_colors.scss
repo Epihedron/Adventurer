@@ -1,5 +1,9 @@
 $lightblue : #939db6;
+$quiet-lightblue : lighten($lightblue, 20%);
+$loud-lightblue : darken($lightblue, 13.33%);
+
 $blue : #263a6c;
+
 $darkblue : #0f172b;
 
 $brown : #924720;
