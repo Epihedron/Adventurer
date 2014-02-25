@@ -52,7 +52,7 @@
 	{
 		mysql_connect('localhost','host','');
 		mysql_select_db('adventurer');
-		$query=mysql_query("select charname from characters where username='admin';");
+		$query=mysql_query("select charname from characters where username='$user';");
 		while($r=mysql_fetch_assoc($query))
 		{
 			$f[]=$r['charname'];

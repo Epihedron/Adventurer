@@ -31,17 +31,17 @@ function ccstat(id,tbl,clm)
 {
 	var ogval = id.html();
 
-	id.html('<input type="text"/>');
-	$('input').focus();
-	$('input').focusout(function()
+	id.html('<input id="temp" type="text"/>');
+	$('#temp').focus();
+	$('#temp').focusout(function()
 	{
-		if($('input').val() == '')
+		if($('#temp').val() == '')
 		{
 			id.html(ogval);
 		}
 		else
 		{
-			var nval = $('input').val();
+			var nval = $('#temp').val();
 			$.ajax(
 			{
 				url:'../php/changeatt.php',
@@ -58,6 +58,7 @@ function ccstat(id,tbl,clm)
 function ccpower(id,tbl,clm,tp)
 {
 	var ogval = id.html();
+	var ooog = id.text();
 
 	id.html('<input id="temp" type="text"/>');
 	$('#temp').focus();
@@ -74,7 +75,7 @@ function ccpower(id,tbl,clm,tp)
 			{
 				url:'../php/changeatt.php',
 				type:'post',
-				data:{table:tbl,column:clm,og:ogval,nv:nval,type:tp},
+				data:{table:tbl,column:clm,og:ooog,nv:nval,type:tp},
 				success:function(d){console.log(d);id.text(nval);},
 				fail:function(){console.log('change data WASNT sent');}
 			});
@@ -121,29 +122,47 @@ $('#classwill').dblclick(function(){ccstat($(this),'characters','willclass')});
 $('#willmisc').dblclick(function(){ccstat($(this),'characters','willmisc')});
 
 //change powers
-$('#atwillpowers').delegate('*','dblclick',function()
+function upp(id,sqltype)
 {
-	var elm=$(this);	
-	ccpower(elm,'powers','power','at will');
-});
-$('#encounterpowers').delegate('*','dblclick',function()
-{
-	var elm=$(this);
-	ccpower(elm,'powers','power','encounter');
-});
+	id.delegate('*','dblclick',function()
+	{
+		ccpower($(this),'powers','power',sqltype);
+	});
+}
+upp($('#atwillpowers'),'at will');
+upp($('#encounterpowers'),'encounter');
+upp($('#dailypowers'),'daily');
+upp($('#utilitypowers'),'utility');
 
 //change class features and race features
+$('#classfeatures').delegate('*','dblclick',function(){ccstat($(this),'cfeatures','cfeature');});
+$('#racefeatures').delegate('*','dblclick',function(){ccstat($(this),'rfeatures','rfeature');});
 
 //change feats
+$('#feats').delegate('*','dblclick',function(){ccstat($(this),'feats','feat');});
 
 //change languages
+$('#langs').delegate('*','dblclick',function(){ccstat($(this),'languages','language');});
 
 //change skills
 
 //change equipment
+$('#head').dblclick(function(){ccstat($(this),'characters','headslot')});
+$('#neck').dblclick(function(){ccstat($(this),'characters','neckslot')});
+$('#earmor').dblclick(function(){ccstat($(this),'characters','chestslot')});
+$('#arms').dblclick(function(){ccstat($(this),'characters','armsslot')});
+$('#hands').dblclick(function(){ccstat($(this),'characters','handsslot')});
+$('#finger1').dblclick(function(){ccstat($(this),'characters','finger1')});
+$('#finger2').dblclick(function(){ccstat($(this),'characters','finger2')});
+$('#waist').dblclick(function(){ccstat($(this),'characters','waistslot')});
+$('#legs').dblclick(function(){ccstat($(this),'characters','legsslot')});
+$('#feet').dblclick(function(){ccstat($(this),'characters','feetslot')});
 
 //change inventory
+$('#inventory').delegate('*','dblclick',function(){ccstat($(this),'inventory','item');});
 
 //change wealth
+//wallet app
 
 //change notes
+$('#notes').dblclick(function(){ccstat($(this),'characters','notes');});
