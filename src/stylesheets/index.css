@@ -1,10 +1,58 @@
-@import url(http://fonts.googleapis.com/css?family=Eagle+Lake);
-@font-face {
-  font-family: "Thorn";
-  src: url('/stylesheets/fonts/fonts/Ithornet.ttf') format('truetype'), url('/stylesheets/fonts/fonts/Ithornet.otf') format('opentype');
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Metamorphous);
+/* line 6, ../sass/_fonts.scss */
+.lora {
+  font-family: 'Lora', serif;
 }
 
-/* line 11, ../sass/_base.scss */
+/* line 10, ../sass/_fonts.scss */
+.morphus {
+  font-family: 'Metamorphous', cursive;
+}
+
+/* line 4, ../sass/_custom.scss */
+.shadow {
+  position: relative;
+  width: 500px;
+  padding: 50px;
+  margin: 0 auto;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+}
+
+/* line 16, ../sass/_custom.scss */
+.shadow:before, .shadow:after {
+  position: absolute;
+  width: 40%;
+  height: 10px;
+  content: ' ';
+  left: 12px;
+  bottom: 12px;
+  background: transparent;
+  -webkit-transform: skew(-5deg) rotate(-5deg);
+  -moz-transform: skew(-5deg) rotate(-5deg);
+  -ms-transform: skew(-5deg) rotate(-5deg);
+  -o-transform: skew(-5deg) rotate(-5deg);
+  transform: skew(-5deg) rotate(-5deg);
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+/* line 36, ../sass/_custom.scss */
+.shadow:after {
+  left: auto;
+  right: 12px;
+  -webkit-transform: skew(5deg) rotate(5deg);
+  -moz-transform: skew(5deg) rotate(5deg);
+  -ms-transform: skew(5deg) rotate(5deg);
+  -o-transform: skew(5deg) rotate(5deg);
+  transform: skew(5deg) rotate(5deg);
+}
+
+/* line 12, ../sass/_base.scss */
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -14,8 +62,16 @@
 /*
  * Globals
  */
+/* Links */
+/* line 10, ../sass/index.scss */
+a,
+a:focus,
+a:hover {
+  color: #fff;
+}
+
 /* Navigation */
-/* line 9, ../sass/index.scss */
+/* line 16, ../sass/index.scss */
 .navbar {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -23,17 +79,17 @@
   -o-border-radius: 0;
   border-radius: 0;
 }
-
-/* Links */
-/* line 17, ../sass/index.scss */
-a,
-a:focus,
-a:hover {
-  color: #fff;
+/* line 18, ../sass/index.scss */
+.navbar .navbar-brand {
+  color: #cc8333;
+}
+/* line 21, ../sass/index.scss */
+.navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
+  color: #e0b585;
 }
 
 /* Custom default button */
-/* line 23, ../sass/index.scss */
+/* line 29, ../sass/index.scss */
 .btn-default,
 .btn-default:focus {
   color: #fff;
@@ -55,7 +111,7 @@ a:hover {
   transition-timing-function: ease-in;
 }
 
-/* line 34, ../sass/index.scss */
+/* line 40, ../sass/index.scss */
 .btn-default:hover {
   background-color: #1b882d;
 }
@@ -63,12 +119,12 @@ a:hover {
 /*
  * Base structure
  */
-/* line 42, ../sass/index.scss */
+/* line 48, ../sass/index.scss */
 body {
   background-color: #fff;
 }
 
-/* line 46, ../sass/index.scss */
+/* line 52, ../sass/index.scss */
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -79,29 +135,29 @@ body {
 /*
  * Forms
  */
-/* line 56, ../sass/index.scss */
+/* line 62, ../sass/index.scss */
 .signin-container {
-  max-width: 350px;
-  padding-top: 3rem;
+  max-width: 475px;
+  margin-top: 5rem;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 61, ../sass/index.scss */
+/* line 67, ../sass/index.scss */
 .signin-container .form-signin {
   padding: 1.5rem;
   background-color: whitesmoke;
   border: 1px solid lightgrey;
 }
-/* line 65, ../sass/index.scss */
+/* line 71, ../sass/index.scss */
 .signin-container .form-signin .form-control {
   height: auto;
 }
-/* line 68, ../sass/index.scss */
+/* line 74, ../sass/index.scss */
 .signin-container .form-signin .form-signin-heading {
   color: black;
   text-align: left;
 }
-/* line 72, ../sass/index.scss */
+/* line 78, ../sass/index.scss */
 .signin-container .form-signin button {
   margin-top: -1px;
   padding-left: 1rem;
@@ -111,7 +167,7 @@ body {
   -moz-border-radius: 0px / 0px;
   border-radius: 0px / 0px;
 }
-/* line 79, ../sass/index.scss */
+/* line 85, ../sass/index.scss */
 .signin-container .form-signin input {
   -webkit-border-radius: 1px 1px;
   -moz-border-radius: 1px / 1px;
@@ -120,7 +176,7 @@ body {
   font-size: 2rem;
   margin-top: -1px;
 }
-/* line 85, ../sass/index.scss */
+/* line 91, ../sass/index.scss */
 .signin-container .form-signin input:focus {
   padding-left: .8rem;
   border-left: 0.3rem solid #8768c2;

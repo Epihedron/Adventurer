@@ -1,6 +1,12 @@
 @import "compass/css3";
 @import "compass/css3/text-shadow";
 
-@import url(http://fonts.googleapis.com/css?family=Eagle+Lake);
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Metamorphous);
 
-@include font-face("Thorn", font-files("fonts/Ithornet.ttf", "fonts/Ithornet.otf"));
+.lora{
+	font-family: 'Lora', serif;
+}
+
+.morphus{
+	font-family: 'Metamorphous', cursive;
+}

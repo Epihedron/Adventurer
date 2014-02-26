@@ -4,19 +4,25 @@
  * Globals
  */
 
-/* Navigation */
-
-.navbar{
-	@include border-radius(0);
-} 
-
-
 /* Links */
 a,
 a:focus,
 a:hover{
 	color: #fff;
 }
+
+/* Navigation */
+
+.navbar{
+	@include border-radius(0);
+	.navbar-brand{
+		color: $tan;
+	}
+	.navbar-brand:hover, .navbar-brand:focus{
+			color: $quiet-tan;
+	}
+
+} 
 
 /* Custom default button */
 .btn-default,
@@ -54,8 +60,8 @@ a:hover{
  * Forms
  */
  .signin-container{
- 	max-width: 350px;
- 	padding-top: 3rem;
+ 	max-width: 475px;
+ 	margin-top: 5rem;
  	margin-left: auto;
  	margin-right: auto;
  	.form-signin{
