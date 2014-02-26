@@ -76,93 +76,32 @@ body {
   padding-right: 1rem;
 }
 
-/* line 53, ../sass/index.scss */
-.ribbon {
-  font-size: 50px !important;
-  /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
-  width: 50%;
-  position: relative;
-  background: #55388c;
-  color: #fff;
-  text-align: center;
-  padding: .25em .1em 1em .1em;
-  /* Adjust to suit */
-  margin: 2em auto 3em;
-  /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
-}
-
-/* line 66, ../sass/index.scss */
-.ribbon:before, .ribbon:after {
-  content: "";
-  position: absolute;
-  display: block;
-  bottom: -1em;
-  border: 1.5em solid #38255b;
-  z-index: -1;
-}
-
-/* line 74, ../sass/index.scss */
-.ribbon:before {
-  left: -2em;
-  border-right-width: 1.5em;
-  border-left-color: transparent;
-}
-
-/* line 79, ../sass/index.scss */
-.ribbon:after {
-  right: -2em;
-  border-left-width: 1.5em;
-  border-right-color: transparent;
-}
-
-/* line 84, ../sass/index.scss */
-.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
-  content: "";
-  position: absolute;
-  display: block;
-  border-style: solid;
-  border-color: #8768c2 transparent transparent transparent;
-  bottom: -1em;
-}
-
-/* line 92, ../sass/index.scss */
-.ribbon .ribbon-content:before {
-  left: 0;
-  border-width: 1em 0 0 1em;
-}
-
-/* line 96, ../sass/index.scss */
-.ribbon .ribbon-content:after {
-  right: 0;
-  border-width: 1em 1em 0 0;
-}
-
 /*
  * Forms
  */
-/* line 104, ../sass/index.scss */
+/* line 56, ../sass/index.scss */
 .signin-container {
   max-width: 350px;
   padding-top: 3rem;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 109, ../sass/index.scss */
+/* line 61, ../sass/index.scss */
 .signin-container .form-signin {
   padding: 1.5rem;
   background-color: whitesmoke;
   border: 1px solid lightgrey;
 }
-/* line 113, ../sass/index.scss */
+/* line 65, ../sass/index.scss */
 .signin-container .form-signin .form-control {
   height: auto;
 }
-/* line 116, ../sass/index.scss */
+/* line 68, ../sass/index.scss */
 .signin-container .form-signin .form-signin-heading {
   color: black;
   text-align: left;
 }
-/* line 120, ../sass/index.scss */
+/* line 72, ../sass/index.scss */
 .signin-container .form-signin button {
   margin-top: -1px;
   padding-left: 1rem;
@@ -172,7 +111,7 @@ body {
   -moz-border-radius: 0px / 0px;
   border-radius: 0px / 0px;
 }
-/* line 127, ../sass/index.scss */
+/* line 79, ../sass/index.scss */
 .signin-container .form-signin input {
   -webkit-border-radius: 1px 1px;
   -moz-border-radius: 1px / 1px;
@@ -181,7 +120,7 @@ body {
   font-size: 2rem;
   margin-top: -1px;
 }
-/* line 133, ../sass/index.scss */
+/* line 85, ../sass/index.scss */
 .signin-container .form-signin input:focus {
   padding-left: .8rem;
   border-left: 0.3rem solid #8768c2;
