@@ -168,7 +168,7 @@
     $charinfo['weight']=$weight;
     $charinfo['height']=$height;
     $charinfo['deity']=$deity;
-    $charinfo['notes']='';
+    $charinfo['notes']='Double click here!';
    
     //abilsco array
     $charinfo['strength']=$str;

@@ -1,7 +1,7 @@
 <?php
     session_start();
     mysql_connect('localhost','host','');
-    mysql_select_db(adventurer);
+    mysql_select_db('adventurer');
     $user=$_POST['username'];
     $password=md5($_POST['password']);
     $userquery=mysql_query("select * from accounts where username='$user';");
