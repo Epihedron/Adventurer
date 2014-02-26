@@ -6,15 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+            <a class="navbar-brand ribbon-content" href="#">Adventurer</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Characters</a></li>
+        <li><a href="#about">DM Tools</a></li>
+        <li><a href="#contact">Forum</a></li>
+    </ul>
+</div><!--/.nav-collapse -->
+</div>
+</div>
+
 <div class="container">
-    <div class="signin-container">
-        <form class="form-signin" role="form" method="post" name="login" id="login" action="src/php/logincheck.php">
-            <h2 class="form-signin-heading">Just login...</h2>
-            <h4 class="form-signin-heading">and pretend this was a clever marketing phrase.</h4>
-            <input class="textinput form-control" placeholder="Username" type="text" id="username" name="username" required autofocus />
-            <input input class="textinput form-control" placeholder="Password" type="password" id="password" name="password" required />
-            <button class="btn btn-lg btn-primary btn-block btn-default loginbuttons" id="loginbutton" type="submit">Sign in</button>
-        </form>
+    <div class="ribbon">
+        <div class="signin-container ribbon-content">
+            <form class="form-signin" role="form" method="post" name="login" id="login" action="src/php/logincheck.php">
+                <h4 class="form-signin-heading">Login</h4>
+                <input class="textinput form-control" placeholder="Username" type="text" id="username" name="username" required autofocus />
+                <input input class="textinput form-control" placeholder="Password" type="password" id="password" name="password" required />
+                <button class="btn btn-lg btn-primary btn-block btn-default loginbuttons" id="loginbutton" type="submit">Sign in</button>
+            </form>
+        </div>
     </div>
 </div>
     <!-- Bootstrap core JavaScript

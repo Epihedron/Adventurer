@@ -1,11 +1,23 @@
-$lightblue : #939db6;
-$quiet-lightblue : lighten($lightblue, 20%);
-$loud-lightblue : darken($lightblue, 13.33%);
+$grey : #F5F5F5;
+$quiet-grey : lighten($grey, 20%);
+$loud-grey : darken($grey, 13.33%);
 
-$blue : #263a6c;
+$darkgreen : #0A3311;
+$quiet-darkgreen : lighten($darkgreen, 20%);
+$loud-darkgreen : darken($darkgreen, 13.33%);
 
-$darkblue : #0f172b;
+$green : #268035;
+$quiet-green : lighten($green, 20%);
+$loud-green : darken($green, 13.33%);
 
-$brown : #924720;
+$purple: #55388C;
+$quiet-purple : lighten($purple, 20%);
+$loud-purple : darken($purple, 13.33%);
 
-$gold : #FF9C00;
+$tan : #CC8333;
+$quiet-tan : lighten($tan, 20%);
+$loud-tan : darken($tan, 13.33%);
+
+$brown : #4D2F0F;
+$quiet-brown : lighten($brown, 20%);
+$loud-brown : darken($brown, 13.33%);

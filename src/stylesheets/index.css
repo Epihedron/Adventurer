@@ -14,8 +14,18 @@
 /*
  * Globals
  */
+/* Navigation */
+/* line 9, ../sass/index.scss */
+.navbar {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+
 /* Links */
-/* line 10, ../sass/index.scss */
+/* line 17, ../sass/index.scss */
 a,
 a:focus,
 a:hover {
@@ -23,14 +33,14 @@ a:hover {
 }
 
 /* Custom default button */
-/* line 16, ../sass/index.scss */
+/* line 23, ../sass/index.scss */
 .btn-default,
 .btn-default:focus {
   color: #fff;
   text-shadow: none;
   /* Prevent inheritence from `body` */
-  background-color: #939db6;
-  border: 1px solid #d0d4df;
+  background-color: #164c1f;
+  border: 1px solid #1b882d;
   -webkit-transition-property: background-color;
   -moz-transition-property: background-color;
   -o-transition-property: background-color;
@@ -45,20 +55,20 @@ a:hover {
   transition-timing-function: ease-in;
 }
 
-/* line 27, ../sass/index.scss */
+/* line 34, ../sass/index.scss */
 .btn-default:hover {
-  background-color: #6a789b;
+  background-color: #1b882d;
 }
 
 /*
  * Base structure
  */
-/* line 35, ../sass/index.scss */
+/* line 42, ../sass/index.scss */
 body {
-  background-color: #263a6c;
+  background-color: #fff;
 }
 
-/* line 39, ../sass/index.scss */
+/* line 46, ../sass/index.scss */
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -66,26 +76,94 @@ body {
   padding-right: 1rem;
 }
 
+/* line 53, ../sass/index.scss */
+.ribbon {
+  font-size: 50px !important;
+  /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+  width: 50%;
+  position: relative;
+  background: #55388c;
+  color: #fff;
+  text-align: center;
+  padding: .25em .1em 1em .1em;
+  /* Adjust to suit */
+  margin: 2em auto 3em;
+  /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+}
+
+/* line 66, ../sass/index.scss */
+.ribbon:before, .ribbon:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -1em;
+  border: 1.5em solid #38255b;
+  z-index: -1;
+}
+
+/* line 74, ../sass/index.scss */
+.ribbon:before {
+  left: -2em;
+  border-right-width: 1.5em;
+  border-left-color: transparent;
+}
+
+/* line 79, ../sass/index.scss */
+.ribbon:after {
+  right: -2em;
+  border-left-width: 1.5em;
+  border-right-color: transparent;
+}
+
+/* line 84, ../sass/index.scss */
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-color: #8768c2 transparent transparent transparent;
+  bottom: -1em;
+}
+
+/* line 92, ../sass/index.scss */
+.ribbon .ribbon-content:before {
+  left: 0;
+  border-width: 1em 0 0 1em;
+}
+
+/* line 96, ../sass/index.scss */
+.ribbon .ribbon-content:after {
+  right: 0;
+  border-width: 1em 1em 0 0;
+}
+
 /*
  * Forms
  */
-/* line 50, ../sass/index.scss */
-.form-signin {
-  max-width: 275px;
+/* line 104, ../sass/index.scss */
+.signin-container {
+  max-width: 350px;
+  padding-top: 3rem;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 54, ../sass/index.scss */
-.form-signin .form-control {
+/* line 109, ../sass/index.scss */
+.signin-container .form-signin {
+  padding: 1.5rem;
+  background-color: whitesmoke;
+  border: 1px solid lightgrey;
+}
+/* line 113, ../sass/index.scss */
+.signin-container .form-signin .form-control {
   height: auto;
 }
-/* line 57, ../sass/index.scss */
-.form-signin .form-signin-heading {
-  color: white;
-  text-align: center;
+/* line 116, ../sass/index.scss */
+.signin-container .form-signin .form-signin-heading {
+  color: black;
+  text-align: left;
 }
-/* line 61, ../sass/index.scss */
-.form-signin button {
+/* line 120, ../sass/index.scss */
+.signin-container .form-signin button {
   margin-top: -1px;
   padding-left: 1rem;
   text-align: left;
@@ -94,19 +172,17 @@ body {
   -moz-border-radius: 0px / 0px;
   border-radius: 0px / 0px;
 }
-/* line 68, ../sass/index.scss */
-.form-signin input {
+/* line 127, ../sass/index.scss */
+.signin-container .form-signin input {
   -webkit-border-radius: 1px 1px;
   -moz-border-radius: 1px / 1px;
   border-radius: 1px / 1px;
   padding-left: 1rem;
+  font-size: 2rem;
+  margin-top: -1px;
 }
-/* line 72, ../sass/index.scss */
-.form-signin input:focus {
+/* line 133, ../sass/index.scss */
+.signin-container .form-signin input:focus {
   padding-left: .8rem;
-  border-left: 0.3rem solid #ff9c00;
-}
-/* line 76, ../sass/index.scss */
-.form-signin input:first-child {
-  margin-bottom: 100px;
+  border-left: 0.3rem solid #8768c2;
 }

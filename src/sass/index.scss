@@ -4,76 +4,135 @@
  * Globals
  */
 
+/* Navigation */
+
+.navbar{
+	@include border-radius(0);
+} 
+
+
 /* Links */
 a,
 a:focus,
 a:hover{
-    color: #fff;
+	color: #fff;
 }
 
 /* Custom default button */
 .btn-default,
 .btn-default:focus{
-    color: #fff;
-    text-shadow: none;
+	color: #fff;
+	text-shadow: none;
  /* Prevent inheritence from `body` */
-    background-color: $lightblue;
-    border: 1px solid $quiet-lightblue;
-    @include transition-property(background-color);
-    @include transition-duration(.2s);
-    @include transition-timing-function(ease-in);
+ background-color: $loud-green;
+ border: 1px solid $quiet-darkgreen;
+ @include transition-property(background-color);
+ @include transition-duration(.2s);
+ @include transition-timing-function(ease-in);
 }
 
 .btn-default:hover{
-	background-color: $loud-lightblue;
+	background-color: $quiet-darkgreen;
 }
 
 /*
  * Base structure
  */
 
-body{
-	background-color: $blue;
-}
+ body{
+ 	background-color: #fff;
+ }
 
-.container{
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 1rem;
-	padding-right: 1rem;
+ .container{
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	padding-left: 1rem;
+ 	padding-right: 1rem;
+ }
+
+ .ribbon {
+ font-size: 50px !important;
+ /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+
+ width: 50%;
+    
+ position: relative;
+ background: $purple;
+ color: #fff;
+ text-align: center;
+ padding: .25em .1em 1em .1em; /* Adjust to suit */
+ margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+}
+.ribbon:before, .ribbon:after {
+ content: "";
+ position: absolute;
+ display: block;
+ bottom: -1em;
+ border: 1.5em solid $loud-purple;
+ z-index: -1;
+}
+.ribbon:before {
+ left: -2em;
+ border-right-width: 1.5em;
+ border-left-color: transparent;
+}
+.ribbon:after {
+ right: -2em;
+ border-left-width: 1.5em;
+ border-right-color: transparent;
+}
+.ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+ content: "";
+ position: absolute;
+ display: block;
+ border-style: solid;
+ border-color: $quiet-purple transparent transparent transparent;
+ bottom: -1em;
+}
+.ribbon .ribbon-content:before {
+ left: 0;
+ border-width: 1em 0 0 1em;
+}
+.ribbon .ribbon-content:after {
+ right: 0;
+ border-width: 1em 1em 0 0;
 }
 
 /*
  * Forms
  */
-
-.form-signin{
-	max-width: 275px;
-	margin-left: auto;
-	margin-right: auto;
-	.form-control{
-		height: auto;
-	}
-	.form-signin-heading{
-		color: white;
-		text-align: center;
-	}
-	button{
-		margin-top: -1px;
-		padding-left: 1rem;
-		text-align: left;
-		font-size: 2rem;
-		@include border-radius(0px, 0px);
-	}
-	input{
-		@include border-radius(1px, 1px);
-		padding-left: 1rem;
-	}
-	input:focus{
-		padding-left: .8rem;
-		border-left: .3rem solid $gold;
-	}
-	input:first-child{
-		margin-bottom: 100px;
-	}
-}
+ .signin-container{
+ 	max-width: 350px;
+ 	padding-top: 3rem;
+ 	margin-left: auto;
+ 	margin-right: auto;
+ 	.form-signin{
+ 		padding: 1.5rem;
+ 		background-color: $grey;
+ 		border: 1px solid $loud-grey;
+ 		.form-control{
+ 			height: auto;
+ 		}
+ 		.form-signin-heading{
+ 			color: black;
+ 			text-align: left;
+ 		}
+ 		button{
+ 			margin-top: -1px;
+ 			padding-left: 1rem;
+ 			text-align: left;
+ 			font-size: 2rem;
+ 			@include border-radius(0px, 0px);
+ 		}
+ 		input{
+ 			@include border-radius(1px, 1px);
+ 			padding-left: 1rem;
+ 			font-size: 2rem;
+ 			margin-top: -1px;
+ 		}
+ 		input:focus{
+ 			padding-left: .8rem;
+ 			border-left: .3rem solid $quiet-purple;
+ 		}
+ 	}
+ }
