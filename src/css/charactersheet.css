@@ -128,7 +128,7 @@ h3
 	border:1px inset #45525D;
 	color:#FBE7C8;
 	border-radius:5;
-	width:300px;
+	width:275px;
 	background:#6C4B1A;
 }
 .mcol ol
@@ -283,4 +283,13 @@ h3
 .clickable
 {
 	cursor:pointer;
+}
+.addbutton:hover
+{
+	cursor:pointer;
+	-webkit-filter: brightness(1.4);
+}
+.deletebutton
+{
+	float:right;
 }
