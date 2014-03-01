@@ -301,7 +301,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#classfeatures').append("<li>"+d[i]['cfeature']+"</li>");
+									$('#classfeatures').append("<li>"+d[i]['cfeature']+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -323,7 +323,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#racefeatures').append("<li>"+d[i]['rfeature']+"</li>");
+									$('#racefeatures').append("<li>"+d[i]['rfeature']+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -347,7 +347,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#feats').append("<li>"+d[i]['feat']+"</li>");
+									$('#feats').append("<li>"+d[i]['feat']+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -369,7 +369,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#langs').append("<li>"+d[i]['language']+"</li>");
+									$('#langs').append("<li>"+d[i]['language']+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -393,7 +393,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#inventory').append("<li>"+d[i]['item']+"</li>");
+									$('#inventory').append("<li>"+d[i]['item']+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -440,28 +440,28 @@ $.ajax(
 							{
 								for(var x in awp)
 								{
-									$("#atwillpowers").append("<li>"+awp[x]+"</li>");
+									$("#atwillpowers").append("<li>"+awp[x]+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 							if(ep)
 							{
 								for(var x in ep)
 								{
-									$("#encounterpowers").append("<li><input type='checkbox'style='float:left;'/>"+ep[x]+"</li>");
+									$("#encounterpowers").append("<li><input type='checkbox' style='float:left;'/>"+ep[x]+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 							if(dp)
 							{
 								for(var x in dp)
 								{
-									$("#dailypowers").append("<li><input type='checkbox'style='float:left;'/>"+dp[x]+"</li>");
+									$("#dailypowers").append("<li><input type='checkbox'style='float:left;'/>"+dp[x]+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 							if(up)
 							{
 								for(var x in up)
 								{
-									$("#utilitypowers").append("<li><input type='checkbox'style='float:left;'/>"+up[x]+"</li>");
+									$("#utilitypowers").append("<li><input type='checkbox'style='float:left;'/>"+up[x]+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},

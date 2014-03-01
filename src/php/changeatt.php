@@ -56,9 +56,10 @@
 		mysql_select_db('adventurer');
 		$query="update $t set $c='$n' where username='$user' and charname='$char' and $c='$o' and type='$tp';";
 		mysql_query($query) or die('Could not update attribute');
+		echo $query;
 	}
-	if(isset($_POST['table']) && isset($_POST['column']) && isset($_POST['og']) && isset($_POST['nv']) && isset($_POST['tp']))
+	if(isset($_POST['table']) && isset($_POST['column']) && isset($_POST['og']) && isset($_POST['nv']) && isset($_POST['type']))
 	{
-		changepow($table,$column,$og,$nv);
+		changepow($table,$column,$og,$nv,$_POST['type']);
 	}
 ?>
