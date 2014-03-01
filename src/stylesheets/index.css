@@ -179,16 +179,21 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 68, ../sass/index.scss */
+/* line 67, ../sass/index.scss */
+.signin-container .form-signin {
+  max-width: 400px;
+  margin: 0 auto;
+}
+/* line 70, ../sass/index.scss */
 .signin-container .form-signin .form-control {
   height: auto;
 }
-/* line 71, ../sass/index.scss */
+/* line 73, ../sass/index.scss */
 .signin-container .form-signin .form-signin-heading {
   color: black;
   text-align: left;
 }
-/* line 75, ../sass/index.scss */
+/* line 77, ../sass/index.scss */
 .signin-container .form-signin button {
   margin-top: -1px;
   padding-left: 1rem;
@@ -198,7 +203,7 @@ body {
   -moz-border-radius: 0px / 0px;
   border-radius: 0px / 0px;
 }
-/* line 82, ../sass/index.scss */
+/* line 84, ../sass/index.scss */
 .signin-container .form-signin input {
   -webkit-border-radius: 1px 1px;
   -moz-border-radius: 1px / 1px;
@@ -207,7 +212,7 @@ body {
   font-size: 2rem;
   margin-top: -1px;
 }
-/* line 88, ../sass/index.scss */
+/* line 90, ../sass/index.scss */
 .signin-container .form-signin input:focus {
   padding-left: .8rem;
   border-left: 0.3rem solid #8768c2;
