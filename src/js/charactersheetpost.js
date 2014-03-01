@@ -167,8 +167,34 @@ $('#inventory').delegate('*','dblclick',function(){ccstat($(this),'inventory','i
 //change notes
 $('#notes').dblclick(function(){ccstat($(this),'characters','notes');});
 
-//delete list item from: powers,class features,race features,feats,languages,inventory
-$('.deletebutton').click(function()
+//adding value to list models
+$('.addbutton').click(function()
 {
-	alert('ok');
+	var list = $(this).prev();
+	var addbox = "<li><input class='liinp' type='text'/></li>"
+	
+	list.append(addbox);
+
+	$('.liinp').focus();
+	$('.liinp').focusout(function()
+	{
+		var val=$(this).val();
+		var type=list.attr('id');
+
+		if(val=='')
+		{
+			$(this).parent().remove();
+		}
+		else
+		{
+			$.ajax(
+			{
+				url:'../php/newattr.php',
+				type:'post',
+				data:{'newval':val,'newtype':type},
+				success:function(d){console.log(d);},
+				fail:function(){console.log('unable to send data');}
+			});
+		}
+	});
 });
