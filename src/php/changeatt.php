@@ -66,18 +66,26 @@
 	//function for deleting values
 	function delcharval($t,$v)
 	{
+		global $user;
+		global $char;
+
 		mysql_connect('localhost','host','');
 		mysql_select_db('adventurer');
 
 		if($t == 'atwillpowers' || $t == 'encounterpowers' || $t == 'dailypowers' || $t == 'utilitypowers')
 		{
-			echo $t.' norm';
-			$query="delete $v from powers where username='$user' and charname='$char' and power='$v';";
+			$query="delete from powers where username='$user' and charname='$char' and power='$v';";
 		}
 		else
 		{
-			$query="";
-			echo $t;
+			if($t=='classfeatures'){$c='cfeature';$t='cfeatures';}
+			if($t=='inventory'){$c='item';}
+			if($t=='racefeatures'){$c='rfeature';$t='rfeatures';}
+			if($t=='langs'){$c='language';$t='languages';}
+			if($t=='feats'){$c='feat';}
+
+			$query="delete from $t where username='$user' and charname='$char' and $c='$v';";
+			echo $query;
 		}
 		mysql_query($query);
 	}
