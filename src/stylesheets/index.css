@@ -1,18 +1,40 @@
 @import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Metamorphous);
-/* line 6, ../sass/_fonts.scss */
-.lora {
-  font-family: 'Lora', serif;
+@font-face {
+  font-family: "Lora";
+  src: url('/stylesheets/fonts/fonts/Lora/Lora-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url('/stylesheets/fonts/style("italic")');
+  src: url('/stylesheets/fonts/style("italic")?#iefix') format('eot'), url('/stylesheets/fonts/fonts/Lora/Lora-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Metamorphous";
+  src: url('/stylesheets/fonts/fonts/Lora/Metamorphous-Regular.ttf') format('truetype');
 }
 
 /* line 10, ../sass/_fonts.scss */
-.morphus {
-  font-family: 'Metamorphous', cursive;
+.lora {
+  font-family: "Lora";
 }
 
-/* line 4, ../sass/_custom.scss */
-.shadow {
+/* line 14, ../sass/_fonts.scss */
+.morphus {
+  font-family: "Metamorphous";
+}
+
+/* line 18, ../sass/_fonts.scss */
+html * {
+  font-family: "Lora";
+  font-size: 1.5rem;
+}
+
+/* line 5, ../sass/_custom.scss */
+.box {
   position: relative;
-  width: 500px;
+  width: 100%;
   padding: 50px;
   margin: 0 auto;
   background-color: #fff;
@@ -21,8 +43,8 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
 }
 
-/* line 16, ../sass/_custom.scss */
-.shadow:before, .shadow:after {
+/* line 17, ../sass/_custom.scss */
+.box:before, .box:after {
   position: absolute;
   width: 40%;
   height: 10px;
@@ -41,8 +63,8 @@
   z-index: -1;
 }
 
-/* line 36, ../sass/_custom.scss */
-.shadow:after {
+/* line 37, ../sass/_custom.scss */
+.box:after {
   left: auto;
   right: 12px;
   -webkit-transform: skew(5deg) rotate(5deg);
@@ -57,6 +79,21 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+/* line 16, ../sass/_base.scss */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #222222;
+  margin-top: 20px;
+}
+/* line 23, ../sass/_base.scss */
+footer p {
+  padding: 5px;
+  margin: 5px 0;
+  text-align: center;
 }
 
 /*

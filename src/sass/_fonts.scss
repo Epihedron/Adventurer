@@ -3,10 +3,19 @@
 
 @import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Metamorphous);
 
+@include font-face("Lora", font-files("fonts/Lora/Lora-Regular.ttf"));
+@include font-face("Lora", font-files("fonts/Lora/Lora-Italic.ttf"), style("italic"));
+@include font-face("Metamorphous", font-files("fonts/Lora/Metamorphous-Regular.ttf"));
+
 .lora{
-	font-family: 'Lora', serif;
+	font-family: "Lora";
 }
 
 .morphus{
-	font-family: 'Metamorphous', cursive;
+	font-family: "Metamorphous";
+}
+
+html *{
+	font-family: "Lora";
+	font-size: 1.5rem;
 }
