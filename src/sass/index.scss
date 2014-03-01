@@ -65,9 +65,8 @@ a:hover{
  	margin-left: auto;
  	margin-right: auto;
  	.form-signin{
- 		padding: 1.5rem;
- 		background-color: $grey;
- 		border: 1px solid $loud-grey;
+ 		max-width: 400px;
+ 		margin: 0 auto;
  		.form-control{
  			height: auto;
  		}
