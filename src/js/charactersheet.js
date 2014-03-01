@@ -464,19 +464,25 @@ $.ajax(
 									$("#utilitypowers").append("<li><input type='checkbox'style='float:left;'/><span class='lival'>"+up[x]+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
+
+							//delete button business
 							$('.deletebutton').click(function()
 							{
 								var title=$(this).parent().parent().attr('id');
 								var text=$(this).prev().text();
 
-								$.ajax(
+								if(confirm('Are you sure you want to delete "'+text+'"?'))
 								{
-									url:'../php/changeatt.php',
-									type:'post',
-									data:{'title':title,'text':text},
-									success:function(d){console.log('Deleted '+text+'; '+d);},
-									fail:function(){console.log('Did send value '+text);}
-								});
+									$.ajax(
+									{
+										url:'../php/changeatt.php',
+										type:'post',
+										data:{'title':title,'text':text},
+										success:function(d){console.log(d);},
+										fail:function(){console.log('Did send value '+text);}
+									});
+									$(this).parent().remove();
+								}
 							});
 						},
 						error:function(e)
