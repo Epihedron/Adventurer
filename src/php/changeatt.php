@@ -62,4 +62,27 @@
 	{
 		changepow($table,$column,$og,$nv,$_POST['type']);
 	}
+
+	//function for deleting values
+	function delcharval($t,$v)
+	{
+		mysql_connect('localhost','host','');
+		mysql_select_db('adventurer');
+
+		if($t == 'atwillpowers' || $t == 'encounterpowers' || $t == 'dailypowers' || $t == 'utilitypowers')
+		{
+			echo $t.' norm';
+			$query="delete $v from powers where username='$user' and charname='$char' and power='$v';";
+		}
+		else
+		{
+			$query="";
+			echo $t;
+		}
+		mysql_query($query);
+	}
+	if(isset($_POST['title']) && isset($_POST['text']))
+	{
+		delcharval($_POST['title'],$_POST['text']);
+	}
 ?>

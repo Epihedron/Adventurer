@@ -292,4 +292,5 @@ h3
 .deletebutton
 {
 	float:right;
+	cursor:pointer;
 }

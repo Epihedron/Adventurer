@@ -166,3 +166,9 @@ $('#inventory').delegate('*','dblclick',function(){ccstat($(this),'inventory','i
 
 //change notes
 $('#notes').dblclick(function(){ccstat($(this),'characters','notes');});
+
+//delete list item from: powers,class features,race features,feats,languages,inventory
+$('.deletebutton').click(function()
+{
+	alert('ok');
+});
