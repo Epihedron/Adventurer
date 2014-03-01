@@ -62,4 +62,23 @@
 	{
 		changepow($table,$column,$og,$nv,$_POST['type']);
 	}
+
+	//function for deleting values
+	function delcharval($t)
+	{
+		mysql_connect('localhost','host','');
+		mysql_select_db('adventurer');
+
+		if($t == 'at will' || 'encounter' || 'daily' || 'utility')
+		{
+			echo $t.' norm';
+		}
+		else
+		{
+			echo $t;
+		}
+	}
+	if(isset($_POST['title']) && isset($_['text']))
+	{
+	}
 ?>

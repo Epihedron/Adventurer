@@ -301,7 +301,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#classfeatures').append("<li>"+d[i]['cfeature']+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$('#classfeatures').append("<li><span class='lival'>"+d[i]['cfeature']+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -323,7 +323,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#racefeatures').append("<li>"+d[i]['rfeature']+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$('#racefeatures').append("<li><span class='lival'>"+d[i]['rfeature']+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -347,7 +347,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#feats').append("<li>"+d[i]['feat']+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$('#feats').append("<li><span class='lival'>"+d[i]['feat']+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -369,7 +369,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#langs').append("<li>"+d[i]['language']+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$('#langs').append("<li><span class='lival'>"+d[i]['language']+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -393,7 +393,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#inventory').append("<li>"+d[i]['item']+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$('#inventory').append("<li><span class='lival'>"+d[i]['item']+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -440,30 +440,44 @@ $.ajax(
 							{
 								for(var x in awp)
 								{
-									$("#atwillpowers").append("<li>"+awp[x]+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$("#atwillpowers").append("<li><span class='lival'>"+awp[x]+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 							if(ep)
 							{
 								for(var x in ep)
 								{
-									$("#encounterpowers").append("<li><input type='checkbox' style='float:left;'/>"+ep[x]+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$("#encounterpowers").append("<li><input type='checkbox' style='float:left;'/><span class='lival'>"+ep[x]+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 							if(dp)
 							{
 								for(var x in dp)
 								{
-									$("#dailypowers").append("<li><input type='checkbox'style='float:left;'/>"+dp[x]+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$("#dailypowers").append("<li><input type='checkbox'style='float:left;'/><span class='lival'>"+dp[x]+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 							if(up)
 							{
 								for(var x in up)
 								{
-									$("#utilitypowers").append("<li><input type='checkbox'style='float:left;'/>"+up[x]+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$("#utilitypowers").append("<li><input type='checkbox'style='float:left;'/><span class='lival'>"+up[x]+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
+							$('.deletebutton').click(function()
+							{
+								var title=$(this).parent().parent().attr('id');
+								var text=$(this).prev().text();
+
+								$.ajax(
+								{
+									url:'../php/changeatt.php',
+									type:'post',
+									data:{'title':title,'text':text},
+									success:function(d){console.log('Deleted '+text+'; '+d);},
+									fail:function(){console.log('Did send value '+text);}
+								});
+							});
 						},
 						error:function(e)
 						{
