@@ -64,21 +64,25 @@
 	}
 
 	//function for deleting values
-	function delcharval($t)
+	function delcharval($t,$v)
 	{
 		mysql_connect('localhost','host','');
 		mysql_select_db('adventurer');
 
-		if($t == 'at will' || 'encounter' || 'daily' || 'utility')
+		if($t == 'atwillpowers' || $t == 'encounterpowers' || $t == 'dailypowers' || $t == 'utilitypowers')
 		{
 			echo $t.' norm';
+			$query="delete $v from powers where username='$user' and charname='$char' and power='$v';";
 		}
 		else
 		{
+			$query="";
 			echo $t;
 		}
+		mysql_query($query);
 	}
-	if(isset($_POST['title']) && isset($_['text']))
+	if(isset($_POST['title']) && isset($_POST['text']))
 	{
+		delcharval($_POST['title'],$_POST['text']);
 	}
 ?>
