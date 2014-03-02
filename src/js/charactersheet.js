@@ -3,7 +3,7 @@ var user;
 var schar;
 var acro=0,arca=0,athl=0,bluf=0,dipl=0,dung=0,endu=0,heal=0,hist=0,insi=0,inti=0,natu=0,perc=0,reli=0,stea=0,stre=0,thie=0;
 var strm,conm,dexm,intm,wism,cham;
-//different functions
+
 //wow, made an odd number even rounded down...epic
 function isOdd(x)
 {
@@ -368,6 +368,7 @@ $.ajax(
 						success:function(data)
 						{
 							var d=JSON.parse(data);
+							console.log(data);
 
 							for(var i in d)
 							{

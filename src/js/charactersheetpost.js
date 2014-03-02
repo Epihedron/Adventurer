@@ -1,5 +1,8 @@
 //my ghetto ass way of getting all the functions to work again. there will be a time where we won't need to reload.
-function ttr(){setTimeout(function(){location.reload();},25)}
+function ttr(){setTimeout(function()
+{
+	location.reload();
+},25)}
 
 //change character name
 $('#character').dblclick(function()
