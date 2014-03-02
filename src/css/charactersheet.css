@@ -222,6 +222,7 @@ h3
 }
 .result
 {
+	cursor:pointer;
 	color:black;
 	display:inline-block;
 	font-weight:bold;

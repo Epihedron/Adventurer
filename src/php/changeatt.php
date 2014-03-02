@@ -93,4 +93,16 @@
 	{
 		delcharval($_POST['title'],$_POST['text']);
 	}
+
+	//change skill value
+	if(isset($_POST['skillcol']))
+	{
+		$sc = $_POST['skillcol'];
+		$ns = $_POST['newskill'];
+		
+		mysql_connect('localhost','host','');
+		mysql_select_db('adventurer');
+		$query="update characters set $sc='$ns' where username='$user' and charname='$char';";
+		mysql_query($query);
+	}
 ?>

@@ -222,39 +222,39 @@ $.ajax(
 
 							//calculating skills values
 							acro+=dexm;     
-							if(d['acrobatics']){acro+=5}
+							if(d['acrobatics']){acro+=5;$('#acro').addClass('resulthl');}
 							arca+=intm;
-							if(d['arcane']){arca+=5}
+							if(d['arcane']){arca+=5; $('#arc').addClass('resulthl');}
 							athl+=strm;
-							if(d['athletics']){athl+=5}	
+							if(d['athletics']){athl+=5; $('#ath').addClass('resulthl');}	
 							bluf+=cham;
-							if(d['bluff']){bluf+=5}		
+							if(d['bluff']){bluf+=5; $('#bluff').addClass('resulthl');}		
 							dipl+=cham;
-							if(d['diplomacy']){dipl+=5}
+							if(d['diplomacy']){dipl+=5; $('#dip').addClass('resulthl');}
 							dung+=wism;
-							if(d['dungeoneering']){dung+=5}	
+							if(d['dungeoneering']){dung+=5; $('#dung').addClass('resulthl');}	
 							endu+=conm;
-							if(d['endurance']){endu+=5}
+							if(d['endurance']){endu+=5; $('#end').addClass('resulthl');}
 							heal+=wism;
-							if(d['heal']){heal+=5}
+							if(d['heal']){heal+=5; $('#heal').addClass('resulthl');}
 							hist+=intm;
-							if(d['history']){hist+=5}
+							if(d['history']){hist+=5; $('#his').addClass('resulthl');}
 							insi+=wism;
-							if(d['insight']){insi+=5}	
+							if(d['insight']){insi+=5; $('#ins').addClass('resulthl');}	
 							inti+=cham;
-							if(d['intimidation']){inti+=5}
+							if(d['intimidation']){inti+=5; $('#inti').addClass('resulthl');}
 							natu+=wism;
-							if(d['nature']){natu+=5}
+							if(d['nature']){natu+=5; $('#nat').addClass('resulthl');}
 							perc+=wism;
-							if(d['perception']){perc+=5}
+							if(d['perception']){perc+=5; $('#perc').addClass('resulthl');}
 							reli+=intm;
-							if(d['religion']){reli+=5}
+							if(d['religion']){reli+=5; $('#rel').addClass('resulthl');}
 							stea+=dexm;
-							if(d['stealth']){stea+=5}	
+							if(d['stealth']){stea+=5; $('#ste').addClass('resulthl');}	
 							stre+=cham;
-							if(d['streetwise']){stre+=5}
+							if(d['streetwise']){stre+=5; $('#stre').addClass('resulthl');}
 							thie+=dexm;
-							if(d['thievery']){thie+=5}
+							if(d['thievery']){thie+=5; $('#thiev').addClass('resulthl');}
 
 							//adding skills value to page
 					                $('#acro').text(acro);
