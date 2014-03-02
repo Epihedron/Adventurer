@@ -1,3 +1,6 @@
+//my ghetto ass way of getting all the functions to work again. there will be a time where we won't need to reload.
+function ttr(){setTimeout(function(){location.reload();},25)}
+
 //change character name
 $('#character').dblclick(function()
 	{
@@ -19,9 +22,10 @@ $('#character').dblclick(function()
 					url:'../php/changeatt.php',
 					type:'post',
 					data:{changename:nval},
-					success:function(d){console.log(d);$('#character').text(nval);},
+					success:function(d){console.log(d);},
 					fail:function(){console.log('change data WASNT sent');}
 				});
+				ttr();
 			}
 		});
 	});
@@ -47,9 +51,10 @@ function ccstat(id,tbl,clm)
 				url:'../php/changeatt.php',
 				type:'post',
 				data:{table:tbl,column:clm,og:ogval,nv:nval},
-				success:function(d){console.log(d);id.text(nval);},
+				success:function(d){console.log(d);location.reload();},
 				fail:function(){console.log('change data WASNT sent');}
 			});
+			ttr();
 		}
 	});
 }
@@ -76,9 +81,10 @@ function ccpower(id,tbl,clm,tp)
 				url:'../php/changeatt.php',
 				type:'post',
 				data:{table:tbl,column:clm,og:ooog,nv:nval,type:tp},
-				success:function(d){console.log(d);id.text(nval);},
+				success:function(d){console.log(d);},
 				fail:function(){console.log('change data WASNT sent');}
 			});
+			ttr();
 		}
 	});
 }
@@ -95,6 +101,7 @@ function ccskill(id,skill,col)
 		success:function(d){console.log(d);},
 		fail:function(){console.log('Could not send skill change');}
 	});
+	ttr();
 }
 
 //change attributes
@@ -226,6 +233,7 @@ $('.addbutton').click(function()
 				success:function(d){console.log(d);},
 				fail:function(){console.log('unable to send data');}
 			});
+			ttr();
 		}
 	});
 });

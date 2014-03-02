@@ -18,6 +18,7 @@ function isOdd(x)
 		return x;
 	}
 }
+
 //ability modifier function
 function datMod(x)
 {
@@ -54,6 +55,9 @@ function datMod(x)
 		}
 	}
 }
+
+//ghetto reloads for now :/
+function ttr(){setTimeout(function(){location.reload()},25);}
 
 //logincheck
 $.ajax(
