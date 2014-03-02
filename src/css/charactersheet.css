@@ -50,14 +50,12 @@ h3
 {
 	position:relative;
 	float:right;
-	line-height:18;
 	margin-right:10px;
 }
 #level
 {
 	position:relative;
 	float:left;
-	line-height:18;
 	margin-left:5px;
 }
 #powerstable tr > td:nth-child(1)
