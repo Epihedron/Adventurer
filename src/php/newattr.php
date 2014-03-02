@@ -32,7 +32,8 @@
 				if($values=='feats'){$values='feats';$c='feat';}
 				if($values=='langs'){$values='languages';$c='language';}
 				if($values=='inventory'){$values='inventory';$c='item';}
-				mysql_query("insert into $values(charname,username,$c) values('$char','$user','$newval');");
+				$query="insert into $values(charname,username,$c) values('$char','$user','$newval');";
+				mysql_query($query);
 			}
 		}
 	}

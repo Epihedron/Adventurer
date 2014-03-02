@@ -39,14 +39,6 @@
 	echo "Character $trash wiped!";
     }
 
-    //make dm files
-    if(isset($_POST['mkdm']))
-    {
-        $fp=fopen("../json/chars/$user/$user"."dm.json", w);
-        fwrite($fp,"{}");
-        fclose("../json/chars/$user/$user"."dm.json");
-    }
-
 	//get character list
 	if(isset($_POST['charlistquery']))
 	{
@@ -61,6 +53,16 @@
 		echo $ff;
 	}
 
+	//regex values before shown to view with htmlspecialchars
+	function htmlspecarr(&$vari)
+	{
+		foreach($vari as $val)
+		{
+			if(!is_array($val)){$val = htmlspecialchars($val);}
+			else {htmlspecarr($val);}
+		}
+	}
+
 	//getting character stats from SQL
 	if(isset($_POST['basicstats']))
 	{
@@ -69,6 +71,8 @@
 		$query=mysql_query("select * from characters where username='$user' and charname='$char';");
 		while($r=mysql_fetch_assoc($query))
 		{
+			htmlspecarr($r);
+			
 			$a=$r;
 		}
 		echo json_encode($a);
@@ -81,6 +85,7 @@
 		$query=mysql_query("select * from powers where username='$user' and charname='$char';");
 		while($r=mysql_fetch_assoc($query))
 		{
+			$r['power']=htmlspecialchars($r['power']);
 			$a[]=$r;
 		}
 		echo json_encode($a);
@@ -93,6 +98,7 @@
 		$query=mysql_query("select * from cfeatures where username='$user' and charname='$char';");
 		while($r=mysql_fetch_assoc($query))
 		{
+			$r['cfeature']=htmlspecialchars($r['cfeature']);
 			$a[]=$r;
 		}
 		echo json_encode($a);
@@ -104,6 +110,7 @@
 		$query=mysql_query("select * from rfeatures where username='$user' and charname='$char';");
 		while($r=mysql_fetch_assoc($query))
 		{
+			$r['rfeature']=htmlspecialchars($r['rfeature']);
 			$a[]=$r;
 		}
 		echo json_encode($a);
@@ -115,6 +122,7 @@
 		$query=mysql_query("select * from feats where username='$user' and charname='$char';");
 		while($r=mysql_fetch_assoc($query))
 		{
+			$r['feat']=htmlspecialchars($r['feat']);
 			$a[]=$r;
 		}
 		echo json_encode($a);
@@ -126,6 +134,7 @@
 		$query=mysql_query("select * from languages where username='$user' and charname='$char';");
 		while($r=mysql_fetch_assoc($query))
 		{
+			$r['language']=htmlspecialchars($r['language']);
 			$a[]=$r;
 		}
 		echo json_encode($a);
@@ -137,6 +146,7 @@
 		$query=mysql_query("select * from inventory where username='$user' and charname='$char';");
 		while($r=mysql_fetch_assoc($query))
 		{
+			$r['item']=htmlspecialchars($r['item']);
 			$a[]=$r;
 		}
 		echo json_encode($a);
