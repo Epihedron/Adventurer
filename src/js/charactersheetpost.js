@@ -83,6 +83,20 @@ function ccpower(id,tbl,clm,tp)
 	});
 }
 
+//change skill function
+function ccskill(id,skill,col)
+{
+	var nval=(id.hasClass('resulthl'))?nval='':nval=skill;
+	$.ajax(
+	{
+		url:'../php/changeatt.php',
+		type:'post',
+		data:{'skillcol':col,'newskill':nval},
+		success:function(d){console.log(d);},
+		fail:function(){console.log('Could not send skill change');}
+	});
+}
+
 //change attributes
 $('#level').dblclick(function(){ccstat($(this),'characters','level')});
 $('#currenthealth').dblclick(function(){ccstat($(this),'characters','currenthp')});
@@ -145,6 +159,23 @@ $('#feats').delegate('*','dblclick',function(){ccstat($(this),'feats','feat');})
 $('#langs').delegate('*','dblclick',function(){ccstat($(this),'languages','language');});
 
 //change skills
+$('#acro').dblclick(function(){ccskill($(this),'hasacro','acrobatics');});
+$('#arc').dblclick(function(){ccskill($(this),'hasarc','arcane');});
+$('#ath').dblclick(function(){ccskill($(this),'hasath','athletics');});
+$('#bluff').dblclick(function(){ccskill($(this),'hasbluff','bluff');});
+$('#dip').dblclick(function(){ccskill($(this),'hasdip','diplomacy');});
+$('#dung').dblclick(function(){ccskill($(this),'hasdung','dungeoneering');});
+$('#end').dblclick(function(){ccskill($(this),'hasend','endurance');});
+$('#heal').dblclick(function(){ccskill($(this),'hasheal','heal');});
+$('#his').dblclick(function(){ccskill($(this),'hashis','history');});
+$('#ins').dblclick(function(){ccskill($(this),'hasins','insight');});
+$('#inti').dblclick(function(){ccskill($(this),'hasinti','intimidation');});
+$('#nat').dblclick(function(){ccskill($(this),'hasnat','nature');});
+$('#perc').dblclick(function(){ccskill($(this),'hasperc','perception');});
+$('#rel').dblclick(function(){ccskill($(this),'hasrel','religion');});
+$('#ste').dblclick(function(){ccskill($(this),'hasste','stealth');});
+$('#stre').dblclick(function(){ccskill($(this),'hasstre','streetwise');});
+$('#thiev').dblclick(function(){ccskill($(this),'hasthiev','thievery');});
 
 //change equipment
 $('#head').dblclick(function(){ccstat($(this),'characters','headslot')});
