@@ -53,7 +53,6 @@ $('#submit').click(function ()
     {
         $('#newcharform').submit();
     }
-    $('#newcharform').submit();
 });
 //validate to make sure field is a number
 function isNumberKey(evt)
