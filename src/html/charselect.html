@@ -1,26 +1,34 @@
-<html>
-    <head>
-        <link href='../css/template1.css'rel='stylesheet'type='text/css'/>
-        <link href='../css/charlist.css'rel='stylesheet'/>
-        <h1>Character Selection</h1>
-        <h2>
-            <label class='menubutton'id='newchar'>New Character</label>
-            <label class='menubutton'id='delchar'>Delete Character</label>
-            <label class='menubutton'id='tomain'>Main</label>
-            <label class='menubutton'id='logout'>Log Out</label>
-        </h2>
-    </head>
-    <body>
-        <label id='user'></label>, select from your characters.<br/><hr/><br/>
-        <div>
-            <ol  id='charlist'>
-                <!--character list from json gets ajaxed here-->
-            </ol>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/styles.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/charselect.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand morphus active" href="main.html">Adventurer</a>
         </div>
-        <div id='test'>
-            
-        </div>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script src='../js/charselect.js'></script>
-    </body>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="charselect.html">Characters</a></li>
+                <li><a href="../php/logout.php">Logout</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src='../js/main.js'></script>
+</body>
 </html>

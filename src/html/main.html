@@ -1,22 +1,55 @@
-<html>
-	<head>
-		<link href='../css/template1.css'rel='stylesheet'/>
-		<title>
-			Adventurer
-		</title>
-		<h1>
-			Greetings, <span id='user'></span> Today is, <span id='date'></span>
-		</h1>
-		<h2>
-			<label class='menubutton'id='dmtools'>DM Tools</label>
-			<label class='menubutton'id='chars'>Characters</label>
-			<label class='menubutton'id='account'>Account</label>
-			<label class='menubutton'id='forums'>Forums</label>
-			<label class='menubutton'id='logout'>Log Out</label>
-		</h2>
-	</head>
-	<body>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-		<script src='../js/main.js'></script>
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/styles.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<!-- 	<h2>
+		<label class='menubutton'id='dmtools'>DM Tools</label>
+		<label class='menubutton'id='chars'>Characters</label>
+		<label class='menubutton'id='account'>Account</label>
+		<label class='menubutton'id='forums'>Forums</label>
+		<label class='menubutton'id='logout'>Log Out</label>
+	</h2> -->
+<div class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand morphus" href="main.html">Adventurer</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="main.html">Characters</a></li>
+                <li><a href="../php/logout.php">Logout</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+<div class="container">
+    <div class="character-list-container box">
+        <h4 class="morphus">Characters</h4>
+        <ul  id='charlist'>
+            <!--character list from json gets ajaxed here-->
+        </ul>
+    </div>
+</div>
+<div class="footer inline-list">
+    <div class="container">
+      <ul>
+          <li>Adventurer v0.2.0</li>
+      </ul>
+    </div>
+</div>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src='../js/main.js'></script>
+    <script src='../js/charselect.js'></script>
+</body>
 </html>
