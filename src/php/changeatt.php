@@ -62,4 +62,47 @@
 	{
 		changepow($table,$column,$og,$nv,$_POST['type']);
 	}
+
+	//function for deleting values
+	function delcharval($t,$v)
+	{
+		global $user;
+		global $char;
+
+		mysql_connect('localhost','host','');
+		mysql_select_db('adventurer');
+
+		if($t == 'atwillpowers' || $t == 'encounterpowers' || $t == 'dailypowers' || $t == 'utilitypowers')
+		{
+			$query="delete from powers where username='$user' and charname='$char' and power='$v';";
+		}
+		else
+		{
+			if($t=='classfeatures'){$c='cfeature';$t='cfeatures';}
+			if($t=='inventory'){$c='item';}
+			if($t=='racefeatures'){$c='rfeature';$t='rfeatures';}
+			if($t=='langs'){$c='language';$t='languages';}
+			if($t=='feats'){$c='feat';}
+
+			$query="delete from $t where username='$user' and charname='$char' and $c='$v';";
+			echo $query;
+		}
+		mysql_query($query);
+	}
+	if(isset($_POST['title']) && isset($_POST['text']))
+	{
+		delcharval($_POST['title'],$_POST['text']);
+	}
+
+	//change skill value
+	if(isset($_POST['skillcol']))
+	{
+		$sc = $_POST['skillcol'];
+		$ns = $_POST['newskill'];
+		
+		mysql_connect('localhost','host','');
+		mysql_select_db('adventurer');
+		$query="update characters set $sc='$ns' where username='$user' and charname='$char';";
+		mysql_query($query);
+	}
 ?>

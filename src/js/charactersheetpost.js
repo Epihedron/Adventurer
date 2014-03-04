@@ -1,3 +1,9 @@
+//my ghetto ass way of getting all the functions to work again. there will be a time where we won't need to reload.
+function ttr(){setTimeout(function()
+{
+	location.reload();
+},25)}
+
 //change character name
 $('#character').dblclick(function()
 	{
@@ -19,9 +25,10 @@ $('#character').dblclick(function()
 					url:'../php/changeatt.php',
 					type:'post',
 					data:{changename:nval},
-					success:function(d){console.log(d);$('#character').text(nval);},
+					success:function(d){console.log(d);},
 					fail:function(){console.log('change data WASNT sent');}
 				});
+				ttr();
 			}
 		});
 	});
@@ -47,9 +54,10 @@ function ccstat(id,tbl,clm)
 				url:'../php/changeatt.php',
 				type:'post',
 				data:{table:tbl,column:clm,og:ogval,nv:nval},
-				success:function(d){console.log(d);id.text(nval);},
+				success:function(d){console.log(d);location.reload();},
 				fail:function(){console.log('change data WASNT sent');}
 			});
+			ttr();
 		}
 	});
 }
@@ -76,11 +84,27 @@ function ccpower(id,tbl,clm,tp)
 				url:'../php/changeatt.php',
 				type:'post',
 				data:{table:tbl,column:clm,og:ooog,nv:nval,type:tp},
-				success:function(d){console.log(d);id.text(nval);},
+				success:function(d){console.log(d);},
 				fail:function(){console.log('change data WASNT sent');}
 			});
+			ttr();
 		}
 	});
+}
+
+//change skill function
+function ccskill(id,skill,col)
+{
+	var nval=(id.hasClass('resulthl'))?nval='':nval=skill;
+	$.ajax(
+	{
+		url:'../php/changeatt.php',
+		type:'post',
+		data:{'skillcol':col,'newskill':nval},
+		success:function(d){console.log(d);},
+		fail:function(){console.log('Could not send skill change');}
+	});
+	ttr();
 }
 
 //change attributes
@@ -145,6 +169,23 @@ $('#feats').delegate('*','dblclick',function(){ccstat($(this),'feats','feat');})
 $('#langs').delegate('*','dblclick',function(){ccstat($(this),'languages','language');});
 
 //change skills
+$('#acro').dblclick(function(){ccskill($(this),'hasacro','acrobatics');});
+$('#arc').dblclick(function(){ccskill($(this),'hasarc','arcane');});
+$('#ath').dblclick(function(){ccskill($(this),'hasath','athletics');});
+$('#bluff').dblclick(function(){ccskill($(this),'hasbluff','bluff');});
+$('#dip').dblclick(function(){ccskill($(this),'hasdip','diplomacy');});
+$('#dung').dblclick(function(){ccskill($(this),'hasdung','dungeoneering');});
+$('#end').dblclick(function(){ccskill($(this),'hasend','endurance');});
+$('#heal').dblclick(function(){ccskill($(this),'hasheal','heal');});
+$('#his').dblclick(function(){ccskill($(this),'hashis','history');});
+$('#ins').dblclick(function(){ccskill($(this),'hasins','insight');});
+$('#inti').dblclick(function(){ccskill($(this),'hasinti','intimidation');});
+$('#nat').dblclick(function(){ccskill($(this),'hasnat','nature');});
+$('#perc').dblclick(function(){ccskill($(this),'hasperc','perception');});
+$('#rel').dblclick(function(){ccskill($(this),'hasrel','religion');});
+$('#ste').dblclick(function(){ccskill($(this),'hasste','stealth');});
+$('#stre').dblclick(function(){ccskill($(this),'hasstre','streetwise');});
+$('#thiev').dblclick(function(){ccskill($(this),'hasthiev','thievery');});
 
 //change equipment
 $('#head').dblclick(function(){ccstat($(this),'characters','headslot')});
@@ -166,3 +207,36 @@ $('#inventory').delegate('*','dblclick',function(){ccstat($(this),'inventory','i
 
 //change notes
 $('#notes').dblclick(function(){ccstat($(this),'characters','notes');});
+
+//adding value to list models
+$('.addbutton').click(function()
+{
+	var list = $(this).prev();
+	var addbox = "<li><input class='liinp' type='text'/></li>"
+	
+	list.append(addbox);
+
+	$('.liinp').focus();
+	$('.liinp').focusout(function()
+	{
+		var val=$(this).val();
+		var type=list.attr('id');
+
+		if(val=='')
+		{
+			$(this).parent().remove();
+		}
+		else
+		{
+			$.ajax(
+			{
+				url:'../php/newattr.php',
+				type:'post',
+				data:{'newval':val,'newtype':type},
+				success:function(d){console.log(d);},
+				fail:function(){console.log('unable to send data');}
+			});
+			ttr();
+		}
+	});
+});

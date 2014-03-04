@@ -3,7 +3,7 @@ var user;
 var schar;
 var acro=0,arca=0,athl=0,bluf=0,dipl=0,dung=0,endu=0,heal=0,hist=0,insi=0,inti=0,natu=0,perc=0,reli=0,stea=0,stre=0,thie=0;
 var strm,conm,dexm,intm,wism,cham;
-//different functions
+
 //wow, made an odd number even rounded down...epic
 function isOdd(x)
 {
@@ -18,6 +18,7 @@ function isOdd(x)
 		return x;
 	}
 }
+
 //ability modifier function
 function datMod(x)
 {
@@ -54,6 +55,9 @@ function datMod(x)
 		}
 	}
 }
+
+//ghetto reloads for now :/
+function ttr(){setTimeout(function(){location.reload()},25);}
 
 //logincheck
 $.ajax(
@@ -222,39 +226,39 @@ $.ajax(
 
 							//calculating skills values
 							acro+=dexm;     
-							if(d['acrobatics']){acro+=5}
+							if(d['acrobatics']){acro+=5;$('#acro').addClass('resulthl');}
 							arca+=intm;
-							if(d['arcane']){arca+=5}
+							if(d['arcane']){arca+=5; $('#arc').addClass('resulthl');}
 							athl+=strm;
-							if(d['athletics']){athl+=5}	
+							if(d['athletics']){athl+=5; $('#ath').addClass('resulthl');}	
 							bluf+=cham;
-							if(d['bluff']){bluf+=5}		
+							if(d['bluff']){bluf+=5; $('#bluff').addClass('resulthl');}		
 							dipl+=cham;
-							if(d['diplomacy']){dipl+=5}
+							if(d['diplomacy']){dipl+=5; $('#dip').addClass('resulthl');}
 							dung+=wism;
-							if(d['dungeoneering']){dung+=5}	
+							if(d['dungeoneering']){dung+=5; $('#dung').addClass('resulthl');}	
 							endu+=conm;
-							if(d['endurance']){endu+=5}
+							if(d['endurance']){endu+=5; $('#end').addClass('resulthl');}
 							heal+=wism;
-							if(d['heal']){heal+=5}
+							if(d['heal']){heal+=5; $('#heal').addClass('resulthl');}
 							hist+=intm;
-							if(d['history']){hist+=5}
+							if(d['history']){hist+=5; $('#his').addClass('resulthl');}
 							insi+=wism;
-							if(d['insight']){insi+=5}	
+							if(d['insight']){insi+=5; $('#ins').addClass('resulthl');}	
 							inti+=cham;
-							if(d['intimidation']){inti+=5}
+							if(d['intimidation']){inti+=5; $('#inti').addClass('resulthl');}
 							natu+=wism;
-							if(d['nature']){natu+=5}
+							if(d['nature']){natu+=5; $('#nat').addClass('resulthl');}
 							perc+=wism;
-							if(d['perception']){perc+=5}
+							if(d['perception']){perc+=5; $('#perc').addClass('resulthl');}
 							reli+=intm;
-							if(d['religion']){reli+=5}
+							if(d['religion']){reli+=5; $('#rel').addClass('resulthl');}
 							stea+=dexm;
-							if(d['stealth']){stea+=5}	
+							if(d['stealth']){stea+=5; $('#ste').addClass('resulthl');}	
 							stre+=cham;
-							if(d['streetwise']){stre+=5}
+							if(d['streetwise']){stre+=5; $('#stre').addClass('resulthl');}
 							thie+=dexm;
-							if(d['thievery']){thie+=5}
+							if(d['thievery']){thie+=5; $('#thiev').addClass('resulthl');}
 
 							//adding skills value to page
 					                $('#acro').text(acro);
@@ -301,7 +305,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#classfeatures').append("<li>"+d[i]['cfeature']+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$('#classfeatures').append("<li><span class='lival'>"+d[i]['cfeature']+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -323,7 +327,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#racefeatures').append("<li>"+d[i]['rfeature']+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$('#racefeatures').append("<li><span class='lival'>"+d[i]['rfeature']+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -347,7 +351,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#feats').append("<li>"+d[i]['feat']+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$('#feats').append("<li><span class='lival'>"+d[i]['feat']+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -364,12 +368,13 @@ $.ajax(
 						success:function(data)
 						{
 							var d=JSON.parse(data);
+							console.log(data);
 
 							for(var i in d)
 							{
 								if(d[i])
 								{
-									$('#langs').append("<li>"+d[i]['language']+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$('#langs').append("<li><span class='lival'>"+d[i]['language']+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -393,7 +398,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#inventory').append("<li>"+d[i]['item']+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$('#inventory').append("<li><span class='lival'>"+d[i]['item']+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -440,30 +445,50 @@ $.ajax(
 							{
 								for(var x in awp)
 								{
-									$("#atwillpowers").append("<li>"+awp[x]+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$("#atwillpowers").append("<li><span class='lival'>"+awp[x]+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 							if(ep)
 							{
 								for(var x in ep)
 								{
-									$("#encounterpowers").append("<li><input type='checkbox' style='float:left;'/>"+ep[x]+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$("#encounterpowers").append("<li><input type='checkbox' style='float:left;'/><span class='lival'>"+ep[x]+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 							if(dp)
 							{
 								for(var x in dp)
 								{
-									$("#dailypowers").append("<li><input type='checkbox'style='float:left;'/>"+dp[x]+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$("#dailypowers").append("<li><input type='checkbox'style='float:left;'/><span class='lival'>"+dp[x]+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 							if(up)
 							{
 								for(var x in up)
 								{
-									$("#utilitypowers").append("<li><input type='checkbox'style='float:left;'/>"+up[x]+"<img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$("#utilitypowers").append("<li><input type='checkbox'style='float:left;'/><span class='lival'>"+up[x]+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
+
+							//delete button business
+							$('.deletebutton').click(function()
+							{
+								var title=$(this).parent().parent().attr('id');
+								var text=$(this).prev().text();
+
+								if(confirm('Are you sure you want to delete "'+text+'"?'))
+								{
+									$.ajax(
+									{
+										url:'../php/changeatt.php',
+										type:'post',
+										data:{'title':title,'text':text},
+										success:function(d){console.log(d);},
+										fail:function(){console.log('Did send value '+text);}
+									});
+									$(this).parent().remove();
+								}
+							});
 						},
 						error:function(e)
 						{

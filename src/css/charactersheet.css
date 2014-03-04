@@ -50,14 +50,12 @@ h3
 {
 	position:relative;
 	float:right;
-	line-height:18;
 	margin-right:10px;
 }
 #level
 {
 	position:relative;
 	float:left;
-	line-height:18;
 	margin-left:5px;
 }
 #powerstable tr > td:nth-child(1)
@@ -222,6 +220,7 @@ h3
 }
 .result
 {
+	cursor:pointer;
 	color:black;
 	display:inline-block;
 	font-weight:bold;
@@ -292,4 +291,5 @@ h3
 .deletebutton
 {
 	float:right;
+	cursor:pointer;
 }
