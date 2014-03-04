@@ -22,18 +22,34 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand morphus" href="#">Adventurer</a>
+            <a class="navbar-brand morphus" href="main.html">Adventurer</a>
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="charselect.html">Characters</a></li>
+                <li class="active"><a href="main.html">Characters</a></li>
                 <li><a href="../php/logout.php">Logout</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
 </div>
+<div class="container">
+    <div class="character-list-container box">
+        <h2>Characters</h2>
+        <ul  id='charlist'>
+            <!--character list from json gets ajaxed here-->
+        </ul>
+    </div>
+</div>
+<div class="footer inline-list">
+    <div class="container">
+      <ul>
+          <li>Adventurer v0.2.0</li>
+      </ul>
+    </div>
+</div>
 
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src='../js/main.js'></script>
+    <script src='../js/charselect.js'></script>
 </body>
 </html>
