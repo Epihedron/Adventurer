@@ -7,8 +7,30 @@
 
 // Compass
 
-// Site wide structure
+/*
+ * Globals
+ */
 
 *, *:before, *:after {
 	@include box-sizing(border-box);
 }
+
+/* Links */
+a,
+a:focus,
+a:hover{
+	color: #fff;
+}
+
+/* Navigation */
+
+.navbar{
+	@include border-radius(0);
+	.navbar-brand{
+		color: $tan;
+	}
+	.navbar-brand:hover, .navbar-brand:focus{
+			color: $quiet-tan;
+	}
+
+} 

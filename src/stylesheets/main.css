@@ -124,71 +124,14 @@ a:hover {
 }
 
 /*
- * Globals
- */
-/* Links */
-/* line 10, ../sass/index.scss */
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
-
-/* Navigation */
-/* line 16, ../sass/index.scss */
-.navbar {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
-  border-radius: 0;
-}
-/* line 18, ../sass/index.scss */
-.navbar .navbar-brand {
-  color: #cc8333;
-}
-/* line 21, ../sass/index.scss */
-.navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
-  color: #e0b585;
-}
-
-/* Custom default button */
-/* line 29, ../sass/index.scss */
-.btn-default,
-.btn-default:focus {
-  color: #fff;
-  text-shadow: none;
-  /* Prevent inheritence from `body` */
-  background-color: #164c1f;
-  border: 1px solid #1b882d;
-  -webkit-transition-property: background-color;
-  -moz-transition-property: background-color;
-  -o-transition-property: background-color;
-  transition-property: background-color;
-  -webkit-transition-duration: 0.2s;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -webkit-transition-timing-function: ease-in;
-  -moz-transition-timing-function: ease-in;
-  -o-transition-timing-function: ease-in;
-  transition-timing-function: ease-in;
-}
-
-/* line 40, ../sass/index.scss */
-.btn-default:hover {
-  background-color: #1b882d;
-}
-
-/*
  * Base structure
  */
-/* line 48, ../sass/index.scss */
+/* line 7, ../sass/main.scss */
 body {
   background-color: #fff;
 }
 
-/* line 52, ../sass/index.scss */
+/* line 11, ../sass/main.scss */
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -196,56 +139,20 @@ body {
   padding-right: 1rem;
 }
 
-/* line 59, ../sass/index.scss */
+/* line 18, ../sass/main.scss */
 .footer {
   color: lightgrey;
 }
 
 /*
- * Forms
+ * Base structure
  */
-/* line 66, ../sass/index.scss */
-.signin-container {
-  max-width: 475px;
-  margin-top: 5rem;
-  margin-left: auto;
-  margin-right: auto;
+/* Lists */
+/* line 28, ../sass/main.scss */
+.character-list-container {
+  text-align: center;
 }
-/* line 71, ../sass/index.scss */
-.signin-container .form-signin {
-  max-width: 400px;
-  margin: 0 auto;
-}
-/* line 74, ../sass/index.scss */
-.signin-container .form-signin .form-control {
-  height: auto;
-}
-/* line 77, ../sass/index.scss */
-.signin-container .form-signin .form-signin-heading {
-  color: black;
-  text-align: left;
-}
-/* line 81, ../sass/index.scss */
-.signin-container .form-signin button {
-  margin-top: -1px;
-  padding-left: 1rem;
-  text-align: left;
-  font-size: 2rem;
-  -webkit-border-radius: 0px 0px;
-  -moz-border-radius: 0px / 0px;
-  border-radius: 0px / 0px;
-}
-/* line 88, ../sass/index.scss */
-.signin-container .form-signin input {
-  -webkit-border-radius: 1px 1px;
-  -moz-border-radius: 1px / 1px;
-  border-radius: 1px / 1px;
-  padding-left: 1rem;
-  font-size: 2rem;
-  margin-top: -1px;
-}
-/* line 94, ../sass/index.scss */
-.signin-container .form-signin input:focus {
-  padding-left: .8rem;
-  border-left: 0.3rem solid #8768c2;
+/* line 30, ../sass/main.scss */
+.character-list-container li {
+  list-style: none;
 }
