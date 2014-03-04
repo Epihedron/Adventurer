@@ -36,6 +36,23 @@ h1, h2, h3, h4 {
   color: #38255b;
 }
 
+/* line 30, ../sass/_fonts.scss */
+html h1 {
+  font-size: 3rem;
+}
+/* line 34, ../sass/_fonts.scss */
+html h2 {
+  font-size: 2.5rem;
+}
+/* line 38, ../sass/_fonts.scss */
+html h3 {
+  font-size: 2rem;
+}
+/* line 42, ../sass/_fonts.scss */
+html h4 {
+  font-size: 1.75rem;
+}
+
 /* line 5, ../sass/_custom.scss */
 .box {
   position: relative;
