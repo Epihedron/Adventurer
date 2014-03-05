@@ -43,11 +43,10 @@ $.ajax({
 				data:{cc:d[this.value]},
 				success:function(data)
 				{
-					console.log(data+' sent successfully');
 					data='';
 				}
 			});
-			setTimeout("window.location.href='../html/charactersheet.html?dummy="+new Date().getTime()+"';",300)
+			window.location.href='../html/charactersheet.html';
 		});
 	}
 });

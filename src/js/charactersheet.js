@@ -298,7 +298,6 @@ $.ajax(
 							$('#silver').text(d['silver']);
 							$('#gold').text(d['gold']);
 							$('#platinum').text(d['platinum']);
-							console.log(d);
 						},
 						error:function()
 						{
@@ -720,6 +719,6 @@ $('#notestab').click(function()
 //back to char select button
 $('#charselect').click(function()
 	{
-		window.location.href='../html/charselect.html';
+		window.location.href='../html/main.html';
 	}
 );
