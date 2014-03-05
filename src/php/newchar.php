@@ -8,7 +8,7 @@
     $character=$_POST['character'];
     $age=$_POST['age'];
     $weight=$_POST['weight'];
-    $height=$_POST['height'];
+    $height=mysql_real_escape_string($_POST['height']);
     $class=$_POST['class'];
     $race=$_POST['race'];
     $gender=$_POST['gender'];
