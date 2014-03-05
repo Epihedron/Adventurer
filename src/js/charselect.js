@@ -46,7 +46,7 @@ $.ajax({
 					data='';
 				}
 			});
-			window.location.href='../html/charactersheet.html';
+			setTimeout("window.location.href='../html/charactersheet.html?char="+new Date().getTime()+"';",300);
 		});
 	}
 });
