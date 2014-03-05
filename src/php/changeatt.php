@@ -36,11 +36,22 @@
 	{
 		global $user;
 		global $char;
+		$n=mysql_real_escape_string($n);
 
-		mysql_connect('localhost','host','');
-		mysql_select_db('adventurer');
+		//mysql_connect('localhost','host','');
+		//mysql_select_db('adventurer');
+		try
+		{
+			$dbh=new PDO("mysql:host=localhost;dbname=adventurer",'host','');
+		}
+		catch(Exception $e)
+		{
+			echo "unable to connect: ".$e->getMessage();
+		}
+		
 		$query="update $t set $c='$n' where username='$user' and charname='$char' and $c='$o';";
-		mysql_query($query) or die('Could not update attribute');
+		$dbh->query($query);
+		//mysql_query($query) or die('Could not update attribute');
 	}
 	if(isset($_POST['table']) && isset($_POST['column']) && isset($_POST['og']) && isset($_POST['nv']))
 	{
