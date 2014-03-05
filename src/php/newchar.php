@@ -155,6 +155,9 @@
 		mysql_query("insert into characters($fincol) values($findat);") or die("<br/> could not send query");
 	}
 
+	//inserting blank values in the wallet
+	mysql_query("insert into wealth(username,charname,copper,silver,gold,platinum) values('$user','$character',0,0,0,0);");
+
     //basic info array
     //$basicinfo['world']=$world;
     $charinfo['username']=$user;
