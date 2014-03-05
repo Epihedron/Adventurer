@@ -24,6 +24,7 @@
 		mysql_query("update inventory set charname='$nn' where username='$user' and charname='$char';");
 		mysql_query("update languages set charname='$nn' where username='$user' and charname='$char';");
 		mysql_query("update powers set charname='$nn' where username='$user' and charname='$char';");
+		mysql_query("update wealth set charname='$nn' where username='$user' and charname='$char';");
 
 		$_SESSION['character']=$nn;
 		echo "Character name changed to ".$_SESSION['character'];

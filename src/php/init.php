@@ -36,6 +36,7 @@
 	mysql_query("delete from languages using languages where languages.username='$user' and languages.charname='$trash';");
 	mysql_query("delete from powers using powers where powers.username='$user' and powers.charname='$trash';");
 	mysql_query("delete from rfeatures using rfeatures where rfeatures.username='$user' and rfeatures.charname='$trash';");
+	mysql_query("delete from wealth using wealth where wealth.username='$user' and wealth.charname='$trash';");
 	echo "Character $trash wiped!";
     }
 
@@ -150,5 +151,27 @@
 			$a[]=$r;
 		}
 		echo json_encode($a);
+	}
+
+	//wealth query
+	if(isset($_POST['wealth']))
+	{
+		mysql_connect('localhost','host','');
+		mysql_select_db('adventurer');
+		$query=mysql_query("select * from wealth where username='$user' and charname='$char';");
+		while($r=mysql_fetch_assoc($query))
+		{
+			//$r=htmlspecialchars($r);
+			$c=htmlspecialchars($r['copper']);
+			$s=htmlspecialchars($r['silver']);
+			$g=htmlspecialchars($r['gold']);
+			$p=htmlspecialchars($r['platinum']);
+
+			$f['copper']=$c;
+			$f['silver']=$s;
+			$f['gold']=$g;
+			$f['platinum']=$p;
+		}
+		echo json_encode($f);
 	}
 ?>

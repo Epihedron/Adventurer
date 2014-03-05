@@ -217,13 +217,6 @@ $.ajax(
 							$('#legs').text(legs);
 							$('#feet').text(feet);
 
-							//wealth
-							$("#copper").text(0);
-							$("#silver").text(0);
-							$("#gold").text(0);
-							$("#platinum").text(0);
-							$("#astraldiamond").text(0);		
-
 							//calculating skills values
 							acro+=dexm;     
 							if(d['acrobatics']){acro+=5;$('#acro').addClass('resulthl');}
@@ -288,6 +281,27 @@ $.ajax(
 						error:function(e)
 						{
 							alert('err');
+						}
+					});
+
+					//adding weatlth to page
+					$.ajax(
+					{
+						url:'../php/init.php',
+						type:'post',
+						data:{'wealth':1},
+						success:function(data)
+						{
+							var d=JSON.parse(data);
+
+							$('#copper').text(d['copper']);
+							$('#silver').text(d['silver']);
+							$('#gold').text(d['gold']);
+							$('#platinum').text(d['platinum']);
+						},
+						error:function()
+						{
+							console.log('could not pull wealth');
 						}
 					});
 
@@ -368,7 +382,6 @@ $.ajax(
 						success:function(data)
 						{
 							var d=JSON.parse(data);
-							console.log(data);
 
 							for(var i in d)
 							{
@@ -706,6 +719,6 @@ $('#notestab').click(function()
 //back to char select button
 $('#charselect').click(function()
 	{
-		window.location.href='../html/charselect.html';
+		window.location.href='../html/main.html';
 	}
 );
