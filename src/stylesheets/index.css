@@ -1,18 +1,17 @@
-@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Metamorphous);
 @font-face {
   font-family: "Lora";
-  src: url('/stylesheets/fonts/fonts/Lora/Lora-Regular.ttf') format('truetype');
+  src: url('/stylesheets/fonts/Lora/Lora-Regular.ttf') format('truetype');
 }
 
 @font-face {
   font-family: "Lora";
   src: url('/stylesheets/fonts/style("italic")');
-  src: url('/stylesheets/fonts/style("italic")?#iefix') format('eot'), url('/stylesheets/fonts/fonts/Lora/Lora-Italic.ttf') format('truetype');
+  src: url('/stylesheets/fonts/style("italic")?#iefix') format('eot'), url('/stylesheets/fonts/Lora/Lora-Italic.ttf') format('truetype');
 }
 
 @font-face {
   font-family: "Metamorphous";
-  src: url('/stylesheets/fonts/fonts/Lora/Metamorphous-Regular.ttf') format('truetype');
+  src: url('/stylesheets/fonts/Metamorphous/Metamorphous-Regular.ttf') format('truetype');
 }
 
 /* line 10, ../sass/_fonts.scss */
@@ -36,19 +35,19 @@ h1, h2, h3, h4 {
   color: #38255b;
 }
 
-/* line 30, ../sass/_fonts.scss */
+/* line 28, ../sass/_fonts.scss */
 html h1 {
   font-size: 3rem;
 }
-/* line 34, ../sass/_fonts.scss */
+/* line 32, ../sass/_fonts.scss */
 html h2 {
   font-size: 2.5rem;
 }
-/* line 38, ../sass/_fonts.scss */
+/* line 36, ../sass/_fonts.scss */
 html h3 {
   font-size: 2rem;
 }
-/* line 42, ../sass/_fonts.scss */
+/* line 40, ../sass/_fonts.scss */
 html h4 {
   font-size: 1.75rem;
 }
@@ -97,13 +96,124 @@ html h4 {
   transform: skew(5deg) rotate(5deg);
 }
 
-/* line 49, ../sass/_custom.scss */
+/* line 50, ../sass/_custom.scss */
+.me-select {
+  position: relative;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+/* line 56, ../sass/_custom.scss */
+.me-select ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+/* line 62, ../sass/_custom.scss */
+.me-select li {
+  margin: 0 auto;
+  position: relative;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* line 73, ../sass/_custom.scss */
+.me-select li.selected {
+  box-shadow: inset 0 0 0 40px #f5e6d6;
+}
+
+/* line 77, ../sass/_custom.scss */
+.me-select label {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  font-size: 1.2em;
+  padding: 15px 10px 15px 80px;
+  vertical-align: top;
+  cursor: pointer;
+}
+
+/* line 87, ../sass/_custom.scss */
+.me-select label span {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+/* line 92, ../sass/_custom.scss */
+.me-select label span:first-child {
+  width: 30%;
+  color: rgba(97, 107, 107, 0.7);
+}
+
+/* line 98, ../sass/_custom.scss */
+.me-select label span:nth-child(2),
+.me-select label a {
+  width: 60%;
+  color: #31d2d4;
+}
+
+/* line 103, ../sass/_custom.scss */
+.me-select label span:last-child {
+  width: 10%;
+  text-align: right;
+  font-size: 60%;
+}
+
+/* line 111, ../sass/_custom.scss */
+.me-select input[type="checkbox"],
+.me-select label::before,
+.me-select input[type="checkbox"]:checked + label::after {
+  width: 26px;
+  height: 26px;
+  top: 50%;
+  left: 20px;
+  margin-top: -13px;
+  position: absolute;
+  cursor: pointer;
+}
+
+/* line 121, ../sass/_custom.scss */
+.me-select input[type="checkbox"] {
+  opacity: 0;
+  -webkit-appearance: none;
+  display: inline-block;
+  vertical-align: middle;
+  z-index: 100;
+}
+
+/* line 129, ../sass/_custom.scss */
+.me-select label::before {
+  content: '';
+  border: 2px solid rgba(0, 0, 0, 0.3);
+}
+
+/* line 134, ../sass/_custom.scss */
+.me-select input[type="checkbox"]:checked + label::after {
+  content: '\2713';
+  text-align: center;
+  line-height: 28px;
+  color: #31d2d4;
+}
+
+/* Media Queries */
+@media screen and (max-width: 50em) {
+  /* line 143, ../sass/_custom.scss */
+  section {
+    font-size: 80%;
+  }
+}
+/* line 150, ../sass/_custom.scss */
 .inline-list {
   text-align: center;
   margin: 0 auto;
   padding: 2rem;
 }
-/* line 53, ../sass/_custom.scss */
+/* line 154, ../sass/_custom.scss */
 .inline-list ul {
   list-style: none;
   padding: 0.5rem;
@@ -142,7 +252,7 @@ a:hover {
 }
 /* line 32, ../sass/_base.scss */
 .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
-  color: #e0b585;
+  color: #f5e6d6;
 }
 
 /*
@@ -171,7 +281,7 @@ a:hover {
 }
 /* line 21, ../sass/index.scss */
 .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
-  color: #e0b585;
+  color: #f5e6d6;
 }
 
 /* Custom default button */

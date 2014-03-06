@@ -1,11 +1,11 @@
 @import "compass/css3";
 @import "compass/css3/text-shadow";
 
-@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Metamorphous);
+// @import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Metamorphous);
 
-@include font-face("Lora", font-files("fonts/Lora/Lora-Regular.ttf"));
-@include font-face("Lora", font-files("fonts/Lora/Lora-Italic.ttf"), style("italic"));
-@include font-face("Metamorphous", font-files("fonts/Lora/Metamorphous-Regular.ttf"));
+@include font-face("Lora", font-files("Lora/Lora-Regular.ttf"));
+@include font-face("Lora", font-files("Lora/Lora-Italic.ttf"), style("italic"));
+@include font-face("Metamorphous", font-files("Metamorphous/Metamorphous-Regular.ttf"));
 
 .lora{
 	font-family: "Lora";
@@ -23,8 +23,6 @@ html *{
 h1, h2, h3, h4{
 	color: $loud-purple;
 }
-
-$base-header-size: 2rem;
 
 html{
 	h1{
