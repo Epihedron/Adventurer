@@ -203,7 +203,10 @@ $('#feet').dblclick(function(){ccstat($(this),'characters','feetslot')});
 $('#inventory').delegate('*','dblclick',function(){ccstat($(this),'inventory','item');});
 
 //change wealth
-//wallet app
+$('#copper').dblclick(function(){ccstat($(this), 'wealth','copper');});
+$('#silver').dblclick(function(){ccstat($(this), 'wealth','silver');});
+$('#gold').dblclick(function(){ccstat($(this), 'wealth','gold');});
+$('#platinum').dblclick(function(){ccstat($(this), 'wealth','platinum');});
 
 //change notes
 $('#notes').dblclick(function(){ccstat($(this),'characters','notes');});

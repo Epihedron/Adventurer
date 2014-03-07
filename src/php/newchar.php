@@ -8,7 +8,7 @@
     $character=$_POST['character'];
     $age=$_POST['age'];
     $weight=$_POST['weight'];
-    $height=$_POST['height'];
+    $height=mysql_real_escape_string($_POST['height']);
     $class=$_POST['class'];
     $race=$_POST['race'];
     $gender=$_POST['gender'];
@@ -154,6 +154,9 @@
 		$findat=implode(",",$data);
 		mysql_query("insert into characters($fincol) values($findat);") or die("<br/> could not send query");
 	}
+
+	//inserting blank values in the wallet
+	mysql_query("insert into wealth(username,charname,copper,silver,gold,platinum) values('$user','$character',0,0,0,0);");
 
     //basic info array
     //$basicinfo['world']=$world;

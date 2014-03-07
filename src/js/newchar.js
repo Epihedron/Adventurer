@@ -14,7 +14,7 @@ $.ajax({
         }
         else
         {
-            $("#user").text(data);
+            $("#username").text(data);
         }
     },
     error:function()
