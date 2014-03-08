@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/styles.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../javascripts/modernizr.custom.js"></script>
+</head>
+<body>
+<div class="navbar navbar-inverse header" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand morphus" href="main.html">Adventurer</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="main.html">Characters</a></li>
+                <li><a href="../php/logout.php">Logout</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
+</div>
+<section>
+    <div class="container body">
+        <div class="character-list-container box">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h4 class="morphus">Characters</h4>
+                </div>
+                <div class="col-md-2">
+                    <button type="button" class="btn btn-default btn-sm" id="visibility-toggle">
+                        <span class="glyphicon glyphicon-edit"> Edit</span>
+                    </button>
+                </div>
+            </div>
+            <form class="me-select">
+                <ul  id="charlist">
+                    <li><input id="cb1" name="cb1" type="checkbox" style="display: none;"><label><span style="display: none;" id="checkbox"></span><span>Mary Jane</span></label></li>
+                    <li><input id="cb2" name="cb2" type="checkbox" style="display: none;"><label><span style="display: none;" id="checkbox"></span><span>Carrie Johnston</span></label></li>
+                    <li><input id="cb3" name="cb3" type="checkbox" style="display: none;"><label><span style="display: none;" id="checkbox"></span><span>Barry White</span></label></li>
+                    <!--character list from json gets ajaxed here-->
+                </ul>
+            </form>
+        </div>
+    </div>
+</section>
+<div class="footer inline-list">
+    <div class="container">
+      <ul>
+          <li>Adventurer v0.2.0</li>
+      </ul>
+    </div>
+</div>
+<script src="../javascripts/magicselection.js"></script>
+<script>
+    (function() {
+        var selList = document.getElementById( 'charlist' ),
+            items = selList.querySelectorAll( 'li' );
+        
+        // fill the initial checked elements (mozilla)
+        [].slice.call( items ).forEach( function( el ) {
+            el.parentNode.className = el.checked ? 'selected' : '';
+        } );
+
+        function checkUncheck( el ) {
+            el.parentNode.className = el.checked ? '' : 'selected';
+            el.checked = !el.checked;
+        }
+
+        new magicSelection( selList.querySelectorAll( 'li > input[type="checkbox"]' ), {
+            onSelection : function( el ) { checkUncheck( el ); },
+            onClick : function( el ) {
+                el.parentNode.className = el.checked ? 'selected' : '';
+            }
+        } );
+
+    } )();
+</script>
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> JQuery for prod-->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script> <!-- JQuery for dev -->
+<script src='../js/main.js'></script>
+<script src='../js/charselect.js'></script>
+<script type="text/javascript">
+function changeVisibility()
+{
+document.querySelectorAll('.me-select label::before').style.visibility="hidden";
+}
+</script>
+</body>
+</html>

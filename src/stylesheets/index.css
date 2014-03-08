@@ -1,53 +1,44 @@
+@import url("http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Metamorphous");
 @font-face {
-  font-family: "Lora";
-  src: url('/stylesheets/fonts/Lora/Lora-Regular.ttf') format('truetype');
+  font-family: 'Glyphicons Halflings';
+  src: url("fonts/bootstrap/glyphicons-halflings-regular.eot");
+  src: url("fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons-halflingsregular") format("svg");
 }
 
-@font-face {
-  font-family: "Lora";
-  src: url('/stylesheets/fonts/style("italic")');
-  src: url('/stylesheets/fonts/style("italic")?#iefix') format('eot'), url('/stylesheets/fonts/Lora/Lora-Italic.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: "Metamorphous";
-  src: url('/stylesheets/fonts/Metamorphous/Metamorphous-Regular.ttf') format('truetype');
-}
-
-/* line 10, ../sass/_fonts.scss */
+/* line 15, ../sass/_fonts.scss */
 .lora {
   font-family: "Lora";
 }
 
-/* line 14, ../sass/_fonts.scss */
+/* line 19, ../sass/_fonts.scss */
 .morphus {
   font-family: "Metamorphous";
 }
 
-/* line 18, ../sass/_fonts.scss */
+/* line 23, ../sass/_fonts.scss */
 html * {
   font-family: "Lora";
   font-size: 1.5rem;
 }
 
-/* line 23, ../sass/_fonts.scss */
+/* line 28, ../sass/_fonts.scss */
 h1, h2, h3, h4 {
   color: #38255b;
 }
 
-/* line 28, ../sass/_fonts.scss */
+/* line 33, ../sass/_fonts.scss */
 html h1 {
   font-size: 3rem;
 }
-/* line 32, ../sass/_fonts.scss */
+/* line 37, ../sass/_fonts.scss */
 html h2 {
   font-size: 2.5rem;
 }
-/* line 36, ../sass/_fonts.scss */
+/* line 41, ../sass/_fonts.scss */
 html h3 {
   font-size: 2rem;
 }
-/* line 40, ../sass/_fonts.scss */
+/* line 45, ../sass/_fonts.scss */
 html h4 {
   font-size: 1.75rem;
 }
@@ -133,7 +124,7 @@ html h4 {
   width: 100%;
   position: relative;
   font-size: 1.2em;
-  padding: 15px 10px 15px 80px;
+  padding: 15px 60px 15px 60px;
   vertical-align: top;
   cursor: pointer;
 }
@@ -144,30 +135,10 @@ html h4 {
   display: inline-block;
 }
 
-/* line 92, ../sass/_custom.scss */
-.me-select label span:first-child {
-  width: 30%;
-  color: rgba(97, 107, 107, 0.7);
-}
-
-/* line 98, ../sass/_custom.scss */
-.me-select label span:nth-child(2),
-.me-select label a {
-  width: 60%;
-  color: #31d2d4;
-}
-
-/* line 103, ../sass/_custom.scss */
-.me-select label span:last-child {
-  width: 10%;
-  text-align: right;
-  font-size: 60%;
-}
-
-/* line 111, ../sass/_custom.scss */
+/* line 94, ../sass/_custom.scss */
 .me-select input[type="checkbox"],
-.me-select label::before,
-.me-select input[type="checkbox"]:checked + label::after {
+.me-select #checkbox::before,
+.me-select input[type="checkbox"]:checked + label span:first-child::after {
   width: 26px;
   height: 26px;
   top: 50%;
@@ -177,7 +148,7 @@ html h4 {
   cursor: pointer;
 }
 
-/* line 121, ../sass/_custom.scss */
+/* line 104, ../sass/_custom.scss */
 .me-select input[type="checkbox"] {
   opacity: 0;
   -webkit-appearance: none;
@@ -186,14 +157,14 @@ html h4 {
   z-index: 100;
 }
 
-/* line 129, ../sass/_custom.scss */
-.me-select label::before {
+/* line 112, ../sass/_custom.scss */
+.me-select #checkbox::before {
   content: '';
   border: 2px solid rgba(0, 0, 0, 0.3);
 }
 
-/* line 134, ../sass/_custom.scss */
-.me-select input[type="checkbox"]:checked + label::after {
+/* line 117, ../sass/_custom.scss */
+.me-select input[type="checkbox"]:checked + label span:first-child::after {
   content: '\2713';
   text-align: center;
   line-height: 28px;
@@ -202,18 +173,18 @@ html h4 {
 
 /* Media Queries */
 @media screen and (max-width: 50em) {
-  /* line 143, ../sass/_custom.scss */
+  /* line 126, ../sass/_custom.scss */
   section {
     font-size: 80%;
   }
 }
-/* line 150, ../sass/_custom.scss */
+/* line 133, ../sass/_custom.scss */
 .inline-list {
   text-align: center;
   margin: 0 auto;
   padding: 2rem;
 }
-/* line 154, ../sass/_custom.scss */
+/* line 137, ../sass/_custom.scss */
 .inline-list ul {
   list-style: none;
   padding: 0.5rem;
@@ -237,8 +208,15 @@ a:hover {
   color: #fff;
 }
 
+/* line 28, ../sass/_base.scss */
+.body a,
+.body a:focus,
+.body a:hover {
+  color: #b5b5b5;
+}
+
 /* Navigation */
-/* line 27, ../sass/_base.scss */
+/* line 35, ../sass/_base.scss */
 .navbar {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -246,11 +224,11 @@ a:hover {
   -o-border-radius: 0;
   border-radius: 0;
 }
-/* line 29, ../sass/_base.scss */
+/* line 37, ../sass/_base.scss */
 .navbar .navbar-brand {
   color: #cc8333;
 }
-/* line 32, ../sass/_base.scss */
+/* line 40, ../sass/_base.scss */
 .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
   color: #f5e6d6;
 }
