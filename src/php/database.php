@@ -21,6 +21,29 @@ class dbQ {
 			echo("<meta http-equiv='refresh' content='2;../../index.html'/>");
 		}
 	}
+	function charlistQ() {
+		global $db;
+		global $user;
+
+		$q = "select charname from characters where username='$user'";
+		$stmt = $db->prepare($q);
+		$stmt->execute();
+		$r = $stmt->fetchAll(PDO::FETCH_OBJ);
+		$f = json_encode($r);
+		echo $f;
+	}
+
+	//basic column/table query. values can be placed in controller and pulled from here. NO USER INPUT PLEASE JUST CODE!
+	function singleQ($column,$table) {
+		global $db;
+
+		$q = "select $column from $table where username='$user' charname='$char'";
+		$stmt = $db->prepare($q);
+		$stmt->execute();
+		$r = $stmt->fetch(PDO::FETCH_OBJ);
+		$f = json_encode($r);
+		echo $f;
+	}
 	
 	//user query
 	function userQ() {

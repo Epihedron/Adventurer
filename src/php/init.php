@@ -9,26 +9,13 @@
 	$userquery = (isset($_POST['userquery']) ? $dbQ->userQ() : false); 
    	$charquery = (isset($_POST['charquery']) ? $dbQ->charQ() : false); 
 	$charchange = (isset($_POST['cc']) ? $_SESSION['character']=$_POST['cc'] : false);
+	$charlistquery = (isset($_POST['charlistquery']) ? $dbQ->charlistQ() : false);
 
 	//delete character
 	if(isset($_POST['delchar']))
 	{
 		$trash=$_POST['delchar'];
 		$dbD->charD($trash,$user);
-	}
-
-	//get character list
-	if(isset($_POST['charlistquery']))
-	{
-		mysql_connect('localhost','host','');
-		mysql_select_db('adventurer');
-		$query=mysql_query("select charname from characters where username='$user';");
-		while($r=mysql_fetch_assoc($query))
-		{
-			$f[]=$r['charname'];
-		}
-		$ff=json_encode($f);
-		echo $ff;
 	}
 
 	//regex values before shown to view with htmlspecialchars

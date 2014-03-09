@@ -46,7 +46,7 @@ $.ajax({
 		var d = JSON.parse(data);
 		for(var i in d)
 		{
-			$("#charlist").append("<li value="+i+">"+d[i]+"</li>");
+			$("#charlist").append("<li value="+i+">"+d[i]['charname']+"</li>");
 		}
 
 		//char selected
@@ -56,7 +56,7 @@ $.ajax({
 			{
 				url:'../php/init.php',
 				type:'POST',
-				data:{cc:d[this.value]},
+				data:{cc:d[this.value]['charname']},
 				success:function(data)
 				{
 					data='';
@@ -64,6 +64,9 @@ $.ajax({
 			});
 			setTimeout("window.location.href='../html/charactersheet.html?char="+new Date().getTime()+"';",300);
 		});
+	},
+	fail: function() {
+		console.log('unable to send charlist query');
 	}
 });
 
