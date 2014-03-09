@@ -1,4 +1,20 @@
 var user;
+
+//function for posting data to init.php
+function initP(d) {
+	$.ajax({
+		url:'../php/init.php',
+		type:'post',
+		data:d,
+		success:function(data) {
+			console.log(data);
+		},
+		fail:function() {
+			console.log('unable to send '+d);
+		}
+	});
+}
+
 //logincheck
 $.ajax({
     url:'../php/init.php',
@@ -88,9 +104,9 @@ $("#delchar").click(function()
                                     {
                                         alert(data);
                                     },
-                                    error:function(err)
+                                    error:function()
                                     {
-                                        alert("An error was thrown:"+JSON.stringify(err));
+					console.log('could not send for deleting a character.');
                                     }
                                 }
                             ).done(function(){location.reload(true);});

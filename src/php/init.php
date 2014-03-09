@@ -1,44 +1,21 @@
 <?php
+	include 'database.php';
 	session_start();
 	$user=$_SESSION['user'];
-	$char=$_SESSION['character'];
-    
-    //character change
-    if(isset($_POST['cc']))
-    {
-	$_SESSION['character']=$_POST['cc'];
-	echo $_SESSION['character'];
-    }
+	$char = (isset($_SESSION['character']) ? $_SESSION['character'] : null);
+	$dbQ = new dbQ;
+	$dbD = new dbD;
+	
+	$userquery = (isset($_POST['userquery']) ? $dbQ->userQ() : false); 
+   	$charquery = (isset($_POST['charquery']) ? $dbQ->charQ() : false); 
+	$charchange = (isset($_POST['cc']) ? $_SESSION['character']=$_POST['cc'] : false);
 
-    //user query
-    if(isset($_POST['userquery']))
-    {
-        echo($user);
-    }
-
-	//character query
-	if(isset($_POST['charquery']))
+	//delete character
+	if(isset($_POST['delchar']))
 	{
-		echo $_SESSION['character'];
+		$trash=$_POST['delchar'];
+		$dbD->charD($trash,$user);
 	}
-
-    //delete character
-    if(isset($_POST['delchar']))
-    {
-	//SQL char removal
-	$trash=$_POST['delchar'];
-	mysql_connect('localhost','host','');
-	mysql_select_db('adventurer');
-	mysql_query("delete from cfeatures using cfeatures where cfeatures.username='$user' and cfeatures.charname='$trash';");
-	mysql_query("delete from characters using characters where characters.username='$user' and characters.charname='$trash';");
-	mysql_query("delete from feats using feats where feats.username='$user' and feats.charname='$trash';");
-	mysql_query("delete from inventory using inventory where inventory.username='$user' and inventory.charname='$trash';");
-	mysql_query("delete from languages using languages where languages.username='$user' and languages.charname='$trash';");
-	mysql_query("delete from powers using powers where powers.username='$user' and powers.charname='$trash';");
-	mysql_query("delete from rfeatures using rfeatures where rfeatures.username='$user' and rfeatures.charname='$trash';");
-	mysql_query("delete from wealth using wealth where wealth.username='$user' and wealth.charname='$trash';");
-	echo "Character $trash wiped!";
-    }
 
 	//get character list
 	if(isset($_POST['charlistquery']))
