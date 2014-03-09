@@ -1,13 +1,16 @@
 <?php
 	include 'database.php';
+
 	//calling in the database controller
 	$dbQ = new dbQ;
 	$dbD = new dbD;
 	$tools = new tools;
+
 	//session calls
 	session_start();
 	$user=$_SESSION['user'];
 	$char = (isset($_SESSION['character']) ? $_SESSION['character'] : null);
+
 	//handles for database controller
 	$userquery = (isset($_POST['userquery']) ? $dbQ->userQ() : false); 
    	$charquery = (isset($_POST['charquery']) ? $dbQ->charQ() : false); 
@@ -21,5 +24,5 @@
 	$featsquery = (isset($_POST['feats']) ? $dbQ->multiQ('*','feats') : false);
 	$languagesquery = (isset($_POST['languages']) ? $dbQ->multiQ('*','languages') : false);
 	$inventoryquery = (isset($_POST['inventory']) ? $dbQ->multiQ('*','inventory') : false);
-	$wealthquery = (isset($_POST['wealth']) ? $dbQ->multiQ('*','wealth') : false);
+	$wealthquery = (isset($_POST['wealth']) ? $dbQ->singleQ('*','wealth') : false);
 ?>

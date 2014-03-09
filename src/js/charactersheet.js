@@ -293,7 +293,6 @@ $.ajax(
 						success:function(data)
 						{
 							var d=JSON.parse(data);
-							console.log(d);
 
 							$('#copper').text(d['copper']);
 							$('#silver').text(d['silver']);

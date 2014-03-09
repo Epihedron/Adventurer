@@ -13,7 +13,7 @@ Class tools {
 	}
 }
 
-//class for basic single model query
+//class for model query
 class dbQ {
 	//login query
 	function loginQ($user,$password) {
@@ -90,6 +90,30 @@ class dbQ {
 
 //class for deleting a value from the model
 class dbD {
+	//delete value from charactersheet
+	function attrD($t,$v) {
+		global $user;
+		global $char;
+		global $db;
+
+		if($t == 'atwillpowers' || $t == 'encounterpowers' || $t == 'dailypowers' || $t == 'utilitypowers')
+		{
+			$stmt = $db->prepare("delete from powers where username='$user' and charname='$char' and power='$v'");
+			$stmt->execute();
+		}
+		else
+		{
+			if($t=='classfeatures'){$c='cfeature';$t='cfeatures';}
+			if($t=='inventory'){$c='item';}
+			if($t=='racefeatures'){$c='rfeature';$t='rfeatures';}
+			if($t=='langs'){$c='language';$t='languages';}
+			if($t=='feats'){$c='feat';}
+
+			$stmt = $db->prepare("delete from $t where username='$user' and charname='$char' and $c='$v'");
+			$stmt->execute();
+		}
+	}
+
 
 	//delete a character
 	function charD($char,$user) {
@@ -117,7 +141,51 @@ class dbD {
 	}
 }
 
+class dbU {
 
+	//change character name
+	function nameU($nn) {
+		global $user;
+		global $char;
+		global $db;
 
+		$tables = array('characters','cfeatures','rfeatures','feats','inventory','languages','powers','wealth');
+		foreach($tables as $t) {
+			$stmt = $db->prepare("update $t set charname = :nn where username = '$user' and charname = '$char'");
+			$stmt->execute(array('nn' => $nn));
+		}
+		$_SESSION['character'] = htmlspecialchars($nn);
+		echo "Character name changed to ".$_SESSION['character'];
+	} 
 
+	//change attribute
+	function attrU($t,$c,$o,$n) {
+		global $user;
+		global $char;
+		global $db;
+
+		$stmt = $db->prepare("update $t set $c = :n where username = '$user' and charname = '$char' and $c = '$o'");
+		$stmt->execute(array('n' => $n));
+	}
+
+	//change power
+	function powerU($t,$c,$o,$n,$tp) {
+		global $user;
+		global $char;
+		global $db;
+
+		$stmt = $db->prepare("update $t set $c = :n where username = '$user' and charname = '$char' and $c = '$o'and type = '$tp'");
+		$Stmt->execute(array('n' => $n));
+	}
+
+	//change skill
+	function skillU($sc,$s) {
+		global $user;
+		global $char;
+		global $db;
+
+		$stmt = $db->prepare("update characters set $sc='$s' where username='$user' and charname='$char'");
+		$stmt->execute();
+	}
+}
 ?>
