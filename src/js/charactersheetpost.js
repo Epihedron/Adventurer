@@ -233,7 +233,7 @@ $('.addbutton').click(function()
 		{
 			$.ajax(
 			{
-				url:'../php/newattr.php',
+				url:'../php/init.php',
 				type:'post',
 				data:{'newval':val,'newtype':type},
 				success:function(d){console.log(d);},

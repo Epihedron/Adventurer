@@ -74,6 +74,43 @@ class dbQ {
 		$f = json_encode($r);
 		echo $f;
 	}
+
+	//insert new character value query
+	function ncharvalQ($nv,$nt) {
+		global $db;
+		global $user;
+		global $char;
+
+		$powers = ['atwillpowers','encounterpowers','dailypowers','utilitypowers'];
+		$tables = ['racefeatures','classfeatures','feats','langs','inventory'];
+	
+		foreach($powers as $value)
+		{
+			if($nt == $value)
+			{
+				if($value == 'atwillpowers'){$value='at will';}
+				if($value == 'encounterpowers'){$value='encounter';}
+				if($value == 'dailypowers'){$value='daily';}
+				if($value == 'utilitypowers'){$value='utility';}
+				$stmt = $db->prepare("insert into powers(charname,username,power,type) values('$char','$user',:nv,'$value')");
+				$stmt->execute(array('nv' => $nv));
+			}
+		}
+
+		foreach($tables as $values)
+		{
+			if($nt == $values)
+			{
+				if($values=='racefeatures'){$values='rfeatures';$c='rfeature';}
+				if($values=='classfeatures'){$values='cfeatures';$c='cfeature';}
+				if($values=='feats'){$values='feats';$c='feat';}
+				if($values=='langs'){$values='languages';$c='language';}
+				if($values=='inventory'){$values='inventory';$c='item';}
+				$stmt = $db->prepare("insert into $values(charname,username,$c) values('$char','$user',:nv)");
+				$stmt->execute(array('nv' => $nv));
+			}
+		}
+	}
 	
 	//user query
 	function userQ() {
