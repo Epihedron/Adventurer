@@ -48,7 +48,7 @@ html h4 {
   position: relative;
   width: 100%;
   max-width: 700px;
-  padding: 2rem;
+  padding: .2rem;
   margin: 0 auto;
   background-color: #fff;
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
@@ -171,25 +171,25 @@ html h4 {
   color: #31d2d4;
 }
 
-/* Media Queries */
-@media screen and (max-width: 50em) {
-  /* line 126, ../sass/_custom.scss */
-  section {
-    font-size: 80%;
-  }
-}
-/* line 133, ../sass/_custom.scss */
+/* line 126, ../sass/_custom.scss */
 .inline-list {
   text-align: center;
   margin: 0 auto;
   padding: 2rem;
 }
-/* line 137, ../sass/_custom.scss */
+/* line 130, ../sass/_custom.scss */
 .inline-list ul {
   list-style: none;
   padding: 0.5rem;
 }
 
+/* Media Queries */
+@media screen and (max-width: 50em) {
+  /* line 138, ../sass/_custom.scss */
+  section {
+    font-size: 80%;
+  }
+}
 /*
  * Globals
  */
@@ -212,7 +212,7 @@ a:hover {
 .body a,
 .body a:focus,
 .body a:hover {
-  color: #b5b5b5;
+  color: #9c9c9c;
 }
 
 /* Navigation */
@@ -231,6 +231,25 @@ a:hover {
 /* line 40, ../sass/_base.scss */
 .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
   color: #f5e6d6;
+}
+
+/* Interactions */
+/* line 48, ../sass/_base.scss */
+.pointer {
+  cursor: pointer;
+  color: #9c9c9c;
+}
+
+/* line 53, ../sass/_base.scss */
+.pointer:hover {
+  color: #9c9c9c;
+}
+
+/* line 57, ../sass/_base.scss */
+.top-right-button {
+  position: absolute;
+  right: 35px;
+  top: 15px;
 }
 
 /* line 17, ../../../../.rvm/gems/ruby-2.1.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
@@ -316,7 +335,7 @@ body {
 
 /* line 19, ../sass/main.scss */
 .footer {
-  color: #b5b5b5;
+  color: #9c9c9c;
 }
 
 /*
@@ -332,9 +351,9 @@ body {
 .character-list-container {
   text-align: center;
 }
-/* line 35, ../sass/main.scss */
-.character-list-container div {
-  padding: .25rem 0 .25rem;
+/* line 38, ../sass/main.scss */
+.character-list-container .row h4 {
+  padding: 1.5rem 0;
 }
 /* line 41, ../sass/main.scss */
 .character-list-container ul {
@@ -346,5 +365,4 @@ body {
   font-size: 1.3rem;
   cursor: pointer;
   color: black;
-  padding: .5rem 0;
 }

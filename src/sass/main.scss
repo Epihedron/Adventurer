@@ -32,11 +32,11 @@
 
  .character-list-container{
  	text-align: center;
- 	div {
- 		padding: .25rem 0 .25rem;
- 	}
  	@mixin reset-list-style {
   		list-style: none;
+	}
+	.row h4{
+		padding: 1.5rem 0;
 	}
  	ul{
  		width: 100%;
@@ -45,7 +45,6 @@
 	 		font-size: 1.3rem;
 	 		cursor: pointer;
 	 		color: black;
-	 		padding: .5rem 0;
 	 	}
 	 	li:hover{
 

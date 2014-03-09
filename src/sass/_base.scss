@@ -42,3 +42,20 @@ a:hover{
 	}
 
 } 
+
+/* Interactions */
+
+.pointer{
+	cursor:pointer;
+	color: $loud-grey;
+}
+
+.pointer:hover{
+	color: $loud-grey;
+}
+
+.top-right-button{
+	position: absolute;
+	right: 35px;
+	top: 15px;
+}
