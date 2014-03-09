@@ -54,10 +54,10 @@ function ccstat(id,tbl,clm)
 				url:'../php/changeatt.php',
 				type:'post',
 				data:{table:tbl,column:clm,og:ogval,nv:nval},
-				success:function(d){console.log(d);location.reload();},
+				success:function(d){console.log(d);},
 				fail:function(){console.log('change data WASNT sent');}
 			});
-			ttr();
+			//ttr();
 		}
 	});
 }

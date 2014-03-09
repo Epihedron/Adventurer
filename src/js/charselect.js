@@ -1,4 +1,20 @@
 var user;
+
+//function for posting data to init.php
+function initP(d) {
+	$.ajax({
+		url:'../php/init.php',
+		type:'post',
+		data:d,
+		success:function(data) {
+			console.log(data);
+		},
+		fail:function() {
+			console.log('unable to send '+d);
+		}
+	});
+}
+
 //logincheck
 // $.ajax({
 //     url:'../php/init.php',
@@ -69,6 +85,7 @@ $("#newchar").click(function()
     }
 );
 
+<<<<<<< HEAD
 //hide/reveal character check boxes
 // $('#visibility-toggle').click(function(){
 //   if ( $('.me-select label::before').css('visibility') == 'hidden' )
@@ -78,6 +95,41 @@ $("#newchar").click(function()
 // });
 $("#visibility-toggle").click(function(){
     $("input[type=checkbox], #checkbox").fadeToggle(200);
+=======
+//delete character
+$("#delchar").click(function()
+{
+    var p1=prompt("Enter character's name(CaSe SeNsItIvE):");
+    if(p1 != null)
+        {
+            var p2=prompt("Measure twice, cut once:");
+            if(p2 != null)
+                {
+                    if(p1==p2)
+                        {
+                            $.ajax(
+                                {
+                                    url:"../php/init.php",
+                                    type:"POST",
+                                    data:{"delchar":p2},
+                                    success:function(data)
+                                    {
+                                        alert(data);
+                                    },
+                                    error:function()
+                                    {
+					console.log('could not send for deleting a character.');
+                                    }
+                                }
+                            ).done(function(){location.reload(true);});
+                        }
+                    else
+                        {
+                            alert('The names did not match.');
+                        }
+                }
+        }
+>>>>>>> master
 });
 
 //delete character
