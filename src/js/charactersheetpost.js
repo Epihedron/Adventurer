@@ -57,7 +57,7 @@ function ccstat(id,tbl,clm)
 				success:function(d){console.log(d);},
 				fail:function(){console.log('change data WASNT sent');}
 			});
-			//ttr();
+			ttr();
 		}
 	});
 }
