@@ -34,9 +34,13 @@
                 <div class="character-list-container box">
                     <div class="row">
                         <div class="col-md-12">
+                            <span class="pointer top-left-button controls-toggle" style="display: none;">
+                                <span class="glyphicon glyphicon-plus"><label for="delete" style="display: none;"></label></span>
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </span>
                             <h4 class="morphus">Characters</h4>
-                            <span class="pointer top-right-button" id="visibility-toggle">
-                                <span class="glyphicon glyphicon-cog"></span>
+                            <span class="pointer top-right-button" >
+                                <span class="glyphicon glyphicon-cog" id="visibility-toggle"></span>
                             </span>
                         </div>
                     </div>
@@ -46,6 +50,7 @@
                             <li><input id="cb2" name="cb2" type="checkbox" style="display: none;"><label><span style="display: none;" id="checkbox"></span><span>Carrie Johnston</span></label></li>
                             <li><input id="cb3" name="cb3" type="checkbox" style="display: none;"><label><span style="display: none;" id="checkbox"></span><span>Barry White</span></label></li>
                             <!--character list from json gets ajaxed here-->
+                            <input id="delete" style="display: none;">
                         </ul>
                     </form>
                 </div>
@@ -89,7 +94,7 @@
 <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> JQuery for prod-->
 <script src="http://code.jquery.com/jquery-latest.min.js"></script> <!-- JQuery for dev -->
 <script src='../js/main.js'></script>
-<script src='../js/charselect.js'></script>
+<script src='../js/charselect.new.js'></script>
 <script type="text/javascript">
 function changeVisibility()
 {

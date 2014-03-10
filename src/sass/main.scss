@@ -32,11 +32,12 @@
 
  .character-list-container{
  	text-align: center;
+ 	padding-bottom: 1.5rem;
  	@mixin reset-list-style {
   		list-style: none;
 	}
 	.row h4{
-		padding: 1.5rem 0;
+		padding: 2rem 0 1.5rem;
 	}
  	ul{
  		width: 100%;
