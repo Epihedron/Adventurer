@@ -5,6 +5,4 @@ Adventurer is a web based application that aides D20 players and dungeon masters
 
 The character creation page has been made into a step by step process, eliminating anxiety from new players after seeing all the fields that need to be entered. This step by step function is not linear, making it easier for more experienced players to quickly fill in their needed values.
 
-Modifying characters or game information after creation is as easy as point, click and add the new value. The character page has been made into a console that can show and hide values. These values can be modified by double clicking the value already shown.
-
-The Dungeon Masters page needs heavy work and is currently down. After the character page is fully functional, work will begin on the Dungeon Masters page.
+Modifying characters or game information after creation is as easy as point, click and add the new value. The character page has been made into a console that can show and hide values. These values can be modified by double clicking the value currently shown.

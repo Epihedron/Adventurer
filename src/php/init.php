@@ -1,154 +1,36 @@
 <?php
 	include 'database.php';
+
+	//calling in the database controller
+	$dbQ = new dbQ;
+	$dbD = new dbD;
+	$tools = new tools;
+
+	//session calls
 	session_start();
 	$user=$_SESSION['user'];
 	$char = (isset($_SESSION['character']) ? $_SESSION['character'] : null);
-	$dbQ = new dbQ;
-	$dbD = new dbD;
-	
+
+	//handles for database controller
+	//basic queries
 	$userquery = (isset($_POST['userquery']) ? $dbQ->userQ() : false); 
    	$charquery = (isset($_POST['charquery']) ? $dbQ->charQ() : false); 
+	$charlistquery = (isset($_POST['charlistquery']) ? $dbQ->charlistQ() : false);
+	$charstatsquery = (isset($_POST['basicstats']) ? $dbQ->singleQ('*','characters') : false);
+	$powersquery = (isset($_POST['powers']) ? $dbQ->multiQ('*','powers') : false);
+	$cfeaturesquery = (isset($_POST['cfeatures']) ? $dbQ->multiQ('*','cfeatures') : false);
+	$rfeaturesquery = (isset($_POST['rfeatures']) ? $dbQ->multiQ('*','rfeatures') : false);
+	$featsquery = (isset($_POST['feats']) ? $dbQ->multiQ('*','feats') : false);
+	$languagesquery = (isset($_POST['languages']) ? $dbQ->multiQ('*','languages') : false);
+	$inventoryquery = (isset($_POST['inventory']) ? $dbQ->multiQ('*','inventory') : false);
+	$wealthquery = (isset($_POST['wealth']) ? $dbQ->singleQ('*','wealth') : false);
+
+	//update queries
 	$charchange = (isset($_POST['cc']) ? $_SESSION['character']=$_POST['cc'] : false);
 
-	//delete character
-	if(isset($_POST['delchar']))
-	{
-		$trash=$_POST['delchar'];
-		$dbD->charD($trash,$user);
-	}
-
-	//get character list
-	if(isset($_POST['charlistquery']))
-	{
-		mysql_connect('localhost','host','');
-		mysql_select_db('adventurer');
-		$query=mysql_query("select charname from characters where username='$user';");
-		while($r=mysql_fetch_assoc($query))
-		{
-			$f[]=$r['charname'];
-		}
-		$ff=json_encode($f);
-		echo $ff;
-	}
-
-	//regex values before shown to view with htmlspecialchars
-	function htmlspecarr(&$vari)
-	{
-		foreach($vari as $val)
-		{
-			if(!is_array($val)){$val = htmlspecialchars($val);}
-			else {htmlspecarr($val);}
-		}
-	}
-
-	//getting character stats from SQL
-	if(isset($_POST['basicstats']))
-	{
-		mysql_connect('localhost','host','');
-		mysql_select_db('adventurer');
-		$query=mysql_query("select * from characters where username='$user' and charname='$char';");
-		while($r=mysql_fetch_assoc($query))
-		{
-			htmlspecarr($r);
-			
-			$a=$r;
-		}
-		echo json_encode($a);
-	}
-
-	if(isset($_POST['powers']))
-	{
-		mysql_connect('localhost','host','');
-		mysql_select_db('adventurer');
-		$query=mysql_query("select * from powers where username='$user' and charname='$char';");
-		while($r=mysql_fetch_assoc($query))
-		{
-			$r['power']=htmlspecialchars($r['power']);
-			$a[]=$r;
-		}
-		echo json_encode($a);
-	}
+	//delete queries
+	$deletechar = (isset($_POST['delchar']) ? $dbD->charD($_POST['delchar'],$user) : false);
 	
-	if(isset($_POST['cfeatures']))
-	{
-		mysql_connect('localhost','host','');
-		mysql_select_db('adventurer');
-		$query=mysql_query("select * from cfeatures where username='$user' and charname='$char';");
-		while($r=mysql_fetch_assoc($query))
-		{
-			$r['cfeature']=htmlspecialchars($r['cfeature']);
-			$a[]=$r;
-		}
-		echo json_encode($a);
-	}
-	if(isset($_POST['rfeatures']))
-	{
-		mysql_connect('localhost','host','');
-		mysql_select_db('adventurer');
-		$query=mysql_query("select * from rfeatures where username='$user' and charname='$char';");
-		while($r=mysql_fetch_assoc($query))
-		{
-			$r['rfeature']=htmlspecialchars($r['rfeature']);
-			$a[]=$r;
-		}
-		echo json_encode($a);
-	}
-	if(isset($_POST['feats']))
-	{
-		mysql_connect('localhost','host','');
-		mysql_select_db('adventurer');
-		$query=mysql_query("select * from feats where username='$user' and charname='$char';");
-		while($r=mysql_fetch_assoc($query))
-		{
-			$r['feat']=htmlspecialchars($r['feat']);
-			$a[]=$r;
-		}
-		echo json_encode($a);
-	}
-	if(isset($_POST['languages']))
-	{
-		mysql_connect('localhost','host','');
-		mysql_select_db('adventurer');
-		$query=mysql_query("select * from languages where username='$user' and charname='$char';");
-		while($r=mysql_fetch_assoc($query))
-		{
-			$r['language']=htmlspecialchars($r['language']);
-			$a[]=$r;
-		}
-		echo json_encode($a);
-	}
-	if(isset($_POST['inventory']))
-	{
-		mysql_connect('localhost','host','');
-		mysql_select_db('adventurer');
-		$query=mysql_query("select * from inventory where username='$user' and charname='$char';");
-		while($r=mysql_fetch_assoc($query))
-		{
-			$r['item']=htmlspecialchars($r['item']);
-			$a[]=$r;
-		}
-		echo json_encode($a);
-	}
-
-	//wealth query
-	if(isset($_POST['wealth']))
-	{
-		mysql_connect('localhost','host','');
-		mysql_select_db('adventurer');
-		$query=mysql_query("select * from wealth where username='$user' and charname='$char';");
-		while($r=mysql_fetch_assoc($query))
-		{
-			//$r=htmlspecialchars($r);
-			$c=htmlspecialchars($r['copper']);
-			$s=htmlspecialchars($r['silver']);
-			$g=htmlspecialchars($r['gold']);
-			$p=htmlspecialchars($r['platinum']);
-
-			$f['copper']=$c;
-			$f['silver']=$s;
-			$f['gold']=$g;
-			$f['platinum']=$p;
-		}
-		echo json_encode($f);
-	}
+	//new value queries
+	$newcharvalue = (isset($_POST['newval']) && isset($_POST['newtype']) ? $dbQ->ncharvalQ($_POST['newval'],$_POST['newtype']) : false);
 ?>

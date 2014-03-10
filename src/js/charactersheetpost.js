@@ -57,7 +57,7 @@ function ccstat(id,tbl,clm)
 				success:function(d){console.log(d);},
 				fail:function(){console.log('change data WASNT sent');}
 			});
-			//ttr();
+			ttr();
 		}
 	});
 }
@@ -233,7 +233,7 @@ $('.addbutton').click(function()
 		{
 			$.ajax(
 			{
-				url:'../php/newattr.php',
+				url:'../php/init.php',
 				type:'post',
 				data:{'newval':val,'newtype':type},
 				success:function(d){console.log(d);},
