@@ -16,15 +16,15 @@ Class tools {
 //class for model query
 class dbQ {
 	//login query
-	function loginQ($user,$password) {
+	function loginQ($u,$p) {
 		global $db;
 
 		$q = "select * from accounts where username = :user";
 		$stmt = $db->prepare($q);
-		$stmt->execute(array('user' => $user));
+		$stmt->execute(array('user' => $u));
 		$r = $stmt->fetch(); 
-		if($user == $r['username'] && $password == $r['password']) {
-			$_SESSION['user'] = $user;
+		if($u == $r['username'] && $p == $r['password']) {
+			$_SESSION['user'] = $u;
 			header("LOCATION:../html/main.html");
 		} else {
 			echo("incorrect login info");
