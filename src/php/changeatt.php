@@ -1,5 +1,5 @@
 <?php
-	include 'database.php';
+	require('database.php');
 
 	$dbU = new dbU;
 	$dbD = new dbD;

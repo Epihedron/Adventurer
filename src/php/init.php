@@ -1,5 +1,5 @@
 <?php
-	include 'database.php';
+	require('database.php');
 
 	//calling in the database controller
 	$dbQ = new dbQ;
