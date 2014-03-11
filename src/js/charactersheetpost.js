@@ -36,7 +36,7 @@ $('#character').dblclick(function()
 //change character stat function
 function ccstat(id,tbl,clm)
 {
-	var ogval = id.html();
+	var ogval = id.text();
 
 	id.html('<input id="temp" type="text"/>');
 	$('#temp').focus();
@@ -54,7 +54,7 @@ function ccstat(id,tbl,clm)
 				url:'../php/changeatt.php',
 				type:'post',
 				data:{table:tbl,column:clm,og:ogval,nv:nval},
-				success:function(d){console.log(d);},
+				success:function(d){console.log(ogval);},
 				fail:function(){console.log('change data WASNT sent');}
 			});
 			ttr();

@@ -59,6 +59,13 @@ function datMod(x)
 //ghetto reloads for now :/
 function ttr(){setTimeout(function(){location.reload()},25);}
 
+//clean html strings before present. helps against javascript injection
+function strip(html) {
+	var tmp = document.createElement("DIV");
+	tmp.innerHTML = html;
+	return tmp.textContent || tmp.innerText || "";
+}
+
 //logincheck
 $.ajax(
 {
@@ -319,7 +326,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#classfeatures').append("<li><span class='lival'>"+d[i]['cfeature']+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$('#classfeatures').append("<li><span class='lival'>"+strip(d[i]['cfeature'])+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -341,7 +348,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#racefeatures').append("<li><span class='lival'>"+d[i]['rfeature']+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$('#racefeatures').append("<li><span class='lival'>"+strip(d[i]['rfeature'])+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -365,7 +372,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#feats').append("<li><span class='lival'>"+d[i]['feat']+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$('#feats').append("<li><span class='lival'>"+strip(d[i]['feat'])+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -387,7 +394,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#langs').append("<li><span class='lival'>"+d[i]['language']+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$('#langs').append("<li><span class='lival'>"+strip(d[i]['language'])+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -411,7 +418,7 @@ $.ajax(
 							{
 								if(d[i])
 								{
-									$('#inventory').append("<li><span class='lival'>"+d[i]['item']+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$('#inventory').append("<li><span class='lival'>"+strip(d[i]['item'])+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 						},
@@ -458,28 +465,28 @@ $.ajax(
 							{
 								for(var x in awp)
 								{
-									$("#atwillpowers").append("<li><span class='lival'>"+awp[x]+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$("#atwillpowers").append("<li><span class='lival'>"+strip(awp[x])+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 							if(ep)
 							{
 								for(var x in ep)
 								{
-									$("#encounterpowers").append("<li><input type='checkbox' style='float:left;'/><span class='lival'>"+ep[x]+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$("#encounterpowers").append("<li><input type='checkbox' style='float:left;'/><span class='lival'>"+strip(ep[x])+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 							if(dp)
 							{
 								for(var x in dp)
 								{
-									$("#dailypowers").append("<li><input type='checkbox'style='float:left;'/><span class='lival'>"+dp[x]+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$("#dailypowers").append("<li><input type='checkbox'style='float:left;'/><span class='lival'>"+strip(dp[x])+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 							if(up)
 							{
 								for(var x in up)
 								{
-									$("#utilitypowers").append("<li><input type='checkbox'style='float:left;'/><span class='lival'>"+up[x]+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
+									$("#utilitypowers").append("<li><input type='checkbox'style='float:left;'/><span class='lival'>"+strip(up[x])+"</span><img class='deletebutton' src='../../images/smldeletebutton.png'/></li>");
 								}
 							}
 
@@ -487,7 +494,7 @@ $.ajax(
 							$('.deletebutton').click(function()
 							{
 								var title=$(this).parent().parent().attr('id');
-								var text=$(this).prev().text();
+								var text=$(this).prev().html();
 
 								if(confirm('Are you sure you want to delete "'+text+'"?'))
 								{

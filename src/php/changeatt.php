@@ -1,5 +1,5 @@
 <?php
-	include 'database.php';
+	require('database.php');
 
 	$dbU = new dbU;
 	$dbD = new dbD;
@@ -16,7 +16,7 @@
 	$changename = (isset($_POST['changename']) ? $dbU->nameU($_POST['changename']) : false);
 
 	//function for changing attributes
-	if(isset($_POST['table']) && isset($_POST['column']) && isset($_POST['og']) && isset($_POST['nv']))
+	if(isset($_POST['table']) && isset($_POST['column']) && isset($og) && isset($nv))
 	{
 		$dbU->attrU($table,$column,$og,$nv);
 	}

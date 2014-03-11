@@ -16,15 +16,15 @@ Class tools {
 //class for model query
 class dbQ {
 	//login query
-	function loginQ($user,$password) {
+	function loginQ($u,$p) {
 		global $db;
 
 		$q = "select * from accounts where username = :user";
 		$stmt = $db->prepare($q);
-		$stmt->execute(array('user' => $user));
+		$stmt->execute(array('user' => $u));
 		$r = $stmt->fetch(); 
-		if($user == $r['username'] && $password == $r['password']) {
-			$_SESSION['user'] = $user;
+		if($u == $r['username'] && $p == $r['password']) {
+			$_SESSION['user'] = $u;
 			header("LOCATION:../html/main.html");
 		} else {
 			echo("incorrect login info");
@@ -191,7 +191,7 @@ class dbU {
 			$stmt = $db->prepare("update $t set charname = :nn where username = '$user' and charname = '$char'");
 			$stmt->execute(array('nn' => $nn));
 		}
-		$_SESSION['character'] = htmlspecialchars($nn);
+		$_SESSION['character'] = $nn;
 		echo "Character name changed to ".$_SESSION['character'];
 	} 
 
@@ -201,8 +201,8 @@ class dbU {
 		global $char;
 		global $db;
 
-		$stmt = $db->prepare("update $t set $c = :n where username = '$user' and charname = '$char' and $c = '$o'");
-		$stmt->execute(array('n' => $n));
+		$stmt = $db->prepare("update $t set $c = :n where username = '$user' and charname = '$char' and $c = :o");
+		$stmt->execute(array('n' => $n,'o' => $o));
 	}
 
 	//change power
@@ -211,8 +211,8 @@ class dbU {
 		global $char;
 		global $db;
 
-		$stmt = $db->prepare("update $t set $c = :n where username = '$user' and charname = '$char' and $c = '$o'and type = '$tp'");
-		$Stmt->execute(array('n' => $n));
+		$stmt = $db->prepare("update $t set $c = :n where username = '$user' and charname = '$char' and $c = :o and type = '$tp'");
+		$Stmt->execute(array('n' => $n,'o' => $o));
 	}
 
 	//change skill

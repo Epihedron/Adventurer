@@ -1,6 +1,6 @@
 <?php
 
-include 'database.php';
+require('database.php');
 session_start();
 $dbQ = new dbQ;
 $user=$_POST['username'];
