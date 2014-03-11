@@ -191,7 +191,7 @@ class dbU {
 			$stmt = $db->prepare("update $t set charname = :nn where username = '$user' and charname = '$char'");
 			$stmt->execute(array('nn' => $nn));
 		}
-		$_SESSION['character'] = htmlspecialchars($nn);
+		$_SESSION['character'] = $nn;
 		echo "Character name changed to ".$_SESSION['character'];
 	} 
 
@@ -201,8 +201,8 @@ class dbU {
 		global $char;
 		global $db;
 
-		$stmt = $db->prepare("update $t set $c = :n where username = '$user' and charname = '$char' and $c = '$o'");
-		$stmt->execute(array('n' => $n));
+		$stmt = $db->prepare("update $t set $c = :n where username = '$user' and charname = '$char' and $c = :o");
+		$stmt->execute(array('n' => $n,'o' => $o));
 	}
 
 	//change power
@@ -211,8 +211,8 @@ class dbU {
 		global $char;
 		global $db;
 
-		$stmt = $db->prepare("update $t set $c = :n where username = '$user' and charname = '$char' and $c = '$o'and type = '$tp'");
-		$Stmt->execute(array('n' => $n));
+		$stmt = $db->prepare("update $t set $c = :n where username = '$user' and charname = '$char' and $c = :o and type = '$tp'");
+		$Stmt->execute(array('n' => $n,'o' => $o));
 	}
 
 	//change skill

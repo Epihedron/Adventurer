@@ -4,7 +4,6 @@
 	//calling in the database controller
 	$dbQ = new dbQ;
 	$dbD = new dbD;
-	$tools = new tools;
 
 	//session calls
 	session_start();
