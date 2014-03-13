@@ -110,6 +110,7 @@ h3
 	margin-top:10px;
 	margin-left:auto;
 	margin-right:auto;
+	padding-bottom:10px;
 	border-radius:8px;
 	font-size:14px;
 	width:335px;
@@ -292,4 +293,13 @@ h3
 {
 	float:right;
 	cursor:pointer;
+}
+.smallinputz
+{
+	width:2.6em;
+}
+.largeinputz
+{
+	width:25em;
+	resize:vertical;
 }

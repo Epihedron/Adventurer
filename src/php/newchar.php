@@ -72,10 +72,7 @@
     $his=$_POST['hashis'];
     
 	//connection to SQL 
-	$conn=mysql_connect('localhost','host','');
-	if(!$conn){print("could not connect to SQL\n");}
-	$sel=mysql_select_db("adventurer");
-	if(!$sel){print("could not select db\n");}
+	$db = new PDO("mysql:host=localhost;dbname=;adventurer","host","");
 
 	//function to send variable arrays to proper SQL tables
 	function qinit($array,$field,$table)
@@ -102,7 +99,8 @@
 			}
 		}
 		
-		mysql_query($sql.';') or die("<br/>Could not send query");
+		$stmt = $db->prepare($sql);
+		$stmt->execute($sql);
 	}
 	
 	function sqinit($array,$field,$table,$type)
@@ -129,7 +127,8 @@
 			}
 		}
 		
-		mysql_query($sql.';') or die("<br/>Could not send query");
+		$stmt = $db->prepare($sql);
+		$stmt->execute($sql);
 	}
 
 	//function to send initial SQL character data
@@ -151,12 +150,17 @@
 			}
 		}
 		$fincol=implode(",",$columns);
-		$findat=implode(",",$data);
-		mysql_query("insert into characters($fincol) values($findat);") or die("<br/> could not send query");
+		$findat=implode(",",$data);		
+		$sql = "insert into characters($fincol) values($findat)";
+		$stmt = $db->prepare($sql);
+		$stmt->execute($sql);
+
 	}
 
 	//inserting blank values in the wallet
-	mysql_query("insert into wealth(username,charname,copper,silver,gold,platinum) values('$user','$character',0,0,0,0);");
+	$sql = "insert into wealth(username,charname,copper,silver,gold,platinum) values('$user','$character',0,0,0,0)";
+	$stmt = $db->prepare($sql);
+	$stmt->execute($sql);
 
     //basic info array
     //$basicinfo['world']=$world;
