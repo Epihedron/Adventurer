@@ -62,6 +62,65 @@ function ccstat(id,tbl,clm)
 	});
 }
 
+//change character stat function with smaller input field
+function ccstatsml(id,tbl,clm)
+{
+	var ogval = id.text();
+
+	id.html('<input id="temp" type="text" class="smallinputz"/>');
+	$('#temp').focus();
+	$('#temp').focusout(function()
+	{
+		if($('#temp').val() == '')
+		{
+			id.html(ogval);
+		}
+		else
+		{
+			var nval = $('#temp').val();
+			$.ajax(
+			{
+				url:'../php/changeatt.php',
+				type:'post',
+				data:{table:tbl,column:clm,og:ogval,nv:nval},
+				success:function(d){console.log(ogval);},
+				fail:function(){console.log('change data WASNT sent');}
+			});
+			ttr();
+		}
+	});
+}
+
+//change character notes function (it specifically brings back the old value)
+function ccstatlrg(id,tbl,clm)
+{
+	var ogval = id.text();
+
+	id.html('<textarea id="temp" class="largeinputz"/>');
+	$('#temp').text(ogval);
+	$('#temp').focus();
+	$('#temp').focusout(function()
+	{
+		if($('#temp').val() == '')
+		{
+			id.html(ogval);
+		}
+		else
+		{
+			var nval = $('#temp').val();
+			$.ajax(
+			{
+				url:'../php/changeatt.php',
+				type:'post',
+				data:{table:tbl,column:clm,og:ogval,nv:nval},
+				success:function(d){console.log(ogval);},
+				fail:function(){console.log('change data WASNT sent');}
+			});
+			ttr();
+		}
+	});
+}
+
 //change character power function
 function ccpower(id,tbl,clm,tp)
 {
@@ -108,42 +167,42 @@ function ccskill(id,skill,col)
 }
 
 //change attributes
-$('#level').dblclick(function(){ccstat($(this),'characters','level')});
-$('#currenthealth').dblclick(function(){ccstat($(this),'characters','currenthp')});
-$('#maxhealth').dblclick(function(){ccstat($(this),'characters','maxhp')});
+$('#level').dblclick(function(){ccstatsml($(this),'characters','level')});
+$('#currenthealth').dblclick(function(){ccstatsml($(this),'characters','currenthp')});
+$('#maxhealth').dblclick(function(){ccstatsml($(this),'characters','maxhp')});
 $('#race').dblclick(function(){ccstat($(this),'characters','race')});
 $('#class').dblclick(function(){ccstat($(this),'characters','class')});
-$('#age').dblclick(function(){ccstat($(this),'characters','age')});
+$('#age').dblclick(function(){ccstatsml($(this),'characters','age')});
 $('#xp').dblclick(function(){ccstat($(this),'characters','xp')});
 $('#gender').dblclick(function(){ccstat($(this),'characters','gender')});
-$('#height').dblclick(function(){ccstat($(this),'characters','height')});
-$('#weight').dblclick(function(){ccstat($(this),'characters','weight')});
+$('#height').dblclick(function(){ccstatsml($(this),'characters','height')});
+$('#weight').dblclick(function(){ccstatsml($(this),'characters','weight')});
 $('#deity').dblclick(function(){ccstat($(this),'characters','deity')});
-$('#speed').dblclick(function(){ccstat($(this),'characters','speed')});
-$('#str').dblclick(function(){ccstat($(this),'characters','strength')});
-$('#con').dblclick(function(){ccstat($(this),'characters','constitution')});
-$('#dex').dblclick(function(){ccstat($(this),'characters','dexterity')});
-$('#int').dblclick(function(){ccstat($(this),'characters','intelligence')});
-$('#wis').dblclick(function(){ccstat($(this),'characters','wisdom')});
-$('#cha').dblclick(function(){ccstat($(this),'characters','charisma')});
+$('#speed').dblclick(function(){ccstatsml($(this),'characters','speed')});
+$('#str').dblclick(function(){ccstatsml($(this),'characters','strength')});
+$('#con').dblclick(function(){ccstatsml($(this),'characters','constitution')});
+$('#dex').dblclick(function(){ccstatsml($(this),'characters','dexterity')});
+$('#int').dblclick(function(){ccstatsml($(this),'characters','intelligence')});
+$('#wis').dblclick(function(){ccstatsml($(this),'characters','wisdom')});
+$('#cha').dblclick(function(){ccstatsml($(this),'characters','charisma')});
 
 //change attacks
-$('#atkclass').dblclick(function(){ccstat($(this),'characters','atkclass')});
-$('#atkfeat').dblclick(function(){ccstat($(this),'characters','atkfeat')});
-$('#atkmisc').dblclick(function(){ccstat($(this),'characters','atkmisc')});
-$('#damfeat').dblclick(function(){ccstat($(this),'characters','damfeat')});
-$('#dammisc').dblclick(function(){ccstat($(this),'characters','dammisc')});
+$('#atkclass').dblclick(function(){ccstatsml($(this),'characters','atkclass')});
+$('#atkfeat').dblclick(function(){ccstatsml($(this),'characters','atkfeat')});
+$('#atkmisc').dblclick(function(){ccstatsml($(this),'characters','atkmisc')});
+$('#damfeat').dblclick(function(){ccstatsml($(this),'characters','damfeat')});
+$('#dammisc').dblclick(function(){ccstatsml($(this),'characters','dammisc')});
 
 //change defenses
-$('#armor').dblclick(function(){ccstat($(this),'characters','armor')});
-$('#classac').dblclick(function(){ccstat($(this),'characters','armorclass')});
-$('#acmisc').dblclick(function(){ccstat($(this),'characters','armormisc')});
-$('#classfort').dblclick(function(){ccstat($(this),'characters','fortclass')});
-$('#fortmisc').dblclick(function(){ccstat($(this),'characters','fortmisc')});
-$('#classref').dblclick(function(){ccstat($(this),'characters','refclass')});
-$('#refmisc').dblclick(function(){ccstat($(this),'characters','refmisc')});
-$('#classwill').dblclick(function(){ccstat($(this),'characters','willclass')});
-$('#willmisc').dblclick(function(){ccstat($(this),'characters','willmisc')});
+$('#armor').dblclick(function(){ccstatsml($(this),'characters','armor')});
+$('#classac').dblclick(function(){ccstatsml($(this),'characters','armorclass')});
+$('#acmisc').dblclick(function(){ccstatsml($(this),'characters','armormisc')});
+$('#classfort').dblclick(function(){ccstatsml($(this),'characters','fortclass')});
+$('#fortmisc').dblclick(function(){ccstatsml($(this),'characters','fortmisc')});
+$('#classref').dblclick(function(){ccstatsml($(this),'characters','refclass')});
+$('#refmisc').dblclick(function(){ccstatsml($(this),'characters','refmisc')});
+$('#classwill').dblclick(function(){ccstatsml($(this),'characters','willclass')});
+$('#willmisc').dblclick(function(){ccstatsml($(this),'characters','willmisc')});
 
 //change powers
 function upp(id,sqltype)
@@ -203,13 +262,13 @@ $('#feet').dblclick(function(){ccstat($(this),'characters','feetslot')});
 $('#inventory').delegate('*','dblclick',function(){ccstat($(this),'inventory','item');});
 
 //change wealth
-$('#copper').dblclick(function(){ccstat($(this), 'wealth','copper');});
-$('#silver').dblclick(function(){ccstat($(this), 'wealth','silver');});
-$('#gold').dblclick(function(){ccstat($(this), 'wealth','gold');});
-$('#platinum').dblclick(function(){ccstat($(this), 'wealth','platinum');});
+$('#copper').dblclick(function(){ccstatsml($(this), 'wealth','copper');});
+$('#silver').dblclick(function(){ccstatsml($(this), 'wealth','silver');});
+$('#gold').dblclick(function(){ccstatsml($(this), 'wealth','gold');});
+$('#platinum').dblclick(function(){ccstatsml($(this), 'wealth','platinum');});
 
 //change notes
-$('#notes').dblclick(function(){ccstat($(this),'characters','notes');});
+$('#notes').dblclick(function(){ccstatlrg($(this),'characters','notes');});
 
 //adding value to list models
 $('.addbutton').click(function()
