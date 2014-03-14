@@ -8,7 +8,7 @@
     $character=$_POST['character'];
     $age=$_POST['age'];
     $weight=$_POST['weight'];
-    $height=mysql_real_escape_string($_POST['height']);
+    $height=$_POST['height'];
     $class=$_POST['class'];
     $race=$_POST['race'];
     $gender=$_POST['gender'];
@@ -39,9 +39,6 @@
 
     $maxhp=$_POST['maxhp'];
     $speed=$_POST['speed'];
-    $passperc=$_POST['passperc'];
-    $passins=$_POST['passins'];
-
     $head=$_POST['ehead'];
     $neck=$_POST['eneck'];
     $armor=$_POST['earmor'];
@@ -53,23 +50,23 @@
     $legs=$_POST['elegs'];
     $feet=$_POST['efeet'];
 
-    $acro=$_POST['hasacro'];
-    $arc=$_POST['hasarc'];
-    $ath=$_POST['hasath'];
-    $bluff=$_POST['hasbluff'];
-    $diplo=$_POST['hasdiplo'];
-    $dung=$_POST['hasdung'];
-    $end=$_POST['hasend'];
-    $heal=$_POST['hasheal'];
-    $ins=$_POST['hasins'];
-    $intim=$_POST['hasintim'];
-    $nat=$_POST['hasnat'];
-    $perc=$_POST['hasperc'];
-    $rel=$_POST['hasrel'];
-    $ste=$_POST['hasste'];
-    $street=$_POST['hasstreet'];
-    $thiev=$_POST['hasthiev'];
-    $his=$_POST['hashis'];
+    $acro=(isset($_POST['hasacro']) ? $_POST['hasacro'] : null);
+    $arc=(isset($_POST['hasarc']) ? $_POST['hasarc'] : null);
+    $ath=(isset($_POST['hasath']) ? $_POST['hasath'] : null);
+    $bluff=(isset($_POST['hasbluff']) ? $_POST['hasbluff'] : null);
+    $diplo=(isset($_POST['hasdiplo']) ? $_POST['hasdiplo'] : null);
+    $dung=(isset($_POST['hasdung']) ? $_POST['hasdung'] : null);
+    $end=(isset($_POST['hasend']) ? $_POST['hasend'] : null);
+    $heal=(isset($_POST['hasheal']) ? $_POST['hasheal'] : null);
+    $ins=(isset($_POST['hasins']) ? $_POST['hasins'] : null);
+    $intim=(isset($_POST['hasintim']) ? $_POST['hasintim'] : null);
+    $nat=(isset($_POST['hasnat']) ? $_POST['hasnat'] : null);
+    $perc=(isset($_POST['hasperc']) ? $_POST['hasperc'] : null);
+    $rel=(isset($_POST['hasrel']) ? $_POST['hasrel'] : null);
+    $ste=(isset($_POST['hasste']) ? $_POST['hasste'] : null);
+    $street=(isset($_POST['hasstreet']) ? $_POST['hasstreet'] : null);
+    $thiev=(isset($_POST['hasthiev']) ? $_POST['hasthiev'] : null);
+    $his=(isset($_POST['hashis']) ? $_POST['hashis'] : null);
     
 	//connection to SQL 
 	$db = new PDO("mysql:host=localhost;dbname=;adventurer","host","");
@@ -77,6 +74,8 @@
 	//function to send variable arrays to proper SQL tables
 	function qinit($array,$field,$table)
 	{
+		global $db;
+
 		if(empty($array))
 		{
 			return null;
@@ -91,20 +90,19 @@
 		
 			foreach($cit as $v)
 			{
-				$sql .= "('$character','$user','".$cit -> current()."')";
-				if($cit -> hasNext())
-				{
-					$sql .= ",";
-				}
+				$sql .= "('$character','$user',:n)";
+				$stmt = $db->prepare($sql);
+				$stmt->execute(array("n" => $cit -> current()));
 			}
 		}
 		
-		$stmt = $db->prepare($sql);
-		$stmt->execute($sql);
+
 	}
 	
 	function sqinit($array,$field,$table,$type)
 	{
+		global $db;
+
 		if(empty($array))
 		{
 			return null;
@@ -119,21 +117,18 @@
 		
 			foreach($cit as $v)
 			{
-				$sql .= "('$character','$user','".$cit -> current()."','$type')";
-				if($cit -> hasNext())
-				{
-					$sql .= ",";
-				}
+				$sql .= "('$character','$user',:n,'$type')";
+				$stmt = $db->prepare($sql);
+				$stmt->execute(array("n" => $cit -> current()));
 			}
 		}
-		
-		$stmt = $db->prepare($sql);
-		$stmt->execute($sql);
 	}
 
 	//function to send initial SQL character data
 	function arraytosql($array)
 	{
+		global $db;
+
 		$columns=array();
 		$data=array();
 		foreach($array as $key => $value)
@@ -153,14 +148,14 @@
 		$findat=implode(",",$data);		
 		$sql = "insert into characters($fincol) values($findat)";
 		$stmt = $db->prepare($sql);
-		$stmt->execute($sql);
+		$stmt->execute();
 
 	}
 
 	//inserting blank values in the wallet
 	$sql = "insert into wealth(username,charname,copper,silver,gold,platinum) values('$user','$character',0,0,0,0)";
 	$stmt = $db->prepare($sql);
-	$stmt->execute($sql);
+	$stmt->execute();
 
     //basic info array
     //$basicinfo['world']=$world;
