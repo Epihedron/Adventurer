@@ -8,7 +8,7 @@ $db->query("create table if not exists accounts(
 	username varchar(50) primary key,
 	password varchar(75),
 	email varchar(50),
-	date varchar(50),
+	date timestamp default current_timestamp,
 	access int
 )");
 
