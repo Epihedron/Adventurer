@@ -280,7 +280,7 @@ $.ajax(
 							$('#thiev').text(thie);
 
 							//adding notes
-							$('#notes').html("<pre>"+d['notes']+"</pre>");
+							$('#notes').html("<pre style='text-align:left;'>"+d['notes']+"</pre>");
 
 							break;
 							}
