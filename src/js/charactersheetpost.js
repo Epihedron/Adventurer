@@ -166,6 +166,7 @@ function ccskill(id,skill,col)
 	ttr();
 }
 
+var timeoutId = 0;
 //change attributes
 $('#level').dblclick(function(){ccstatsml($(this),'characters','level')});
 $('#currenthealth').dblclick(function(){ccstatsml($(this),'characters','currenthp')});
