@@ -69,7 +69,7 @@
     $his=(isset($_POST['hashis']) ? $_POST['hashis'] : null);
     
 	//connection to SQL 
-	$db = new PDO("mysql:host=localhost;dbname=;adventurer","host","");
+	$db = new PDO("mysql:host=localhost;dbname=adventurer","host","",array(PDO::ATTR_PERSISTENT =>true));
 
 	//function to send variable arrays to proper SQL tables
 	function qinit($array,$field,$table)
