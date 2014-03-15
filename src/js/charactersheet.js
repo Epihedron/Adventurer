@@ -174,7 +174,8 @@ $.ajax(
 							//hit points
 							$("#currenthealth").text(d["currenthp"]);
 							$("#maxhealth").text(d["maxhp"]);
-							$("#surges").text(0);
+							$("#surgesleft").text(d["surgesleft"]);
+							$("#surges").text(d["surges"]);
 
 							//passive perception and insight
 							var pperc,pins;

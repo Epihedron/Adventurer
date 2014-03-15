@@ -4,6 +4,8 @@ function ttr(){setTimeout(function()
 	location.reload();
 },25)}
 
+
+
 //change character name
 $('#character').dblclick(function()
 	{
@@ -98,6 +100,7 @@ function ccstatlrg(id,tbl,clm)
 
 	id.html('<textarea id="temp" class="largeinputz"/>');
 	$('#temp').text(ogval);
+	$("#temp").height( $("#temp")[0].scrollHeight );
 	$('#temp').focus();
 	$('#temp').focusout(function()
 	{
@@ -171,6 +174,8 @@ var timeoutId = 0;
 $('#level').dblclick(function(){ccstatsml($(this),'characters','level')});
 $('#currenthealth').dblclick(function(){ccstatsml($(this),'characters','currenthp')});
 $('#maxhealth').dblclick(function(){ccstatsml($(this),'characters','maxhp')});
+$('#surgesleft').dblclick(function(){ccstatsml($(this),'characters','surgesleft')});
+$('#surges').dblclick(function(){ccstatsml($(this),'characters','surges')});
 $('#race').dblclick(function(){ccstat($(this),'characters','race')});
 $('#class').dblclick(function(){ccstat($(this),'characters','class')});
 $('#age').dblclick(function(){ccstatsml($(this),'characters','age')});

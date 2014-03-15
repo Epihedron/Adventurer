@@ -48,9 +48,9 @@ h3
 }
 #healthinfo
 {
-	position:relative;
 	float:right;
-	margin-right:10px;
+	text-align:right;
+	width:50%;
 }
 #level
 {
@@ -301,5 +301,6 @@ h3
 .largeinputz
 {
 	width:25em;
+	text-align:left;
 	resize:vertical;
 }
