@@ -67,6 +67,12 @@
     $street=(isset($_POST['hasstreet']) ? $_POST['hasstreet'] : null);
     $thiev=(isset($_POST['hasthiev']) ? $_POST['hasthiev'] : null);
     $his=(isset($_POST['hashis']) ? $_POST['hashis'] : null);
+
+	//1/4 of the value rounded down
+	function quarterDown($a) {
+		$a = floor($a / 4);
+		return $a;
+	}
     
 	//connection to SQL 
 	$db = new PDO("mysql:host=localhost;dbname=adventurer","host","",array(PDO::ATTR_PERSISTENT =>true));
@@ -202,6 +208,8 @@
     //HP
     $charinfo['maxhp']=$maxhp;
     $charinfo['currenthp']=$maxhp;
+	$charinfo['surgesleft'] = quarterDown($maxhp);
+	$charinfo['surges'] = quarterDown($maxhp);
     $charinfo['speed']=$speed;
    
     //equipment

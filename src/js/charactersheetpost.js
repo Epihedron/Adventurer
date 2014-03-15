@@ -173,6 +173,8 @@ function ccskill(id,skill,col)
 $('#level').dblclick(function(){ccstatsml($(this),'characters','level')});
 $('#currenthealth').dblclick(function(){ccstatsml($(this),'characters','currenthp')});
 $('#maxhealth').dblclick(function(){ccstatsml($(this),'characters','maxhp')});
+$('#surgesleft').dblclick(function(){ccstatsml($(this),'characters','surgesleft')});
+$('#surges').dblclick(function(){ccstatsml($(this),'characters','surges')});
 $('#race').dblclick(function(){ccstat($(this),'characters','race')});
 $('#class').dblclick(function(){ccstat($(this),'characters','class')});
 $('#age').dblclick(function(){ccstatsml($(this),'characters','age')});
