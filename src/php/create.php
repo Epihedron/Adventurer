@@ -54,9 +54,10 @@
                 else
                 {
 			try {
-                    		$q = "insert into accounts(firstname,lastname,username,password,email,access) values(?, ?, ?, ?, ?, 1)";
+                    		$q = "insert into accounts(`firstname`,`lastname`,`username`,`password`,`email`,`access`) values(?, ?, ?, ?, ?, 1)";
 				$s = $db->prepare($q);
 				$s->execute(array($first, $last, $username, $hashedpass, $email));
+				$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
                     		echo('You have submitted successfully. Heading to login.');
                     		echo("<meta http-equiv='refresh' content='3;../../index.html'");
 			} catch (Exception $e) {
