@@ -6,7 +6,7 @@
 <html>
     <head>
     <link href='../css/redirect.css' type='text/css' rel='StyleSheet'/>
-    <meta http-equiv='refresh' content='3;../../index.html'/>
+    <meta http-equiv='refresh' content='2;../../index.html'/>
     </head>
     <body>
         You have logged out successfully.
