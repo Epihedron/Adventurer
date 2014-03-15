@@ -87,6 +87,7 @@
 			$sql="insert into $table(charname,username,$field) values";
 			$it=new ArrayIterator($array);
 			$cit=new CachingIterator($it);
+
 		
 			foreach($cit as $v)
 			{
@@ -237,64 +238,83 @@
 	//sending charinfo array to SQL table
 	arraytosql($charinfo);
 
-    //race features
-    foreach($_POST['rfeat'] as $x)
-    {
-        $rfeatures[]=$x;
-    }
-	qinit($rfeatures,'rfeature','rfeatures');
+    	//race features
+    	if(isset($_POST['rfeat'])) {
+		foreach($_POST['rfeat'] as $x)
+    		{
+    		    $rfeatures[]=$x;
+    		}
+		qinit($rfeatures,'rfeature','rfeatures');
+	}
 
-    //class features
-    foreach($_POST['cfeat'] as $x)
-    {
-        $cfeatures[]=$x;
-    }
-	qinit($cfeatures,'cfeature','cfeatures');
+    	//class features
+	if(isset($_POST['cfeat'])) {
+   		foreach($_POST['cfeat'] as $x)
+		{
+        		$cfeatures[]=$x;
+    		}
+		qinit($cfeatures,'cfeature','cfeatures');
+	}
 
-    //feats
-    foreach($_POST['feat'] as $x)
-    {
-        $feats[]=$x;
-    }
-	qinit($feats,'feat','feats');
+    	//feats
+	if(isset($_POST['feat'])) {
+    		foreach($_POST['feat'] as $x)
+    		{
+        		$feats[]=$x;
+    		}
+		qinit($feats,'feat','feats');
+	}
 
-    foreach($_POST['lang'] as $x)
-    {
-        $langs[]=$x;
-    }
-	qinit($langs,'language','languages');
+	//langs
+	if(isset($_POST['lang'])) {
+    		foreach($_POST['lang'] as $x)
+    		{
+    		    $langs[]=$x;
+    		}
+		qinit($langs,'language','languages');
+	}
     
-    //powers
-    foreach($_POST['atwill'] as $x)
-    {
-        $aw[]=$x;
-    }
-	sqinit($aw,'power','powers','at will');
+    	//powers
+	if(isset($_POST['atwill'])) {
+    		foreach($_POST['atwill'] as $x)
+    		{
+    		    $aw[]=$x;
+    		}
+		sqinit($aw,'power','powers','at will');
+	}
 
-    foreach($_POST['enc'] as $x)
-    {
-        $enc[]=$x;
-    }
-	sqinit($enc,'power','powers','encounter');
+	if(isset($_POST['enc'])) {
+    		foreach($_POST['enc'] as $x)
+    		{
+    		    $enc[]=$x;
+    		}
+		sqinit($enc,'power','powers','encounter');
+	}
 
-    foreach($_POST['daily'] as $x)
-    {
-        $daily[]=$x;
-    }
-	sqinit($daily,'power','powers','daily');
+	if(isset($_POST['daily'])) {
+    		foreach($_POST['daily'] as $x)
+    		{
+    		    $daily[]=$x;
+    		}
+		sqinit($daily,'power','powers','daily');
+	}
 
-    foreach($_POST['util'] as $x)
-    {
-        $util[]=$x;
-    }
-	sqinit($util,'power','powers','utility');
+	if(isset($_POST['util'])) {
+    		foreach($_POST['util'] as $x)
+    		{
+    		    $util[]=$x;
+    		}
+		sqinit($util,'power','powers','utility');
+	}
 
-    //inventory slots
-    foreach($_POST['inv'] as $x)
-    {
-        $equip[]=$x;
-    }
-	qinit($equip,'item','inventory');
+    	//inventory slots
+	if(isset($_POST['inv'])) {
+    		foreach($_POST['inv'] as $x)
+    		{
+    		    $equip[]=$x;
+    		}
+		qinit($equip,'item','inventory');
+	}
 
-	header("location:../html/charselect.html");
+	header("location:../html/main.html");
 ?>

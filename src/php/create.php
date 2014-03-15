@@ -1,16 +1,22 @@
 <?php
     $required = array('firstname','lastname','password','passwordagain','email','username');
     $error=false;
-    mysql_connect('localhost','host','');
-    mysql_select_db(adventurer);
-    $date = date('m/d/y@H:i');
+	$db = new PDO("mysql:host=localhost;dbname = adventurer", "host", "");
+	if(!$db){throw new Exception('failed to connect to the database');}
     $hashedpass = md5($_POST['password']);
     $username = $_POST['username'];
     $first = $_POST['firstname'];
     $last = $_POST['lastname'];
     $email = $_POST['email'];
-    $userscheck=mysql_query("select username from accounts where username='$username';");
-    $ucrow=mysql_fetch_array($userscheck);
+	function usercheck() {
+		global $username;
+		global $db;
+		$query = "select username from accounts where username = :u;";
+		$stmt = $db->prepare($query);
+		$stmt->execute(array("u" => $username));
+		$r = $stmt->fetch();
+		return $r[0];
+	}
 
     foreach($required as $field)
     {
@@ -40,19 +46,22 @@
             }
             else
             {
-                if($ucrow[0]==$username)
+                if(usercheck() == $username)
                 {
                     echo('Username already exists.');
                     echo("<meta http-equiv='refresh' content='2;../html/createaccount.html'");
                 }
                 else
                 {
-                    echo($otherusers);
-                    mysql_query("insert into accounts(firstname,lastname,username,password,email,date,access) values('$first','$last','$username','$hashedpass','$email','$date',1);");
-                    $newusr["name"]=$first;
-                    $newusr["access"]=1;
-                    echo('You have submitted successfully. Heading to login.');
-                    echo("<meta http-equiv='refresh' content='3;../../index.html'");
+			try {
+                    		$q = "insert into accounts(firstname,lastname,username,password,email,access) values(?, ?, ?, ?, ?, 1)";
+				$s = $db->prepare($q);
+				$s->execute(array($first, $last, $username, $hashedpass, $email));
+                    		echo('You have submitted successfully. Heading to login.');
+                    		echo("<meta http-equiv='refresh' content='3;../../index.html'");
+			} catch (Exception $e) {
+				die("error in query");
+			}
                 }
             }
         }
