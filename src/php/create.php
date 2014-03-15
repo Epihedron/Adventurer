@@ -1,8 +1,6 @@
 <?php
     $required = array('firstname','lastname','password','passwordagain','email','username');
     $error=false;
-	$db = new PDO("mysql:host=localhost;dbname = adventurer", "host", "");
-	if(!$db){throw new Exception('failed to connect to the database');}
     $hashedpass = md5($_POST['password']);
     $username = $_POST['username'];
     $first = $_POST['firstname'];
@@ -10,12 +8,17 @@
     $email = $_POST['email'];
 	function usercheck() {
 		global $username;
-		global $db;
-		$query = "select username from accounts where username = :u;";
-		$stmt = $db->prepare($query);
-		$stmt->execute(array("u" => $username));
-		$r = $stmt->fetch();
-		return $r[0];
+		$db = new PDO("mysql:host=localhost;dbname=adventurer", "host", "",array(PDO::ATTR_PERSISTENT => true));
+		try {
+			$query = "select username from accounts where username = :u;";
+			$stmt = $db->prepare($query);
+			$stmt->execute(array("u" => $username));
+			$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+			$r = $stmt->fetch();
+			return $r[0];
+		} catch (Exception $e) {
+			die('could not send username compare query: '.$e->getMessage() );
+		}
 	}
 
     foreach($required as $field)
@@ -54,14 +57,15 @@
                 else
                 {
 			try {
-                    		$q = "insert into accounts(`firstname`,`lastname`,`username`,`password`,`email`,`access`) values(?, ?, ?, ?, ?, 1)";
+				$db = new PDO("mysql:host=localhost;dbname=adventurer", "host", "",array(PDO::ATTR_PERSISTENT => true));
+                    		$q = "insert into accounts(firstname,lastname,username,password,email,access) values(?, ?, ?, ?, ?, 1)";
 				$s = $db->prepare($q);
 				$s->execute(array($first, $last, $username, $hashedpass, $email));
 				$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
                     		echo('You have submitted successfully. Heading to login.');
                     		echo("<meta http-equiv='refresh' content='3;../../index.html'");
 			} catch (Exception $e) {
-				die("error in query");
+				die("error in query to make account: ".$e->getMessage());
 			}
                 }
             }
