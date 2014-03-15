@@ -4,6 +4,8 @@ function ttr(){setTimeout(function()
 	location.reload();
 },25)}
 
+
+
 //change character name
 $('#character').dblclick(function()
 	{
@@ -98,6 +100,7 @@ function ccstatlrg(id,tbl,clm)
 
 	id.html('<textarea id="temp" class="largeinputz"/>');
 	$('#temp').text(ogval);
+	$("#temp").height( $("#temp")[0].scrollHeight );
 	$('#temp').focus();
 	$('#temp').focusout(function()
 	{

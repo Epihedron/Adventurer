@@ -301,5 +301,6 @@ h3
 .largeinputz
 {
 	width:25em;
+	text-align:left;
 	resize:vertical;
 }
