@@ -1,19 +1,8 @@
 <?php
-
 //connecting to MySQL with PDO
 $db = new PDO("mysql:host=localhost;dbname=adventurer",'host','');
 
-//tool box
-Class tools {
-	function cleanHTMLarr(&$vari) {
-		foreach($var as $val) {
-			if(!is_array($val)){$val = htmlspecialchars($val);}
-			else {cleanHTMLarr($val);}
-		}
-	}
-}
-
-//class for model query
+//model class for query
 class dbQ {
 	//login query
 	function loginQ($u,$p) {
@@ -50,7 +39,6 @@ class dbQ {
 		global $db;
 		global $user;
 		global $char;
-		$tools = new tools;
 
 		$q = "select $column from $table where username='$user'and charname='$char'";
 		$stmt = $db->prepare($q);
@@ -65,7 +53,6 @@ class dbQ {
 		global $db;
 		global $user;
 		global $char;
-		$tools = new tools;
 
 		$q = "select $column from $table where username='$user'and charname='$char'";
 		$stmt = $db->prepare($q);
