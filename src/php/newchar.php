@@ -1,10 +1,13 @@
 <?php
-    session_start();
-    
-    //post variables
-    $user=$_SESSION['user'];
-    //$world=$_POST['world'];
+//class calls
+require('tools.php');
+$tools = new uTools;
 
+//session calls
+    session_start();
+    $user=$_SESSION['user'];
+
+    //$world=$_POST['world'];
     $character=$_POST['character'];
     $age=$_POST['age'];
     $weight=$_POST['weight'];
@@ -68,12 +71,6 @@
     $thiev=(isset($_POST['hasthiev']) ? $_POST['hasthiev'] : null);
     $his=(isset($_POST['hashis']) ? $_POST['hashis'] : null);
 
-	//1/4 of the value rounded down
-	function quarterDown($a) {
-		$a = floor($a / 4);
-		return $a;
-	}
-    
 	//connection to SQL 
 	$db = new PDO("mysql:host=localhost;dbname=adventurer","host","",array(PDO::ATTR_PERSISTENT =>true));
 
@@ -208,8 +205,8 @@
     //HP
     $charinfo['maxhp']=$maxhp;
     $charinfo['currenthp']=$maxhp;
-	$charinfo['surgesleft'] = quarterDown($maxhp);
-	$charinfo['surges'] = quarterDown($maxhp);
+	$charinfo['surgesleft'] = $tools->calcQuartDown($maxhp);
+	$charinfo['surges'] = $tools->calcQuartDown($maxhp);
     $charinfo['speed']=$speed;
    
     //equipment

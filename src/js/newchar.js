@@ -1,5 +1,8 @@
+//date
 var n = new Date();
 var d = n.toDateString();
+$('#date').text(d);
+
 //login check
 $.ajax({
     url:'../php/init.php',
@@ -22,6 +25,7 @@ $.ajax({
         alert('ajax encounter a problem');
     }
 });
+
 //submission with validation
 $('#submit').click(function ()
 {
@@ -54,7 +58,8 @@ $('#submit').click(function ()
         $('#newcharform').submit();
     }
 });
-//validate to make sure field is a number
+
+//validate to make sure certain fields are a number
 function isNumberKey(evt)
 {
     var charCode = (evt.which) ? evt.which : event.keyCode
@@ -62,6 +67,8 @@ function isNumberKey(evt)
         return false;
     return true;
 }
+
+//validation on input escape
 $('input').blur(function()
 {
     if(!$(this).val())
@@ -76,14 +83,15 @@ $('input').blur(function()
         $(this).next().text('');
     }
 });
-$('#date').text(d);
-//to main button
+
+//back to main page button
 $(".menubutton:nth-child(2)").click(function()
     {
-        window.location.href='../html/charselect.html'
+        window.location.href='../html/main.html'
     }
 );
-//after document loads
+
+//after document loads code in this function will execute
 $(document).ready(function()
 {
     //back and forward buttons
@@ -108,6 +116,7 @@ $(document).ready(function()
             }
         }
     );
+
     $('#backward').click(function()
         {
             if(i>imin && i<=imax)
@@ -124,6 +133,7 @@ $(document).ready(function()
             }
         }
     );
+
     //additional input fields
     $('#addracefeature').click(function()
         {
