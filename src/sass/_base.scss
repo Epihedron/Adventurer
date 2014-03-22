@@ -41,38 +41,3 @@ a:hover{
 			color: $quiet-tan;
 	}
 } 
-
-/* Interactions */
-
-.pointer{
-	cursor:pointer;
-	color: $loud-grey;
-}
-
-.pointer:hover{
-	color: $loud-grey;
-}
-
-$buttons: 4; //update this number based on the total number of buttons
-
-.top-right-button{
-	font-size: 14px;
-	@for $i from 1 to $buttons{
-		span:nth-child(#{$i}){
-			position: absolute;
-			top: 15px;
-			right: $i * 25px + 5;
-		}
-	}
-}
-
-.top-left-button{
-	font-size: 14px;
-	@for $i from 1 to $buttons{
-		span:nth-child(#{$i}){
-			position: absolute;
-			top: 15px;
-			left: $i * 25px + 5;
-		}
-	}
-}
