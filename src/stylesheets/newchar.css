@@ -54,79 +54,7 @@ html h4 {
   color: #0a3311;
 }
 
-/* Interactions */
 /* line 5, ../sass/_custom.scss */
-.pointer {
-  cursor: pointer;
-  color: #9c9c9c;
-}
-
-/* line 10, ../sass/_custom.scss */
-.pointer:hover {
-  color: #9c9c9c;
-}
-
-/* line 16, ../sass/_custom.scss */
-.top-right-button {
-  font-size: 16px;
-}
-/* line 19, ../sass/_custom.scss */
-.top-right-button span:nth-child(1) {
-  position: absolute;
-  top: 15px;
-  right: 30px;
-}
-/* line 19, ../sass/_custom.scss */
-.top-right-button span:nth-child(2) {
-  position: absolute;
-  top: 15px;
-  right: 55px;
-}
-/* line 19, ../sass/_custom.scss */
-.top-right-button span:nth-child(3) {
-  position: absolute;
-  top: 15px;
-  right: 80px;
-}
-
-/* line 27, ../sass/_custom.scss */
-.top-left-button {
-  font-size: 14px;
-}
-/* line 30, ../sass/_custom.scss */
-.top-left-button span:nth-child(1) {
-  position: absolute;
-  top: 15px;
-  left: 30px;
-}
-/* line 30, ../sass/_custom.scss */
-.top-left-button span:nth-child(2) {
-  position: absolute;
-  top: 15px;
-  left: 55px;
-}
-/* line 30, ../sass/_custom.scss */
-.top-left-button span:nth-child(3) {
-  position: absolute;
-  top: 15px;
-  left: 80px;
-}
-
-/* Structure */
-/* line 42, ../sass/_custom.scss */
-.inline-list {
-  text-align: center;
-  margin: 0 auto;
-  padding: 2rem;
-}
-/* line 46, ../sass/_custom.scss */
-.inline-list ul {
-  list-style: none;
-  padding: 0.5rem;
-}
-
-/* Supplemental */
-/* line 56, ../sass/_custom.scss */
 .box {
   position: relative;
   width: 100%;
@@ -139,7 +67,7 @@ html h4 {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
 }
 
-/* line 69, ../sass/_custom.scss */
+/* line 18, ../sass/_custom.scss */
 .box:before, .box:after {
   position: absolute;
   width: 40%;
@@ -159,7 +87,7 @@ html h4 {
   z-index: -1;
 }
 
-/* line 89, ../sass/_custom.scss */
+/* line 38, ../sass/_custom.scss */
 .box:after {
   left: auto;
   right: 12px;
@@ -170,21 +98,21 @@ html h4 {
   transform: skew(5deg) rotate(5deg);
 }
 
-/* line 101, ../sass/_custom.scss */
+/* line 50, ../sass/_custom.scss */
 .me-select {
   position: relative;
   margin: 0 auto;
   max-width: 800px;
 }
 
-/* line 107, ../sass/_custom.scss */
+/* line 56, ../sass/_custom.scss */
 .me-select ul {
   list-style: none;
   padding: 0;
   width: 100%;
 }
 
-/* line 113, ../sass/_custom.scss */
+/* line 62, ../sass/_custom.scss */
 .me-select li {
   margin: 0 auto;
   position: relative;
@@ -196,12 +124,12 @@ html h4 {
   user-select: none;
 }
 
-/* line 124, ../sass/_custom.scss */
+/* line 73, ../sass/_custom.scss */
 .me-select li.selected {
   box-shadow: inset 0 0 0 40px #f5e6d6;
 }
 
-/* line 128, ../sass/_custom.scss */
+/* line 77, ../sass/_custom.scss */
 .me-select label {
   display: inline-block;
   width: 100%;
@@ -212,13 +140,13 @@ html h4 {
   cursor: pointer;
 }
 
-/* line 138, ../sass/_custom.scss */
+/* line 87, ../sass/_custom.scss */
 .me-select label span {
   vertical-align: middle;
   display: inline-block;
 }
 
-/* line 145, ../sass/_custom.scss */
+/* line 94, ../sass/_custom.scss */
 .me-select input[type="checkbox"],
 .me-select #checkbox::before,
 .me-select input[type="checkbox"]:checked + label span:first-child::after {
@@ -231,7 +159,7 @@ html h4 {
   cursor: pointer;
 }
 
-/* line 155, ../sass/_custom.scss */
+/* line 104, ../sass/_custom.scss */
 .me-select input[type="checkbox"] {
   opacity: 0;
   -webkit-appearance: none;
@@ -240,13 +168,13 @@ html h4 {
   z-index: 100;
 }
 
-/* line 163, ../sass/_custom.scss */
+/* line 112, ../sass/_custom.scss */
 .me-select #checkbox::before {
   content: '';
   border: 2px solid rgba(0, 0, 0, 0.3);
 }
 
-/* line 168, ../sass/_custom.scss */
+/* line 117, ../sass/_custom.scss */
 .me-select input[type="checkbox"]:checked + label span:first-child::after {
   content: '\2713';
   text-align: center;
@@ -254,9 +182,21 @@ html h4 {
   color: #1b882d;
 }
 
+/* line 126, ../sass/_custom.scss */
+.inline-list {
+  text-align: center;
+  margin: 0 auto;
+  padding: 2rem;
+}
+/* line 130, ../sass/_custom.scss */
+.inline-list ul {
+  list-style: none;
+  padding: 0.5rem;
+}
+
 /* Media Queries */
 @media screen and (max-width: 50em) {
-  /* line 179, ../sass/_custom.scss */
+  /* line 138, ../sass/_custom.scss */
   section {
     font-size: 80%;
   }
@@ -362,118 +302,42 @@ a:hover {
   left: 80px;
 }
 
-/* line 17, ../../../../../../Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
-}
-
-/* line 22, ../../../../../../Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-html {
-  line-height: 1;
-}
-
-/* line 24, ../../../../../../Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-ol, ul {
-  list-style: none;
-}
-
-/* line 26, ../../../../../../Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* line 28, ../../../../../../Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-/* line 30, ../../../../../../Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q, blockquote {
-  quotes: none;
-}
-/* line 103, ../../../../../../Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
-}
-
-/* line 32, ../../../../../../Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-a img {
-  border: none;
-}
-
-/* line 116, ../../../../../../Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.3/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
-  display: block;
-}
-
 /*
- * Base structure
+ * Globals
  */
-/* line 8, ../sass/main.scss */
-body {
-  background-color: #fff;
-}
-
-/* line 12, ../sass/main.scss */
-.container {
+/* Forms */
+/* line 9, ../sass/newchar.scss */
+.newchar-form-section-container {
+  max-width: 475px;
+  margin-top: 5rem;
   margin-left: auto;
   margin-right: auto;
+}
+/* line 14, ../sass/newchar.scss */
+.newchar-form-section-container button {
+  margin-top: -1px;
   padding-left: 1rem;
-  padding-right: 1rem;
+  text-align: left;
+  font-size: 2rem;
+  -webkit-border-radius: 0px 0px;
+  -moz-border-radius: 0px / 0px;
+  border-radius: 0px / 0px;
 }
-
-/* line 19, ../sass/main.scss */
-.footer {
-  color: #9c9c9c;
+/* line 21, ../sass/newchar.scss */
+.newchar-form-section-container input {
+  -webkit-border-radius: 1px 1px;
+  -moz-border-radius: 1px / 1px;
+  border-radius: 1px / 1px;
+  padding-left: 1rem;
+  font-size: 2rem;
+  margin-top: -1px;
 }
-
-/*
- * Base structure
- */
-/* line 27, ../sass/main.scss */
-.inner-container {
-  padding: 0 auto;
+/* line 27, ../sass/newchar.scss */
+.newchar-form-section-container input:focus {
+  padding-left: .8rem;
+  border-left: 0.3rem solid #8768c2;
 }
-
-/* Lists */
-/* line 33, ../sass/main.scss */
-.character-list-container {
-  text-align: center;
-  padding-bottom: 1.5rem;
-}
-/* line 39, ../sass/main.scss */
-.character-list-container .row h4 {
-  padding: 2rem 0 1.5rem;
-}
-/* line 42, ../sass/main.scss */
-.character-list-container ul {
-  width: 100%;
-}
-/* line 44, ../sass/main.scss */
-.character-list-container ul li span {
-  text-align: center;
-  font-size: 1.3rem;
-  cursor: pointer;
-  color: black;
+/* line 31, ../sass/newchar.scss */
+.newchar-form-section-container .box3in {
+  width: 35px;
 }

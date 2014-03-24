@@ -1,0 +1,34 @@
+@import "base";
+
+/*
+ * Globals
+ */
+
+/* Forms */
+
+ .newchar-form-section-container{
+ 	max-width: 475px;
+ 	margin-top: 5rem;
+ 	margin-left: auto;
+ 	margin-right: auto;
+	button{
+		margin-top: -1px;
+		padding-left: 1rem;
+		text-align: left;
+		font-size: 2rem;
+		@include border-radius(0px, 0px);
+	}
+	input{
+		@include border-radius(1px, 1px);
+		padding-left: 1rem;
+		font-size: 2rem;
+		margin-top: -1px;
+	}
+	input:focus{
+		padding-left: .8rem;
+		border-left: .3rem solid $quiet-purple;
+	}
+	.box3in{
+		width: 35px;
+	}
+}
