@@ -6,11 +6,21 @@
 
 /* Forms */
 
- .newchar-form-section-container{
+ .newchar-container{
  	max-width: 475px;
- 	margin-top: 5rem;
- 	margin-left: auto;
- 	margin-right: auto;
+ 	margin: 5rem auto 0;
+ 	padding: 1rem 2.5rem;
+	.box3in{
+		width: 35px;
+	}
+	.form-group{
+		margin-bottom: 1px;
+		label:first-of-type{}
+	}
+	label{
+		font-weight: normal;
+		margin-top: 5px;
+	}
 	button{
 		margin-top: -1px;
 		padding-left: 1rem;
@@ -28,7 +38,9 @@
 		padding-left: .8rem;
 		border-left: .3rem solid $quiet-purple;
 	}
-	.box3in{
-		width: 35px;
-	}
+ 	legend{
+ 		text-align: center;
+ 		font-size: 1.8rem;
+ 		font-weight: bold;
+ 	}
 }

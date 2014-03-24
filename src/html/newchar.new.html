@@ -10,25 +10,57 @@
     <div class="container body">
         <div class="row">
             <form class="form-horizontal" id='newcharform'action='../php/newchar.php'method='post'>
-                <div class="newchar-form-section-container box">
+                <div class="newchar-container box">
                     <fieldset id='basicinfo'>
                         <legend>Basic Info 1/10</legend>
-                        <label class='lrglabel col-sm-2'>Character:</label>
-                        <input class="col-sm-10 textinput form-control" maxlength='25'type='text'id='character'name='character'/>
-                        <label class='lrglabel col-sm-2'>Class:</label>
-                        <input class="col-sm-10 textinput form-control" maxlength='25' type='text' id='class'name='class'/>
-                        <label class='lrglabel col-sm-2'>Race:</label>
-                        <input class="col-sm-10 textinput form-control" maxlength='25'type='text'id='race'name='race'/>
-                        <label class='lrglabel col-sm-2'>Age:</label>
-                        <input class="col-sm-10 textinput form-control" onkeypress='return isNumberKey(event)' min='10' max='2000'type='text'id='age'name='age'/>
-                        <label class='lrglabel col-sm-2'>Gender:</label>
-                        <input class="col-sm-10 textinput form-control" maxlength='6'id='gender'name='gender'/>
-                        <label class='lrglabel col-sm-2'>Height:</label>
-                        <input class="col-sm-10 textinput form-control" maxlength='6'type='text'id='height'name='height'/>
-                        <label class='lrglabel col-sm-2'>Weight:</label>
-                        <input class="col-sm-10 textinput form-control" maxlength='3'type='text'id='weight'name='weight'/>
-                        <label class='lrglabel col-sm-2'>Diety:</label>
-                        <input class="col-sm-10 textinput form-control" maxlength='25'type='text'id='diety'name='diety'/>
+                        <div class="form-group">
+                            <label class='lrglabel col-xs-3'>Character:</label>
+                            <div class="col-xs-9">
+                                <input class="textinput form-control" maxlength='25'type='text'id='character'name='character'/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class='lrglabel col-xs-3'>Class:</label>
+                            <div class="col-xs-9">
+                                <input class="textinput form-control" maxlength='25' type='text' id='class'name='class'/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class='lrglabel col-xs-3'>Race:</label>
+                            <div class="col-xs-9">
+                                <input class="textinput form-control" maxlength='25'type='text'id='race'name='race'/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class='lrglabel col-xs-3'>Age:</label>
+                            <div class="col-xs-9">
+                                <input class="textinput form-control" onkeypress='return isNumberKey(event)' min='10' max='2000'type='text'id='age'name='age'/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <label class='lrglabel col-xs-3'>Gender:</label>
+                            <div class="col-xs-9">
+                        <input class="textinput form-control" maxlength='6'id='gender'name='gender'/>
+                            </div>
+                        </div>
+                                                <div class="form-group">
+                        <label class='lrglabel col-xs-3'>Height:</label>
+                            <div class="col-xs-9">
+                        <input class="textinput form-control" maxlength='6'type='text'id='height'name='height'/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <label class='lrglabel col-xs-3'>Weight:</label>
+                            <div class="col-xs-9">
+                        <input class="textinput form-control" maxlength='3'type='text'id='weight'name='weight'/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        <label class='lrglabel col-xs-3'>Diety:</label>
+                            <div class="col-xs-9">
+                        <input class="textinput form-control" maxlength='25'type='text'id='diety'name='diety'/>
+                            </div>
+                        </div> 
                     </fieldset>
                     <fieldset id='abilsco'>
                         <legend>Ability Scores 2/10</legend>

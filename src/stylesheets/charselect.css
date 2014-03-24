@@ -279,7 +279,16 @@ a:hover {
   color: #fff;
 }
 
-/* line 28, ../sass/_base.scss */
+/* line 25, ../sass/_base.scss */
+.form-control:focus {
+  outline: 0 !important;
+  border-color: #cccccc;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+/* line 34, ../sass/_base.scss */
 .body a,
 .body a:focus,
 .body a:hover {
@@ -287,7 +296,7 @@ a:hover {
 }
 
 /* Navigation */
-/* line 35, ../sass/_base.scss */
+/* line 41, ../sass/_base.scss */
 .navbar {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -295,11 +304,11 @@ a:hover {
   -o-border-radius: 0;
   border-radius: 0;
 }
-/* line 37, ../sass/_base.scss */
+/* line 43, ../sass/_base.scss */
 .navbar .navbar-brand {
   color: #cc8333;
 }
-/* line 40, ../sass/_base.scss */
+/* line 46, ../sass/_base.scss */
 .navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
   color: #f5e6d6;
 }
