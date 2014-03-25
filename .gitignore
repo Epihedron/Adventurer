@@ -215,6 +215,7 @@ pip-log.txt
 .mr.developer.cfg
 
 #################
-## other pages
+## other pages and files
 #################
 blog/
+.htaccess
