@@ -10,17 +10,26 @@
 	max-width: 475px;
 	min-height: 425px;
 	margin: 5rem auto 0;
-	padding: 1rem 2.5rem 10rem;
+	padding: 1rem 2.5rem 6rem;
 	.form-group{
 		margin-bottom: 1px;
-		label:first-of-type{}
 	}
 	.no-padding-right{
 		padding-right: 0;
 	}
 	#nextprev{
+		width: 100px;
 		position: absolute;
-		bottom: 1.6rem;
+		bottom: 2rem;
+		left: 50%;
+		margin-left: -50px;
+		text-align: center;
+		span{
+			font-size: 3rem;
+		}
+		#forward > span{
+			top: 0;
+		}
 	}
 	label{
 		font-weight: normal;
