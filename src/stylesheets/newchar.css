@@ -320,27 +320,29 @@ a:hover {
 /* line 9, ../sass/newchar.scss */
 .newchar-container {
   max-width: 475px;
+  min-height: 425px;
   margin: 5rem auto 0;
-  padding: 1rem 2.5rem;
+  padding: 1rem 2.5rem 10rem;
 }
-/* line 13, ../sass/newchar.scss */
+/* line 14, ../sass/newchar.scss */
 .newchar-container .form-group {
   margin-bottom: 1px;
 }
-/* line 17, ../sass/newchar.scss */
+/* line 18, ../sass/newchar.scss */
 .newchar-container .no-padding-right {
   padding-right: 0;
 }
-/* line 20, ../sass/newchar.scss */
+/* line 21, ../sass/newchar.scss */
 .newchar-container #nextprev {
-  padding: 1rem 0 0;
+  position: absolute;
+  bottom: 1.6rem;
 }
-/* line 23, ../sass/newchar.scss */
+/* line 25, ../sass/newchar.scss */
 .newchar-container label {
   font-weight: normal;
   margin-top: 5px;
 }
-/* line 27, ../sass/newchar.scss */
+/* line 29, ../sass/newchar.scss */
 .newchar-container button {
   margin-top: -1px;
   padding-left: 1rem;
@@ -350,7 +352,7 @@ a:hover {
   -moz-border-radius: 0px / 0px;
   border-radius: 0px / 0px;
 }
-/* line 34, ../sass/newchar.scss */
+/* line 36, ../sass/newchar.scss */
 .newchar-container input {
   -webkit-border-radius: 1px 1px;
   -moz-border-radius: 1px / 1px;
@@ -359,18 +361,18 @@ a:hover {
   font-size: 2rem;
   margin-top: -1px;
 }
-/* line 40, ../sass/newchar.scss */
+/* line 42, ../sass/newchar.scss */
 .newchar-container input:focus {
   padding-left: .8rem;
   border-left: 0.3rem solid #8768c2;
 }
-/* line 44, ../sass/newchar.scss */
+/* line 46, ../sass/newchar.scss */
 .newchar-container legend {
   text-align: center;
   font-size: 1.8rem;
   font-weight: bold;
 }
-/* line 49, ../sass/newchar.scss */
+/* line 51, ../sass/newchar.scss */
 .newchar-container #skills input {
   margin-top: 9px;
 }

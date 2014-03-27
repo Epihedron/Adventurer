@@ -8,8 +8,9 @@
 
 .newchar-container{
 	max-width: 475px;
+	min-height: 425px;
 	margin: 5rem auto 0;
-	padding: 1rem 2.5rem;
+	padding: 1rem 2.5rem 10rem;
 	.form-group{
 		margin-bottom: 1px;
 		label:first-of-type{}
@@ -18,7 +19,8 @@
 		padding-right: 0;
 	}
 	#nextprev{
-		padding: 1rem 0 0;
+		position: absolute;
+		bottom: 1.6rem;
 	}
 	label{
 		font-weight: normal;
