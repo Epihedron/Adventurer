@@ -138,25 +138,34 @@
                     </fieldset>
                     <fieldset id='atks'>
                         <legend>Attacks 4/10</legend>
-                        <table id=''>
-                            <th>
-                                <td><u>Class</u></td>
-                                <td><u>Feat</u></td>
-                                <td><u>Misc</u></td>
-                            </th>
-                            <tr>
-                                <td><label>Attack Bonus:</label></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='3'id='atkclass'name='atkclass'/></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='3'id='atkfeat'name='atkfeat'/></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='3'id='atkmisc'name='atkmisc'/></td>
-
-                            </tr>
-                            <tr>
-                                <td><label class='mdlabel'>Damage:</label></td>
-                                <td></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='3'id='damfeat'name='dmgfeat'/></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='3'id='dammisc'name='dmgmisc'/></td>
-                            </tr>
+                            <div class="row">
+                                <div class="col-xs-3"></div>
+                                <div class="col-xs-3">Class</div>
+                                <div class="col-xs-3">Feat</div>
+                                <div class="col-xs-3">Misc</div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-3 no-padding-right">Attack Bonus:</label>
+                                <div class="col-xs-3">
+                                    <input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='3'id='atkclass'name='atkclass'/>
+                                </div>
+                                <div class="col-xs-3">
+                                    <input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='3'id='atkfeat'name='atkfeat'/>
+                                </div>
+                                <div class="col-xs-3">
+                                    <input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='3'id='atkmisc'name='atkmisc'/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class='col-xs-3'>Damage:</label>
+                                <div class="col-xs-3"></div>
+                                <div class="col-xs-3">
+                                    <input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='3'id='damfeat'name='dmgfeat'/>
+                                </div>
+                                <div class="col-xs-3">
+                                    <input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='3'id='dammisc'name='dmgmisc'/>
+                                </div>
+                            </div>
                         </table>
                     </fieldset>
 
@@ -293,43 +302,77 @@
         <fieldset id='skills'>
             <legend>Skills 10/10</legend>
             <u>Skills</u><br/>
-            <div class="column col-sm-6">
-                <label for="hasacro">Acrobatics:</label>
-                <input type='checkbox' value='hasacro'name='hasacro' id='hasacro'/>
-                <label for="hasarc">Arcana:</label>
-                <input type='checkbox' value='hasarc'name='hasarc' id='hasarc'/>
-                <label for="hasath">Athletics:</label>
-                <input type='checkbox' value='hasath'name='hasath' id='hasath'/>
-                <label for="hasbluff">Bluff:</label>
-                <input type='checkbox' value='hasbluff'name='hasbluff' id='hasbluff'/>
-                <label for="hasdiplo">Diplomacy</label>
-                <input type='checkbox' value='hasdiplo'name='hasdiplo' id='hasdiplo'/>
-                <label for="hasdung">Dungeoneering:</label>
-                <input type='checkbox' value='hasdung'name='hasdung' id='hasdung'/>
-                <label for="hasend">Endurance:</label>
-                <input type='checkbox' value='hasend'name='hasend' id='hasend'/>
-                <label for="hasheal">Heal:</label>
-                <input type='checkbox' value='hasheal'name='hasheal' id='hasheal'/>
-                <label for="hashis">History:</label>
-                <input type='checkbox' value='hashis'name='hashis' id='hashis'/>
+            <div class="form-group col-sm-6">
+                <label class="col-xs-9" for="hasacro">Acrobatics:</label>
+                <div class="col-xs-3">
+                    <input type='checkbox' value='hasacro'name='hasacro' id='hasacro'/>
+                </div>
+                <label class="col-xs-9" for="hasarc">Arcana:</label>
+                <div class="col-xs-3">
+                    <input type='checkbox' value='hasarc'name='hasarc' id='hasarc'/>
+                </div>
+                <label class="col-xs-9" for="hasath">Athletics:</label>
+                <div class="col-xs-3">
+                    <input type='checkbox' value='hasath'name='hasath' id='hasath'/>
+                </div>
+                <label class="col-xs-9" for="hasbluff">Bluff:</label>
+                <div class="col-xs-3">
+                    <input type='checkbox' value='hasbluff'name='hasbluff' id='hasbluff'/>
+                </div>
+                <label class="col-xs-9" for="hasdiplo">Diplomacy</label>
+                <div class="col-xs-3">
+                    <input type='checkbox' value='hasdiplo'name='hasdiplo' id='hasdiplo'/>
+                </div>
+                <label class="col-xs-9" for="hasdung">Dungeoneering:</label>
+                <div class="col-xs-3">
+                    <input type='checkbox' value='hasdung'name='hasdung' id='hasdung'/>
+                </div>
+                <label class="col-xs-9" for="hasend">Endurance:</label>
+                <div class="col-xs-3">
+                    <input type='checkbox' value='hasend'name='hasend' id='hasend'/>
+                </div>
+                <label class="col-xs-9" for="hasheal">Heal:</label>
+                <div class="col-xs-3">
+                    <input type='checkbox' value='hasheal'name='hasheal' id='hasheal'/>
+                </div>
+                <label class="col-xs-9" for="hashis">History:</label>
+                <div class="col-xs-3">
+                    <input type='checkbox' value='hashis'name='hashis' id='hashis'/>
+                </div>
             </div>
             <div class="col-sm-6">
-                <label for="hasins">Insight:</label>
-                <input type='checkbox' value='hasins'name='hasins' id='hasins'/>
-                <label for="hasintim">Intimidate:</label>
-                <input type='checkbox' value='hasintim'name='hasintim' id='hasintim'/>
-                <label for="hasnat">Nature:</label>
-                <input type='checkbox' value='hasnat'name='hasnat' id='hasnat'/>
-                <label for="hasperc">Perception:</label>
-                <input type='checkbox' value='hasperc'name='hasperc' id='hasperc'/>
-                <label for="hasrel">Religion:</label>
-                <input type='checkbox' value='hasrel'name='hasrel' id='hasrel'/>
-                <label for="hasste">Stealth:</label>
-                <input type='checkbox' value='hasste'name='hasste' id='hasste'/>
-                <label for="hasstree">Streetwise:</label>
-                <input type='checkbox' value='hasstreet'name='hasstree' id='hasstree'/>
-                <label for="hasthiev">Thievery::</label>
-                <input type='checkbox' value='hasthiev'name='hasthiev' id='hasthiev'/>
+                <label class="col-xs-9" for="hasins">Insight:</label>
+                <div class="col-xs-3">
+                    <input type='checkbox' value='hasins'name='hasins' id='hasins'/>
+                </div>
+                <label class="col-xs-9" for="hasintim">Intimidate:</label>
+                <div class="col-xs-3">
+                    <input type='checkbox' value='hasintim'name='hasintim' id='hasintim'/>
+                </div>
+                <label class="col-xs-9" for="hasnat">Nature:</label>
+                <div class="col-xs-3">
+                    <input type='checkbox' value='hasnat'name='hasnat' id='hasnat'/>
+                </div>
+                <label class="col-xs-9" for="hasperc">Perception:</label>
+                <div class="col-xs-3">
+                    <input type='checkbox' value='hasperc'name='hasperc' id='hasperc'/>
+                </div>
+                <label class="col-xs-9" for="hasrel">Religion:</label>
+                <div class="col-xs-3">
+                    <input type='checkbox' value='hasrel'name='hasrel' id='hasrel'/>
+                </div>
+                <label class="col-xs-9" for="hasste">Stealth:</label>
+                <div class="col-xs-3">
+                    <input type='checkbox' value='hasste'name='hasste' id='hasste'/>
+                </div>
+                <label class="col-xs-9" for="hasstree">Streetwise:</label>
+                <div class="col-xs-3">
+                    <input type='checkbox' value='hasstreet'name='hasstree' id='hasstree'/>
+                </div>
+                <label class="col-xs-9" for="hasthiev">Thievery:</label>
+                <div class="col-xs-3">
+                    <input type='checkbox' value='hasthiev'name='hasthiev' id='hasthiev'/>
+                </div>
             </div>
         </fieldset>
         <div class="row" id='nextprev'>

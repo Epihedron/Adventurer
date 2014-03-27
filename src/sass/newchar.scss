@@ -14,12 +14,11 @@
 		margin-bottom: 1px;
 		label:first-of-type{}
 	}
+	.no-padding-right{
+		padding-right: 0;
+	}
 	#nextprev{
 		padding: 1rem 0 0;
-	}
-	#skills .column{
-		padding: 0 .5rem;
-
 	}
 	label{
 		font-weight: normal;
@@ -46,5 +45,8 @@
 		text-align: center;
 		font-size: 1.8rem;
 		font-weight: bold;
+	}
+	#skills input{
+		margin-top: 9px;
 	}
 }
