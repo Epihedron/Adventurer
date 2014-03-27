@@ -4,9 +4,9 @@
     <link rel="stylesheet" type="text/css" href="../stylesheets/newchar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="../javascripts/modernizr.custom.js"></script>
+    <script src="../js/newchar.js" type="text/javascript"></script>
 </head>
 <body>
-
     <div class="container body">
         <div class="row">
             <form class="form-horizontal" id='newcharform'action='../php/newchar.php'method='post'>
@@ -64,50 +64,81 @@
                     </fieldset>
                     <fieldset id='abilsco'>
                         <legend>Ability Scores 2/10</legend>
-                        <label class='lrglabel'>Strength:</label><input class="textinput form-control" name='str' onkeypress='return isNumberKey(event)' type='text'class='box3in' maxlength='2'id='str'/><br/>
-                        <label class='lrglabel'>Constitution:</label><input class="textinput form-control" name='con' onkeypress='return isNumberKey(event)' type='text'class='box3in' maxlength='2'id='con'/><br/>
-                        <label class='lrglabel'>Dexterity:</label><input class="textinput form-control" name='dex' onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='2'id='dex'/><br/>
-                        <label class='lrglabel'>Intelligence:</label><input class="textinput form-control" name='int' onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='2'id='int'/><br/>
-                        <label class='lrglabel'>Wisdom:</label><input class="textinput form-control" name='wis' onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='2'id='wis'/><br/>
-                        <label class='lrglabel'>Charisma:</label><input class="textinput form-control" name='cha' onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='2'id='cha'/></label>
+                        <div class="form-group">
+                            <label class='lrglabel col-xs-3'>Strength:</label>
+                            <div class="col-xs-9">
+                                <input class="textinput form-control" name='str' onkeypress='return isNumberKey(event)' type='text'  maxlength='2'id='str'/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class='lrglabel col-xs-3'>Constitution:</label>
+                            <div class="col-xs-9">
+                                <input class="textinput form-control" name='con' onkeypress='return isNumberKey(event)' type='text'  maxlength='2'id='con'/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class='lrglabel col-xs-3'>Dexterity:</label>
+                            <div class="col-xs-9">
+                                <input class="textinput form-control" name='dex' onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='dex'/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class='lrglabel col-xs-3'>Intelligence:</label>
+                            <div class="col-xs-9">
+                                <input class="textinput form-control" name='int' onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='int'/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class='lrglabel col-xs-3'>Wisdom:</label>
+                            <div class="col-xs-9">
+                                <input class="textinput form-control" name='wis' onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='wis'/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class='lrglabel col-xs-3'>Charisma:</label>
+                            <div class="col-xs-9">
+                                <input class="textinput form-control" name='cha' onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='cha'/></label>
+                            </div>
+                        </div>
                     </fieldset>
                     <fieldset id='defs'>
                         <legend>Defenses 3/10</legend>
                         <table id='deftbl'>
-                            <th>
-                                <td><u>Armor</u></td>
-                                <td><u>Class</u></td>
-                                <td><u>Misc</u></td>
-                            </th>
-                            <tr>
-                                <td><label class='mdlabel'>Armor:</label></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='2'id='armor'name='armor'/></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='2'id='armclass'name='armclass'/></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='2'id='armmisc'name='armmisc'/></td>
-                            </tr>
-                            <tr>
-                                <td><label class='mdlabel'>Fortitude:</label></td>
-                                <td></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='2'id='fortclass'name='fortclass'/></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='2'id='fortmisc'name='fortmisc'/></td>
-                            </tr>
-                            <tr>
-                                <td><label class='mdlabel'>Reflex:</label></td>
-                                <td></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='2'id='reflexclass'name='refclass'/></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='2'id='reflexmisc'name='refmisc'/></td>
-                            </tr>
-                            <tr>
-                                <td><label class='mdlabel'>Will:</label></td>
-                                <td></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='2'id='willclass'name='willclass'/></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='2'id='willmisc'name='willmisc'/></td>
-                            </tr>
+                            <div class="row">
+                                <div class="col-xs-3"></div>
+                                <div class="col-xs-3">Armor</div>
+                                <div class="col-xs-3">Class</div>
+                                <div class="col-xs-3">Misc</div>
+                            </div>
+                            <div class="form-group">
+                                <label class='col-xs-3'>Armor:</label>
+                                <div class="col-xs-3"><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='armor'name='armor'/></div>
+                                <div class="col-xs-3"><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='armclass'name='armclass'/></div>
+                                <div class="col-xs-3"><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='armmisc'name='armmisc'/></div>
+                            </div>
+                            <div class="form-group">
+                                <label class='col-xs-3'>Fortitude:</label>
+                                <div class="col-xs-3"></div>
+                                <div class="col-xs-3"><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='fortclass'name='fortclass'/></div>
+                                <div class="col-xs-3"><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='fortmisc'name='fortmisc'/></div>
+                            </div>
+                            <div class="form-group">
+                                <label class='col-xs-3'>Reflex:</label>
+                                <div class="col-xs-3"></div>
+                                <div class="col-xs-3"><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='reflexclass'name='refclass'/></div>
+                                <div class="col-xs-3"><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='reflexmisc'name='refmisc'/></div>
+                            </div>
+                            <div class="form-group">
+                                <label class='col-xs-3'>Will:</label>
+                                <div class="col-xs-3"></div>
+                                <div class="col-xs-3"><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='willclass'name='willclass'/></div>
+                                <div class="col-xs-3"><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='willmisc'name='willmisc'/></div>
+                            </div>
                         </table>
                     </fieldset>
                     <fieldset id='atks'>
                         <legend>Attacks 4/10</legend>
-                        <table id='atktbl'>
+                        <table id=''>
                             <th>
                                 <td><u>Class</u></td>
                                 <td><u>Feat</u></td>
@@ -115,16 +146,16 @@
                             </th>
                             <tr>
                                 <td><label>Attack Bonus:</label></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='3'id='atkclass'name='atkclass'/></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='3'id='atkfeat'name='atkfeat'/></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='3'id='atkmisc'name='atkmisc'/></td>
+                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='3'id='atkclass'name='atkclass'/></td>
+                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='3'id='atkfeat'name='atkfeat'/></td>
+                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='3'id='atkmisc'name='atkmisc'/></td>
 
                             </tr>
                             <tr>
                                 <td><label class='mdlabel'>Damage:</label></td>
                                 <td></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='3'id='damfeat'name='dmgfeat'/></td>
-                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='3'id='dammisc'name='dmgmisc'/></td>
+                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='3'id='damfeat'name='dmgfeat'/></td>
+                                <td><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='3'id='dammisc'name='dmgmisc'/></td>
                             </tr>
                         </table>
                     </fieldset>
@@ -133,19 +164,19 @@
                     <fieldset id='hitpoints'>
                         <legend>Hit Points 5/10</legend>
                         <label class='xllabel'>Max Hit Points:</label>
-                        <input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='3'id='maxhp'name='maxhp'/><br/>
+                        <input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='3'id='maxhp'name='maxhp'/><br/>
                         <label class='xllabel'>Speed:</label>
-                        <input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text'class='box3in'maxlength='3'id='speed'name='speed'/><br/>
+                        <input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='3'id='speed'name='speed'/><br/>
                     </fieldset>
                     <fieldset id='features'>
                         <legend>Features 6/10</legend>
                         <u class='atttitle'>Race Features</u><br/>
                         <ol id='racefeaturelist'>
-                <!-- <input class="textinput form-control" type='text'maxchar='100'id='racefeatures1'name='racefeatures1'class='lgtxt'/><br/>
-                <input class="textinput form-control" type='text'maxchar='100'id='racefeatures2'name='racefeatures2'class='lgtxt'/><br/>
-                <input class="textinput form-control" type='text'maxchar='100'id='racefeatures3'name='racefeatures3'class='lgtxt'/><br/>
-                <input class="textinput form-control" type='text'maxchar='100'id='racefeatures4'name='racefeatures4'class='lgtxt'/><br/>
-                <input class="textinput form-control" type='text'maxchar='100'id='racefeatures5'name='racefeatures5'class='lgtxt'/><br/> -->
+                <!-- <input class="textinput form-control" type='text' maxchar='100' id='racefeatures1' name='racefeatures1' class='lgtxt'/><br/>
+                <input class="textinput form-control" type='text' maxchar='100' id='racefeatures2' name='racefeatures2' class='lgtxt'/><br/>
+                <input class="textinput form-control" type='text' maxchar='100' id='racefeatures3' name='racefeatures3' class='lgtxt'/><br/>
+                <input class="textinput form-control" type='text' maxchar='100' id='racefeatures4' name='racefeatures4' class='lgtxt'/><br/>
+                <input class="textinput form-control" type='text' maxchar='100' id='racefeatures5' name='racefeatures5' class='lgtxt'/><br/> -->
             </ol>
             <span class='addbutton'id='addracefeature'></span><br/>
             <u class='atttitle'>Class Features</u><br/>
@@ -262,55 +293,58 @@
         <fieldset id='skills'>
             <legend>Skills 10/10</legend>
             <u>Skills</u><br/>
-            <div class='vertdiv'>
-                <label class='skllbl'>Acrobatics:</label>
-                <input type='checkbox' value='hasacro'name='hasacro'/><br/>
-                <label class='skllbl'>Arcana:</label>
-                <input type='checkbox' value='hasarc'name='hasarc'/><br/>
-                <label class='skllbl'>Athletics:</label>
-                <input type='checkbox' value='hasath'name='hasath'/><br/>
-                <label class='skllbl'>Bluff:</label>
-                <input type='checkbox' value='hasbluff'name='hasbluff'/><br/>
-                <label class='skllbl'>Diplomacy</label>
-                <input type='checkbox' value='hasdiplo'name='hasdiplo'/><br/>
-                <label class='skllbl'>Dungeoneering:</label>
-                <input type='checkbox' value='hasdung'name='hasdung'/><br/>
-                <label class='skllbl'>Endurance:</label>
-                <input type='checkbox' value='hasend'name='hasend'/><br/>
-                <label class='skllbl'>Heal:</label>
-                <input type='checkbox' value='hasheal'name='hasheal'/>
+            <div class="column col-sm-6">
+                <label for="hasacro">Acrobatics:</label>
+                <input type='checkbox' value='hasacro'name='hasacro' id='hasacro'/>
+                <label for="hasarc">Arcana:</label>
+                <input type='checkbox' value='hasarc'name='hasarc' id='hasarc'/>
+                <label for="hasath">Athletics:</label>
+                <input type='checkbox' value='hasath'name='hasath' id='hasath'/>
+                <label for="hasbluff">Bluff:</label>
+                <input type='checkbox' value='hasbluff'name='hasbluff' id='hasbluff'/>
+                <label for="hasdiplo">Diplomacy</label>
+                <input type='checkbox' value='hasdiplo'name='hasdiplo' id='hasdiplo'/>
+                <label for="hasdung">Dungeoneering:</label>
+                <input type='checkbox' value='hasdung'name='hasdung' id='hasdung'/>
+                <label for="hasend">Endurance:</label>
+                <input type='checkbox' value='hasend'name='hasend' id='hasend'/>
+                <label for="hasheal">Heal:</label>
+                <input type='checkbox' value='hasheal'name='hasheal' id='hasheal'/>
+                <label for="hashis">History:</label>
+                <input type='checkbox' value='hashis'name='hashis' id='hashis'/>
             </div>
-            <div class='vertdiv'>
-                <label class='skllbl'>Insight:</label>
-                <input type='checkbox' value='hasins'name='hasins'/><br/>
-                <label class='skllbl'>Intimidate:</label>
-                <input type='checkbox' value='hasintim'name='hasintim'/><br/>
-                <label class='skllbl'>Nature:</label>
-                <input type='checkbox' value='hasnat'name='hasnat'/><br/>
-                <label class='skllbl'>Perception:</label>
-                <input type='checkbox' value='hasperc'name='hasperc'/><br/>
-                <label class='skllbl'>Religion:</label>
-                <input type='checkbox' value='hasrel'name='hasrel'/><br/>
-                <label class='skllbl'>Stealth:</label>
-                <input type='checkbox' value='hasste'name='hasste'/><br/>
-                <label class='skllbl'>Streetwise:</label>
-                <input type='checkbox' value='hasstreet'name='hasstreet'/><br/>
-                <label class='skllbl'>Thievery::</label>
-                <input type='checkbox' value='hasthiev'name='hasthiev'/>
-            </div><br/>
-            <label>History:</label>
-            <input type='checkbox' value='hashis'name='hashis'/>
+            <div class="col-sm-6">
+                <label for="hasins">Insight:</label>
+                <input type='checkbox' value='hasins'name='hasins' id='hasins'/>
+                <label for="hasintim">Intimidate:</label>
+                <input type='checkbox' value='hasintim'name='hasintim' id='hasintim'/>
+                <label for="hasnat">Nature:</label>
+                <input type='checkbox' value='hasnat'name='hasnat' id='hasnat'/>
+                <label for="hasperc">Perception:</label>
+                <input type='checkbox' value='hasperc'name='hasperc' id='hasperc'/>
+                <label for="hasrel">Religion:</label>
+                <input type='checkbox' value='hasrel'name='hasrel' id='hasrel'/>
+                <label for="hasste">Stealth:</label>
+                <input type='checkbox' value='hasste'name='hasste' id='hasste'/>
+                <label for="hasstree">Streetwise:</label>
+                <input type='checkbox' value='hasstreet'name='hasstree' id='hasstree'/>
+                <label for="hasthiev">Thievery::</label>
+                <input type='checkbox' value='hasthiev'name='hasthiev' id='hasthiev'/>
+            </div>
         </fieldset>
+        <div class="row" id='nextprev'>
+            <div class="col-xs-6">
+                <img src='../../images/sword2.png'id='backward'class='nav'/>
+            </div>
+            <div class="col-xs-6">
+                <img src='../../images/sword.png'id='forward'class='nav'/>
+            </div>
+        </div>
     </div>
 </form>
-
-<div id='nextprev'>
-    <img src='../../images/sword2.png'id='backward'class='nav'/>
-    <img src='../../images/sword.png'id='forward'class='nav'/>
 </div>
 </div>
-</div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src='../js/newchar.js'></script>
 </body>
 </html>

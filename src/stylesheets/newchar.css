@@ -324,19 +324,23 @@ a:hover {
   padding: 1rem 2.5rem;
 }
 /* line 13, ../sass/newchar.scss */
-.newchar-container .box3in {
-  width: 35px;
-}
-/* line 16, ../sass/newchar.scss */
 .newchar-container .form-group {
   margin-bottom: 1px;
 }
+/* line 17, ../sass/newchar.scss */
+.newchar-container #nextprev {
+  padding: 1rem 0 0;
+}
 /* line 20, ../sass/newchar.scss */
+.newchar-container #skills .column {
+  padding: 0 .5rem;
+}
+/* line 24, ../sass/newchar.scss */
 .newchar-container label {
   font-weight: normal;
   margin-top: 5px;
 }
-/* line 24, ../sass/newchar.scss */
+/* line 28, ../sass/newchar.scss */
 .newchar-container button {
   margin-top: -1px;
   padding-left: 1rem;
@@ -346,7 +350,7 @@ a:hover {
   -moz-border-radius: 0px / 0px;
   border-radius: 0px / 0px;
 }
-/* line 31, ../sass/newchar.scss */
+/* line 35, ../sass/newchar.scss */
 .newchar-container input {
   -webkit-border-radius: 1px 1px;
   -moz-border-radius: 1px / 1px;
@@ -355,12 +359,12 @@ a:hover {
   font-size: 2rem;
   margin-top: -1px;
 }
-/* line 37, ../sass/newchar.scss */
+/* line 41, ../sass/newchar.scss */
 .newchar-container input:focus {
   padding-left: .8rem;
   border-left: 0.3rem solid #8768c2;
 }
-/* line 41, ../sass/newchar.scss */
+/* line 45, ../sass/newchar.scss */
 .newchar-container legend {
   text-align: center;
   font-size: 1.8rem;

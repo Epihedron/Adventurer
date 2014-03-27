@@ -6,16 +6,20 @@
 
 /* Forms */
 
- .newchar-container{
- 	max-width: 475px;
- 	margin: 5rem auto 0;
- 	padding: 1rem 2.5rem;
-	.box3in{
-		width: 35px;
-	}
+.newchar-container{
+	max-width: 475px;
+	margin: 5rem auto 0;
+	padding: 1rem 2.5rem;
 	.form-group{
 		margin-bottom: 1px;
 		label:first-of-type{}
+	}
+	#nextprev{
+		padding: 1rem 0 0;
+	}
+	#skills .column{
+		padding: 0 .5rem;
+
 	}
 	label{
 		font-weight: normal;
@@ -38,9 +42,9 @@
 		padding-left: .8rem;
 		border-left: .3rem solid $quiet-purple;
 	}
- 	legend{
- 		text-align: center;
- 		font-size: 1.8rem;
- 		font-weight: bold;
- 	}
+	legend{
+		text-align: center;
+		font-size: 1.8rem;
+		font-weight: bold;
+	}
 }
