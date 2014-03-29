@@ -4,60 +4,72 @@
  * Globals
  */
 
-/* Forms */
-
-.newchar-container{
-	max-width: 475px;
-	min-height: 425px;
-	margin: 5rem auto 0;
-	padding: 1rem 2.5rem 6rem;
-	.form-group{
-		margin-bottom: 1px;
-	}
-	.no-padding-right{
-		padding-right: 0;
-	}
-	#nextprev{
-		width: 100px;
-		position: absolute;
-		bottom: 2rem;
-		left: 50%;
-		margin-left: -50px;
-		text-align: center;
-		span{
-			font-size: 3rem;
+/* 
+ * Page specific
+ */
+.body{
+	padding-top: .8rem;
+	.newchar-container{
+		max-width: 450px;
+		min-height: 400px;
+		margin: 2rem auto;
+		padding: 1rem 1.5rem 6rem;
+		.legend{
+			padding-top: 2rem;
+			// font-weight: bold;
 		}
-		#forward > span{
-			top: 0;
+		legend+.legend{
+			padding-top: 0;
 		}
-	}
-	label{
-		font-weight: normal;
-		margin-top: 5px;
-	}
-	button{
-		margin-top: -1px;
-		padding-left: 1rem;
-		text-align: left;
-		font-size: 2rem;
-		@include border-radius(0px, 0px);
-	}
-	input{
-		@include border-radius(1px, 1px);
-		padding-left: 1rem;
-		font-size: 2rem;
-		margin-top: -1px;
-	}
-	input:focus{
-		padding-left: .8rem;
-		border-left: .3rem solid $quiet-purple;
-	}
-	legend{
-		text-align: center;
-		font-size: 1.8rem;
-		font-weight: bold;
-	}
-	#skills input{
-		margin-top: 9px;
+		// Forms
+		.form-group{
+			margin-bottom: 1px;
+		}
+		.no-padding-right{
+			padding-right: 0;
+		}
+		#nextprev{
+			width: 100px;
+			position: absolute;
+			bottom: 2rem;
+			left: 50%;
+			margin-left: -50px;
+			text-align: center;
+			span{
+				font-size: 3rem;
+			}
+			#forward > span{
+				top: 0;
+			}
+		}
+		label{
+			font-weight: normal;
+			margin-top: 5px;
+		}
+		button{
+			margin-top: -1px;
+			padding-left: 1rem;
+			text-align: left;
+			font-size: 2rem;
+			@include border-radius(0px, 0px);
+		}
+		input{
+			@include border-radius(1px, 1px);
+			padding-left: 1rem;
+			font-size: 2rem;
+			margin-top: -1px;
+		}
+		input:focus{
+			padding-left: .8rem;
+			border-left: .3rem solid $quiet-purple;
+		}
+		legend{
+			text-align: center;
+			font-size: 1.8rem;
+			font-weight: bold;
+		}
+		#skills input{
+			margin-top: 9px;
+		}
 	}
 }

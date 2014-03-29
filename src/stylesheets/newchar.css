@@ -316,24 +316,38 @@ a:hover {
 /*
  * Globals
  */
-/* Forms */
-/* line 9, ../sass/newchar.scss */
-.newchar-container {
-  max-width: 475px;
-  min-height: 425px;
-  margin: 5rem auto 0;
-  padding: 1rem 2.5rem 6rem;
+/* 
+ * Page specific
+ */
+/* line 10, ../sass/newchar.scss */
+.body {
+  padding-top: .8rem;
 }
-/* line 14, ../sass/newchar.scss */
-.newchar-container .form-group {
-  margin-bottom: 1px;
+/* line 12, ../sass/newchar.scss */
+.body .newchar-container {
+  max-width: 450px;
+  min-height: 400px;
+  margin: 2rem auto;
+  padding: 1rem 1.5rem 6rem;
 }
 /* line 17, ../sass/newchar.scss */
-.newchar-container .no-padding-right {
+.body .newchar-container .legend {
+  padding-top: 2rem;
+}
+/* line 21, ../sass/newchar.scss */
+.body .newchar-container legend + .legend {
+  padding-top: 0;
+}
+/* line 25, ../sass/newchar.scss */
+.body .newchar-container .form-group {
+  margin-bottom: 1px;
+}
+/* line 28, ../sass/newchar.scss */
+.body .newchar-container .no-padding-right {
   padding-right: 0;
 }
-/* line 20, ../sass/newchar.scss */
-.newchar-container #nextprev {
+/* line 31, ../sass/newchar.scss */
+.body .newchar-container #nextprev {
   width: 100px;
   position: absolute;
   bottom: 2rem;
@@ -341,21 +355,21 @@ a:hover {
   margin-left: -50px;
   text-align: center;
 }
-/* line 27, ../sass/newchar.scss */
-.newchar-container #nextprev span {
+/* line 38, ../sass/newchar.scss */
+.body .newchar-container #nextprev span {
   font-size: 3rem;
 }
-/* line 30, ../sass/newchar.scss */
-.newchar-container #nextprev #forward > span {
+/* line 41, ../sass/newchar.scss */
+.body .newchar-container #nextprev #forward > span {
   top: 0;
 }
-/* line 34, ../sass/newchar.scss */
-.newchar-container label {
+/* line 45, ../sass/newchar.scss */
+.body .newchar-container label {
   font-weight: normal;
   margin-top: 5px;
 }
-/* line 38, ../sass/newchar.scss */
-.newchar-container button {
+/* line 49, ../sass/newchar.scss */
+.body .newchar-container button {
   margin-top: -1px;
   padding-left: 1rem;
   text-align: left;
@@ -364,8 +378,8 @@ a:hover {
   -moz-border-radius: 0px / 0px;
   border-radius: 0px / 0px;
 }
-/* line 45, ../sass/newchar.scss */
-.newchar-container input {
+/* line 56, ../sass/newchar.scss */
+.body .newchar-container input {
   -webkit-border-radius: 1px 1px;
   -moz-border-radius: 1px / 1px;
   border-radius: 1px / 1px;
@@ -373,18 +387,18 @@ a:hover {
   font-size: 2rem;
   margin-top: -1px;
 }
-/* line 51, ../sass/newchar.scss */
-.newchar-container input:focus {
+/* line 62, ../sass/newchar.scss */
+.body .newchar-container input:focus {
   padding-left: .8rem;
   border-left: 0.3rem solid #8768c2;
 }
-/* line 55, ../sass/newchar.scss */
-.newchar-container legend {
+/* line 66, ../sass/newchar.scss */
+.body .newchar-container legend {
   text-align: center;
   font-size: 1.8rem;
   font-weight: bold;
 }
-/* line 60, ../sass/newchar.scss */
-.newchar-container #skills input {
+/* line 71, ../sass/newchar.scss */
+.body .newchar-container #skills input {
   margin-top: 9px;
 }
