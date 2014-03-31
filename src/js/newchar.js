@@ -127,47 +127,53 @@ $(document).ready(function()
     //additional input fields
     $('#addracefeature').click(function()
         {
-            $('#racefeaturelist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='rfeat[]'type='text'maxchar='100'class='lgtxt'/></li>");
+            $('#racefeaturelist').append("<div class='col-xs-9'><input name='rfeat[]'type='text'maxchar='100'/></div><div class='col-xs-3' id='removeitem'><span class='glyphicon glyphicon-remove-sign'/></div>");
         }
     );
     $('#addclassfeature').click(function()
         {
-            $('#classfeaturelist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='cfeat[]'type='text'maxchar='100'class='lgtxt'/></li>");
+            $('#classfeaturelist').append("<div class='col-xs-9'><input name='cfeat[]'type='text'maxchar='100'/></div><div class='col-xs-3' id='removeitem'><span class='glyphicon glyphicon-remove-sign'/></div>");
         }
     );
     $('#addfeat').click(function()
         {
-            $('#featslist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='feat[]'type='text'maxchar='100'class='lgtxt'/></li>");
+            $('#featslist').append("<div class='col-xs-9'><input name='feat[]'type='text'maxchar='100'/></div><div class='col-xs-3' id='removeitem'><span class='glyphicon glyphicon-remove-sign'/></div>");
         }
     );
     $('#addlang').click(function()
         {
-            $('#langslist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='lang[]'type='text'maxchar='100'class='lgtxt'/></li>");
+            $('#langslist').append("<div class='col-xs-9'><input name='lang[]'type='text'maxchar='100'/></div><div class='col-xs-3' id='removeitem'><span class='glyphicon glyphicon-remove-sign'/></div>");
         }
     );
     $('#addatwill').click(function()
         {
-            $('#atwillplist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='atwill[]'type='text'maxchar='100'class='lgtxt'/></li>");
+            $('#atwillplist').append("<div class='col-xs-9'><input name='atwill[]'type='text'maxchar='100'/></div><div class='col-xs-3' id='removeitem'><span class='glyphicon glyphicon-remove-sign'/></div>");
         }
     );
     $('#addenc').click(function()
         {
-            $('#encplist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='enc[]'type='text'maxchar='100'class='lgtxt'/></li>");
+            $('#encplist').append("<div class='col-xs-9'><input name='enc[]'type='text'maxchar='100'/></div><div class='col-xs-3' id='removeitem'><span class='glyphicon glyphicon-remove-sign'/></div>");
         }
     );
     $('#adddaily').click(function()
         {
-            $('#dailyplist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='daily[]'type='text'maxchar='100'class='lgtxt'/></li>");
+            $('#dailyplist').append("<div class='col-xs-9'><input name='daily[]'type='text'maxchar='100'/></div><div class='col-xs-3' id='removeitem'><span class='glyphicon glyphicon-remove-sign'/></div>");
         }
     );
     $('#addutil').click(function()
         {
-            $('#utilityplist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='util[]'type='text'maxchar='100'class='lgtxt'/></li>");
+            $('#utilityplist').append("<div class='col-xs-9'><input name='util[]'type='text'maxchar='100'/></div><div class='col-xs-3' id='removeitem'><span class='glyphicon glyphicon-remove-sign'/></div>");
         }
     );
     $('#addinv').click(function()
         {
-            $('#invlist').append("<img onclick='$(this).next().remove(),$(this).remove()'class='deletebutton'/><li><input name='inv[]'type='text'maxchar='100'class='lgtxt'/></li>");
+            $('#invlist').append("<div class='col-xs-9'><input name='inv[]'type='text'maxchar='100'/></div><div class='col-xs-3' id='removeitem'><span class='glyphicon glyphicon-remove-sign'/></div>");
+        }
+    );
+    //remove additional fields
+    $('#removeitem').click(funtion()
+        {
+            $(this).parent().prev().remove(),$(this).parent().remove();
         }
     );
 });
