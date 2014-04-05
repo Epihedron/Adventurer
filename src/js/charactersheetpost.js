@@ -1,4 +1,4 @@
-//my ghetto ass way of getting all the functions to work again. there will be a time where we won't need to reload.
+//ghetto way of getting all the functions to work again. there will be a time where we won't need to reload.
 function ttr(){setTimeout(function()
 {
 	location.reload();
