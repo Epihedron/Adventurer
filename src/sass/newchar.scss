@@ -15,40 +15,51 @@
 		margin: 2rem auto;
 		padding: 1rem 1.5rem 6rem;
 		.legend{
-			padding-top: 2rem;
-			// font-weight: bold;
+			padding-top: 1rem;
+			font-weight: 700;
 		}
 		legend+.legend{
 			padding-top: 0;
 		}
-		// Forms
+		// Interactive elements
 		.form-group{
 			margin-bottom: 1px;
 		}
-		.no-padding-right{
-			padding-right: 0;
+		.add-field{
+			text-align: center;
+			padding: 1rem 0 0;
+			span{
+				font-size: 2.4rem;
+			}
 		}
 		.button-glyphicon{
-			.glyphicon{
-				font-size: 2rem;
-				text-align: center;
+			span{
 				vertical-align: middle;
+				font-size: 2rem;
+				color: $loud-grey;
+				padding: 6px;
+				right: 2rem;
 			}
 		}
 		#nextprev{
-			width: 100px;
+			$nextprev-width : 40rem;
+			max-width: $nextprev-width;
+			width: 100%;
 			position: absolute;
-			bottom: 2rem;
+			top: 3.5rem;
 			left: 50%;
-			margin-left: -50px;
-			text-align: center;
+			margin-left: (-$nextprev-width/2);
 			span{
-				font-size: 3rem;
+				font-size: 2rem;
 			}
-			#forward > span{
-				top: 0;
+			#backward{
+				float: left;
+			}
+			#forward{
+				float: right;
 			}
 		}
+		// Form styling
 		label{
 			font-weight: normal;
 			margin-top: 5px;

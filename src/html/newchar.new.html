@@ -1,10 +1,10 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../stylesheets/styles.css">
-    <link rel="stylesheet" type="text/css" href="../stylesheets/newchar.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="../javascripts/modernizr.custom.js"></script>
-    <script src="../js/newchar.js" type="text/javascript"></script>
+    <title>New Character Sheet</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../stylesheets/newchar.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 </head>
 <body>
     <div class="container body">
@@ -12,52 +12,60 @@
             <form class="form-horizontal" id='newcharform'action='../php/newchar.php'method='post'>
                 <div class="box">
                     <div class="newchar-container">
+                        <div id='nextprev'>
+                            <div id='backward'>
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </div>
+                            <div id='forward'>
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </div>
+                        </div>
                         <fieldset id='basicinfo'>
                             <legend>Basic Info 1/10</legend>
                             <div class="form-group">
-                            <label class='col-xs-3 control-label'>Character:</label>
+                                <label class='col-xs-3 control-label'>Character:</label>
                                 <div class="col-xs-9">
                                     <input class="textinput form-control" maxlength='25'type='text'id='character'name='character'/>
                                 </div>
                             </div>
                             <div class="form-group">
-                            <label class='col-xs-3 control-label'>Class:</label>
+                                <label class='col-xs-3 control-label'>Class:</label>
                                 <div class="col-xs-9">
                                     <input class="textinput form-control" maxlength='25' type='text' id='class'name='class'/>
                                 </div>
                             </div>
                             <div class="form-group">
-                            <label class='col-xs-3 control-label'>Race:</label>
+                                <label class='col-xs-3 control-label'>Race:</label>
                                 <div class="col-xs-9">
                                     <input class="textinput form-control" maxlength='25'type='text'id='race'name='race'/>
                                 </div>
                             </div>
                             <div class="form-group">
-                            <label class='col-xs-3 control-label'>Age:</label>
+                                <label class='col-xs-3 control-label'>Age:</label>
                                 <div class="col-xs-9">
                                     <input class="textinput form-control" onkeypress='return isNumberKey(event)' min='10' max='2000'type='text'id='age'name='age'/>
                                 </div>
                             </div>
                             <div class="form-group">
-                            <label class='col-xs-3 control-label'>Gender:</label>
+                                <label class='col-xs-3 control-label'>Gender:</label>
                                 <div class="col-xs-9">
                                     <input class="textinput form-control" maxlength='6'id='gender'name='gender'/>
                                 </div>
                             </div>
                             <div class="form-group">
-                            <label class='col-xs-3 control-label'>Height:</label>
+                                <label class='col-xs-3 control-label'>Height:</label>
                                 <div class="col-xs-9">
                                     <input class="textinput form-control" maxlength='6'type='text'id='height'name='height'/>
                                 </div>
                             </div>
                             <div class="form-group">
-                            <label class='col-xs-3 control-label'>Weight:</label>
+                                <label class='col-xs-3 control-label'>Weight:</label>
                                 <div class="col-xs-9">
                                     <input class="textinput form-control" maxlength='3'type='text'id='weight'name='weight'/>
                                 </div>
                             </div>
                             <div class="form-group">
-                            <label class='col-xs-3 control-label'>Diety:</label>
+                                <label class='col-xs-3 control-label'>Diety:</label>
                                 <div class="col-xs-9">
                                     <input class="textinput form-control" maxlength='25'type='text'id='diety'name='diety'/>
                                 </div>
@@ -98,15 +106,14 @@
                             <div class="form-group">
                                 <label class='col-xs-4 control-label'>Charisma:</label>
                                 <div class="col-xs-8">
-                                    <input class="textinput form-control" name='cha' onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='cha'/></label>
+                                    <input class="textinput form-control" name='cha' onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='cha'/>
                                 </div>
                             </div>
                         </fieldset>
                         <fieldset id='defs'>
                             <legend>Defenses 3/10</legend>
                             <div class="row">
-                                <div class="col-xs-4"></div>
-                                <div class="col-xs-2">Armor</div>
+                                <div class="col-xs-offset-4 col-xs-2">Armor</div>
                                 <div class="col-xs-offset-1 col-xs-2">Class</div>
                                 <div class="col-xs-offset-1 col-xs-2">Misc</div>
                             </div>
@@ -123,22 +130,19 @@
                             </div>
                             <div class="form-group">
                                 <label class='col-xs-4 control-label'>Reflex:</label>
-                                <div class="col-xs-2"></div>
-                                <div class="col-xs-offset-1 col-xs-2"><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='reflexclass'name='refclass'/></div>
+                                <div class="col-xs-offset-3 col-xs-2"><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='reflexclass'name='refclass'/></div>
                                 <div class="col-xs-offset-1 col-xs-2"><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='reflexmisc'name='refmisc'/></div>
                             </div>
                             <div class="form-group">
                                 <label class='col-xs-4 control-label'>Will:</label>
-                                <div class="col-xs-2"></div>
-                                <div class="col-xs-offset-1 col-xs-2"><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='willclass'name='willclass'/></div>
+                                <div class="col-xs-offset-3 col-xs-2"><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='willclass'name='willclass'/></div>
                                 <div class="col-xs-offset-1 col-xs-2"><input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='2'id='willmisc'name='willmisc'/></div>
                             </div>
                         </fieldset>
                         <fieldset id='atks'>
                             <legend>Attacks 4/10</legend>
                             <div class="row">
-                                <div class="col-xs-4"></div>
-                                <div class="col-xs-2">Class</div>
+                                <div class="col-xs-offset-4 col-xs-2">Class</div>
                                 <div class="col-xs-offset-1 col-xs-2">Feat</div>
                                 <div class="col-xs-offset-1 col-xs-2">Misc</div>
                             </div>
@@ -156,8 +160,7 @@
                             </div>
                             <div class="form-group">
                                 <label class='col-xs-4 control-label'>Damage:</label>
-                                <div class="col-xs-2"></div>
-                                <div class="col-xs-offset-1 col-xs-2">
+                                <div class="col-xs-offset-3 col-xs-2">
                                     <input class="textinput form-control" onkeypress='return isNumberKey(event)' type='text' maxlength='3'id='damfeat'name='dmgfeat'/>
                                 </div>
                                 <div class="col-xs-offset-1 col-xs-2">
@@ -182,168 +185,111 @@
                         </fieldset>
                         <fieldset id='features'>
                             <legend>Features 6/10</legend>
-                            <div class="legend"><p>Race Features</p></div>
+                            <div class='legend col-xs-12'><p>Race Features</p></div>
                             <div id='racefeaturelist'>
-                                <input class="textinput form-control" type='text' maxchar='100' id='racefeatures1' name='racefeatures1' class='lgtxt'/>
-                                <input class="textinput form-control" type='text' maxchar='100' id='racefeatures2' name='racefeatures2' class='lgtxt'/>
-                                <input class="textinput form-control" type='text' maxchar='100' id='racefeatures3' name='racefeatures3' class='lgtxt'/>
-                                <input class="textinput form-control" type='text' maxchar='100' id='racefeatures4' name='racefeatures4' class='lgtxt'/>
-                                <input class="textinput form-control" type='text' maxchar='100' id='racefeatures5' name='racefeatures5' class='lgtxt'/>
                             </div>
-                            <span class='glyphicon glyphicon-plus-sign'id='addracefeature'></span>
-                            <div class='legend'><p>Class Features</p></div>
+                            <div class="col-xs-12 add-field">
+                                <span class='glyphicon glyphicon-plus-sign'id='addracefeature'></span>
+                            </div>
+                            <div class='legend col-xs-12'><p>Class Features</p></div>
                             <div class='varfield'id='classfeaturelist'>
-                                <input class="textinput form-control" type='text'maxchar='100'id='classfeatures1'name='classfeatures1'class='lgtxt'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='classfeatures2'name='classfeatures2'class='lgtxt'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='classfeatures3'name='classfeatures3'class='lgtxt'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='classfeatures4'name='classfeatures4'class='lgtxt'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='classfeatures5'name='classfeatures5'class='lgtxt'/>
                             </div>
-                            <span class='glyphicon glyphicon-plus-sign'id='addclassfeature'></span><br/>
+                            <div class="col-xs-12 add-field">
+                                <span class='glyphicon glyphicon-plus-sign'id='addclassfeature'></span><br/>
+                            </div>
                         </fieldset>
                         <fieldset id='featsnlang'>
                             <legend>Feats and Languages 7/10</legend>
-                            <div class='legend'>Feats</div>
+                            <div class='legend col-xs-12'>Feats</div>
                             <div class='varfield'id='featslist'>
-                                <input class="textinput form-control" type='text'maxchar='100'id='feat1'class='lgtxt'name='feat1'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='feat2'class='lgtxt'name='feat2'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='feat3'class='lgtxt'name='feat3'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='feat4'class='lgtxt'name='feat4'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='feat5'class='lgtxt'name='feat5'/>
                             </div>
-                            <span class='glyphicon glyphicon-plus-sign'id='addfeat'></span>
-                            <div class='legend'>Languages</div>
+                            <div class="col-xs-12 add-field">
+                                <span class='glyphicon glyphicon-plus-sign'id='addfeat'></span>
+                            </div>
+                            <div class='legend col-xs-12'>Languages</div>
                             <div class='varfield'id='langslist'>
-                                <input class="textinput form-control" type='text'maxchar='100'id='lang1'class='lgtxt'name='lang1'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='lang2'class='lgtxt'name='lang2'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='lang3'class='lgtxt'name='lang3'/>
                             </div>
-                            <span class='glyphicon glyphicon-plus-sign'id='addlang'></span>
+                            <div class="col-xs-12 add-field">
+                                <span class='glyphicon glyphicon-plus-sign'id='addlang'></span>
+                            </div>
                         </fieldset>
                         <fieldset id='powers'>
                             <legend>Powers 8/10</legend>
-                            <div class='legend'>At-Will</div>
+                            <div class='legend col-xs-12'>At-Will</div>
                             <div class='varfield'id='atwillplist'>
-                                <input class="textinput form-control" type='text'maxchar='100'id='aw1'name='aw1'class='lgtxt'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='aw2'name='aw2'class='lgtxt'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='aw3'name='aw3'class='lgtxt'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='aw4'name='aw4'class='lgtxt'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='aw5'name='aw5'class='lgtxt'/>
                             </div>
-                            <span class='glyphicon glyphicon-plus-sign'id='addatwill'></span>
-                            <div class='legend'>Encounter</div>
+                            <div class="col-xs-12 add-field">
+                                <span class='glyphicon glyphicon-plus-sign'id='addatwill'></span>
+                            </div>
+                            <div class='legend col-xs-12'>Encounter</div>
                             <div class='varfield'id='encplist'>
-                                <input class="textinput form-control" type='text'maxchar='100'id='e1'name='enc1'class='lgtxt'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='e2'name='enc2'class='lgtxt'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='e3'name='enc3'class='lgtxt'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='e4'name='enc4'class='lgtxt'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='e5'name='enc5'class='lgtxt'/>
                             </div>
-                            <span class='glyphicon glyphicon-plus-sign'id='addenc'></span>
-                            <div class='legend'>Daily</div>
+                            <div class="col-xs-12 add-field">
+                                <span class='glyphicon glyphicon-plus-sign'id='addenc'></span>
+                            </div>
+                            <div class='legend col-xs-12'>Daily</div>
                             <div class='varfield'id='dailyplist'>
-                                <input class="textinput form-control" type='text'maxchar='100'id='d1'name='dai1'class='lgtxt'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='d2'name='dai2'class='lgtxt'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='d3'name='dai3'class='lgtxt'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='d4'name='dai4'class='lgtxt'/>
-                                <input class="textinput form-control" type='text'maxchar='100'id='d5'name='dai5'class='lgtxt'/>
                             </div>
-                            <span class='glyphicon glyphicon-plus-sign'id='adddaily'></span>
-                            <div class='atttitle'>Utility</div>
+                            <div class="col-xs-12 add-field">
+                                <span class='glyphicon glyphicon-plus-sign'id='adddaily'></span>
+                            </div>
+                            <div class='legend col-xs-12'>Utility</div>
                             <div class='varfield'id='utilityplist'>
                             </div>
-                            <span class='glyphicon glyphicon-plus-sign'id='addutil'></span>
+                            <div class="col-xs-12 add-field">
+                                <span class='glyphicon glyphicon-plus-sign'id='addutil'></span>
+                            </div>
                         </fieldset>
                         <fieldset id='equip'>
                             <legend>Equipment 9/10</legend>
                             <div class="form-group">
                                 <label class='col-xs-3 control-label'>Head:</label>
                                 <div class="col-xs-9">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='ehead'name='ehead'/>
+                                    <input class="textinput form-control" type='text'maxlength='30'id='ehead'name='ehead'/>
                                 </div>
                                 <label class='col-xs-3 control-label'>Neck:</label>
                                 <div class="col-xs-9">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='eneck'name='eneck'/>
+                                    <input class="textinput form-control" type='text'maxlength='30'id='eneck'name='eneck'/>
                                 </div>
                                 <label class='col-xs-3 control-label'>Armor:</label>
                                 <div class="col-xs-9">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='earmor'name='earmor'/>
+                                    <input class="textinput form-control" type='text'maxlength='30'id='earmor'name='earmor'/>
                                 </div>
                                 <label class='col-xs-3 control-label'>Arms:</label>
                                 <div class="col-xs-9">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='earms'name='earms'/>
+                                    <input class="textinput form-control" type='text'maxlength='30'id='earms'name='earms'/>
                                 </div>
                                 <label class='col-xs-3 control-label'>Hands:</label>
                                 <div class="col-xs-9">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='ehands'name='ehands'/>
+                                    <input class="textinput form-control" type='text'maxlength='30'id='ehands'name='ehands'/>
                                 </div>
                                 <label class='col-xs-3 control-label'>Finger:</label>
                                 <div class="col-xs-9">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='efinger1'name='efinger1'/>
+                                    <input class="textinput form-control" type='text'maxlength='30'id='efinger1'name='efinger1'/>
                                 </div>
                                 <label class='col-xs-3 control-label'>Finger:</label>
                                 <div class="col-xs-9">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='efinger2'name='efinger2'/>
+                                    <input class="textinput form-control" type='text'maxlength='30'id='efinger2'name='efinger2'/>
                                 </div>
                                 <label class='col-xs-3 control-label'>Waist:</label>
                                 <div class="col-xs-9">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='ewaist'name='ewaist'/>
+                                    <input class="textinput form-control" type='text'maxlength='30'id='ewaist'name='ewaist'/>
                                 </div>
                                 <label class='col-xs-3 control-label'>Legs:</label>
                                 <div class="col-xs-9">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='elegs'name='elegs'/>
+                                    <input class="textinput form-control" type='text'maxlength='30'id='elegs'name='elegs'/>
                                 </div>
                                 <label class='col-xs-3 control-label'>Feet:</label>
                                 <div class="col-xs-9">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='efeet'name='efeet'/>
+                                    <input class="textinput form-control" type='text'maxlength='30'id='efeet'name='efeet'/>
                                 </div>
                             </div>
-
-                            <div class="legend"><p>Inventory</p></div>
-
+                            <div class='legend col-xs-12'><p>Inventory</p></div>
                             <div class="form-group" id="invlist">
-                                <label class='col-xs-4'>Slot 1:</label>
-                                <div class="col-xs-8">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='slot1'name='slot1'/>
-                                </div>
-                                <label class='col-xs-4'>Slot 2:</label>
-                                <div class="col-xs-8">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='slot2'name='slot2'/>
-                                </div>
-                                <label class='col-xs-4'>Slot 3:</label>
-                                <div class="col-xs-8">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='slot3'name='slot3'/>
-                                </div>
-                                <label class='col-xs-4'>Slot 4:</label>
-                                <div class="col-xs-8">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='slot4'name='slot4'/>
-                                </div>
-                                <label class='col-xs-4'>Slot 5:</label>
-                                <div class="col-xs-8">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='slot5'name='slot5'/>
-                                </div>
-                                <label class='col-xs-4'>Slot 6:</label>
-                                <div class="col-xs-8">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='slot6'name='slot6'/>
-                                </div>
-                                <label class='col-xs-4'>Slot 7:</label>
-                                <div class="col-xs-8">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='slot7'name='slot7'/>
-                                </div>
-                                <label class='col-xs-4'>Slot 8:</label>
-                                <div class="col-xs-8">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='slot8'name='slot8'/>
-                                </div>
-                                <label class='col-xs-4'>Slot 9:</label>
-                                <div class="col-xs-8">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='slot9'name='slot9'/>
-                                </div>
-                                <label class='col-xs-4'>Slot 10:</label>
-                                <div class="col-xs-8">
-                                    <input class="textinput form-control" type='text'maxchar='30'id='slot10'name='slot10'/>
-                                </div>
                             </div>
-                            <span class='glyphicon glyphicon-plus-sign'id='addinv'></span><br/>
+                            <div class="col-xs-12 add-field">
+                                <span class='glyphicon glyphicon-plus-sign'id='addinv'></span><br/>
+                            </div>
                         </fieldset>
                         <fieldset id='skills'>
                             <legend>Skills 10/10</legend>
@@ -426,21 +372,12 @@
                                 </div>
                             </div>
                         </fieldset>
-                        <div class="row" id='nextprev'>
-                            <div id='backward' class='nav col-xs-6'/>
-                            <span class="glyphicon glyphicon-chevron-left"></span>
-                        </div>
-                        <div id='forward' class='nav col-xs-6'/>
-                        <span class="glyphicon glyphicon-chevron-right"></span>
                     </div>
                 </div>
             </form>
         </div>
     </div>
-</form>
-</div>
-</div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src='../js/newchar.js'></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/newchar.js"></script>
 </body>
 </html>
