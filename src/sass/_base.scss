@@ -22,6 +22,20 @@ a:hover{
 	color: #fff;
 }
 
+.form-control:focus{
+	outline: 0 !important;
+	border-color: #cccccc;
+	@include box-shadow(none);
+}
+
+.body{
+	a,
+	a:focus,
+	a:hover{
+	color: $loud-grey;
+	}
+}
+
 /* Navigation */
 
 .navbar{
@@ -32,5 +46,4 @@ a:hover{
 	.navbar-brand:hover, .navbar-brand:focus{
 			color: $quiet-tan;
 	}
-
 } 

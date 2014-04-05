@@ -1,12 +1,63 @@
 //Custom Elements
 
+/* Interactions */
+
+.pointer{
+	cursor:pointer;
+	color: $loud-grey;
+}
+
+.pointer:hover{
+	color: $loud-grey;
+}
+
+$buttons: 4; //update this number based on the total number of buttons
+
+.top-right-button{
+	font-size: 16px;
+	@for $i from 1 to $buttons{
+		span:nth-child(#{$i}){
+			position: absolute;
+			top: 15px;
+			right: $i * 25px + 5;
+		}
+	}
+}
+
+.top-left-button{
+	font-size: 14px;
+	@for $i from 1 to $buttons{
+		span:nth-child(#{$i}){
+			position: absolute;
+			top: 15px;
+			left: $i * 25px + 5;
+		}
+	}
+}
+
+/* Structure */
+
+// List Alignment - Used in the footer to center and align a list of items
+.inline-list
+{
+	text-align: center;
+	margin: 0 auto;
+	padding: 2rem;
+	ul{
+		list-style: none;
+		padding: 0.5rem;
+	}
+}
+
+/* Supplemental */
+
 // Box - Shadow Paper Curl from http://www.sitepoint.com/pure-css3-paper-curls/
 .box
 {
 	position: relative;
 	width: 100%;
 	max-width: 700px;
-	padding: 2rem;
+	padding: 2rem 1rem;
 	margin: 0 auto;
 	background-color: #fff;
 	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
@@ -79,7 +130,7 @@
 	width: 100%;
 	position: relative;
 	font-size: 1.2em;
-	padding: 15px 10px 15px 80px;
+	padding: 0.5rem 3rem;
 	vertical-align: top;
 	cursor: pointer;
 }
@@ -89,30 +140,13 @@
 	display: inline-block;
 }
 
-.me-select label span:first-child {
-	width: 30%;
-	color: rgba(97,107,107,0.7);
-}
-
-.me-select label span:nth-child(2),
-.me-select label a {
-	width: 60%;
-	color: #31d2d4;
-}
-
-.me-select label span:last-child {
-	width: 10%;
-	text-align: right;
-	font-size: 60%;
-}
-
 .me-select input[type="checkbox"],
-.me-select label::before,
-.me-select input[type="checkbox"]:checked + label::after {
+.me-select #checkbox::before,
+.me-select input[type="checkbox"]:checked + label span:first-child::after {
 	width: 26px;
 	height: 26px;
 	top: 50%;
-	left: 20px;
+	left: 1.8rem;
 	margin-top: -13px;
 	position: absolute;
 	cursor: pointer;
@@ -126,33 +160,23 @@
 	z-index: 100;
 }
 
-.me-select label::before {
+.me-select #checkbox::before {
 	content: '';
 	border: 2px solid rgba(0,0,0,0.3);
 }
 
-.me-select input[type="checkbox"]:checked + label::after {
+.me-select input[type="checkbox"]:checked + label span:first-child::after {
 	content: '\2713';
 	text-align: center;
 	line-height: 28px;
-	color: #31d2d4;
+	color: $quiet-darkgreen;
 }
+
+
 
 /* Media Queries */
 @media screen and (max-width: 50em) {
 	section {
 		font-size: 80%;
-	}
-}
-
-// List Alignment - Used in the footer to center and align a list of items
-.inline-list
-{
-	text-align: center;
-	margin: 0 auto;
-	padding: 2rem;
-	ul{
-		list-style: none;
-		padding: 0.5rem;
 	}
 }

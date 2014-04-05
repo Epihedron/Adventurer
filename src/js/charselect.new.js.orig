@@ -1,20 +1,4 @@
 var user;
-
-//function for posting data to init.php
-function initP(d) {
-	$.ajax({
-		url:'../php/init.php',
-		type:'post',
-		data:d,
-		success:function(data) {
-			console.log(data);
-		},
-		fail:function() {
-			console.log('unable to send '+d);
-		}
-	});
-}
-
 //logincheck
 $.ajax({
     url:'../php/init.php',
@@ -46,7 +30,12 @@ $.ajax({
 		var d = JSON.parse(data);
 		for(var i in d)
 		{
+<<<<<<< HEAD:src/js/charselect.js
 			$("#charlist").append("<li value="+i+">"+d[i]['charname']+"</li>");
+=======
+			// $("#charlist").append('<li value='+i+'>'+d[i]+'</li>'); previous list formatting
+            $("#charlist").append('<li value='+i+'><input id="cb'+i+'" name="cb'+i+'" type="checkbox"><label for="cb'+i+'"><span></span><span>'+d[i]+'</span><span></span></label></li>');
+>>>>>>> akdesign:src/js/charselect.new.js
 		}
 
 		//char selected
@@ -71,21 +60,27 @@ $.ajax({
 });
 
 //basic menu button items
-$("#tomain").click(function()
-    {
-        window.location.href='../html/main.html';
-    }
-);
-$("#logout").click(function()
-    {
-        window.location.href='../php/logout.php';
-    }
-);
-$("#newchar").click(function()
-    {
-        window.location.href='../html/newchar.html';
-    }
-);
+$("#tomain").click(function() {
+    window.location.href = '../html/main.html';
+});
+$("#logout").click(function() {
+    window.location.href = '../php/logout.php';
+});
+$("#newchar").click(function() {
+    window.location.href = '../html/newchar.html';
+});
+
+//hide/reveal character check boxes
+$('#visibility-toggle').click(function(){
+  if ( $('.me-select label::before').css('visibility') == 'hidden' )
+    $('.me-select label::before').css('visibility','visible');
+  else
+    $('.me-select label::before').css('visibility','hidden');
+});
+$(document).on('click', '#visibility-toggle',  function(event) {
+    $("input[type=checkbox], #checkbox,  .controls-toggle").fadeToggle(150);
+    $("#visibility-toggle").toggleClass("darkgreen");
+});
 
 //delete character
 $("#delchar").click(function()
@@ -107,9 +102,9 @@ $("#delchar").click(function()
                                     {
                                         alert(data);
                                     },
-                                    error:function()
+                                    error:function(err)
                                     {
-					console.log('could not send for deleting a character.');
+                                        alert("An error was thrown:"+JSON.stringify(err));
                                     }
                                 }
                             ).done(function(){location.reload(true);});

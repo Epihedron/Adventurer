@@ -1,0 +1,93 @@
+@import "base";
+
+/*
+ * Globals
+ */
+
+/* 
+ * Page specific
+ */
+.body{
+	padding-top: .8rem;
+	.newchar-container{
+		max-width: 450px;
+		min-height: 400px;
+		margin: 2rem auto;
+		padding: 1rem 1.5rem 6rem;
+		.legend{
+			padding-top: 1rem;
+			font-weight: 700;
+		}
+		legend+.legend{
+			padding-top: 0;
+		}
+		// Interactive elements
+		.form-group{
+			margin-bottom: 1px;
+		}
+		.add-field{
+			text-align: center;
+			padding: 1rem 0 0;
+			span{
+				font-size: 2.4rem;
+			}
+		}
+		.button-glyphicon{
+			span{
+				vertical-align: middle;
+				font-size: 2rem;
+				color: $loud-grey;
+				padding: 6px;
+				right: 2rem;
+			}
+		}
+		#nextprev{
+			$nextprev-width : 40rem;
+			max-width: $nextprev-width;
+			width: 100%;
+			position: absolute;
+			top: 3.5rem;
+			left: 50%;
+			margin-left: (-$nextprev-width/2);
+			span{
+				font-size: 2rem;
+			}
+			#backward{
+				float: left;
+			}
+			#forward{
+				float: right;
+			}
+		}
+		// Form styling
+		label{
+			font-weight: normal;
+			margin-top: 5px;
+		}
+		button{
+			margin-top: -1px;
+			padding-left: 1rem;
+			text-align: left;
+			font-size: 2rem;
+			@include border-radius(0px, 0px);
+		}
+		input{
+			@include border-radius(1px, 1px);
+			padding-left: 1rem;
+			font-size: 2rem;
+			margin-top: -1px;
+		}
+		input:focus{
+			padding-left: .8rem;
+			border-left: .3rem solid $quiet-purple;
+		}
+		legend{
+			text-align: center;
+			font-size: 1.8rem;
+			font-weight: bold;
+		}
+		#skills input{
+			margin-top: 9px;
+		}
+	}
+}

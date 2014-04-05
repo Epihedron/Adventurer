@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<<<<<<< HEAD
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="src/stylesheets/styles.css">
+    <link rel="stylesheet" type="text/css" href="src/stylesheets/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+=======
+<link rel="stylesheet" type="text/css" href="src/stylesheets/styles.css">
+<link rel="stylesheet" type="text/css" href="src/stylesheets/index.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+>>>>>>> eff5139f194bc13bbca363b43ad0090f49f6113c
+</head>
+<body>
+    <div class="navbar navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+            <a class="navbar-brand morphus" href="#">Adventurer</a>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav"> <!-- class="active" can be used for current menu option -->
+        <!--     
+            <li><a href="#">Characters</a></li>
+            <li class="active"><a href="#">DM Tools</a></li>
+            <li><a href="#">Forum</a></li>
+         -->
+        </ul>
+    </div><!--/.nav-collapse -->
+</div>
+</div>
+
+<div class="container">
+    <div class="signin-container box">
+        <form class="form-signin" role="form" method="post" name="login" id="login" action="src/php/logincheck.php">
+            <h4 class="form-signin-heading">Login</h4>
+            <input class="textinput form-control" placeholder="Username" type="text" id="username" name="username" required autofocus />
+            <input input class="textinput form-control" placeholder="Password" type="password" id="password" name="password" required />
+            <button class="btn btn-lg btn-primary btn-block btn-default loginbuttons" id="loginbutton" type="submit">Sign in</button>
+        </form>
+    </div>
+</div>
+<div class="footer inline-list">
+    <div class="container">
+      <ul>
+          <li>Adventurer v0.2.0</li>
+      </ul>
+    </div>
+</div>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+</body>
+
+</html>

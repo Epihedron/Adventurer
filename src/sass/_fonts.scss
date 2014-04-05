@@ -1,11 +1,16 @@
 @import "compass/css3";
-@import "compass/css3/text-shadow";
 
-// @import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Metamorphous);
+@import url("http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Metamorphous");
 
-@include font-face("Lora", font-files("Lora/Lora-Regular.ttf"));
-@include font-face("Lora", font-files("Lora/Lora-Italic.ttf"), style("italic"));
-@include font-face("Metamorphous", font-files("Metamorphous/Metamorphous-Regular.ttf"));
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('fonts/bootstrap/glyphicons-halflings-regular.eot');
+  src: url('fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/bootstrap/glyphicons-halflings-regular.woff') format('woff'), url('fonts/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+// @include font-face("Lora", font-files("../fonts/Lora/Lora-Regular.ttf"));
+// @include font-face("Lora", font-files("fonts/Lora/Lora-Italic.ttf"), style("italic"));
+// @include font-face("Metamorphous", font-files("Metamorphous/Metamorphous-Regular.ttf"));
 
 .lora{
 	font-family: "Lora";
@@ -40,4 +45,14 @@ html{
 	h4{
 		font-size: 1.75rem;
 	}
+}
+
+/* Colors */
+
+.tan{
+	color: $tan;
+}
+
+.darkgreen{
+	color: $darkgreen;
 }
