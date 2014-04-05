@@ -131,7 +131,7 @@ html h4 {
   position: relative;
   width: 100%;
   max-width: 700px;
-  padding: .2rem;
+  padding: 2rem 1rem;
   margin: 0 auto;
   background-color: #fff;
   -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
