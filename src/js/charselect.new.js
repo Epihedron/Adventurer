@@ -30,7 +30,7 @@ $.ajax({
 		var d = JSON.parse(data);
 		for(var i in d)
 		{
-            $("#charlist").append('<li value='+i+'><input id="cb'+i+'" name="cb'+i+'" type="checkbox"><label for="cb'+i+'"><span></span><span>'+d[i]['charname']+'</span><span></span></label></li>');
+            $("#charlist").append('<li value='+i+'><input id="cb'+i+'" name="cb'+i+'" type="checkbox"><label for="cb'+i+'"><span id="checkbox"></span><span>'+d[i]['charname']+'</span><span></span></label></li>');
 		}
 
 		//char selected
