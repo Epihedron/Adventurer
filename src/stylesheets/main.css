@@ -58,63 +58,23 @@ html h4 {
 /* line 5, ../sass/_custom.scss */
 .pointer {
   cursor: pointer;
-  color: #9c9c9c;
-}
-
-/* line 10, ../sass/_custom.scss */
-.pointer:hover {
-  color: #9c9c9c;
-}
-
-/* line 16, ../sass/_custom.scss */
-.top-left-button {
-  font-size: 14px;
-}
-/* line 19, ../sass/_custom.scss */
-.top-left-button .glyph-button:nth-child(1) {
-  position: absolute;
-  top: 15px;
-  left: 30px;
-}
-/* line 19, ../sass/_custom.scss */
-.top-left-button .glyph-button:nth-child(2) {
-  position: absolute;
-  top: 15px;
-  left: 55px;
-}
-
-/* line 27, ../sass/_custom.scss */
-.top-right-button {
-  font-size: 16px;
-}
-/* line 30, ../sass/_custom.scss */
-.top-right-button .glyph-button:nth-child(1) {
-  position: absolute;
-  top: 15px;
-  right: 30px;
-}
-/* line 30, ../sass/_custom.scss */
-.top-right-button .glyph-button:nth-child(2) {
-  position: absolute;
-  top: 15px;
-  right: 55px;
 }
 
 /* Structure */
-/* line 42, ../sass/_custom.scss */
+/* line 13, ../sass/_custom.scss */
 .inline-list {
   text-align: center;
   margin: 0 auto;
   padding: 2rem;
 }
-/* line 46, ../sass/_custom.scss */
+/* line 17, ../sass/_custom.scss */
 .inline-list ul {
   list-style: none;
   padding: 0.5rem;
 }
 
 /* Supplemental */
-/* line 56, ../sass/_custom.scss */
+/* line 27, ../sass/_custom.scss */
 .box {
   position: relative;
   width: 100%;
@@ -127,7 +87,7 @@ html h4 {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
 }
 
-/* line 69, ../sass/_custom.scss */
+/* line 40, ../sass/_custom.scss */
 .box:before, .box:after {
   position: absolute;
   width: 40%;
@@ -147,7 +107,7 @@ html h4 {
   z-index: -1;
 }
 
-/* line 89, ../sass/_custom.scss */
+/* line 60, ../sass/_custom.scss */
 .box:after {
   left: auto;
   right: 12px;
@@ -158,21 +118,21 @@ html h4 {
   transform: skew(5deg) rotate(5deg);
 }
 
-/* line 101, ../sass/_custom.scss */
+/* line 72, ../sass/_custom.scss */
 .me-select {
   position: relative;
   margin: 0 auto;
   max-width: 800px;
 }
 
-/* line 107, ../sass/_custom.scss */
+/* line 78, ../sass/_custom.scss */
 .me-select ul {
   list-style: none;
   padding: 0;
   width: 100%;
 }
 
-/* line 113, ../sass/_custom.scss */
+/* line 84, ../sass/_custom.scss */
 .me-select li {
   margin: 0 auto;
   position: relative;
@@ -184,12 +144,12 @@ html h4 {
   user-select: none;
 }
 
-/* line 124, ../sass/_custom.scss */
+/* line 95, ../sass/_custom.scss */
 .me-select li.selected {
   box-shadow: inset 0 0 0 40px #f5e6d6;
 }
 
-/* line 128, ../sass/_custom.scss */
+/* line 99, ../sass/_custom.scss */
 .me-select label {
   display: inline-block;
   width: 100%;
@@ -200,13 +160,13 @@ html h4 {
   cursor: pointer;
 }
 
-/* line 138, ../sass/_custom.scss */
+/* line 109, ../sass/_custom.scss */
 .me-select label span {
   vertical-align: middle;
   display: inline-block;
 }
 
-/* line 145, ../sass/_custom.scss */
+/* line 116, ../sass/_custom.scss */
 .me-select input[type="checkbox"],
 .me-select #checkbox::before,
 .me-select input[type="checkbox"]:checked + label span:first-child::after {
@@ -219,7 +179,7 @@ html h4 {
   cursor: pointer;
 }
 
-/* line 155, ../sass/_custom.scss */
+/* line 126, ../sass/_custom.scss */
 .me-select input[type="checkbox"] {
   opacity: 0;
   -webkit-appearance: none;
@@ -228,13 +188,13 @@ html h4 {
   z-index: 100;
 }
 
-/* line 163, ../sass/_custom.scss */
+/* line 134, ../sass/_custom.scss */
 .me-select #checkbox::before {
   content: '';
   border: 2px solid rgba(0, 0, 0, 0.3);
 }
 
-/* line 168, ../sass/_custom.scss */
+/* line 139, ../sass/_custom.scss */
 .me-select input[type="checkbox"]:checked + label span:first-child::after {
   content: '\2713';
   text-align: center;
@@ -244,7 +204,7 @@ html h4 {
 
 /* Media Queries */
 @media screen and (max-width: 50em) {
-  /* line 179, ../sass/_custom.scss */
+  /* line 150, ../sass/_custom.scss */
   section {
     font-size: 80%;
   }
@@ -395,21 +355,56 @@ body {
   padding: 0 auto;
 }
 
-/* Lists */
 /* line 33, ../sass/main.scss */
+.top-left-button {
+  font-size: 14px;
+  color: #9c9c9c;
+}
+/* line 37, ../sass/main.scss */
+.top-left-button .glyph-button:nth-child(1) {
+  position: absolute;
+  top: 5px;
+  left: 30px;
+}
+/* line 37, ../sass/main.scss */
+.top-left-button .glyph-button:nth-child(2) {
+  position: absolute;
+  top: 5px;
+  left: 55px;
+}
+
+/* line 45, ../sass/main.scss */
+.top-right-button {
+  font-size: 16px;
+}
+/* line 48, ../sass/main.scss */
+.top-right-button .glyph-button:nth-child(1) {
+  position: absolute;
+  top: 5px;
+  right: 30px;
+}
+/* line 48, ../sass/main.scss */
+.top-right-button .glyph-button:nth-child(2) {
+  position: absolute;
+  top: 5px;
+  right: 55px;
+}
+
+/* Lists */
+/* line 58, ../sass/main.scss */
 .character-list-container {
   text-align: center;
   padding-bottom: 1.5rem;
 }
-/* line 39, ../sass/main.scss */
+/* line 64, ../sass/main.scss */
 .character-list-container .row h4 {
   padding: 2rem 0 1.5rem;
 }
-/* line 42, ../sass/main.scss */
+/* line 67, ../sass/main.scss */
 .character-list-container ul {
   width: 100%;
 }
-/* line 44, ../sass/main.scss */
+/* line 69, ../sass/main.scss */
 .character-list-container ul li span {
   text-align: center;
   font-size: 1.3rem;

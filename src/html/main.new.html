@@ -35,7 +35,7 @@
                 <div class="character-list-container box">
                     <div class="row">
                         <div class="col-md-12">
-                            <span class="pointer top-left-button controls-toggle" style="display: none;">
+                            <span class="top-left-button controls-toggle" style="display: none;">
                                 <span class="glyph-button">
                                     <a href="newchar.new.html">
                                         <span class="glyphicon glyphicon-plus"></span>
@@ -43,13 +43,13 @@
                                 </span>
                                 <span class="glyph-button">
                                     <label for="delete">
-                                        <span class="glyphicon glyphicon-trash"></span>
+                                        <span class="pointer glyphicon glyphicon-trash"></span>
                                     </label>
                                 </span>
                             </span>
-                            <span class="pointer top-right-button" >
+                            <span class="top-right-button" >
                                 <span class="glyph-button">
-                                    <span class="glyphicon glyphicon-cog" id="visibility-toggle"></span>
+                                    <span class="pointer glyphicon glyphicon-cog" id="visibility-toggle"></span>
                                 </span>
                             </span>
                         </div>
@@ -60,11 +60,11 @@
                     <form class="me-select">
                         <ul  id="charlist">
                             <input id="cb'+i+'" name="cb'+i+'" type="checkbox"><label for="cb'+i+'">
-                            <span style="display: none;" id="checkbox"></span><span class="charname">'+d[i]['charname']+'</span></label></li>
+                            <!-- <span style="display: none;" id="checkbox"></span><span class="charname">Godzilla</span></label></li> -->
 
                             <!--character list from json gets ajaxed here-->
                         </ul>
-                        <input id="delete" style="display: none;">
+                        <input id="delete" style="display: none;" role="form" method="post" name="delchar" id="delchar" action="src/php/delchar.php">
                     </form>
                 </div>
             </div>

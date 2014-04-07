@@ -3,36 +3,7 @@
 /* Interactions */
 
 .pointer{
-	cursor:pointer;
-	color: $loud-grey;
-}
-
-.pointer:hover{
-	color: $loud-grey;
-}
-
-$buttons: 3; //update this number based on the total number of buttons
-
-.top-left-button{
-	font-size: 14px;
-	@for $i from 1 to $buttons{
-		.glyph-button:nth-child(#{$i}){
-			position: absolute;
-			top: 15px;
-			left: $i * 25px + 5;
-		}
-	}
-}
-
-.top-right-button{
-	font-size: 16px;
-	@for $i from 1 to $buttons{
-		.glyph-button:nth-child(#{$i}){
-			position: absolute;
-			top: 15px;
-			right: $i * 25px + 5;
-		}
-	}
+	cursor: pointer;
 }
 
 /* Structure */
