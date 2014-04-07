@@ -36,13 +36,21 @@
                     <div class="row">
                         <div class="col-md-12">
                             <span class="pointer top-left-button controls-toggle" style="display: none;">
-                                <label for="delete">
-                                    <span class="glyphicon glyphicon-plus"></span>
-                                </label>
-                                <span class="glyphicon glyphicon-trash"></span>
+                                <span class="glyph-button">
+                                    <a href="newchar.new.html">
+                                        <span class="glyphicon glyphicon-plus"></span>
+                                    </a>
+                                </span>
+                                <span class="glyph-button">
+                                    <label for="delete">
+                                        <span class="glyphicon glyphicon-trash"></span>
+                                    </label>
+                                </span>
                             </span>
                             <span class="pointer top-right-button" >
-                                <span class="glyphicon glyphicon-cog" id="visibility-toggle"></span>
+                                <span class="glyph-button">
+                                    <span class="glyphicon glyphicon-cog" id="visibility-toggle"></span>
+                                </span>
                             </span>
                         </div>
                     </div>
@@ -51,9 +59,12 @@
                     </div>
                     <form class="me-select">
                         <ul  id="charlist">
+                            <input id="cb'+i+'" name="cb'+i+'" type="checkbox"><label for="cb'+i+'">
+                            <span style="display: none;" id="checkbox"></span><span class="charname">'+d[i]['charname']+'</span></label></li>
+
                             <!--character list from json gets ajaxed here-->
-                            <input id="delete" style="display: none;">
                         </ul>
+                        <input id="delete" style="display: none;">
                     </form>
                 </div>
             </div>

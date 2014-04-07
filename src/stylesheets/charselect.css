@@ -67,49 +67,37 @@ html h4 {
 }
 
 /* line 16, ../sass/_custom.scss */
-.top-right-button {
-  font-size: 16px;
-}
-/* line 19, ../sass/_custom.scss */
-.top-right-button span:nth-child(1) {
-  position: absolute;
-  top: 15px;
-  right: 30px;
-}
-/* line 19, ../sass/_custom.scss */
-.top-right-button span:nth-child(2) {
-  position: absolute;
-  top: 15px;
-  right: 55px;
-}
-/* line 19, ../sass/_custom.scss */
-.top-right-button span:nth-child(3) {
-  position: absolute;
-  top: 15px;
-  right: 80px;
-}
-
-/* line 27, ../sass/_custom.scss */
 .top-left-button {
   font-size: 14px;
 }
-/* line 30, ../sass/_custom.scss */
-.top-left-button span:nth-child(1) {
+/* line 19, ../sass/_custom.scss */
+.top-left-button .glyph-button:nth-child(1) {
   position: absolute;
   top: 15px;
   left: 30px;
 }
-/* line 30, ../sass/_custom.scss */
-.top-left-button span:nth-child(2) {
+/* line 19, ../sass/_custom.scss */
+.top-left-button .glyph-button:nth-child(2) {
   position: absolute;
   top: 15px;
   left: 55px;
 }
+
+/* line 27, ../sass/_custom.scss */
+.top-right-button {
+  font-size: 16px;
+}
 /* line 30, ../sass/_custom.scss */
-.top-left-button span:nth-child(3) {
+.top-right-button .glyph-button:nth-child(1) {
   position: absolute;
   top: 15px;
-  left: 80px;
+  right: 30px;
+}
+/* line 30, ../sass/_custom.scss */
+.top-right-button .glyph-button:nth-child(2) {
+  position: absolute;
+  top: 15px;
+  right: 55px;
 }
 
 /* Structure */
