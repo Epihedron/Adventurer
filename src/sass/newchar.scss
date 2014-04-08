@@ -13,7 +13,7 @@
 		max-width: 450px;
 		min-height: 200px;
 		margin: 2rem auto;
-		padding: 1rem 1.5rem;
+		padding: 1rem 1rem;
 		.legend{
 			padding-top: 1rem;
 			font-weight: 700;
@@ -41,23 +41,15 @@
 				right: 2rem;
 			}
 		}
-		#nextprev{
-			$nextprev-width : 40rem;
-			max-width: $nextprev-width;
-			width: 100%;
+		.top-right{
 			position: absolute;
 			top: 5rem;
-			left: 50%;
-			margin-left: (-$nextprev-width/2);
-			span{
-				font-size: 2rem;
-			}
-			#backward{
-				float: left;
-			}
-			#forward{
-				float: right;
-			}
+			right: 10%;
+		}
+		.top-left{
+			position: absolute;
+			top: 5rem;
+			left: 10%;
 		}
 		// Form styling
 		label{
@@ -83,6 +75,7 @@
 			text-align: center;
 			font-size: 1.8rem;
 			font-weight: bold;
+			padding: 0 2.5rem;
 		}
 		#skills input{
 			margin-top: 9px;

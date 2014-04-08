@@ -28,8 +28,8 @@
 	padding: 0 auto;
 }
 
-$buttons: 3; //update this number based on the total number of buttons
-
+// absolutely positioned buttons
+$buttons: 3; // update this number based on the total number of buttons
 .top-left-button{
 	font-size: 14px;
 	color: $loud-grey;
