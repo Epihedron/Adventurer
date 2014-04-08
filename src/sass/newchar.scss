@@ -11,9 +11,9 @@
 	padding-top: .8rem;
 	.newchar-container{
 		max-width: 450px;
-		min-height: 400px;
+		min-height: 200px;
 		margin: 2rem auto;
-		padding: 1rem 1.5rem 6rem;
+		padding: 1rem 1.5rem;
 		.legend{
 			padding-top: 1rem;
 			font-weight: 700;
@@ -46,7 +46,7 @@
 			max-width: $nextprev-width;
 			width: 100%;
 			position: absolute;
-			top: 3.5rem;
+			top: 5rem;
 			left: 50%;
 			margin-left: (-$nextprev-width/2);
 			span{
@@ -66,8 +66,6 @@
 		}
 		button{
 			margin-top: -1px;
-			padding-left: 1rem;
-			text-align: left;
 			font-size: 2rem;
 			@include border-radius(0px, 0px);
 		}
@@ -88,6 +86,20 @@
 		}
 		#skills input{
 			margin-top: 9px;
+		}
+		.btn-default,
+		.btn-default:focus{
+			color: #fff;
+			text-shadow: none;
+			margin: 4rem auto 0;
+			max-width: 15rem;
+			text-align: center;
+			/* Prevent inheritence from `body` */
+			background-color: $loud-green;
+			border: 1px solid $quiet-darkgreen;
+			@include transition-property(background-color);
+			@include transition-duration(.2s);
+			@include transition-timing-function(ease-in);
 		}
 	}
 }
