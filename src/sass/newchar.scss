@@ -15,8 +15,12 @@
 		margin: 2rem auto;
 		padding: 1rem 1rem;
 		.legend{
+			margin-top: 1rem;	
 			padding-top: 1rem;
 			font-weight: 700;
+			p{
+				padding: 0.5rem;
+			}
 		}
 		legend+.legend{
 			padding-top: 0;
@@ -27,7 +31,7 @@
 		}
 		.add-field{
 			text-align: center;
-			padding: 1rem 0 0;
+			padding: 0.5rem;
 			span{
 				font-size: 2.4rem;
 			}
@@ -76,6 +80,10 @@
 			font-size: 1.8rem;
 			font-weight: bold;
 			padding: 0 2.5rem;
+			margin-top: 1rem;
+			p{
+				margin-bottom: 0;
+			}
 		}
 		#skills input{
 			margin-top: 9px;
