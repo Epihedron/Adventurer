@@ -203,59 +203,91 @@
                     </fieldset>
                     <fieldset id='features'>
                         <legend>Features 6/10</legend>
-                        <div class='legend col-xs-12'><p>Race Features</p></div>
-                        <div id='racefeaturelist'>
+                        <div class="row legend">
+                            <div class="col-xs-10">
+                                <p>Race Features</p>
+                            </div>
+                            <div class="col-xs-2 add-field">
+                                <span class='glyphicon glyphicon-plus-sign'id='addracefeature'></span>
+                            </div>
                         </div>
-                        <div class="col-xs-12 add-field">
-                            <span class='glyphicon glyphicon-plus-sign'id='addracefeature'></span>
+                        <div class="row" id='racefeaturelist'>
                         </div>
-                        <div class='legend col-xs-12'><p>Class Features</p></div>
-                        <div class='varfield'id='classfeaturelist'>
+                        <div class="row legend">
+                            <div class="col-xs-10">
+                                <p>Class Features</p>
+                            </div>
+                            <div class="col-xs-2 add-field">
+                                <span class='glyphicon glyphicon-plus-sign'id='addclassfeature'></span><br/>
+                            </div>
                         </div>
-                        <div class="col-xs-12 add-field">
-                            <span class='glyphicon glyphicon-plus-sign'id='addclassfeature'></span><br/>
+                        <div class='row' id='classfeaturelist'>
                         </div>
                     </fieldset>
                     <fieldset id='featsnlang'>
                         <legend>Feats and Languages 7/10</legend>
-                        <div class='legend col-xs-12'>Feats</div>
-                        <div class='varfield'id='featslist'>
+                        <div class="row legend">
+                            <div class="col-xs-10">
+                                <p>Feats</p>
+                            </div>
+                            <div class="col-xs-2 add-field">
+                                <span class='glyphicon glyphicon-plus-sign'id='addfeat'></span>
+                            </div>
+                        </div>                        
+                        <div class='row' id='featslist'>
                         </div>
-                        <div class="col-xs-12 add-field">
-                            <span class='glyphicon glyphicon-plus-sign'id='addfeat'></span>
+                        <div class="row legend">
+                            <div class="col-xs-10">
+                                <p>Languages</p>
+                            </div>
+                            <div class="col-xs-2 add-field">
+                                <span class='glyphicon glyphicon-plus-sign'id='addlang'></span>
+                            </div>
                         </div>
-                        <div class='legend col-xs-12'>Languages</div>
-                        <div class='varfield'id='langslist'>
-                        </div>
-                        <div class="col-xs-12 add-field">
-                            <span class='glyphicon glyphicon-plus-sign'id='addlang'></span>
+                        <div class='row' id='langslist'>
                         </div>
                     </fieldset>
                     <fieldset id='powers'>
                         <legend>Powers 8/10</legend>
-                        <div class='legend col-xs-12'>At-Will</div>
-                        <div class='varfield'id='atwillplist'>
+                        <div class="row legend">
+                            <div class="col-xs-10">
+                                <p>At-Will</p>
+                            </div>
+                            <div class="col-xs-2 add-field">
+                                <span class='glyphicon glyphicon-plus-sign'id='addatwill'></span>
+                            </div>
                         </div>
-                        <div class="col-xs-12 add-field">
-                            <span class='glyphicon glyphicon-plus-sign'id='addatwill'></span>
+                        <div class='row' id='atwillplist'>
                         </div>
-                        <div class='legend col-xs-12'>Encounter</div>
-                        <div class='varfield'id='encplist'>
+                        <div class="row legend">
+                            <div class="col-xs-10">
+                                <p>Encounter</p>
+                            </div>
+                            <div class="col-xs-2 add-field">
+                                <span class='glyphicon glyphicon-plus-sign'id='addenc'></span>
+                            </div>
                         </div>
-                        <div class="col-xs-12 add-field">
-                            <span class='glyphicon glyphicon-plus-sign'id='addenc'></span>
+                        <div class='row' id='encplist'>
                         </div>
-                        <div class='legend col-xs-12'>Daily</div>
-                        <div class='varfield'id='dailyplist'>
+                        <div class="row legend">
+                            <div class="col-xs-10">
+                                <p>Daily</p>
+                            </div>
+                            <div class="col-xs-2 add-field">
+                                <span class='glyphicon glyphicon-plus-sign'id='adddaily'></span>
+                            </div>
                         </div>
-                        <div class="col-xs-12 add-field">
-                            <span class='glyphicon glyphicon-plus-sign'id='adddaily'></span>
+                        <div class='row' id='dailyplist'>
                         </div>
-                        <div class='legend col-xs-12'>Utility</div>
-                        <div class='varfield'id='utilityplist'>
+                        <div class="row legend">
+                            <div class="col-xs-10">
+                                <p>Utility</p>
+                            </div>
+                            <div class="col-xs-2 add-field">
+                                <span class='glyphicon glyphicon-plus-sign'id='addutil'></span>
+                            </div>
                         </div>
-                        <div class="col-xs-12 add-field">
-                            <span class='glyphicon glyphicon-plus-sign'id='addutil'></span>
+                        <div class='row' id='utilityplist'>
                         </div>
                     </fieldset>
                     <fieldset id='equip'>
@@ -302,11 +334,15 @@
                                 <input class="textinput form-control" type='text'maxlength='30'id='efeet'name='efeet'/>
                             </div>
                         </div>
-                        <div class='legend col-xs-12'><p>Inventory</p></div>
-                        <div class="form-group" id="invlist">
+                        <div class="row legend">
+                            <div class="col-xs-10">
+                                <p>Inventory</p>
+                            </div>
+                            <div class="col-xs-2 add-field">
+                                <span class='glyphicon glyphicon-plus-sign' id='addinv'></span>
+                            </div>
                         </div>
-                        <div class="col-xs-12 add-field">
-                            <span class='glyphicon glyphicon-plus-sign'id='addinv'></span><br/>
+                        <div class="form-group" id="invlist">
                         </div>
                     </fieldset>
                     <fieldset id='skills'>
