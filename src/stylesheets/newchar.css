@@ -276,7 +276,7 @@ a:hover {
   max-width: 450px;
   min-height: 200px;
   margin: 2rem auto;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1rem;
 }
 /* line 17, ../sass/newchar.scss */
 .body .newchar-container .legend {
@@ -309,32 +309,23 @@ a:hover {
   right: 2rem;
 }
 /* line 44, ../sass/newchar.scss */
-.body .newchar-container #nextprev {
-  max-width: 40rem;
-  width: 100%;
+.body .newchar-container .top-right {
   position: absolute;
   top: 5rem;
-  left: 50%;
-  margin-left: -20rem;
+  right: 10%;
 }
-/* line 52, ../sass/newchar.scss */
-.body .newchar-container #nextprev span {
-  font-size: 2rem;
+/* line 49, ../sass/newchar.scss */
+.body .newchar-container .top-left {
+  position: absolute;
+  top: 5rem;
+  left: 10%;
 }
 /* line 55, ../sass/newchar.scss */
-.body .newchar-container #nextprev #backward {
-  float: left;
-}
-/* line 58, ../sass/newchar.scss */
-.body .newchar-container #nextprev #forward {
-  float: right;
-}
-/* line 63, ../sass/newchar.scss */
 .body .newchar-container label {
   font-weight: normal;
   margin-top: 5px;
 }
-/* line 67, ../sass/newchar.scss */
+/* line 59, ../sass/newchar.scss */
 .body .newchar-container button {
   margin-top: -1px;
   font-size: 2rem;
@@ -342,7 +333,7 @@ a:hover {
   -moz-border-radius: 0px / 0px;
   border-radius: 0px / 0px;
 }
-/* line 72, ../sass/newchar.scss */
+/* line 64, ../sass/newchar.scss */
 .body .newchar-container input {
   -webkit-border-radius: 1px 1px;
   -moz-border-radius: 1px / 1px;
@@ -351,22 +342,23 @@ a:hover {
   font-size: 2rem;
   margin-top: -1px;
 }
-/* line 78, ../sass/newchar.scss */
+/* line 70, ../sass/newchar.scss */
 .body .newchar-container input:focus {
   padding-left: .8rem;
   border-left: 0.3rem solid #8768c2;
 }
-/* line 82, ../sass/newchar.scss */
+/* line 74, ../sass/newchar.scss */
 .body .newchar-container legend {
   text-align: center;
   font-size: 1.8rem;
   font-weight: bold;
+  padding: 0 2.5rem;
 }
-/* line 87, ../sass/newchar.scss */
+/* line 80, ../sass/newchar.scss */
 .body .newchar-container #skills input {
   margin-top: 9px;
 }
-/* line 91, ../sass/newchar.scss */
+/* line 84, ../sass/newchar.scss */
 .body .newchar-container .btn-default,
 .body .newchar-container .btn-default:focus {
   color: #fff;
