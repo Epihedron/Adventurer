@@ -299,38 +299,36 @@ a:hover {
 /* line 32, ../sass/newchar.scss */
 .body .newchar-container .add-field {
   text-align: center;
-  padding: 0.5rem;
 }
-/* line 35, ../sass/newchar.scss */
+/* line 34, ../sass/newchar.scss */
 .body .newchar-container .add-field span {
   font-size: 2.4rem;
 }
-/* line 40, ../sass/newchar.scss */
-.body .newchar-container .button-glyphicon span {
-  vertical-align: middle;
-  font-size: 2rem;
+/* line 39, ../sass/newchar.scss */
+.body .newchar-container .dynamic-items span {
   color: #9c9c9c;
-  padding: 6px;
-  right: 2rem;
+  text-align: center;
+  padding-top: 0.5rem;
+  font-size: 2rem;
 }
-/* line 48, ../sass/newchar.scss */
+/* line 46, ../sass/newchar.scss */
 .body .newchar-container .top-right {
   position: absolute;
   top: 5rem;
   right: 10%;
 }
-/* line 53, ../sass/newchar.scss */
+/* line 51, ../sass/newchar.scss */
 .body .newchar-container .top-left {
   position: absolute;
   top: 5rem;
   left: 10%;
 }
-/* line 59, ../sass/newchar.scss */
+/* line 57, ../sass/newchar.scss */
 .body .newchar-container label {
   font-weight: normal;
   margin-top: 5px;
 }
-/* line 63, ../sass/newchar.scss */
+/* line 61, ../sass/newchar.scss */
 .body .newchar-container button {
   margin-top: -1px;
   font-size: 2rem;
@@ -338,7 +336,7 @@ a:hover {
   -moz-border-radius: 0px / 0px;
   border-radius: 0px / 0px;
 }
-/* line 68, ../sass/newchar.scss */
+/* line 66, ../sass/newchar.scss */
 .body .newchar-container input {
   -webkit-border-radius: 1px 1px;
   -moz-border-radius: 1px / 1px;
@@ -347,12 +345,16 @@ a:hover {
   font-size: 2rem;
   margin-top: -1px;
 }
-/* line 74, ../sass/newchar.scss */
+/* line 72, ../sass/newchar.scss */
 .body .newchar-container input:focus {
   padding-left: .8rem;
   border-left: 0.3rem solid #8768c2;
 }
-/* line 78, ../sass/newchar.scss */
+/* line 76, ../sass/newchar.scss */
+.body .newchar-container .textinput {
+  min-width: 3rem;
+}
+/* line 79, ../sass/newchar.scss */
 .body .newchar-container legend {
   text-align: center;
   font-size: 1.8rem;
@@ -360,15 +362,15 @@ a:hover {
   padding: 0 2.5rem;
   margin-top: 1rem;
 }
-/* line 84, ../sass/newchar.scss */
+/* line 85, ../sass/newchar.scss */
 .body .newchar-container legend p {
   margin-bottom: 0;
 }
-/* line 88, ../sass/newchar.scss */
+/* line 89, ../sass/newchar.scss */
 .body .newchar-container #skills input {
   margin-top: 9px;
 }
-/* line 92, ../sass/newchar.scss */
+/* line 93, ../sass/newchar.scss */
 .body .newchar-container .btn-default,
 .body .newchar-container .btn-default:focus {
   color: #fff;

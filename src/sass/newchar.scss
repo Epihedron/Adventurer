@@ -31,18 +31,16 @@
 		}
 		.add-field{
 			text-align: center;
-			padding: 0.5rem;
 			span{
 				font-size: 2.4rem;
 			}
 		}
-		.button-glyphicon{
+		.dynamic-items{
 			span{
-				vertical-align: middle;
-				font-size: 2rem;
 				color: $loud-grey;
-				padding: 6px;
-				right: 2rem;
+				text-align: center;
+				padding-top: 0.5rem;
+				font-size: 2rem;
 			}
 		}
 		.top-right{
@@ -74,6 +72,9 @@
 		input:focus{
 			padding-left: .8rem;
 			border-left: .3rem solid $quiet-purple;
+		}
+		.textinput{
+			min-width: 3rem;
 		}
 		legend{
 			text-align: center;

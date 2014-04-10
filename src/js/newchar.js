@@ -137,47 +137,47 @@ $(document).ready(function()
     //additional input fields
     $('#addracefeature').click(function()
         {
-            $('#racefeaturelist').append("<div class='col-xs-10'><input class='form-control' name='rfeat[]'type='text'maxchar='100'/></div><div class='col-xs-2 button-glyphicon'><span class='glyphicon glyphicon-remove-circle' id='removeitem'></span></div>");
+            $('#racefeaturelist').append("<div class='col-xs-10'><input class='form-control' name='rfeat[]'type='text'maxchar='100'/></div><div class='col-xs-2'><span class='glyphicon glyphicon-remove-circle' id='removeitem'></span></div>");
         }
     );
     $('#addclassfeature').click(function()
         {
-            $('#classfeaturelist').append("<div class='col-xs-10'><input class='form-control' name='cfeat[]'type='text'maxchar='100'/></div><div class='col-xs-2 button-glyphicon'><span class='glyphicon glyphicon-remove-circle' id='removeitem'></span></div>");
+            $('#classfeaturelist').append("<div class='col-xs-10'><input class='form-control' name='cfeat[]'type='text'maxchar='100'/></div><div class='col-xs-2'><span class='glyphicon glyphicon-remove-circle' id='removeitem'></span></div>");
         }
     );
     $('#addfeat').click(function()
         {
-            $('#featslist').append("<div class='col-xs-10'><input class='form-control' name='feat[]'type='text'maxchar='100'/></div><div class='col-xs-2 button-glyphicon'><span class='glyphicon glyphicon-remove-circle' id='removeitem'></span></div>");
+            $('#featslist').append("<div class='col-xs-10'><input class='form-control' name='feat[]'type='text'maxchar='100'/></div><div class='col-xs-2'><span class='glyphicon glyphicon-remove-circle' id='removeitem'></span></div>");
         }
     );
     $('#addlang').click(function()
         {
-            $('#langslist').append("<div class='col-xs-10'><input class='form-control' name='lang[]'type='text'maxchar='100'/></div><div class='col-xs-2 button-glyphicon'><span class='glyphicon glyphicon-remove-circle' id='removeitem'></span></div>");
+            $('#langslist').append("<div class='col-xs-10'><input class='form-control' name='lang[]'type='text'maxchar='100'/></div><div class='col-xs-2'><span class='glyphicon glyphicon-remove-circle' id='removeitem'></span></div>");
         }
     );
     $('#addatwill').click(function()
         {
-            $('#atwillplist').append("<div class='col-xs-10'><input class='form-control' name='atwill[]'type='text'maxchar='100'/></div><div class='col-xs-2 button-glyphicon'><span class='glyphicon glyphicon-remove-circle' id='removeitem'></span></div>");
+            $('#atwillplist').append("<div class='col-xs-10'><input class='form-control' name='atwill[]'type='text'maxchar='100'/></div><div class='col-xs-2'><span class='glyphicon glyphicon-remove-circle' id='removeitem'></span></div>");
         }
     );
     $('#addenc').click(function()
         {
-            $('#encplist').append("<div class='col-xs-10'><input class='form-control' name='enc[]'type='text'maxchar='100'/></div><div class='col-xs-2 button-glyphicon'><span class='glyphicon glyphicon-remove-circle' id='removeitem'></span></div>");
+            $('#encplist').append("<div class='col-xs-10'><input class='form-control' name='enc[]'type='text'maxchar='100'/></div><div class='col-xs-2'><span class='glyphicon glyphicon-remove-circle' id='removeitem'></span></div>");
         }
     );
     $('#adddaily').click(function()
         {
-            $('#dailyplist').append("<div class='col-xs-10'><input class='form-control' name='daily[]'type='text'maxchar='100'/></div><div class='col-xs-2 button-glyphicon'><span class='glyphicon glyphicon-remove-circle' id='removeitem'></span></div>");
+            $('#dailyplist').append("<div class='col-xs-10'><input class='form-control' name='daily[]'type='text'maxchar='100'/></div><div class='col-xs-2'><span class='glyphicon glyphicon-remove-circle' id='removeitem'></span></div>");
         }
     );
     $('#addutil').click(function()
         {
-            $('#utilityplist').append("<div class='col-xs-10'><input class='form-control' name='util[]'type='text'maxchar='100'/></div><div class='col-xs-2 button-glyphicon'><span class='glyphicon glyphicon-remove-circle' id='removeitem'></span></div>");
+            $('#utilityplist').append("<div class='col-xs-10'><input class='form-control' name='util[]'type='text'maxchar='100'/></div><div class='col-xs-2'><span class='glyphicon glyphicon-remove-circle' id='removeitem'></span></div>");
         }
     );
     $('#addinv').click(function()
         {
-            $('#invlist').append("<div class='col-xs-10'><input class='form-control' name='inv[]'type='text'maxchar='100'/></div><div class='col-xs-2 button-glyphicon'><span class='glyphicon glyphicon-remove-circle' id='removeitem'></span></div>");
+            $('#invlist').append("<div class='col-xs-10'><input class='form-control' name='inv[]'type='text'maxchar='100'/></div><div class='col-xs-2'><span class='glyphicon glyphicon-remove-circle' id='removeitem'></span></div>");
         }
     );
     $(document).on('click', '#removeitem' , function() {
