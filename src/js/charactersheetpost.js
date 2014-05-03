@@ -2,7 +2,7 @@
 function ttr(){setTimeout(function()
 {
 	location.reload();
-},25)}
+},100)}
 
 
 
